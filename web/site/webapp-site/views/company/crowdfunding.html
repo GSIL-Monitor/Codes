@@ -1,0 +1,154 @@
+<div class="detail-body overview-left-part m-t"  ng-controller="CrowdfundingDetailCtrl" >   
+	  
+	 <!-- company detail -->
+	  <div class="panel-body pnl">
+	  	  <div class="container-fluid m-b" >
+	  	  	
+	  	  	
+	  	  	<div class="text-right" ng-show="cf.comments> 0 || cf.supporters>0">
+	  	  		<i class="fa fa-comments"></i>
+	  	  		<strong>{{cf.comments}}</strong>
+	  	  		&nbsp;&nbsp;&nbsp;&nbsp;
+	  	  		<i class="fa fa-thumbs-up"></i>
+		  		<strong>{{cf.supporters}}</strong>
+	  	  	</div>
+	  	  
+	  	  </div>
+	  		
+		  <div class="div-desc m-t-sm m-b-md">
+			  <p><strong><span>{{ 'Brief Introduction' | translate}}</span>:</strong></p>
+			  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;{{cf.description}}
+		  </div>
+
+   		  <div class="pull-right">
+   		  	<strong> {{'FROM'|translate}}:</strong>
+   		  	
+   		  	<strong class="m-r-xs">
+   		  		<a href="{{cf.sourceUrl}}" target="_blank">{{cf.sourceName}}</a>
+   		  	</strong>
+   		  </div>
+		  <div  style="margin-top: 45px;" ng-show="scfDocuList.length>0">
+			  <p> <strong>{{ 'Product  Introduction' | translate}}:</strong></p>
+				<div class="text-center"   ng-show="item.type==9030"  ng-repeat="item in scfDocuList">
+
+					<image  style="width: 100%;" src="{{item.link}}" />
+				</div>
+				<!--<div class="m-t" ng-show="doucFlage">-->
+					<!--<p><strong>{{ 'Document  Below' | translate}}:</strong></p>-->
+				<!--</div>-->
+			  <!--<div  ng-show="item.type==9010 && item.link.substring(0,4)=='http'" ng-repeat="item in scfDocuList">-->
+					  <!--<a href="{{item.link}}" target=_blank >-->
+						<!--<image style="width: 50px;heigth:50px; "src="fonts/12120016_143849507121_2.jpg" />-->
+					  <!--</a>-->
+
+			  <!--</div>-->
+			  <!--<div class="m-t" ng-show="vedioFlage">-->
+				  <!--<p><strong>{{ 'Vedio  Below' | translate}}:</strong></p>-->
+			  <!--</div>-->
+			  <!--<div  ng-show="item.type==9020 && item.link.substring(0,4)=='http'" ng-repeat="item in scfDocuList">-->
+					  <!--<a href="{{item.link}}" target=_blank>-->
+						  <!--<image style="width: 50px;heigth:50px; "src="fonts/f01d.png" />-->
+					  <!--</a>-->
+			  <!--</div>-->
+
+		  </div>
+
+	 <div style="height:20px"></div>
+	  
+     <!--  -->
+     <div class="overview-right-part" >
+     	<h3>
+  	  		<span ng-class="(cf.status == 1901 || cf.status ==1902)?'default-color': 'inactive-color'">
+        		{{cf.statusName}}
+       		</span>
+     	</h3>
+     	
+     	<div class="m-t">
+	     	<p>
+
+	            <span>{{'SUCCESS_RAISING' | translate}}:
+					<span ng-show='cf.currency == 3010'><i class="fa fa-usd"></i></span>
+					<span ng-show='cf.currency == 3020'><i class="fa fa-cny"></i></span>
+					<strong>{{cf.successRaising}}</strong>
+
+				</span>
+	            <div class="first-line" >
+		            <div class="first-flag"></div>
+		        </div>
+	     	</p>
+	     		
+	     	<p>
+	     		<span>{{'AMOUNT_RAISING' | translate}}:
+					<span ng-show='cf.currency == 3010'><i class="fa fa-usd"></i></span>
+					<span ng-show='cf.currency == 3020'><i class="fa fa-cny"></i></span>
+					<strong>{{cf.amountRaising}}</strong></span>
+	           <div class="second-line">
+		            <div class="second-flag"></div>
+		        </div>
+	     		
+	     	</p>
+     	
+     	</div>
+		 <div style="margin-top: 30px;padding: 0px;"  ng-show="scfLeader.length>0">
+			 <span>{{'Raising From'|translate}}:</span>
+			 <hr />
+		<div class="m-t-none" style="padding: 0px;" ng-repeat="item in scfLeader track by $index">
+			<p>
+				<span>{{'InvestorName'|translate}}:
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong >{{item.investorName}}</strong>
+				</span>
+			</p>
+
+			<p >
+				<span ng-show="item.investment!=null">{{'Investment'|translate}}:
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span ng-show='cf.currency == 3010'><i class="fa fa-usd"></i></span>
+					<span ng-show='cf.currency == 3020'><i class="fa fa-cny"></i></span>
+					<strong>{{item.investment}}</strong>
+				</span>
+			</p>
+
+			<p >
+				<span>{{'investorType'|translate}}:
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong>{{item.investorType}}</strong>
+				</span>
+			</p>
+			<hr/>
+		</div>
+		 </div>
+     	
+     </div>
+		  </div>
+
+
+
+	</div>
+
+   
+   <script>
+   $(document).ready(function(){
+	   fix_company();
+	
+   })
+   
+   $(window).bind("load resize scroll", function() {
+	   fix_company();
+   })
+   
+   function fix_company(){
+	   // company page
+       var windowWidth = $( window ).width();
+       if(windowWidth <1024) {
+       	$(".overview-left-part").css('width', '100%');
+       	$(".overview-right-part").css('display', 'none');
+       }
+       else {
+       	$(".overview-left-part").css('width', '75%');
+       	$(".overview-right-part").css('display', 'block');
+       }
+   }
+
+   
+   </script>

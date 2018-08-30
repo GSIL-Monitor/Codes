@@ -1,0 +1,51 @@
+戈壁项目小助手 gobixzs
+arthur@gobi.vc / du4xxxxxx
+
+AppID: wxa3ce89070799e1be
+AppSecret: 4d7b395b28810f03b572fe61fc6d961d
+
+Token:	smh33TDLq30MrtZskrQRpLUrR6PJ8GJ
+EncodingAESKey:	siLOMKbpW3XquvBAhOW7HBMn06lYYsQiPLEAMXziQsP
+
+戈壁创赢(上海)创业投资管理有限公司 
+上海市浦东新区科苑路399号张江创新园7幢						
+gh_48e693c25737
+
+<xml><ToUserName><![CDATA[gh_48e693c25737]]></ToUserName>
+<FromUserName><![CDATA[oSN3lsk-WiQEMrWpo0ouADCkuplE]]></FromUserName>
+<CreateTime>1428476579</CreateTime>
+<MsgType><![CDATA[link]]></MsgType>
+<Title><![CDATA[天天投携手10家顶级资本合伙人，共邀腾讯系创业精英，相约北京，4月15日]]></Title>
+<Description><![CDATA[4月15日，北京，前腾讯MIG总裁 刘成敏、金沙江创投合伙人 朱啸虎、天神互动（上市公司）董事长 朱晔等10多位顶级投资人，邀您一对一、面对面交流]]></Description>
+<Url><![CDATA[http://www.evervc.com/mtopic/bj415.html]]></Url>
+<MsgId>6135260190111793434</MsgId>
+</xml>
+
+<xml><ToUserName><![CDATA[gh_48e693c25737]]></ToUserName>
+<FromUserName><![CDATA[oSN3lsk-WiQEMrWpo0ouADCkuplE]]></FromUserName>
+<CreateTime>1428476930</CreateTime>
+<MsgType><![CDATA[link]]></MsgType>
+<Title><![CDATA[全球最拥堵城市排行：前30名中国大陆上榜10个]]></Title>
+<Description><![CDATA[]]></Description>
+<Url><![CDATA[http://view.inews.qq.com/w/WXN201504060195860A1?refer=nwx&openid=o04IBANAm4H_GkvHOOxGESRyjDbY&groupid=1428312055&msgid=1]]></Url>
+<MsgId>6135261697645314495</MsgId>
+</xml>
+
+<xml><ToUserName><![CDATA[gh_48e693c25737]]></ToUserName>
+<FromUserName><![CDATA[oSN3lsk-WiQEMrWpo0ouADCkuplE]]></FromUserName>
+<CreateTime>1428476974</CreateTime>
+<MsgType><![CDATA[link]]></MsgType>
+<Title><![CDATA[“贵圈”瞄准的是八卦里的金子，艾漫科技A轮融资6000万元]]></Title>
+<Description><![CDATA[http://36kr.com/p/531137.html?from=groupmessage&isappinstalled=0]]></Description>
+<Url><![CDATA[http://36kr.com/p/531137.html?from=groupmessage&isappinstalled=0]]></Url>
+<MsgId>6135261886623875551</MsgId>
+</xml>
+
+<xml><ToUserName><![CDATA[gh_48e693c25737]]></ToUserName>
+<FromUserName><![CDATA[oSN3lsk-WiQEMrWpo0ouADCkuplE]]></FromUserName>
+<CreateTime>1428476564</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[1]]></Content>
+<MsgId>6135260125687283985</MsgId>
+</xml>
+

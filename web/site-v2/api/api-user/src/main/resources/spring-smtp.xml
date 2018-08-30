@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<!-- 服务器 -->
+		<property name="host" value="${SMTP_SERVER}" />
+		<!-- 端口号 -->
+		<property name="port" value="${SMTP_PORT}" />
+		<!-- SSL -->
+		<property name="protocol" value="smtps" />
+		<!-- 用户名 -->
+		<property name="username" value="${SMTP_USERNAME}" />
+		<!-- 密码 -->
+		<property name="password" value="${SMTP_PASSWORD}" />
+		<!-- SMTP服务器验证 -->
+		<property name="javaMailProperties">
+			<props>
+				<!-- 验证身份 -->
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtps.starttls.enable">true</prop>
+				<prop key="mail.smtps.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="freemarkerMailConfiguration"
+		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/email_templates" />
+	</bean>
+
+	<bean id="simpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+		<!-- 发件人email -->
+		<property name="from" value="${SMTP_USERNAME}" />
+	</bean>
+
+	<bean id="simpleMail" class="com.tsb.util.Email">
+		<property name="javaMailSender" ref="javaMailSender" />
+		<property name="simpleMailMessage" ref="simpleMailMessage" />
+		<property name="freemarkerMailConfiguration" ref="freemarkerMailConfiguration" />
+		<property name="host" value="${HOST}" />
+	</bean>
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.user.DealUserRelReadDao">
+	<resultMap id="durResult" type="DealUserRel">
+	</resultMap>
+	
+	<select id="listByDealId" parameterType="Integer" resultMap="durResult">
+		select * from deal_user_rel where dealId = #{dealId}
+	</select>
+	
+	<select id="getByDealIdAndIdentify"  resultMap="durResult">
+		select * from deal_user_rel where dealId = #{dealId} and userIdentify= #{userIdentify}
+	</select>
+
+</mapper>

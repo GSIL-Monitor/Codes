@@ -1,0 +1,143 @@
+# -*- coding: utf-8 -*-
+import os, sys, time
+import datetime
+import json
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
+sys.path.append(os.path.join(os.path.split(os.path.realpath(__file__))[0], '../../../util'))
+import config
+import db
+import loghelper
+import url_helper
+import name_helper
+import util
+
+sys.path.append(os.path.join(os.path.split(os.path.realpath(__file__))[0], '../../crawler/website'))
+import website
+
+#TODO
+# 通过corporate的fullName进行备案查询，获取最新备案的网站，并对网站就行访问测试，删除正在开发的或者被劫持的
+
+def save_collection_beian(items):
+    mongo = db.connect_mongo()
+    collection_name = mongo.info.beian
+    for item in items:
+        #logger.info(json.dumps(item, ensure_ascii=False, cls=util.CJsonEncoder))
+        if collection_name.find_one({"domain": item["domain"]}) is not None:
+            collection_name.delete_one({"domain": item["domain"]})
+        item["createTime"] = datetime.datetime.now()
+        item["modifyTime"] = item["createTime"]
+        collection_name.insert_one(item)
+    mongo.close()
+
+
+def save_beian_artifacts(items, companyId):
+    conn = db.connect_torndb()
+    for item in items:
+        homepage = "http://www." + item["domain"]
+
+        artifact = conn.get("select * from artifact where type=4010 and companyId=%s and link=%s limit 1",
+                                       companyId, homepage)
+        if source_artifact is None:
+            source_artifact = conn.get("select * from artifact where type=4010 and companyId=%s and domain=%s limit 1",
+                companyId, item["domain"])
+
+        type = 4010
+        if artifact is None:
+            sql = "insert artifact(companyId, name, link, type, domain, createTime,modifyTime) \
+                              values(%s,%s,%s,%s,%s,now(),now())"
+            conn.insert(sql, companyId, item["websiteName"], homepage, type, item["domain"])
+
+    conn.close()
+
+def checkwebsite(items):
+    nitems = []
+    # 我们会把好的网站存到mysql.artifact里，但是所有网站都会存到mongo.info.website里面
+    for item in items:
+        URL = "http://www." + item["domain"]
+
+        logger.info("Checking : %s", URL)
+            meta = website.get_meta_info(URL)
+            if meta is None :
+                meta = {
+                    "url": URL,
+                    "httpcode": 404
+                }
+                saveWebsite(meta)
+                # 404 代表不能访问，不存到mysql.artifact
+            else:
+                saveWebsite(meta)
+
+                bflag = True
+                # 校验黄赌毒
+                for bbword in ["赌博","一夜情","裸聊","三级片","色情","葡京","床戏"]:
+                item ----> meta
+                    if item.has_key("description") is True and item["description"] is not None and item["description"].find(bbword) >= 0:
+                        bflag = False
+                        break
+                    if item.has_key("title") is True and item["title"] is not None and item["title"].find(bbword) >= 0:
+                        bflag = False
+                        break
+                    if item.has_key("tags") is True and item["tags"] is not None and item["tags"].find(bbword) >= 0:
+                        bflag = False
+                        break
+                #黄赌毒网站也不存到mysql.artifact
+                if bflag is True:
+                    nitems.append(item)
+
+    return nitems
+
+
+
+def saveWebsite(item):
+    mongo = db.connect_mongo()
+    collection_website = mongo.info.website
+    # in case that related websites have been saved before
+    record = collection_website.find_one({"url": item["url"]})
+    if record is None:
+        item["createTime"] = datetime.datetime.now()
+        item["modifyTime"] = item["createTime"]
+        try:
+            id = collection_website.insert(item)
+        except:
+            return None
+    mongo.close()
+
+
+
+if __name__ == '__main__':
+
+    id = 0
+    while True:
+
+        #verify == 点赞，active -> A（不作处理） P（点了不发布） Y（发布） N（删除） NULL
+        corprates = conn.query("select * from corporate where (active is null or active='Y') and verify='Y' and id>%s limit 1000"
+
+        for corporate in corporates:
+
+            #corporate 对应 companies， 一个corporate可能对应多个产品线companies
+            companies = conn.query("select * from company where (active is null or active='Y') and corporateId=%s", corporate["id")
+
+
+            fullName = corporate["fullName"]
+            # 根据fullName进行备案信息查询，返回list 包含该公司名下所有的网站的备案信息
+            beians = getBeian(fullName)
+
+            #保存所有beian信息到mongo.info.beian
+            save_collection_beian(beians)
+
+            # 针对得到的所有网站进行清洗，一：判断是否可以访问，HTTP 200？ 二：判断是否是黄色网站，并返回清洗后的结果
+            items_new = checkwebsite(beians)
+
+            for company in companies:
+
+                #保存得到的网站到Mysql.artifact中，保存过程中检查是否已经有了，含有的（包含被删除的）都不会保存
+                save_beian_artifacts(items_new,company["id"])
+
+        # 是否全部corporates都检查过了
+        if len(corporates) == 0:
+            time.sleep(60 * 60)
+            id = 0
+
+

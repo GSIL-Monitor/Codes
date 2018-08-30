@@ -1,0 +1,1 @@
+rsync -vzrt --exclude "*.pyc" --exclude ".*" --exclude "*.log" --exclude main.conf --exclude "build" --exclude "project.egg-info" --progress -e ssh --delete support/  root@tshbao-task-01:/data/task-v2/spider/support

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.MemberWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Member">
+		insert member(
+			name, education, work, workEmphasis,photo,
+			active, verify, createTime, createUser
+		)
+		values(
+			#{name}, #{education}, #{work}, #{workEmphasis}, #{photo},
+			#{active}, #{verify}, #{createTime}, #{createUser}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Member">
+		update
+			member
+		set 
+			name = #{name},
+			education = #{education},
+			workEmphasis = #{workEmphasis},
+			work = #{work},
+			photo = #{photo},
+			active = #{active},
+			verify = #{verify},
+			modifyTime = #{modifyTime},
+			modifyUser= #{modifyUser}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

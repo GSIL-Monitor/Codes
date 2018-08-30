@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.read.source.SourceMemberReadDao">
+	<resultMap id="sourceMemberResult" type="SourceMember">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="sourceMemberResult">
+		select * from source_member where id = #{id}
+	</select>
+	
+	<select id="listByMemberId" parameterType="Integer" resultMap="sourceMemberResult">
+		select * from source_member where memberId = #{id}
+	</select>
+	
+	<select id="listByCompanyMemberRelId" parameterType="Integer" resultMap="sourceMemberResult">
+		select m.* from source_member m join source_company_member_rel r on m.id=r.sourceMemberId
+		where r.companyMemberRelId = #{id}
+	</select>
+	
+</mapper>

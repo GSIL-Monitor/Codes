@@ -1,0 +1,144 @@
+# -*- coding: utf-8 -*-
+import os, sys
+
+#TODO
+#android, itunes  website需要提取domain!!! 通过domain判断是否是同一个公司的应用!
+#itunes 提取产品名短名 Mr.Hug-全球旅行直播-发现全球个性旅行活动 -> Mr.Hug
+#简聊 · Teambition
+
+if __name__ == '__main__':
+
+    while True:
+        source_companies = conn.find()                              #查询所有需要扩展的公司源
+
+        #gevent -> list of source_companies
+
+        for source_company in source_companies:
+            while True:
+                #Step A/1:备案查询
+                #Get names by sourceCompangId from Mysql.source_company_name, ?filter by name_help?
+                source_company_names = conn.find()
+                artifacts = conn.find()  #所有的未查询过的公司名称
+                while source_company_name in source_company_names:
+                    if source_company_name not in mongo.beian:                  #Case that one company_name has multiple beian# : 上海汇翼->(today.ai/teambition.com)
+                        items = beian.query_by_company_name()                   #If only one found in Mongo.beian(organizer) it is fine
+                        colletion.insert(items, beian)                          #insert infos into Mongo.beian
+                        conn.check_insert(link, source_artifacts)               #insert website/homepage into Mysql.source_artifact
+                        conn.check_insert(name, source_company_names)           #insert organizer into Mysql.source_company_names
+                        conn.check_insert(mainBeianhao, source_mainBeianhao)    #insert mainBeianhao into Mysql.source_mainbeiahao
+                    else :
+                        pass
+                    #beian
+                    #发现更多的artifact(website)和公司名,主备案号
+
+                #Step A/2
+                #Get domains by sourceCompangId from Mysql.source_artifacts
+                source_artifacts                                                      #未查询过的网站artifact
+                while artifact in artifacts:
+                    domain= artifact["domain"] 4010
+                    if domian not in mongo.beian:                           #If only one found in Mongo.beian(domain)
+                        items = beian.query_by_domain()
+                        collection.insert(items, beian)                     #insert infos into Mongo.beian
+                        conn.check_insert(link, source_artifacts)               #insert website/homepage into Mysql.source_artifact
+                        conn.check_insert(name, source_company_names)             #insert organizer into Mysql.source_company_names
+                        conn.check_insert(mainBeianhao, source_mainBeianhao)      #insert mainBeianhao into Mysql.source_mainbeiahao
+                    else:
+                        pass
+                    #beian
+                    #发现更多的artifact(website)和公司名,主备案号
+
+                #Step A/3
+                #??Get main_beianhaos by sourceCompanyId from Mysql.source_mainbeianhao
+                main_beianhaos = conn.find()                                 #按主备案号查询
+                while main_beianhao in main_beianhao:
+                    mainBeianhao = main_beianhao["mainBeianhao"]
+                    if mainBeianhao not in mongo.main_beianhao:
+                        items = beian.query_by_mainBeianhao
+                        collection.insert(items, beian)                     #insert infos into Mongo.beian
+                        conn.insert(link, source_artifacts)                 #insert website/homepage into Mysql.source_artifact
+                        conn.insert(name, source_company_names)             #insert organizer into Mysql.source_company_names
+                        conn.insert(mainBeianhao, source_mainBeianhao)      #insert mainBeianhao into Mysql.source_mainbeiahao
+                        collection.insert(items["mainBeianhao"], main_beianhao) #insert mainBeianhao into Mongo.main_beianhao
+                    else:
+                        pass
+                #发现更多的artifact(website)和公司名
+
+                #itunes扩展
+                #Step B/1
+                #artifacts = collection.find()###?? artifacts from Step A/2= collection.find()  #查询itunes artifact
+                while artifact in artifacts:
+
+                    if artifact["type"] == 4040:
+                        if get_trackid(artifact["link"]) not in mongo.itunes:            #判断是否存在
+                            Set("active", "N")                              #mark it as Noactive
+                        else:
+                            conn.update(mongo.ituns[_id], source_artifacts)      #存在: copy from mongo.itunes
+                            conn.insert(mongo.ituns[_id],artifact[id], source_artifact_itunes_rel)
+                            set("active")
+
+                #Step B/2根据公司名查询更多的itunes artifact
+                source_company_names ### source_company_names from Step A/1
+                while source_company_name in source_company_names:
+                    if source_company_name["name"] not in mongo.ituns["producers"]:
+                        pass
+                    else:
+                        if mongo.ituns["trackid"] in artifacts["4040-"]:
+                            pass
+                        else:
+                            conn.insert(mongo.ituns[_id], source_artifacts)
+                            conn.insert(mongo.ituns[_id], artifact[id], source_artifact_itunes_rel)
+                            #ituns's company_name are in english, not saving it into Mysql.source_company_name
+                    if source_company_name["name"] not in mongo.ituns["seller"]:
+                        sameas(above)
+
+                #Step B/3根据域名查询更多的itunes artifact
+                #??
+                while artifact in artifacts:
+                    if artifact["type"] == 4010:
+                        if artifact["domian"] not in mongo.ituns["website"].get_domian:
+                            pass
+                        else:
+                            if mongo.ituns["link"] in artifacts:
+                                pass
+                            else:
+                                conn.insert(mongo.ituns[_id], source_artifacts)
+                                conn.insert(mongo.ituns[_id], artifact[id], source_artifact_itunes_rel)
+
+                #发现更多的artifact(website)和公司名,check if existed in source_art..and company_name
+
+                #android扩展
+                artifacts = collection.find()    #查询android artifact
+                while artifact in artifacts:
+                    if artifact["type"] == 4050:
+                        if artifact["link"] not in mongo.android:  # 判断是否存在
+                            Set("active", "N")  # mark it as Noactive
+                        else:
+                            conn.update(mongo.android[_id], source_artifacts)  # 存在: copy from mongo.android
+                            conn.insert(mongo.android[_id], artifact[id], source_artifact_android_rel)
+
+
+                #根据公司名查询更多的android artifact
+                source_company_names  ### source_company_names from Step A/1
+                while source_company_name in source_company_names:
+                    if source_company_name["name"] not in mongo.android["author"]:
+                        pass
+                    else:
+                        if mongo.android["link"] in artifacts:
+                            pass
+                        else:
+                            conn.insert(mongo.android[_id], source_artifacts)
+                            conn.insert(mongo.android[_id], artifact[id], source_artifact_itunes_rel)
+                            conn.check_insert(mongo.android[author], source_company_name)
+
+                #根据域名查询更多的android artifact
+                #发现更多的artifact(website)和公司名
+
+                #工商查询
+                #曾用名?
+
+                #清洗website artfiact
+                #查询meta信息, 标记不能访问的website, 处理转跳的website
+                #verify -> source_artifacts/source_company_name set verify
+                break if 没有更多的artifacts和公司名被发现
+
+        time.sleep(60)

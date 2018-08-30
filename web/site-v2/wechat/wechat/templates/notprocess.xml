@@ -1,0 +1,13 @@
+<xml>
+	<ToUserName><![CDATA[{{ model.user }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ model.app }}]]></FromUserName>
+	<CreateTime>{{ model.createTime }}</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[系统不能处理您的信息
+
+系统只接受链接消息，不接受文本消息、图片消息、语音消息、视频消息、小视频消息、地理位置消息
+
+系统也不能接受word, ppt, pdf等文件
+
+如有问题，请联系管理员]]></Content>
+</xml>

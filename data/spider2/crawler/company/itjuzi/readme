@@ -1,0 +1,15 @@
+#Itjuzi:
+
+investfirm/investor/investevents(funding) 页面不会显示“找不到您访问的页面”格式
+Company/news/album/Person(member) 有“找不到您访问的页面”格式， 需要在is_crawler_success中加以考虑
+
+Investevents(funding)/investfirm/investor/member/album 需要加https进行访问
+
+URL: SOURCE/TYPE/FLAG
+COMPANY: 13030/36001/INCR
+INVESTEVENTS(FUNDING): 13030/36002/INCR
+INVESTFIRM: 13030/36003/INCR
+INVESTOR: 13030/36004/INCR
+PERSON(MEMBER): 13030/36005/INCR
+NEWS: 13030/36006/INCR
+ALBUM: 13030/36007/INCR

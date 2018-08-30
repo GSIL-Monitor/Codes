@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.CompanySectorWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="CompanySector">
+		insert company_sector
+			(
+			companyId,
+			sectorId,
+			verify,
+			active,	
+			createTime,
+			createUser,
+			confidence
+			)
+		values(
+			#{companyId},
+			#{sectorId},
+			#{verify}, 
+			#{active}, 
+			now(), 
+			#{createUser},
+			#{confidence}
+		)
+	</insert>
+	
+	<update id="update" parameterType="CompanySector">
+		update company_sector 
+		set sectorId = #{sectorId}, verify=#{verify}, modifyUser=#{modifyUser}, modifyTime = now() 
+		where id=#{id}
+	</update>
+	
+	<delete id="delete">
+		delete from company_sector where companyId = #{companyId}
+	</delete>
+	
+	<delete id="deleteOneSector">
+		delete from company_sector where companyId = #{companyId} and sectorId = #{sectorId}
+	</delete>
+	
+</mapper>

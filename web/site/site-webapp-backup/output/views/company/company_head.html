@@ -1,0 +1,77 @@
+<div class="company-head-page" ng-controller="CompanyHeadCtrl">
+   <ul class="company-header">
+        <li class="company-title" >
+        	<span>
+        		{{ headInfo.name}}
+        	</span>
+        </li>
+        
+        <li class="cate-active">
+       		<i class="fa fa-heart-o fa-2x heart"  ng-hide="headInfo.userCompanyRel.heart == 'Y'"   company-heart="{{headInfo.companyId}}"></i> 
+       	    <i class="fa fa-heart fa-2x heart"  ng-show="headInfo.userCompanyRel.heart == 'Y'"   company-heart="{{headInfo.companyId}}"></i> 
+       	</li>
+ 
+ 		 <li class="pull-right" id="li-data" ng-controller= "BasicModalCtrl">
+           <button class="btn btn-primary"  ng-click="open('list')">
+           	{{'ADD_TO_A_LIST' |  translate}}
+           </button>
+        </li>
+ 		 
+   </ul>
+
+    <ul class="list-inline company-category" >
+		
+	    <li id="li-overview" class="li-href" >
+	    	<a href="#/company/overview?{{headInfo.companyId}}" category-filter>
+			<span class="fa-stack fa-lg">
+	               <i class="fa fa-circle-thin fa-stack-2x"></i>
+	               <i class="fa fa-table fa-stack-1x"></i>
+			</span> 
+			{{ 'OVERVIEW' | translate}}
+			</a>
+        </li>
+        
+        <!--  
+        <li id="li-team" class="li-href" >
+        	<a href="#/company/team?{{company.companyId}}" category-filter>
+		        <span class="fa-stack fa-lg">
+		        <i class="fa fa-circle-thin fa-stack-2x"></i>
+		        <i class="fa fa-signal fa-stack-1x"></i>
+			      </span>
+		      {{ 'TEAM' | translate}}
+	        </a>
+        </li>
+        -->
+        
+        <li id="li-trends" class="li-href" ng-show="trends == 'Y'">
+        	<a href="#/company/trends?{{headInfo.companyId}}" category-filter>
+		        <span class="fa-stack fa-lg">
+		        <i class="fa fa-circle-thin fa-stack-2x"></i>
+		        <i class="fa fa-signal fa-stack-1x"></i>
+			      </span>
+		      {{ 'TRENDS' | translate}}
+	        </a>
+        </li>
+        
+         <li id="li-events"class="li-href" ng-hide='headInfo.newsCount ==0'>
+        	 <a href="#/company/events?{{headInfo.companyId}}" category-filter>	
+			<span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i> 
+                <i class="fa fa-flag fa-stack-1x"></i>
+			</span>
+			{{ 'EVENTS' | translate}}
+			</a>
+        </li>
+    </ul>
+
+  </div>
+  
+  <script>
+  	$(function(){
+    	var url = window.location.href;
+    	if(url.indexOf('overview') > 0)	$('#li-overview').addClass('cate-active');
+    	if(url.indexOf('team') > 0)	$('#li-team').addClass('cate-active');
+    	if(url.indexOf('trends') > 0)	$('#li-trends').addClass('cate-active');
+    	if(url.indexOf('events') > 0) $('#li-events').addClass('cate-active');
+  	})
+  </script>

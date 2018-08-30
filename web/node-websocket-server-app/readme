@@ -1,0 +1,14 @@
+ngnix
+
+    location /app {
+	    proxy_read_timeout 1d;
+	    proxy_pass http://110.27.73.209:8001;
+	    proxy_http_version 1.1;
+	    proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+	}
+
+
+npm install forever -g
+
+forever start -o /var/www/node-websocket-server-app/logs/out.log -e /var/www/node-websocket-server-app/logs/err.log -l /var/www/node-websocket-server-app/logs/forever.log -a app.js

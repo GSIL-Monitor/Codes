@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gobi | Reset</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/plugins/validation/css/formValidation.min.css">
+	<link href="css/style.css" rel="stylesheet">
+    
+</head>
+
+<body class="gray-bg">
+
+<div class="text-center pvl full-width">
+
+
+</div>
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+
+            <h3 class="m-b-lg">Reset Your Password</h3>
+
+			<div id="div-error" style="color: red; display:none">
+				Please go to forgot page and get reset link
+				<p>
+					<a href="forgot_password.html"><small>Forgot password?</small></a>
+				<p>
+			</div>
+            <form id="resetForm" class="m-t" role="form" method="post" >
+                <div class="form-group ">
+                    <h4 id="email" class=" text-left m-l"></h4>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Comfirm Password" name="cmfpassword">
+                </div>
+                
+                <button type="submit" class="btn btn-primary block full-width m-b">Reset</button>
+            </form>
+            
+			<hr/>
+             <div class="row">
+		        <div class="col-md-6">
+		        </div>
+		        <div class="col-md-6 text-right">
+		            <small>Gobi © 2015</small>
+		        </div>
+    		</div>
+
+        </div>
+    </div>
+</body>
+
+
+<script src="js/jquery/jquery-2.1.1.min.js"></script>
+<script src="js/plugins/validation/js/formValidation.min.js"></script>
+<script src="js/plugins/validation/js/framework/bootstrap.min.js"></script>
+<script src="js/plugins/validation/js/language/zh_CN.js"></script>
+
+<script type="text/javascript">
+		$(document).ready(function() {
+			var email = location.href.split("?")[1];
+			$("#email").text(email);
+			if(email == null)
+				location.href="/index.html";
+			
+		    $('#resetForm').formValidation({
+		        message: 'This value is not valid',
+		        icon: {
+		            valid: 'glyphicon glyphicon-ok',
+		            invalid: 'glyphicon glyphicon-remove',
+		            validating: 'glyphicon glyphicon-refresh'
+		        },
+		        fields: {
+		            password: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The password is required and can\'t be empty'
+		                    },
+		                    stringLength: {
+		                        min: 6,
+		                        message: 'The password must be more than 6 characters long'
+		                    },
+		                }
+		            },
+		        
+			        cmfpassword: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The password is required and can\'t be empty'
+		                    },
+		                    identical: {
+		                        field: 'password',
+		                        message: 'The password should be same'
+		                    }
+		                }
+		            }
+		            
+		        }
+		    })
+		    .on('success.form.fv', function(e) {
+		    	// Prevent form submission
+	            e.preventDefault();
+
+	            // Get the form instance
+	            var $form = $(e.target);
+
+	            // Get the FormValidation instance
+	            var bv = $form.data('formValidation');
+	            
+	            // Use Ajax to submit form data
+	            $.ajax({
+	            	method: 'post',
+	                url: './api/user/reset',
+	                data: $form.serialize()
+	            }).success(function(resp) {
+					if(resp.result){
+						var now = new Date();
+						var time = now.getTime();
+						time += 12*30*24*3600*1000;
+						now.setTime(time);
+						
+						document.cookie = 'username='+resp.user.username+';expires='+now.toUTCString();
+						document.cookie = 'login_token='+resp.token+';expires='+now.toUTCString();
+						
+						location.href= "reset_success.html";
+					}else{
+						$("#div-error").show();
+					}
+					//location.href="./index.html";
+	            });
+	            
+	        });
+		});
+	</script>
+
+</html>

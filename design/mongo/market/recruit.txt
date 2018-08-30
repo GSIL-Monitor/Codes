@@ -1,0 +1,19 @@
+database: market
+collection: recruit
+记录结构：
+{
+    "_id":,
+    "source":,
+    "sourceId":,
+    "sourceUrl":,
+    "name":,
+    "fullName":
+    "website":
+    "verifyBySource":
+    "logo":  
+  	"cate":
+  	"round":
+    "desc":,
+    "createTime":
+    "modifyTime": 
+}

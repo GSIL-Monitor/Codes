@@ -1,0 +1,12 @@
+database: log
+collection: user_abnormal_log
+记录结构：
+{
+    "_id":,
+    "userId":,
+    "type":,
+    "desc":,
+    "createTime":
+    "modifyTime": 
+    "processed": "Y"
+}

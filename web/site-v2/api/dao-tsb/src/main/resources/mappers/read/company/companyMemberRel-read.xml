@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.CompanyMemberRelReadDao">
+	<resultMap type="CompanyMemberRel" id="cmrResult">
+	</resultMap>
+	
+	<select id="get" resultMap="cmrResult">
+		select
+			*
+		from
+			company_member_rel
+		where
+			companyId=#{companyId} and (active !='N' or active is Null) order by joinDate desc limit 20
+	</select>
+	
+	<select id="count" resultType="int">
+		select
+			count(*)
+		from
+			company_member_rel
+		where
+			companyId=#{companyId} and active='Y'
+	</select>
+	
+	<select id="listByCompanyId" parameterType="Integer" resultMap="cmrResult">
+		select * from company_member_rel
+		where active='Y' and companyId = #{id} order by joinDate desc limit 20
+	</select>
+	
+	<select id="listByMemberId" parameterType="Integer" resultMap="cmrResult">
+		select * from company_member_rel
+		where active='Y' and memberId = #{id}  limit 20
+	</select>
+
+</mapper>

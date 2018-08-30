@@ -1,0 +1,26 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h3 >{{'FILTER' | translate}}&nbsp;{{'NAME' | translate}}</h3>
+</div>
+<div class="modal-body form-group">
+	<span class="ember-view">
+		<div class="search-param label" ng-repeat= 'item in nameItems track by $index'> 
+   		{{item}}
+    	<i class="fa fa-times close-filter"  item-close-filter='name' ></i>
+    	</div>
+	</span>
+    <input id="input-name" filter type="text" placeholder="Filter name" class="form-control m-t-md " ng-model='name'  name="filter-name"
+    onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+	<span class="tt-dropdown-menu">
+		<div class="div-result" name-auto-complete  ng-repeat='item in ajaxNameItems track by $index'>
+			<span>{{item}}</span>
+		</div>
+	</span>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
+

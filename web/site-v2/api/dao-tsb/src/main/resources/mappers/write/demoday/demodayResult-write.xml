@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.demoday.DemodayResultWriteDao">
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"
+		parameterType="DemodayResult">
+		insert
+		demoday_result
+		(
+			organizationId,
+			demodayCompanyId,
+			result,
+			createUser,
+			createTime
+		 )
+		values(
+			#{organizationId},
+			#{demodayCompanyId}, 
+			#{result},
+			#{createUser},
+			#{createTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="DemodayResult">
+		update
+			demoday_result
+		set
+			organizationId =#{organizationId},
+			demodayCompanyId =#{demodayCompanyId},
+			result = #{result},
+			createUser= #{createUser},
+			createTime = #{createTime},
+			modifyUser =#{modifyUser},
+			modifyTime = #{modifyTime}
+		where
+			id = #{id}
+	</update>
+	<delete id="delete">
+		delete from demoday_result where demodayCompanyId=#{demodayCompanyId}
+	</delete>
+</mapper>

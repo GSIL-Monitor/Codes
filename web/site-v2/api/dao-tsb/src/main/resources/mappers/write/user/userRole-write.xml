@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.user.UserRoleWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="UserRole">
+		insert user_role(
+			userId, role, createTime
+		)
+		values(
+			#{userId}, #{role}, #{createTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="User">
+		update
+			user_role
+		set 
+			userId = #{userId}, 
+			role = #{role}, 
+			createTime = #{createTime},
+			modifyTime = #{modifyTime}
+		where 
+			id = #{id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+	delete from user_role where id=#{id}
+	
+	</delete>
+
+</mapper>

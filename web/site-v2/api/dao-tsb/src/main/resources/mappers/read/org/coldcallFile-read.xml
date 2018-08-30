@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.ColdcallFileReadDao">
+	<resultMap id="coldcallFileResult" type="ColdcallFile">
+	</resultMap>
+
+	<select id="listByColdcallId" parameterType="Integer" resultMap="coldcallFileResult">
+		select * from coldcall_file where coldcallId = #{coldcallId}
+	</select>
+	
+</mapper>

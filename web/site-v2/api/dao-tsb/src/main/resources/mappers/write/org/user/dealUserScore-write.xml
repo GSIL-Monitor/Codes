@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.org.user.DealUserScoreWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="DealUserScore">
+		insert deal_user_score(
+			userId, dealId,type,score,createTime 
+		)
+		values(
+			#{userId}, #{dealId},#{type},#{score},now()
+		)
+	</insert>
+	
+	<update id="update" parameterType="DealUserScore">
+		update
+			deal_user_score
+		set 
+			userId=#{userId}, 
+			dealId=#{dealId},
+			type=#{type},
+			score=#{score},
+			createTime=#{createTime},
+			modifyTime=now()
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

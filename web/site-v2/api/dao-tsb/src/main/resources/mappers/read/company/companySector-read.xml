@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.CompanySectorReadDao">
+	<resultMap id="csResult" type="CompanySector">
+	</resultMap>
+
+	<select id="get" resultMap="csResult">
+		select * from company_sector where companyId = #{companyId} and active = 'Y'
+		order by id desc
+	</select>
+	
+	<select id="getBySectorId" resultMap="csResult">
+		select * from company_sector where companyId = #{companyId} and sectorId = #{sectorId} and active = 'Y' 
+	</select>
+	
+</mapper>

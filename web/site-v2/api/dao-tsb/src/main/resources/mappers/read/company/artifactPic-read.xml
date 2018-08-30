@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.ArtifactPicReadDao">
+	<resultMap id="apResult" type="ArtifactPic">
+	</resultMap>
+	
+	<select id="get"  resultMap="apResult">
+		select * from artifact_pic where artifactId = #{artifactId} 
+		and active='Y' order by createTime desc
+	</select>
+	
+	<select id="getByIds"  resultMap="apResult">
+		select * from artifact_pic where  active='Y' and artifactId in 
+		<foreach collection="ids" item="item" index="index"
+            open="(" close=")"  separator=",">
+            #{item}
+        </foreach>
+	</select>
+	
+</mapper>

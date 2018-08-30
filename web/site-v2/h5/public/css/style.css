@@ -1,0 +1,855 @@
+body {
+  font-size: 80%;
+  color: #222;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+.container {
+  width: 98%;
+  padding: 0 8px;
+  margin: 0 auto;
+  max-width: 800px;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+a:hover,
+a:focus {
+  color: #1c84c6;
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul,
+menu,
+dir {
+  display: block;
+  list-style-type: disc;
+}
+input,
+textarea {
+  line-height: 1.5;
+}
+input {
+  min-height: 32px;
+  padding: 7px 8px;
+  font-size: 13px;
+  color: #333;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 1pt;
+  outline: none;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  text-indent: 5px;
+}
+input:focus,
+textarea:focus {
+  outline: thin dotted;
+  outline: 1px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+p {
+  padding: 10px 0px;
+}
+.full-width {
+  width: 100% !important;
+}
+.full-height {
+  height: 100% !important;
+}
+.font-bold {
+  font-weight: 600;
+}
+.font-noraml {
+  font-weight: 400;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+.inline-block,
+.all-block {
+  display: inline-block;
+  width: 100%;
+}
+.clear {
+  display: block;
+  overflow: hidden;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+@font-face {
+  font-family: 'libian';
+  src: url('../font/FZlibian_sub.woff') format('woff');
+}
+@font-face {
+  font-family: 'maobi';
+  src: url('../font/LXKmaobi_sub.woff') format('woff');
+}
+body {
+  font-family: libian;
+  overflow-x: hidden;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  padding: 0;
+  max-width: 430px;
+  min-height: 500px;
+  max-height: 700px;
+}
+.btn {
+  font-family: libian;
+  font-size: 1.8em;
+  min-height: 28px;
+  min-width: 100px;
+  padding: 5px 3px;
+  outline: none;
+  text-align: center;
+  line-height: 1.42857143;
+  border: none;
+}
+.home {
+  width: 100%;
+  height: 100%;
+  background: url("../pic/bg-home.jpg");
+  background-repeat: repeat-y;
+  background-size: 100%;
+  min-height: 430px;
+}
+.home-main {
+  margin-top: 50px;
+  width: 100%;
+  height: 400px;
+  display: inline-block;
+  font-size: 1.8em;
+}
+.left-part {
+  width: 75%;
+  float: left;
+  color: #fff;
+  display: inline-block;
+}
+.content {
+  margin-top: 30px;
+  margin-right: 50px;
+  background: url('../pic/home-border.png');
+  background-size: contain;
+  background-position: 100% 0;
+  background-repeat: repeat-y;
+  height: 360px;
+}
+.content > div {
+  width: 60px;
+  word-wrap: break-word;
+  letter-spacing: 10px;
+  padding: 0 10px 0 20px;
+  text-align: center;
+  float: right;
+  height: 360px;
+  background: url('../pic/home-border.png');
+  background-size: contain;
+  background-position: 0 0;
+  background-repeat: repeat-y;
+}
+.right-part {
+  font-family: maobi;
+  float: left;
+  width: 25%;
+  height: 400px;
+  padding-right: 10%;
+}
+.title {
+  background: url('../pic/home-title-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 80px;
+  height: 300px;
+  text-align: center;
+}
+.book-name {
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  font-size: 1.8em;
+  word-wrap: break-word;
+  letter-spacing: 30px;
+  padding: 0 0 0 6px;
+}
+.start {
+  text-align: center;
+  margin-top: 20px;
+}
+.home-btn {
+  width: 230px;
+  height: 53px;
+  background: url('../pic/home-btn.png');
+  background-repeat: no-repeat;
+  background-size: contain ;
+  color: #fff;
+}
+.page {
+  display: none;
+}
+.home {
+  display: block;
+}
+@media (max-width: 380px) {
+  .container {
+    width: 100%;
+    padding: 0;
+    max-width: 350px;
+  }
+  .content {
+    margin-right: 30px;
+  }
+  .title {
+    width: 70px;
+  }
+  .book-name {
+    font-size: 1.6em;
+    margin-top: 20px;
+    width: 45px;
+    padding: 0 0 0 5px;
+  }
+  .home-main {
+    font-size: 1.7em;
+    height: 340px;
+    margin-top: 20px;
+  }
+}
+@media (max-height: 600px) {
+  .home-main {
+    font-size: 1.7em;
+    height: 340px;
+  }
+  .content,
+  .content > div {
+    height: 300px;
+    font-size: 0.9em;
+  }
+}
+/*** game **/
+.game {
+  width: 100%;
+  height: 100%;
+  background: url('../pic/game/bg-game.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.game-main {
+  width: 360px;
+  margin-left: 10px;
+  margin-right: 30px;
+  min-height: 400px;
+  padding-top: 40px;
+  padding-bottom: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 1.7em;
+  z-index: 100;
+}
+.game-left {
+  width: 286px;
+  float: left;
+  text-align: right;
+  background: url("../pic/rank/line1.png");
+  background-repeat: repeat-y;
+  background-position: right;
+  background-size: contain;
+}
+.game-content {
+  display: inline-block;
+  background: url("../pic/game/line-top.png");
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: contain;
+}
+.game-content > div {
+  width: 68px;
+  word-wrap: break-word;
+  letter-spacing: 20px;
+  padding: 0 11px 0 24px;
+  text-align: center;
+  float: right;
+  height: 500px;
+  padding-top: 10px;
+  line-height: 1.05;
+}
+.main1 {
+  background: url('../pic/game/bg-p1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main2 {
+  background: url('../pic/game/bg-p2.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main3 {
+  background: url('../pic/game/bg-p3.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main4 {
+  background: url('../pic/game/bg-p4.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main5 {
+  background: url('../pic/game/bg-p5.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main6 {
+  background: url('../pic/game/bg-p6.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main7 {
+  background: url('../pic/game/bg-p7.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.select1 {
+  background: url("../pic/rank/line1.png");
+  background-repeat: repeat-y;
+  background-position: left;
+  background-size: contain;
+}
+.select2 {
+  background: url("../pic/rank/line2.png");
+  background-repeat: repeat-y;
+  background-position: left;
+  background-size: contain;
+}
+.select3 {
+  background: url("../pic/rank/line3.png");
+  background-repeat: repeat-y;
+  background-position: left;
+  background-size: contain;
+}
+.select4 {
+  background: url("../pic/rank/line4.png");
+  background-repeat: repeat-y;
+  background-position: left;
+  background-size: contain;
+}
+.select5 {
+  background: url("../pic/rank/line5.png");
+  background-repeat: repeat-y;
+  background-position: left;
+  background-size: contain;
+}
+.select6 {
+  background: url("../pic/rank/line6.png");
+  background-repeat: repeat-y;
+  background-position: left;
+  background-size: contain;
+}
+.game-content > div:hover {
+  cursor: pointer;
+}
+.list-5 > div {
+  width: 55px;
+  letter-spacing: 20px;
+  padding: 0 7px 0 18px;
+  padding-top: 10px;
+}
+.list-6 > div {
+  width: 45px;
+  letter-spacing: 15px;
+  padding: 0 2px 0 13px;
+  padding-top: 10px;
+}
+.game-right {
+  font-family: maobi;
+  float: left;
+  display: inline-block;
+  width: 74px;
+  padding-right: 2px;
+}
+.num-padding {
+  padding-left: 5px;
+  line-height: 30px;
+  font-size: 1.2em;
+}
+.mark-padding {
+  padding-left: 8px;
+}
+.rank1,
+.rank2,
+.rank3,
+.rank4,
+.rank5,
+.rank6 {
+  text-align: center;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: -8px;
+}
+.rank1 {
+  background: url("../pic/rank/rank1.png") no-repeat 0 0;
+  background-size: contain;
+}
+.rank2 {
+  background: url("../pic/rank/rank2.png") no-repeat 0 0;
+  background-size: contain;
+}
+.rank3 {
+  background: url("../pic/rank/rank3.png") no-repeat 0 0;
+  background-size: contain;
+}
+.rank4 {
+  background: url("../pic/rank/rank4.png") no-repeat 0 0;
+  background-size: contain;
+}
+.rank5 {
+  background: url("../pic/rank/rank5.png") no-repeat 0 0;
+  background-size: contain;
+}
+.rank6 {
+  background: url("../pic/rank/rank6.png") no-repeat 0 0;
+  background-size: contain;
+}
+.game-title {
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-align: left;
+  margin-top: -20px;
+  line-height: 1.3;
+}
+.game-title-top {
+  width: 74px;
+  height: 68px;
+  display: inline-block;
+  background: url("../pic/game/bg-title-top.png") no-repeat 0 0;
+  background-size: contain;
+}
+.game-title-content {
+  width: 74px;
+  padding: 0 10px 0 23px;
+  font-size: 1.1em;
+  word-wrap: break-word;
+  letter-spacing: 20px;
+  margin-top: -50px;
+}
+.game-title-bottom {
+  width: 74px;
+  height: 68px;
+  display: inline-block;
+  background: url("../pic/game/bg-title-bottom.png") no-repeat 0 0;
+  background-size: contain;
+  margin-top: -40px;
+}
+.page-rank {
+  font-size: 0.9em;
+  letter-spacing: normal;
+  word-wrap: normal;
+  text-align: center;
+  margin-left: 1px;
+}
+.slash {
+  font-size: 0.6em;
+  padding: 0 2px;
+  margin-top: -5px;
+}
+@media (max-width: 380px) {
+  .game-main {
+    font-size: 1.4em;
+    width: 90%;
+    margin-left: 3%;
+    margin-right: 7%;
+  }
+  .game-content > div {
+    width: 56px;
+    padding: 0 8px 0 18px;
+    height: 420px;
+  }
+  .list-5 > div {
+    width: 45px;
+    padding: 0 2px 0 14px;
+  }
+  .list-6 > div {
+    width: 38px;
+    padding: 0 0 0 8px;
+  }
+  .game-left {
+    width: 82%;
+  }
+  .game-right {
+    width: 18%;
+  }
+  .game-title {
+    font-size: 1em;
+    text-align: left;
+    margin-top: 6px;
+  }
+  .game-title-top {
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    margin-top: -30px;
+  }
+  .game-title-content {
+    width: 100%;
+    display: inline-block;
+    padding: 0 1px 0 15px;
+    margin-top: -40px;
+  }
+  .game-title-bottom {
+    width: 100%;
+    display: inline-block;
+    height: 50px;
+    margin-top: -30px;
+  }
+  .page-rank {
+    width: 100%;
+    font-size: 0.9em;
+    letter-spacing: normal;
+    word-wrap: normal;
+    text-align: center;
+  }
+}
+@media (max-height: 600px) {
+  .rank1,
+  .rank2,
+  .rank3,
+  .rank4,
+  .rank5,
+  .rank6 {
+    width: 22px;
+    height: 22px;
+    margin-top: 5px;
+    margin-left: -10px;
+  }
+}
+/**** result ****/
+.result {
+  width: 100%;
+  height: 100%;
+  font-family: maobi;
+  background: url('../pic/game/bg-game.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.result-main {
+  text-align: center;
+  width: 360px;
+  margin-left: 10px;
+  margin-right: 30px;
+  min-height: 400px;
+  padding-top: 40px;
+  padding-bottom: 130px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 1.7em;
+  background: url('../pic/game/line-round.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 100;
+}
+.result-contain {
+  text-align: center;
+  width: 86%;
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-left: 15px;
+  display: inline-block;
+  background: url("../pic/result/icon-dragon.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.result-content {
+  text-align: center;
+  display: inline-block;
+  background: url("../pic/result/bg-success.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding-top: 5px;
+  min-height: 320px;
+}
+.result-content > div {
+  font-size: 1.15em;
+  width: 55px;
+  word-wrap: break-word;
+  letter-spacing: 15px;
+  padding: 0 7px 0 18px;
+  text-align: center;
+  float: right;
+  line-height: 28px;
+}
+.result-padding {
+  font-size: 1.8em;
+  line-height: 30px;
+  color: #882E3B;
+}
+#result,
+.percent,
+#time {
+  font-size: 1.2em;
+  line-height: 28px;
+  color: #882E3B;
+}
+.result-action {
+  font-size: 0.5em;
+  text-align: center;
+}
+.result-action > div {
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  padding-left: 15px;
+}
+.result-action > div > button {
+  width: 255px;
+  padding: 10px 0;
+  line-height: 22px;
+}
+.btn-red {
+  background: url('../pic/result/btn-red.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: #fff;
+}
+.btn-blue {
+  background: url('../pic/result/btn-blue.png');
+  background-repeat: no-repeat;
+  background-size: contain ;
+  color: #fff;
+}
+.share-hint {
+  background: url('../pic/result/bg-share1.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 120px;
+  height: 90px;
+}
+.hint-content {
+  font-family: libian;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #000;
+  width: 120px;
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  text-align: left;
+}
+@media (max-width: 380px) {
+  .result-main {
+    font-size: 1.4em;
+    width: 90%;
+    margin-left: 3%;
+    margin-right: 7%;
+    padding-top: 30px;
+  }
+  .result-content {
+    min-height: 260px;
+  }
+  .result-content > div {
+    font-size: 1em;
+    width: 55px;
+    word-wrap: break-word;
+    letter-spacing: 15px;
+    padding: 0 7px 0 18px;
+    text-align: center;
+    float: right;
+    line-height: 25px;
+  }
+  .result-padding {
+    font-size: 1.5em;
+    line-height: 26px;
+    color: #882E3B;
+  }
+  .share-hint {
+    width: 105px;
+    height: 80px;
+  }
+  .hint-content {
+    font-size: 0.8em;
+  }
+}
+@media (max-height: 600px) {
+  .result-main {
+    font-size: 1.5em;
+    width: 90%;
+    margin-left: 3%;
+    margin-right: 7%;
+  }
+}
+.zhitou {
+  width: 100%;
+  height: 100%;
+  background: url("../pic/bg-home.jpg");
+  background-repeat: repeat-y;
+  background-size: 100%;
+  min-height: 430px;
+}
+.zhitou-main {
+  width: 100%;
+  padding-left: 10%;
+  min-height: 400px;
+  margin-top: 30px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+}
+.zhitou-slogan {
+  font-family: maobi;
+  font-size: 1.5em;
+  color: #000;
+  background: url('../pic/result/bg-slogan.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  min-height: 80px;
+  padding-bottom: 20px;
+}
+.slogan1 {
+  line-height: 50px;
+}
+.slogan2 {
+  margin-top: -10px;
+  line-height: 22px;
+}
+.import {
+  font-size: 1.5em;
+  color: #882E3B;
+}
+.num-import {
+  font-size: 2em;
+  color: #882E3B;
+}
+.num-large {
+  font-size: 1.7em;
+}
+.font-large {
+  font-size: 1.2em;
+}
+.zhitou-info {
+  font-family: maobi;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+.zhitou-info > p {
+  line-height: 40px;
+}
+.zhitou-scan {
+  text-align: center;
+  margin-top: 15px;
+}
+.div-scan {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background: url('../pic/result/bg-scan.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: 10px;
+}
+.img-scan {
+  display: inline-block;
+  width: 100%;
+}
+.zhitou-bp {
+  margin-top: 5px;
+}
+.zhitou-logo {
+  margin-top: 15px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+.zhitou-logo > img {
+  width: 100%;
+}
+.mask {
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 430px;
+  min-height: 450px;
+  z-index: 1000;
+  background: url('../pic/result/bg-mask1.png');
+  background-size: 100%;
+  background-repeat: repeat-y;
+}
+@media (max-width: 380px) {
+  .zhitou-main {
+    font-size: 1.2em;
+  }
+  .zhitou-slogan {
+    width: 98%;
+    font-size: 1.3em;
+  }
+  .slogan1 {
+    line-height: 45px;
+  }
+  .slogan2 {
+    margin-top: -10px;
+    line-height: 22px;
+  }
+  .zhitou-info {
+    margin-top: 10px;
+  }
+  .zhitou-info > p {
+    line-height: 30px;
+  }
+}
+@media (max-height: 600px) {
+  .zhitou-main {
+    font-size: 1.2em;
+  }
+}

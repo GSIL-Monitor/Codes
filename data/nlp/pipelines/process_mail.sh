@@ -1,0 +1,1 @@
+/opt/py-env/bin/python emailer.py full >> logs/mail.full.log 2>&1 &

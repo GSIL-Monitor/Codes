@@ -1,0 +1,346 @@
+.dd-list:before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -9px;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background: #ccc;
+  border: 2px solid #ccc;
+}
+
+.dd-item{
+  min-height: 80px;
+}
+
+.dd-item:before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #ccc;
+}
+
+.tl-node > div.dd-item-body{
+  display: inline-block;
+  padding-bottom: 10px;
+  width: 100%;
+  margin-top: -2px;
+}
+
+.dd-selected{
+  height: auto;
+}
+
+.dd-selected > .dd-title{
+  font-weight: 600;
+}
+
+.dd-detail{
+  font-size: 1.15em;
+}
+
+.dd-detail > div{
+  padding: 0.5em 0;
+  margin-left: 85px;
+  width: 100%;
+  display: inline-block;
+}
+
+.dd-detail > div > span{
+  float: left;
+  color: #888;
+  margin-right: 10px;
+  margin-left: 35px;
+}
+
+.dd-detail > div > a{
+  float: left;
+}
+
+.dd-title{
+  padding: 0;
+  font-size: 1.3em;
+  margin-top: -3px;
+}
+
+.dd-title:hover{
+  cursor: pointer;
+  color: @dark-blue;
+}
+
+.dd-time{
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.dd-status{
+  font-weight: 500;
+  color: @text-blue;
+  font-size: 0.9em;
+}
+
+.star-rating{
+  font-size: 1.7em;
+  color: @blue;
+}
+
+.star-rating > i{
+  padding: 1px;
+}
+
+.star-rating > i:hover{
+  cursor: pointer;
+}
+
+.star-rating-label{
+  font-size: 0.7em;
+  padding-right: 5px;
+  line-height: 0.6em;
+  color: #000;
+  vertical-align: middle;
+}
+
+.demoday-score{
+  margin-left: 60px;
+}
+
+.score-submit{
+  padding: 1px 10px;
+  width: 150px;
+  height: 20px;
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+.dd-nav{
+  font-size: 1.1em;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+
+.dd-nav > a{
+  color: #666;
+}
+
+.dd-nav > a:hover{
+  color: @text-blue;
+}
+
+.dd-nav > a.selected-dark, .dd-nav >span > a.selected-dark{
+  color: @text-blue;
+  font-weight: 600;
+}
+
+.dd-hint{
+  font-size: 1.15em;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+  background: @gray;
+}
+
+.dd-score-list, .dd-company-score-list{
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #eee;
+  margin-top: 10px;
+}
+
+
+.preScore-item, .score-item, .dd-company-score-item, .noPass-item{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 0.9em;
+  border-top: 1px solid #eee;
+}
+
+.dd-company-score-item{
+  padding: 5px 10px;
+}
+
+.preScore-item:hover, .score-item:hover, .dd-company-score-item:hover, .noPass-item:hover{
+  background: @soft-gray;
+}
+
+.preScore-item >div, .score-item >div, .dd-company-score-item>div, .noPass-item > div{
+  float: left;
+}
+
+.dd-company-score-item>div{
+  width: 16.66%;
+}
+
+.dd-list-head{
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+}
+
+.preScore-item-rank, .score-item-rank, .noPass-item-rank{
+  width: 5%;
+}
+
+.preScore-item-rank~div{
+  width: 19%;
+}
+
+.score-item-rank~div{
+  width: 9.5%;
+}
+
+.noPass-item-rank~div{
+  width:23.75%;
+}
+
+.dd-item-name{
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.div-demoday-score{
+  width: 150px;
+}
+
+
+
+.item-unSelect, .item-unSelect > div, .item-unSelect>div>a, .item-unSelect>div>div{
+  color: #aaa;
+}
+
+.dd-body{
+  font-size: 1.1em;
+}
+
+.dd-detail-info{
+  font-size: 1em;
+  padding-bottom: 20px;
+}
+
+.dd-detail-info > span{
+  margin-right: 20px;
+}
+
+.dd-list-change{
+  float: right;
+}
+
+.dd-list-change > a{
+  margin-left: 5px;
+}
+
+.dd-detail-list{
+}
+
+.dd-submit-hint{
+  padding-bottom: 5px;
+}
+
+.dd-submit-item{
+  padding-left: 30px;
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.dd-submit-item > div{
+  display: inline-block;
+}
+
+
+.dd-selected-company{
+  font-size: 1.2em;
+  color: #000;
+}
+
+.dd-add-company-submit{
+  margin-top: 10px;
+  width: 200px;
+}
+
+.dd-decision{
+  padding: 10px 10px 30px;
+}
+
+.decision-list{
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.decision-item{
+  padding: 5px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.vote-list{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.vote-list > button{
+  width: 150px;
+  height: 40px;
+  vertical-align: middle;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.dd-submit-title{
+  font-size: 1.3em;
+  color: @red;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.recommendation-textarea{
+  height: 300px;
+  width: 200px;
+  resize: none;
+}
+
+.org-recommendation{
+  padding-top: 20px;
+}
+
+.recommend-head{
+  padding: 5px 0;
+}
+
+.recommend-head >span{
+  font-size: 1.2em;
+}
+
+.pre-recommendation{
+  padding: 10px;
+  width: 200px;
+  position: absolute;
+  min-height: 50px;
+}
+
+
+.score-decide{
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.dd-name{
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.no-pass-list{
+  margin-top: 20px;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.CompanyTagRelWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="CompanyTagRel">
+		insert 
+		company_tag_rel
+			(companyId, tagId, active, verify, createTime, createUser)
+		values(
+			#{companyId}, #{tagId}, #{active}, #{verify}, #{createTime}, #{createUser}
+		)
+	</insert>
+
+	<update id="update" parameterType="CompanyTagRel">
+		update 
+			company_tag_rel 
+		set 
+			verify=#{verify},
+			active=#{active},
+			modifyTime = #{modifyTime},
+			modifyUser = #{modifyUser}
+		where companyId = #{companyId} and tagId = #{tagId}
+	</update>
+	
+</mapper>

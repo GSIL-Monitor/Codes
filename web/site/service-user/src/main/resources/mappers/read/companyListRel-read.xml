@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.user.dao.read.CompanyListRelReadDao">
+	<resultMap id="clrResult" type="CompanyListRel">
+	</resultMap>
+
+	<select id="get" resultMap="clrResult">
+		select * from company_list_rel where
+		companyListId = #{id} and active='Y'
+	</select>
+	<select id="getByCompanyId" resultMap="clrResult">
+		select * from company_list_rel where
+		companyId = #{id} and active='Y' order by createTime desc
+	</select>
+	
+	<select id="getCompanyIds" resultType="int">
+		select companyId from
+		company_list_rel where companyListId = #{listId} order by modifyTime
+	</select>
+	<select id="getCompanyListRel" parameterType="int" resultMap="clrResult">
+		select  * from company_list_rel where companyListId = #{companyListId} and companyId=#{companyId}
+	</select>
+</mapper>

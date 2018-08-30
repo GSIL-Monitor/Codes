@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.collection.CollectionReadDao">
+	<resultMap id="collResult" type="CollectionSys">
+	</resultMap>
+
+	<select id="getById" parameterType="Integer" resultMap="collResult">
+		select * from collection where id=#{id}
+	</select>
+	
+	<select id="getByUserId" parameterType="Integer" resultMap="collResult">
+		select c.* from collection_user_rel cur left join collection c on c.id = cur.collectionId 
+		 where cur.userId=#{userId} and (cur.active='Y' or cur.active is null)
+	</select>
+	
+	<select id="getCustomCols" parameterType="Integer" resultMap="collResult">
+		select
+			c.* 
+		from 
+			collection_user_rel cur 
+		left join
+			collection c 
+		on
+		 	c.id = cur.collectionId 
+		 where 
+		 	cur.userId=#{userId} and cur.active='Y' 
+		 and
+		  	c.type=#{type} and c.active='Y'
+		  order by  cur.createTime desc, c.createTime desc
+	</select>
+	
+	<select id="getSysCols" parameterType="Integer" resultMap="collResult">
+		select *  from  collection  where type=#{type} and (active='Y' or active is null)
+		  order by sort desc, createTime desc
+	</select>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.InvestorWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Investor">
+		insert investor(
+			name, website, domain, description,logo,stage,field,type,
+			active, verify, createTime, createUser
+		)
+		values(
+			#{name}, #{website}, #{domain}, #{description},#{logo},#{stage},#{field},#{type},
+			#{active}, #{verify}, #{createTime}, #{createUser}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Investor">
+		update
+			investor
+		set 
+			name = #{name},
+			website = #{website}, 
+			domain = #{domain}, 
+			description = #{description},
+			logo = #{logo},
+			stage = #{stage},
+			field = #{field},
+			type = #{type},
+			active = #{active},
+			verify = #{verify},
+			modifyTime = #{modifyTime},
+			modifyUser= #{modifyUser}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

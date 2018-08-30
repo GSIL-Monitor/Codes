@@ -1,0 +1,56 @@
+{
+  "name": "webapp-sedna2",
+  "version": "1.0.0",
+  "dependencies": {
+    "babel-core": "6.3.13",
+    "classnames": "^2.1.3",
+    "flux": "^2.0.1",
+    "jquery": "^2.1.0",
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0",
+    "react": "^0.14.3",
+    "react-addons-css-transition-group": "^0.14.0",
+    "react-addons-test-utils": "0.14.0",
+    "react-dom": "^0.14.0",
+    "react-dropzone-component": "^0.8.1",
+    "react-highcharts ": "^8.0.0",
+    "react-intl": "^1.2.0",
+    "react-router": "~1.0.0",
+    "react-static-container": "^1.0.0",
+    "react-swipe": "^4.1.0",
+    "swipe-js-iso": "^2.0.0",
+    "reflux": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-react-transform": "^1.1.1",
+    "browserify": "11.1.0",
+    "browserify-shim": "3.8.10",
+    "envify": "3.4.0",
+    "expect": "1.10.0",
+    "html-webpack-plugin": "^2.9.0",
+    "jest-cli": "^0.4.3",
+    "jsx-loader": "0.13.2",
+    "reactify": "^1.1.1",
+    "uglify-js": "~2.4.24",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "watchify -o webapp-site/build/bundle.js -v -d webapp-site/js/app.js | watchify -o webapp-search/build/bundle.js -v -d webapp-search/js/app.js | watchify -o webapp-user/build/bundle.js -v -d webapp-user/js/app.js | watchify -o webapp-admin/build/bundle.js -v -d webapp-admin/js/app.js  | watchify -o mobile-site/build/bundle.js -v -d mobile-site/js/app.js",
+    "build-site": "browserify webapp-site/js/app.js -t [envify --NODE_ENV production] | babel --presets es2015 | uglifyjs -cm > webapp-site/build/bundle.js",
+    "build-search": "browserify webapp-search/js/app.js -t [envify --NODE_ENV production] | babel --presets es2015 | uglifyjs -cm > webapp-search/build/bundle.js",
+    "build-user": "browserify webapp-user/js/app.js -t [envify --NODE_ENV production] | babel --presets es2015 | uglifyjs -cm > webapp-user/build/bundle.js",
+    "test": "jest"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "jest": {
+    "rootDir": "./js"
+  }
+}

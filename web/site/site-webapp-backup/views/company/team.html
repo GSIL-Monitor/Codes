@@ -1,0 +1,80 @@
+<div ng-controller="CompanyTeamCtrl">
+<div class="team-info" ng-show="team.length > 0">
+	<div class="team-left-part">
+		<div class="t-title">
+	        <span class="ft16"> {{'MEMBER_INFO' | translate}}</span>
+	    </div>
+		<div class="team-detail container-fluid team-container">
+			<div class="col-md-4 m-b" ng-repeat="item in team">
+				<div class="ibox-card" ng-show="item.member != null">
+					<div class="ibox-card-content">
+						<h4>
+							<strong>{{item.member.memberName}}</strong>
+						</h4>
+		
+						<p ng-show="item.position != null">{{item.memberPosition}}</p>
+		
+						<p ng-show="item.joinDate != null">{{item.joinDate}}</p>
+						<p
+							ng-show="item.member.educationExperience != null && item.member.educationExperience != ''">
+							{{item.member.educationExperience}}</p>
+						<p ng-show="item.member.workExperience != null && item.member.workExperience != ''">
+							{{item.member.workExperience}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="team-right-part m-t">
+	 	<h3>{{'SUMMARY' | translate}}</h3>
+		 	
+		 	
+
+	</div>
+</div>
+<div class="job-info" ng-show="jobs.length > 0">
+	<div class="team-left-part">
+		<div class="t-title">
+	        <span class="ft16"> {{'RECRUIT_INFO' | translate}} </span>
+	    </div>
+		
+		<div class='t-detail'>
+		<div class="horizontal-timeline">
+			<div class="line"></div>
+		  	<div class="line-wrap ps-container ">
+		  		<div class="item" ng-repeat="item in jobs">
+					 <span class="vline"></span>
+		             <span class="spot"></span>
+		             <span class="info">
+		                  <span class="phase" ng-class="(item.bornTime.slice(0,4) == year)?'new':'old'">
+		                  	{{item.positionName}}
+		                  </span>
+		                  <br>
+		                  <span class="time">
+		                      {{item.bornTime.slice(0,10)}}
+		                  </span>
+		             </span>
+	             </div>
+				
+		     </div>
+	   	  </div>
+	     </div>
+     </div>
+     <div class="team-right-part m-t" ng-show="recruit.size >0">
+     
+     	<div ng-repeat="item in recruit" ng-show="item.isMajor == 'Y'">
+	     	<p class="m-t-xl">{{'FIELD' | translate}}: <strong>{{item.fieldName}}</strong>  </p>
+	     	<p>{{'SPEED' | translate}}: <strong>{{item.overallSpeedName}}</strong> </p>
+	     	<p>{{'SALARY' | translate}}: <strong>{{item.similarSalaryName}}</strong> </p>
+     	</div>
+     </div>
+</div>
+
+
+
+</div>
+
+
+

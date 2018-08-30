@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body >
+    <div style="font-size: 15px; display: inline-block; width: 100%; padding: 0 20px; text-align: center">
+        <div style="width: 510px;
+                    margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="padding: 10px 0; font-size: 36px; margin:10px auto 0;width:500px">
+                机构版使用申请
+            </div>
+            <div style="font-size: 18px;">
+                用户id：${data['application']['userId']}
+            </div>
+            <div style="font-size: 18px;">
+                姓名：${data['application']['username']}
+            </div>
+            <div style="font-size: 18px;">
+                机构：${data['application']['orgName']}
+            </div>
+            <div style="font-size: 18px;">
+                职位：${data['application']['position']}
+            </div>
+            <div style="font-size: 18px;">
+                电话：${data['application']['phone']}
+            </div>
+            <div style="font-size: 18px;">
+                微信：${data['application']['wechat']}
+            </div>
+            <div style="font-size: 18px;">
+                Email：${data['application']['email']}
+            </div>
+            % if data['application']['namecard'] is not None and data['application']['namecard'] != "":
+            <div style="font-size: 18px;">
+                名片：<img src="http://www.xiniudata.com/file/${data['application']['namecard']}"/>
+            </div>
+            % endif
+            <div style="font-size: 18px;">
+                身份：${data['application']['userIdentify']}
+            </div>
+            <div style="font-size: 18px;">
+                Memo：${data['application']['memo']}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

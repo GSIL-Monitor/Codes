@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.org.DealWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Deal">
+		insert deal(
+			companyId, organizationId,status,priority,declineStatus,createTime,
+			currency, preMoney, investment
+		)
+		values(
+			#{companyId}, #{organizationId},#{status},#{priority},#{declineStatus},now(),
+			#{currency}, #{preMoney}, #{investment}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Deal">
+		update
+			deal
+		set 
+			companyId=#{companyId}, 
+			organizationId=#{organizationId},
+			status=#{status},
+			priority=#{priority},
+			declineStatus=#{declineStatus},
+			currency=#{currency}, 
+			preMoney=#{preMoney}, 
+			investment=#{investment},
+			createTime=#{createTime},
+			modifyTime=now()
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

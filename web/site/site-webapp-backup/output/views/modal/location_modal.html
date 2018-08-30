@@ -1,0 +1,25 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h3 >{{'FILTER' | translate}}&nbsp;{{'LOCATION' | translate}}</h3>
+</div>
+<div class="modal-body form-group">
+	<span class="ember-view">
+		<div class="search-param label" ng-repeat= 'item in locationItems track by $index'> 
+	   		{{item}}
+	    	<i class="fa fa-times close-filter"  item-close-filter='location' ></i>
+    	</div>
+	</span>
+    <input id="input-location" filter type="text" placeholder="Shanghai" class="form-control m-t-md " ng-model='location'  name="filter-location"
+     onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+	<span class="tt-dropdown-menu">
+		<div class="div-result" location-auto-complete  ng-repeat='item in ajaxLocationItems track by $index'>
+			<span>{{item}}</span>
+		</div>
+	</span>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>
+

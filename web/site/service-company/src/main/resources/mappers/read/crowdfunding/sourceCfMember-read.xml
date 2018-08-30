@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.crowdfunding.SourceCfMemberReadDao">
+	<resultMap id="scfmResult" type="SourceCfMember">
+	</resultMap>
+
+	<select id="count" resultType="int">
+		select count(id) from source_cf_member where sourceCfId = #{scfId}
+	</select>
+	<select id="getMembers" resultMap="scfmResult">
+		select * from source_cf_member where sourceCfId = #{scfId}
+	</select>
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crawler.dao.read.NewsContentReadDao">
+	<resultMap id="newsContentResult" type="NewsContent">
+	</resultMap>
+	<select id="get" resultMap="newsContentResult">
+		select * from news_content#{tableId} where newsId = #{newsId} order by rank desc
+	</select>
+
+</mapper>

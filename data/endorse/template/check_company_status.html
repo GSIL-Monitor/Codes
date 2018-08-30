@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body >
+    <div style="font-size: 15px; display: inline-block; width: 100%; padding: 0 20px; text-align: center">
+        <div style="margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="padding: 10px 0; font-size: 36px; margin:10px auto 0;width:500px">
+                疑似融资结束的公司清单
+            </div>
+            % for id,code,name in data["items"]:
+            <div style="font-size: 11px;">
+                companyId: ${id}, companyCode: ${code}, companyName: <a href="http://pro.xiniudata.com/validator/#/company/${code}/overview">${name}</a>
+            </div>
+            % endfor
+        </div>
+    </div>
+</body>
+</html>

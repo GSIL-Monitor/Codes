@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.user.UserReadDao">
+	<resultMap id="userResult" type="User">
+	</resultMap>                                    
+	
+	<select id="getById" resultMap="userResult">
+		select * from user where id=#{id}
+	</select>
+
+	<select id="getByEmail" resultMap="userResult">
+		select * from user where email=#{email}
+	</select>
+	
+	<select id="getByIds" resultMap="userResult">
+		select * from user where id in 
+		<foreach collection="ids" item="item" index="index"
+            open="(" close=")"  separator=",">
+            #{item}
+        </foreach>
+        and active='Y'
+	</select>
+	
+	<select id="listByOrgAndRole" resultMap="userResult">
+		select u.*
+		from user u
+			join user_organization_rel o on u.id=o.userId
+			join user_role r	on u.id=r.userId
+		where
+			o.organizationId=#{organizationId} and
+			r.role=#{role}
+		order by u.id
+	</select>
+</mapper>

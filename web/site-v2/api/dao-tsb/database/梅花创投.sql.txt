@@ -1,0 +1,16 @@
+insert organization(id,name,type,status,grade,createTime) values(2,'梅花创投',17020,null,33020,now());
+insert organization_conf(id,coldcall,api) values(2,0,0);
+
+#张筱燕
+insert user(id,username,email,password,active,createTime) values(30,'张筱燕','35326974@qq.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(30,'35326974@qq.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(2,30,now());
+insert user_role(userId,role,createTime) values(30,25030,now());
+update user set password=md5('241145813318058567243035326974@qq.com') where id=30;
+
+#岳祥
+insert user(id,username,email,password,active,createTime) values(31,'岳祥','532396423@qq.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(31,'532396423@qq.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(2,31,now());
+insert user_role(userId,role,createTime) values(31,25040,now());
+update user set password=md5('2411458133180585672431532396423@qq.com') where id=31;

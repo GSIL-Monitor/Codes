@@ -1,0 +1,41 @@
+{"name":"游戏",       "id":6014  }
+{"name":"动作游戏",    "id":7001}
+{"name":"探险游戏",    "id":7002}
+{"name":"街机游戏",    "id":7003}
+{"name":"桌面游戏",    "id":7004}
+{"name":"扑克牌游戏",    "id":7005}
+{"name":"娱乐场游戏",   "id":7006}
+{"name":"骰子游戏",    "id":7007}
+{"name":"教育游戏",    "id":7008}
+{"name":"家庭游戏",    "id":7009}
+{"name":"音乐",    "id":7011}
+{"name":"智力游戏",    "id":7012}
+{"name":"赛车游戏",    "id":7013}
+{"name":"角色扮演游戏",   "id":7014}
+{"name":"模拟游戏",    "id":7015}
+{"name":"体育",    "id":7016}
+{"name":"策略游戏",    "id":7017}
+{"name":"小游戏",    "id":7018}
+{"name":"文字游戏",    "id":7019}
+{"name":"报刊杂志",    "id":6021}
+{"name":"商务",       "id":6000,  "url":"https://itunes.apple.com/cn/genre/ios-shang-wu/id6000?mt=8"}
+{"name":"商品指南",    "id":6022,  "url":"https://itunes.apple.com/cn/genre/ios-shang-pin-zhi-nan/id6022?mt=8"}
+{"name":"教育",       "id":6017,  "url":"https://itunes.apple.com/cn/genre/ios-jiao-yu/id6017?mt=8"}
+{"name":"娱乐",       "id":6016,  "url":"https://itunes.apple.com/cn/genre/ios-yu-le/id6016?mt=8"}
+{"name":"财务",       "id":6015,  "url":"https://itunes.apple.com/cn/genre/ios-cai-wu/id6015?mt=8"}
+{"name":"美食佳饮",    "id":6023,   "url":"https://itunes.apple.com/cn/genre/ios-mei-shi-jia-yin/id6023?mt=8"}
+{"name":"健康健美",    "id":6013,   "url":"https://itunes.apple.com/cn/genre/ios-jian-kang-jian-mei/id6013?mt=8"}
+{"name":"生活",       "id":6012,  "url":"https://itunes.apple.com/cn/genre/ios-sheng-huo/id6012?mt=8"}
+{"name":"医疗",       "id":6020,  "url":"https://itunes.apple.com/cn/genre/ios-yi-liao/id6020?mt=8"}
+{"name":"音乐",       "id":6011,  "url":"https://itunes.apple.com/cn/genre/ios-yin-le/id6011?mt=8"}
+{"name":"导航",       "id":6010,  "url":"https://itunes.apple.com/cn/genre/ios-dao-hang/id6010?mt=8"}
+{"name":"新闻",       "id":6009,  "url":"https://itunes.apple.com/cn/genre/ios-xin-wen/id6009?mt=8"}
+{"name":"摄影与录像",  "id":6008,    "url":"https://itunes.apple.com/cn/genre/ios-she-ying-yu-lu-xiang/id6008?mt=8"}
+{"name":"效率",       "id":6007,  "url":"https://itunes.apple.com/cn/genre/ios-xiao-lu/id6007?mt=8"}
+{"name":"参考",       "id":6006,  "url":"https://itunes.apple.com/cn/genre/ios-can-kao/id6006?mt=8"}
+{"name":"购物",       "id":6024,  "url":"https://itunes.apple.com/cn/genre/ios-gou-wu/id6024?mt=8"}
+{"name":"社交",       "id":6005,  "url":"https://itunes.apple.com/cn/genre/ios-she-jiao/id6005?mt=8"}
+{"name":"体育",       "id":6004,  "url":"https://itunes.apple.com/cn/genre/ios-ti-yu/id6004?mt=8"}
+{"name":"旅游",       "id":6003,  "url":"https://itunes.apple.com/cn/genre/ios-lu-you/id6003?mt=8"}
+{"name":"工具",       "id":6002,  "url":"https://itunes.apple.com/cn/genre/ios-gong-ju/id6002?mt=8"}
+{"name":"天气",       "id":6001,  "url":"https://itunes.apple.com/cn/genre/ios-tian-qi/id6001?mt=8"}

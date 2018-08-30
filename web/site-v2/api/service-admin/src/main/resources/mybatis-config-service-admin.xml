@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL" />
+	</settings>
+
+	<typeAliases>
+		<!-- demo day -->
+		<typeAlias alias="DemodayOrgVO" type="com.tsb.admin.vo.DemodayOrgVO" />
+		<typeAlias alias="DemodayCompanyVO" type="com.tsb.admin.vo.DemodayCompanyVO" />
+		<typeAlias alias="UserPreScoreVO" type="com.tsb.admin.vo.UserPreScoreVO" />
+		<typeAlias alias="AvgPreScoreVO" type="com.tsb.admin.vo.AvgPreScoreVO" />
+		<typeAlias alias="ColdCallVO" type="com.tsb.admin.vo.ColdCallVO" />
+		<typeAlias alias="UsersInfoVO" type="com.tsb.admin.vo.UsersInfoVO" />
+
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mappers/read/demodayVO-read.xml" />
+		<mapper resource="mappers/read/coldCallVO-read.xml" />
+		<mapper resource="mappers/read/usersInfoVO-read.xml" />
+	</mappers>
+</configuration>

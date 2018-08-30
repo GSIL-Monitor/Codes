@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<bean id="adminDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="maxTotal">
+			<value>${jdbc.maxTotal}</value>
+		</property>
+		<property name="maxWaitMillis">
+			<value>${jdbc.maxWaitMillis}</value>
+		</property>
+		<property name="maxIdle">
+			<value>${jdbc.maxIdle}</value>
+		</property>
+		<property name="initialSize">
+			<value>${jdbc.initSize}</value>
+		</property>
+		<property name="defaultReadOnly">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<bean id="adminTxManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	    <property name="dataSource" ref="adminDataSource"/>
+	</bean>
+	<tx:annotation-driven transaction-manager="adminTxManager" />
+
+	<aop:config>
+		<aop:pointcut id="dao" expression="execution(* com.tsb.admin.dao.*.*(..))" />
+		<aop:advisor pointcut-ref="dao" advice-ref="adminTxAdvice"/>
+	</aop:config>
+
+	<tx:advice id="adminTxAdvice" transaction-manager="adminTxManager">
+	    <tx:attributes>
+	      <tx:method name="get*" read-only="true" />
+	      <tx:method name="insert*" propagation="REQUIRED" />
+	      <tx:method name="update*" propagation="REQUIRED" />
+	      <tx:method name="delete*" propagation="REQUIRED" />
+	      <tx:method name="*" rollback-for="Exception" />
+	    </tx:attributes>
+    </tx:advice>
+
+
+	<bean id="adminSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="adminDataSource" />
+		<property name="configLocation" value="classpath:mybatis-config-service-admin.xml" />
+	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.tsb.admin.dao" />
+		<property name="sqlSessionFactoryBeanName" value="adminSqlSessionFactory" />
+	</bean>
+	
+
+
+	<!--  service -->
+	
+    <context:component-scan base-package="com.tsb.admin.service.impl, com.tsb.admin.service.async, com.tsb.admin.util"/>
+	
+	<aop:config>
+		<aop:pointcut id="adminService" expression="execution(* com.tsb.admin.service.*.*(..))" />
+		<aop:advisor pointcut-ref="adminService" advice-ref="adminAdviceService"/>
+	</aop:config>
+	
+	<tx:advice id="adminAdviceService" transaction-manager="adminTxManager">
+	
+	 <tx:attributes>
+	      <tx:method name="get*" read-only="true" />
+	      <tx:method name="create*" propagation="REQUIRED" />
+	      <tx:method name="update*" propagation="REQUIRED" />
+	      <tx:method name="delete*" propagation="REQUIRED" />
+	      <tx:method name="*" rollback-for="Exception" />
+	    </tx:attributes>
+    </tx:advice>
+    
+    
+    <aop:config>
+		<aop:pointcut id="tsbService" expression="execution(* com.tsb.admin.service.*.*(..))" />
+		<aop:advisor pointcut-ref="tsbService" advice-ref="tsbAdviceService"/>
+	</aop:config>
+	
+	<tx:advice id="tsbAdviceService" transaction-manager="tsbTxManager">
+	    <tx:attributes>
+	      <tx:method name="get*" read-only="true" />
+	      <tx:method name="create*" propagation="REQUIRED" />
+	      <tx:method name="update*" propagation="REQUIRED" />
+	      <tx:method name="delete*" propagation="REQUIRED" />
+	      <tx:method name="*" rollback-for="Exception" />
+	    </tx:attributes>
+    </tx:advice>
+    
+</beans>

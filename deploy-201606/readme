@@ -1,0 +1,1 @@
+fab -f fab_coldcall.py rsync

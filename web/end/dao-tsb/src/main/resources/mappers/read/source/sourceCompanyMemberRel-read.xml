@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.source.SourceCompanyMemberRelReadDao">
+	<resultMap id="scmrResult" type="SourceCompanyMemberRel">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="scmrResult">
+		select * from source_company_member_rel where id = #{id}
+	</select>
+	
+	<select id="listByCompanyMemberRelId" parameterType="Integer" resultMap="scmrResult">
+		select * from source_company_member_rel
+		where companyMemberRelId = #{id}
+	</select>
+	
+</mapper>

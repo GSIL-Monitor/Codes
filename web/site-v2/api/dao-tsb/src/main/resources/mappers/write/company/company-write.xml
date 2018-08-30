@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.CompanyWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Company">
+		insert company(code, name, fullName, description,
+				productDesc, modelDesc, operationDesc, teamDesc, marketDesc, compititorDesc, advantageDesc, planDesc, 
+				brief, round, roundDesc, companyStatus,
+				fundingType, currency, preMoney, postMoney, shareRatio, investment, headCountMin, headCountMax,
+				locationId, address, phone, establishDate, logo,
+				verify, active, createUser, createTime, confidence )
+		values( #{code}, #{name}, #{fullName}, #{description},
+				#{productDesc},  #{modelDesc}, #{operationDesc}, #{teamDesc},
+				#{marketDesc}, #{compititorDesc}, #{advantageDesc}, #{planDesc}, 
+				#{brief}, #{round}, #{roundDesc}, #{companyStatus},
+				#{fundingType}, #{currency}, #{preMoney}, #{postMoney},#{shareRatio},#{investment}, #{headCountMin}, #{headCountMax},
+				#{locationId}, #{address}, #{phone}, #{establishDate}, #{logo},
+				#{verify}, #{active}, #{createUser}, #{createTime}, #{confidence} )
+	</insert>
+	
+	<update id="update" parameterType="Company">
+		update
+			company
+		set 
+			name = #{name},
+			fullName = #{fullName},
+			description = #{description},
+			productDesc = #{productDesc}, 
+			modelDesc = #{modelDesc}, 
+			operationDesc = #{operationDesc}, 
+			teamDesc = #{teamDesc}, 
+			marketDesc = #{marketDesc}, 
+			compititorDesc = #{compititorDesc}, 
+			advantageDesc = #{advantageDesc}, 
+			planDesc = #{planDesc}, 
+				
+			brief = #{brief},
+			round = #{round},
+			roundDesc = #{roundDesc},
+			companyStatus = #{companyStatus},
+			fundingType = #{fundingType},
+			currentRound = #{currentRound},
+			currentRoundDesc = #{currentRoundDesc},
+			preMoney = #{preMoney},
+			investment=#{investment},
+			postMoney = #{postMoney},
+			shareRatio = #{shareRatio},
+			currency = #{currency},
+			headCountMin = #{headCountMin},
+			headCountMax = #{headCountMax},
+			locationId = #{locationId},
+			establishDate = #{establishDate},
+			address = #{address},
+			phone = #{phone},
+			verify= #{verify},
+			modifyTime = #{modifyTime},
+			modifyUser = #{modifyUser}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

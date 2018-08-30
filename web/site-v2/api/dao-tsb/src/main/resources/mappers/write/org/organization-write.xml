@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.org.OrganizationWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="User">
+		insert organization(
+			name, type, status, grade, createTime
+		)
+		values(
+			#{name}, #{type}, #{status}, #{grade}, #{createTime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Organization">
+		update
+			organization
+		set 
+			name = #{name}, 
+			type= #{type}, 
+			status = #{status}, 
+			grade = #{grade},
+			createTime = #{createTime}, 
+			modifyTime = #{modifyTime}
+		where 
+			id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from organization where id=#{id}
+	</delete>
+</mapper>

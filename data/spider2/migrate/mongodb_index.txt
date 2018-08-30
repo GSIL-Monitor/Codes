@@ -1,0 +1,198 @@
+#raw
+use raw
+db.projectdata.ensureIndex({"source":-1, "type":-1, "key_int":-1}, {unique:false})
+db.projectdata.ensureIndex({"source":-1, "type":-1, "key":-1}, {unique:true})
+db.projectdata.ensureIndex({"source":-1, "type":-1, "processed":-1, "key_int":-1}, {unique:false})
+db.projectdata.ensureIndex({"source":-1, "type":-1, "processed_yuanma":-1}, {unique:false})
+db.news.ensureIndex({"parsed":-1, "aggregated":-1}, {unique:false})
+db.news.ensureIndex({"source":-1, "news_key":-1, "company_id":-1}, {unique:false})
+db.news.ensureIndex({"source":-1, "parsed":-1}, {unique:false})
+
+db.proxy.ensureIndex({"type":-1, "anonymity":-1},{unique:false})
+
+#stock
+use stock
+db.neeq.ensureIndex({"processStatus":-1},{unique:false})
+db.neeq.ensureIndex({"sourceId":-1},{unique:false})
+db.sse.ensureIndex({"processStatus":-1},{unique:false})
+db.sse.ensureIndex({"sourceId":-1},{unique:false})
+db.announcement.ensureIndex({"link":-1},{unique:true})
+db.announcement.ensureIndex({"rpchecked":1},{unique:false},{background:true})
+db.announcement.ensureIndex({"title":1},{unique:false},{background:true})
+db.announcement.ensureIndex({"stockExchangeId":-1, "createTime:-1},{unique:false})
+
+
+#market
+use market
+db.android.ensureIndex({"apkname":-1}, {unique:true})
+db.android.ensureIndex({"apkname_domain":-1}, {unique:false})
+db.android.ensureIndex({"website_domain":-1}, {unique:false})
+db.android.ensureIndex({"author":-1}, {unique:false})
+db.android.ensureIndex({"apkname":-1, "myappprocessed":-1}, {unique:false})
+db.android.ensureIndex({"apkname":-1, "wandoujiaprocessed":-1}, {unique:false})
+db.android.ensureIndex({"apkname":-1, "flymeprocessed":-1}, {unique:false})
+db.android.ensureIndex({"apkname":-1, "miappprocessed":-1}, {unique:false})
+db.android.ensureIndex({"apkname":-1,"updateDateChecked":-1}, {unique:false})
+
+db.android_market.ensureIndex({"appmarket":-1, "key_int":-1}, {unique:false})
+db.android_market.ensureIndex({"appmarket":-1, "apkname":-1}, {unique:true})
+db.android_market.ensureIndex({"name":-1}, {unique:false})
+
+db.itunes_index.ensureIndex({"trackId":-1}, {unique:true})
+db.itunes.ensureIndex({"trackId":-1}, {unique:true})
+db.itunes.ensureIndex({"supportDomain":-1}, {unique:false})
+db.itunes.ensureIndex({"sellerDomain":-1}, {unique:false})
+db.itunes.ensureIndex({"sellerName":-1}, {unique:false})
+db.itunes.ensureIndex({"developer":-1}, {unique:false})
+
+
+db.baidu_index.ensureIndex({"key_int":-1},{unique:true})
+db.baidu_index.ensureIndex({"docids.docid":-1},{unique:false})
+db.baidu_index.ensureIndex({"processed":-1},{unique:false})
+
+db.baidu_search.ensureIndex({"key_int":-1},{unique:true})
+db.baidu_search.ensureIndex({"search_name":-1},{unique:false})
+db.baidu_search.ensureIndex({"processed":-1},{unique:false})
+db.baidu_search.ensureIndex({"apkname":-1},{unique:true})
+
+
+#trend
+use trend
+db.alexa_raw.ensureIndex({"parser":-1}, {unique:false})
+db.alexa_raw.ensureIndex({"domain":-1 ,"date":-1}, {unique:false})
+db.alexa_raw.ensureIndex({"date":-1}, {unique:false})
+db.alexa.ensureIndex({"date":-1}, {unique:false})
+db.alexa.ensureIndex({"domain":-1 ,"date":-1}, {unique:false})
+db.appstore_rank.ensureIndex({"type":1,"genre":1,"trackId":1,"date":1},{unique:false})
+db.android.ensureIndex({"appmarket":-1 ,"apkname":-1, "date":-1}, {unique:false})
+
+db.itunes.ensureIndex({"trackId":-1 ,"date":-1}, {unique:false})
+db.tkdataApp_rank.ensureIndex({"freqId":1 ,"startDate":-1}, {unique:false})
+db.tkdataApp_rank.ensureIndex({"subCategoryId":1,'startDate':-1,'endDate':-1}, {unique:false})
+db.jobs.ensureIndex({"source":1,"companyId":1,"offline":1},{unique:false})
+db.jobs.ensureIndex({"source":1,"sourceId":1,"offline":1},{unique:false})
+db.jobs.ensureIndex({"m_processed":1},{unique:false})
+
+#job
+db.company.ensureIndex({"source":1,"sourceId":1},{unique:false})
+db.company.ensureIndex({"jobChecked":1},{unique:false})
+db.company.ensureIndex({"mapChecked":1},{unique:false})
+db.job.ensureIndex({"source":1,"recruit_company_id":1,"offline":1},{unique:false})
+db.job.ensureIndex({"source":1,"sourceId":1,"offline":1},{unique:false})
+db.job.ensureIndex({"recruit_company_id":1},{unique:false})
+db.job.ensureIndex({"jdChecked":1},{unique:false})
+db.job.ensureIndex({"modifyTime":1,"offline":1},{unique:false})
+
+#amac
+db.manager.ensureIndex({"source":1,"sourceId":1},{unique:false})
+db.manager.ensureIndex({"managerName":1},{unique:false})
+db.manager.ensureIndex({"domain":1},{unique:false})
+db.manager.ensureIndex({"managerLegalPerson":1},{unique:false})
+db.fund.ensureIndex({"source":1,"sourceId":1},{unique:false})
+db.fund.ensureIndex({"fundName":1},{unique:false})
+db.fund.ensureIndex({"managerId":1},{unique:false})
+
+#info
+use info
+db.beian.ensureIndex({"domain":-1}, {unique:false})
+db.beian.ensureIndex({"mainBeianhao":-1}, {unique:false})
+db.beian.ensureIndex({"organizer":-1}, {unique:false})
+db.main_beianhao.ensureIndex({"mainBeianhao":-1}, {unique:true})
+db.gongshang.ensureIndex({"name":-1}, {unique:true})
+db.gongshang.ensureIndex({"changeInfo_xiniu":-1}, {unique:false},{background:true})
+db.gongshang_history.ensureIndex({"name":-1}, {unique:false})
+db.gongshang_name.ensureIndex({"name":-1}, {unique:true})
+db.gongshang_name.ensureIndex({"type":-1, "lastCheckTime":-1}, {unique:false})
+db.gongshang_name.ensureIndex({"type":-1, "zglastCheckTime":-1}, {unique:false})
+db.website.ensureIndex({"url":-1}, {unique:true})
+db.website.ensureIndex({"websiteCheckTime":-1}, {unique:false})
+db.website.ensureIndex({"domain":-1}, {unique:false},{background:true})
+db.company_idx.ensureIndex({"name":-1}, {unique:true})
+db.company_idx.ensureIndex({"name_md5":-1}, {unique:true})
+
+#article
+use article
+db.news.ensureIndex({"companyId":-1}, {unique:false})
+db.news.ensureIndex({"media_tag_processed":1})
+
+#log
+use log
+db.errorlog.ensureIndex({"date":-1 ,"loggerName":-1}, {unique:false})
+
+
+
+
+#性能检查
+db.setProfilingLevel(1)
+db.system.profile.find({millis:{$gt:10000}}).sort({ts:-1}).limit(1).pretty()
+
+db.system.profile.find({millis:{$gt:1000}}).sort({ts:-1}).limit(1).pretty()
+
+
+#article
+use article
+db.news.ensureIndex({"processStatus":1}, {unique:false})
+db.news.ensureIndex({"date":-1, "processStatus":1}, {unique:false})
+db.news.ensureIndex({"type":1, "date":-1, "processStatus":1}, {unique:false})
+db.news.ensureIndex({"source":1, "key_int":-1},{unique:false})
+db.news.ensureIndex({"companyIds":1},{unique:false})
+db.news.ensureIndex({"link":1}, {unique:false})
+db.news.ensureIndex({"title":1}, {unique:false})
+db.news.ensureIndex({"type":1, "beginDate":1, "city":1},{unique:false})
+db.news.ensureIndex({"author":-1, "cleanTitle":1}, {unique:false})
+
+
+#2016/8/19
+use article
+db.news.ensureIndex({"source":1, "type":1, "createTime": 1},{background:true})
+db.news.ensureIndex({"sectors":1, "type":1, "processStatus": 1, "date": 1},{background:true})
+
+
+use raw
+db.projectdata.ensureIndex({"source":1, "type":1, "date":1},{background:true})
+
+use info
+db.gongshang.ensureIndex({"modifyTime":1},{background:true})
+db.gongshang.ensureIndex({"diffChecked":1},{background:true})
+
+alter table source_company add index (source,createTime);
+alter table source_investor add index (source,createTime);
+alter table source_member add index (source,createTime);
+alter table source_funding add index (createTime);
+
+alter table source_company add index (source,modifyTime,createTime);
+alter table source_investor add index (source,modifyTime,createTime);
+alter table source_member add index (source,modifyTime,createTime);
+alter table source_funding add index (modifyTime,createTime);
+
+use market
+db.android_market.ensureIndex({"appmarket": 1, "createTime": 1}, {background:true})
+db.android_market.ensureIndex({"appmarket": 1, "modifyTime": 1, "createTime": 1}, {background:true})
+db.android.ensureIndex({"createTime": 1}, {background:true})
+db.android.ensureIndex({"modifyTime": 1, "createTime": 1}, {background:true})
+db.itunes.ensureIndex({"createTime": 1}, {background:true})
+db.itunes.ensureIndex({"modifyTime": 1, "createTime": 1}, {background:true})
+db.itunes.ensureIndex({"offlineDetectTime": 1}, {background:true})
+
+#
+db.api_log.ensureIndex({"userId" : 1,"data.payload.code" : 1})
+db.api_log.ensureIndex({"userId" : 1,"data.payload.newsId" : -1}, {background:true})
+db.api_log.ensureIndex({"userId" : 1}, {background:true})
+db.user_log.ensureIndex({"time":-1}, {unique:false},{background:true})
+
+#message
+db.message_4_deal.ensureIndex({"deal_id":1, "deal_log_id":1})
+db.message_4_deal.ensureIndex({"deal_id":1, "track_4_deal_id":1})
+db.message_4_user.ensureIndex({"receiver":1, "at_message_id":1})
+db.message_4_user.ensureIndex({"receiver":1, "broadcast_message_id":1})
+db.message_4_user.ensureIndex({"receiver":1, "deal_log_id":1})
+db.message_4_user.ensureIndex({"receiver":1, "collection_message_id":1})
+db.message_4_user.ensureIndex({"receiver":1, "recommend_message_id":1})
+db.message_4_user.ensureIndex({"receiver":1, "track_4_deal_id":1})
+#track
+db.track_4_deal.ensureIndex({"deal_id":1, "track_id":1})
+
+#log
+db.user_log.ensureIndex({userId:1, "jsonRequest.payload.newsId":-1},{background:true})
+db.user_log.ensureIndex({userId:1, "jsonRequest.payload.code":-1},{background:true})
+db.user_log.ensureIndex({requestURL:1, "jsonRequest.payload.companyId":-1},{background:true})

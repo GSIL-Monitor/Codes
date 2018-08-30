@@ -1,0 +1,92 @@
+#v2
+#coldcall
+10,40 * * * * cd /data/task-v2/coldcall; flock -xn /tmp/coldcall.lock -c '/opt/py-env/bin/python coldcall_email.py >> logs/coldcall.log 2>&1'
+
+#crawler increase
+5  7-22 * * 1-5 cd /data/task-v2/spider/crawler/company/; flock -xn /tmp/itjuzi.lock -c '/opt/py-env/bin/python itjuzi.py >> logs/itjuzi-incr.log 2>&1'
+10 7-22 * * 1-5 cd /data/task-v2/spider/crawler/company/; flock -xn /tmp/kr36.lock -c '/opt/py-env/bin/python kr36.py >> logs/kr36-incr.log 2>&1'
+
+#crawler job&company
+5 * * * * cd /data/task-v2/spider/crawler/company/; flock -xn /tmp/lagou.lock -c '/opt/py-env/bin/python recruit_lagou.py >> logs/lagou-incr.log 2>&1'
+10 * * * * cd /data/task-v2/spider/crawler/company/; flock -xn /tmp/neitui.lock -c '/opt/py-env/bin/python recruit_neitui.py >> logs/neitui-incr.log 2>&1'
+15 * * * * cd /data/task-v2/spider/crawler/company/; flock -xn /tmp/jobtong.lock -c '/opt/py-env/bin/python recruit_jobtong.py >> logs/jobtong-incr.log 2>&1'
+
+#market
+1  11,18 * * * cd /data/task-v2/spider/crawler/market/; flock -xn /tmp/360.lock -c '/opt/node/bin/node 360.js >> logs/360.log 2>&1'
+1  12,19 * * * cd /data/task-v2/spider/parser/market/; flock -xn /tmp/360_parser.lock -c '/opt/py-env/bin/python 360_parser.py >> logs/360.log 2>&1'
+6  11,18 * * * cd /data/task-v2/spider/crawler/market/; flock -xn /tmp/baidu.lock -c '/opt/node/bin/node baidu.js >> logs/baidu.log 2>&1'
+6  12,19 * * * cd /data/task-v2/spider/parser/market/; flock -xn /tmp/baidu_parser.lock -c '/opt/py-env/bin/python baidu_parser.py >> logs/baidu.log 2>&1'
+0  20 * * * cd /data/task-v2/spider/aggregator/market; flock -xn /tmp/other_match.lock -c '/opt/py-env/bin/python other_match.py > logs/other.log 2>&1'
+0  1 * * * cd /data/task-v2/spider/aggregator/market; flock -xn /tmp/360_match.lock -c '/opt/py-env/bin/python 360_match.py > logs/360.log 2>&1'
+0  3 * * * cd /data/task-v2/spider/aggregator/market; flock -xn /tmp/baidu_match.lock -c '/opt/py-env/bin/python baidu_match.py > logs/baidu.log 2>&1'
+30 0 * * * cd /data/task-v2/spider/crawler/market/; flock -xn /tmp/itunes.lock -c '/opt/py-env/bin/python itunes.py > logs/itunes.log 2>&1'
+0  6 * * * cd /data/task-v2/spider/parser/market/; flock -xn /tmp/itunes_parser.lock -c '/opt/py-env/bin/python itunes_parser.py > logs/itunes.log 2>&1'
+0  7 * * * cd /data/task-v2/spider/aggregator/market; flock -xn /tmp/itunes_match.lock -c '/opt/py-env/bin/python itunes_match.py > logs/itunes.log 2>&1'
+30 7 * * * cd /data/task-v2/spider/crawler/market/; flock -xn /tmp/wandoujia.lock -c '/opt/py-env/bin/python wandoujia.py >> logs/wandoujia.log 2>&1'
+30 7 * * * cd /data/task-v2/spider/crawler/market/; flock -xn /tmp/myapp.lock -c '/opt/py-env/bin/python myapp.py >> logs/myapp.log 2>&1'
+
+#trends
+0 1 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/myapp_trends.lock -c '/opt/py-env/bin/python myapp.py > logs/myapp.log 2>&1'
+0 1 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/wandoujia_trends.lock -c '/opt/py-env/bin/python wandoujia.py > logs/wandoujia.log 2>&1'
+0 4 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/baidu_trends.lock -c '/opt/py-env/bin/python baidu.py > logs/baidu.log 2>&1'
+0 4 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/360_trends.lock -c '/opt/py-env/bin/python 360.py > logs/360.log 2>&1'
+0 7 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/itunes_trends.lock -c '/opt/py-env/bin/python itunes.py > logs/itunes.log 2>&1'
+0 8 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/appstore_rank.lock -c '/opt/py-env/bin/python appstore_rank.py > logs/appstore_rank.log 2>&1'
+0 2 * * * cd /data/task-v2/spider/crawler/trends/; flock -xn /tmp/alexa_trends.lock -c '/opt/py-env/bin/python alexa.py > logs/alexa.log 2>&1'
+
+#tag full
+0 2 * * 6 cd /data/task-v2/nlp/keywords/; /opt/py-env/bin/python extract.py full > logs/full.log 2>&1
+
+# process coldcall full
+0 2 * * 6 cd /data/task-v2/nlp/pipelines; /opt/py-env/bin/python emailer.py full >> logs/mail.full.log 2>&1 &
+
+# gobi recommend full, weekly
+0 1 * * * cd /data/task-v2/nlp/recommend/; /opt/py-env/bin/python push.py recommend 1 >> logs/push.recommend.gobi.log 2>&1 &
+
+# task push
+0 1 * * * cd /data/task-v2/nlp/recommend/; /opt/py-env/bin/python push.py task 1 >> logs/push.task.gobi.log 2>&1 &
+
+
+
+
+pip install pycurl --global-option="--with-nss"
+
+
+2016/06/10
+pip镜像
+vi /root/.pip/pip.conf
+[global]
+index-url = http://pypi.douban.com/simple
+trusted-host = pypi.douban.com
+
+#
+pip install requests
+pip install pymongo
+
+yum install libxslt libxslt-devel
+pip install lxml
+pip install pyquery
+pip install gevent
+pip install chardet
+pip install bs4
+pip install tld
+pip install tldextract
+pip install MySQL-python
+pip install pymysql
+pip install torndb
+
+yum install libjpeg-turbo-devel
+yum install zlib-devel
+pip install pillow
+pip install readability
+pip install readability-lxml
+pip install tornado
+yum install curl-devel
+pip uninstall pycurl
+pip install pycurl --global-option="--with-nss"
+
+pip install kafka
+pip install pypinyin
+pip install whois
+#pip install ordereddict
+#pip install pythonwhois

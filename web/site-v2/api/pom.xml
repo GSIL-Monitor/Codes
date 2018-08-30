@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>gobi</groupId>
+	<artifactId>gobi</artifactId>
+	<packaging>pom</packaging>
+	<version>2.1</version>
+	<name>gobi</name>
+	<url>http://maven.apache.org</url>
+
+
+	<modules>
+		<module>parent</module>
+		<module>util</module>
+		<module>model-tsb</module>
+		<module>model-crawler</module>
+		<module>dao-tsb</module>
+		<module>dao-crawler</module>
+		<module>service-admin</module>
+		<module>service-company</module>
+		<module>service-user</module>
+		<module>service-crawler</module>
+		<module>api-admin</module>
+		<module>api-company</module>
+		<module>api-user</module>
+	</modules>
+
+</project>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean id="crawlerDataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.crawlerUrl}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<property name="maxTotal">
+			<value>${jdbc.maxTotal}</value>
+		</property>
+		<property name="maxWaitMillis">
+			<value>${jdbc.maxWaitMillis}</value>
+		</property>
+		<property name="maxIdle">
+			<value>${jdbc.maxIdle}</value>
+		</property>
+		<property name="initialSize">
+			<value>${jdbc.initSize}</value>
+		</property>
+		<property name="defaultReadOnly">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<bean id="crawlerTxManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	    <property name="dataSource" ref="crawlerDataSource"/>
+	</bean>
+	<tx:annotation-driven transaction-manager="crawlerTxManager" />
+
+	<aop:config>
+		<aop:pointcut id="dao" expression="execution(* com.crawler.dao.*.*(..))" />
+		<aop:advisor pointcut-ref="dao" advice-ref="crawlerTxAdvice"/>
+	</aop:config>
+
+	<tx:advice id="crawlerTxAdvice" transaction-manager="crawlerTxManager">
+	    <tx:attributes>
+	      <tx:method name="get*" read-only="true" />
+	      <tx:method name="list*" read-only="true" />
+	      <tx:method name="count*" read-only="true" />
+	      <tx:method name="insert*" propagation="REQUIRED" />
+	      <tx:method name="update*" propagation="REQUIRED" />
+	      <tx:method name="delete*" propagation="REQUIRED" />
+	      <tx:method name="*" rollback-for="Exception" />
+	    </tx:attributes>
+    </tx:advice>
+
+
+	<bean id="crawlerSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="crawlerDataSource" />
+		<property name="configLocation" value="classpath:mybatis-config-dao-crawler.xml" />
+	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.crawler.dao" />
+		<property name="sqlSessionFactoryBeanName" value="crawlerSqlSessionFactory" />
+	</bean>
+
+
+</beans>

@@ -1,0 +1,15 @@
+zhon
+numpy
+scipy
+[matplotlib]
+gensim
+sklearn
+pandas
+jupyter/[ipython[notebook]]
+jieba
+kafka-python
+torndb
+elasticsearch
+PIL
+pymongo
+pypinyin

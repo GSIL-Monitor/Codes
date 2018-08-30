@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<h1>{{name}}</h1>
+
+{{ wtf.quick_form(form) }}
+
+<div style="width:300px">
+{% if hasdata %}{{ data.to_html(classes="table table-striped") | safe}}{% endif %}
+</div>
+{% endblock %}

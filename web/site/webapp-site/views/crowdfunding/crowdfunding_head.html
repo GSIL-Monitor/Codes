@@ -1,0 +1,81 @@
+<div class="company-head-page" >
+    <ul class="company-header">
+        <li id="company-logo">
+        </li>
+        <li class="company-title">
+        	<span>
+        		{{ headInfo.cfName}}
+        	</span>
+
+        </li>
+
+        <li id="company-verify" >
+        </li>
+
+        <!--<li class="cate-active ft20" ng-class="(headInfo.verify=='Y') ? 'verified' : 'unverified'">-->
+            <!--<i class="fa fa-heart-o fa-1x heart"  ng-hide="headInfo.userCompanyRel.heart == 'Y'"   company-heart></i>-->
+            <!--<i class="fa fa-heart fa-1x heart"  ng-show="headInfo.userCompanyRel.heart == 'Y'"   company-heart></i>-->
+        <!--</li>-->
+
+        <li class="li-right pull-right" id="li-data" ng-controller= "BasicModalCtrl">
+            <button class="btn btn-primary"  ng-click="open('list')">
+                {{'ADD_TO_A_LIST' |  translate}}
+            </button>
+        </li>
+
+    </ul>
+
+    <ul class="list-inline company-category" id="company-head-ul">
+
+        <li id="li-overview" class="li-href" >
+            <a href="#/crowdfunding/{{headInfo.cfId}}/view" category-filter>
+			<span class="fa-stack ft15">
+	               <i class="fa fa-circle-thin fa-stack-2x"></i>
+	               <i class="fa fa-table fa-stack-1x"></i>
+			</span>
+                {{ 'Crowdfunding' | translate}}
+            </a>
+        </li>
+
+
+        <li id="li-team" class="li-href"  ng-show="headInfo.scfMemberCount > 0 ">
+            <a href="#/crowdfunding/{{headInfo.cfId}}/member" category-filter>
+					<span class="fa-stack ft15">
+						<i class="fa fa-circle-thin fa-stack-2x"></i>
+						<i class="fa fa-users fa-stack-1x"></i>
+					</span>
+                {{ 'Member' | translate}}
+            </a>
+        </li>
+
+        <!--<li id="li-team" class="li-href"  ng-show="headInfo.scfLeaderCount > 0">-->
+            <!--<a href="#/company/{{headInfo.cfId}}/leader" category-filter>-->
+					<!--<span class="fa-stack ft15">-->
+						<!--<i class="fa fa-circle-thin fa-stack-2x"></i>-->
+						<!--<i class="fa fa-users fa-stack-1x"></i>-->
+					<!--</span>-->
+                <!--{{ 'Leader' | translate}}-->
+            <!--</a>-->
+        <!--</li>-->
+
+        <li class="pull-right" >
+            <a ng-click="verify()">
+                {{ 'VERIFY' | translate}}
+            </a>
+        </li>
+
+
+    </ul>
+
+</div>
+
+<script>
+    $(function(){
+        var url = window.location.href;
+        if(url.indexOf('overview') > 0)	$('#li-overview').addClass('cate-active');
+        if(url.indexOf('team') > 0)	$('#li-team').addClass('cate-active');
+        if(url.indexOf('trends') > 0)	$('#li-trends').addClass('cate-active');
+        if(url.indexOf('crowdfunding') > 0)	$('#li-cf').addClass('cate-active');
+        if(url.indexOf('events') > 0) $('#li-events').addClass('cate-active');
+    })
+</script>

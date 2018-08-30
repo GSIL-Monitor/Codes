@@ -1,0 +1,47 @@
+<div class="row">
+    <nav class="navbar navbar-static-top white-bg border-bottom" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <span minimaliza-sidebar></span>
+            <form class="navbar-form-custom">
+                <div class="form-group">
+                    <input type="text" filter ng-model='full'  autocomplete="off"  placeholder="{{'SEARCH' | translate}}..."
+                     class="form-control" name="top-search" id="top-search"
+                     onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+               
+               		
+               		<span class="tt-dropdown-menu search-span">
+						<div class="div-result" search='name'  ng-repeat='item in ajaxFullItems.names track by $index'>
+							<span>{{item}}</span>
+						</div>
+						<div class="div-result" search='keyword' style="border-top: 1px solid #ccc;"
+						  ng-repeat='item in ajaxFullItems.tags track by $index' ng-show='ajaxFullItems.tags.length >0'>
+							<span>{{item}}</span> <span class='search-hint-span pull-right m-r'> in keyword </span>
+						</div>
+						<div class="div-result" search='investor'  style="border-top: 1px solid #ccc;"
+						 ng-repeat='item in ajaxFullItems.investors track by $index' ng-show='ajaxFullItems.investors.length >0'>
+							<span>{{item}}</span> <span class='search-hint-span pull-right m-r'> in investor </span>
+						</div>
+					</span>
+					
+                </div>
+            </form>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li class="dropdown" dropdown>
+                <a class="dropdown-toggle count-info" href dropdown-toggle>
+                    <i class="fa fa-language"></i> {{'LANGUAGE' | translate}}
+                </a>
+                <ul class="dropdown-menu" ng-controller="TranslateCtrl">
+                    <li><a ng-click="changeLanguage('en')">English</a></li>
+                    <li><a ng-click="changeLanguage('cn')">中文</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a ng-click="logout()">
+                    <i class="fa fa-sign-out"></i> {{'LOGOUT' | translate}}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

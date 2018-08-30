@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="CompanyIndex" type="com.crawler.model.CompanyIndex" />
+		<typeAlias alias="IOS" type="com.crawler.model.IOS" />
+		<typeAlias alias="Android" type="com.crawler.model.Android" />
+		<typeAlias alias="Alexa" type="com.crawler.model.Alexa" />
+		<typeAlias alias="News" type="com.crawler.model.News" />
+		<typeAlias alias="NewsContent" type="com.crawler.model.NewsContent" />
+		<typeAlias alias="ProxyTYC" type="com.crawler.model.ProxyTYC" />
+	</typeAliases>
+	
+	<mappers>
+		<!-- ************ Read *************** -->
+		<mapper resource="mappers/read/companyIndex-read.xml" />
+		<mapper resource="mappers/read/ios-read.xml" />
+		<mapper resource="mappers/read/android-read.xml" />
+		<mapper resource="mappers/read/alexa-read.xml" />
+		<mapper resource="mappers/read/news-read.xml" />
+		<mapper resource="mappers/read/newsContent-read.xml" />
+		<mapper resource="mappers/read/proxyTYC-read.xml" />
+		
+		<!-- ************ Write *************** -->
+		<mapper resource="mappers/write/proxyTYC-write.xml" />
+	</mappers>
+</configuration>

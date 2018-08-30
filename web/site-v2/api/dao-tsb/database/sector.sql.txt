@@ -1,0 +1,331 @@
+insert sector(id,sectorName,verify,active,createTime,confidence) values(1,'电子商务','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1001,'生鲜食品','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1002,'海淘代购','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1003,'跨境电商','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1004,'服装服饰','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1005,'3C电子','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1006,'美妆','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1007,'母婴玩具','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1008,'家居建材','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1009,'珠宝首饰','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1010,'奢侈品','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1011,'二次元周边','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1012,'医药保健品','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1013,'导购返利','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1014,'积分优惠','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1015,'电商解决方案','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1016,'电商媒体及社区','Y','Y',now(),1,2,1);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(1999,'其他电商','Y','Y',now(),1,2,1);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(2,'本地生活','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2001,'美食餐饮','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2002,'家政服务','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2003,'城市社区','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2004,'美业服务','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2005,'婚礼婚庆','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2006,'宠物服务','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2007,'休闲娱乐','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2008,'维修服务','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2009,'本地物流','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2010,'商户服务及信息化','Y','Y',now(),1,2,2);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(2999,'其他本地生活','Y','Y',now(),1,2,2);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(3,'社交','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3001,'社区论坛','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3002,'婚恋交友','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3003,'陌生人交友','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3004,'熟人社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3005,'商务社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3006,'同性社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3007,'兴趣社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3008,'校园社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3009,'直播社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3010,'综合社交','Y','Y',now(),1,2,3);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(3999,'其他社交','Y','Y',now(),1,2,3);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(4,'智能硬件','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4001,'智能家居','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4002,'室内生态','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4003,'消费电子','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4004,'可穿戴设备','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4005,'智能健康','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4006,'智能配件','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4007,'智能母婴设备','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4008,'医疗硬件','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4009,'机器人','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4010,'无人机','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4011,'VR/AR设备','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4012,'出行工具','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4013,'手机平板','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4014,'硬件媒体及社区','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4015,'硬件孵化器','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4016,'硬件供应链','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4017,'人工智能','Y','Y',now(),1,2,4);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(4999,'其他硬件','Y','Y',now(),1,2,4);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(5,'汽车交通','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5001,'新车','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5002,'二手车','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5003,'平行进口车','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5004,'新能源汽车及服务','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5005,'汽车后服务','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5006,'汽车改装','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5007,'汽车试驾','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5008,'交通出行','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5009,'车主服务','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5010,'停车服务','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5011,'汽车金融','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5012,'汽车物流','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5013,'汽车媒体及社区','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5014,'车联网及硬件','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5015,'驾校培训','Y','Y',now(),1,2,5);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(5999,'其他汽车交通相关','Y','Y',now(),1,2,5);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(6,'医疗健康','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6001,'寻医问诊','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6002,'挂号陪诊','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6003,'健康管理','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6004,'上门医疗','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6005,'心理健康','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6006,'医疗大数据','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6007,'医疗信息化','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6008,'医生服务','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6009,'专科服务','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6010,'基因检测','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6011,'美容整形','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6012,'医疗器械','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6013,'医疗媒体及社区','Y','Y',now(),1,2,6);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(6999,'其他医疗健康相关','Y','Y',now(),1,2,6);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(7,'金融','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7001,'理财','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7002,'P2P','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7003,'消费金融','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7004,'股票及基金','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7005,'保险','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7006,'众筹合投','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7007,'信用卡','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7008,'外汇','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7009,'期货','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7010,'贵金属','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7011,'供应链金融','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7012,'海外资产配置','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7013,'第三方支付','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7014,'记账工具','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7015,'虚拟货币','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7016,'大数据征信','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7017,'不良资产','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7018,'金融信息化','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7019,'金融产品导购','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7020,'金融媒体及社区','Y','Y',now(),1,2,7);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(7999,'其他金融相关','Y','Y',now(),1,2,7);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(8,'企业服务','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8001,'协同办公','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8002,'销售营销','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8003,'人力资源管理','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8004,'法务财务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8005,'通讯会议','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8006,'数据服务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8007,'安全服务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8008,'众包服务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8009,'外包服务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8010,'开发者服务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8011,'企业IT运维','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8012,'行业解决方案','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8013,'融资服务','Y','Y',now(),1,2,8);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(8999,'其他企业服务','Y','Y',now(),1,2,8);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(9,'工具软件','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9001,'系统工具','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9002,'图片摄影','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9003,'专业工具','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9004,'日历日程','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9005,'智能助手','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9006,'搜索引擎','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9007,'浏览器','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9008,'安全软件','Y','Y',now(),1,2,9);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(9999,'其他工具','Y','Y',now(),1,2,9);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(10,'旅游户外','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10001,'周边游','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10002,'出境游','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10003,'入境游','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10004,'定制游','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10005,'高端游','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10006,'目的地服务','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10007,'酒店及客栈','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10008,'短租公寓','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10009,'包车租车','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10010,'景点门票','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10011,'B2B同业旅游','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10012,'旅游规划工具','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10013,'户外活动','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10014,'旅游社交','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10015,'景点信息化','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10016,'旅游媒体及社区','Y','Y',now(),1,2,10);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(10999,'其他旅游相关','Y','Y',now(),1,2,10);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(11,'教育','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11001,'儿童早教','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11002,'K12教育','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11003,'高等教育','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11004,'职业培训','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11005,'出国留学','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11006,'语言学习','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11007,'兴趣教育','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11008,'教育信息化','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11009,'教育媒体及社区','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11010,'教育综合服务','Y','Y',now(),1,2,11);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(11999,'其他教育相关','Y','Y',now(),1,2,11);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(12,'房产家装','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12001,'中介服务','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12002,'品牌公寓','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12003,'房屋装修','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12004,'家居建材','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12005,'物业','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12006,'商业地产','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12007,'孵化器','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12008,'房产金融','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12009,'房产信息化','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12010,'房产综合服务','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12011,'房产媒体及社区','Y','Y',now(),1,2,12);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(12999,'其他房产家装相关','Y','Y',now(),1,2,12);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(13,'游戏','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13001,'手机游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13002,'网页游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13003,'端游','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13004,'电视游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13005,'开发引擎工具','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13006,'游戏媒体','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13007,'游戏外包','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13008,'体感游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13009,'社交游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13010,'单机游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13011,'电子竞技游戏','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13012,'游戏数据管理','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13013,'游戏直播','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13014,'游戏外设','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13015,'游戏发行及渠道','Y','Y',now(),1,2,13);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(13999,'其他游戏服务','Y','Y',now(),1,2,13);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(14,'文化娱乐','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14001,'动漫/二次元','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14002,'网络视频','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14003,'移动视频','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14004,'传统影视','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14005,'新内容生态','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14006,'内容制作','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14007,'IP内容管理','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14008,'内容分发','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14009,'衍生品','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14010,'艺人管理','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14011,'粉丝经济','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14012,'设计及创意','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14013,'绘画','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14014,'音乐音频','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14015,'文娱媒体及社区','Y','Y',now(),1,2,14);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(14999,'其他文娱相关','Y','Y',now(),1,2,14);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(15,'运动健身','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15001,'健身服务','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15002,'运动装备及品牌','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15003,'体育智能硬件','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15004,'运动垂直电商','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15005,'运动场地','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15006,'赛事管理','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15007,'赛事数据','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15008,'赛事IP','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15009,'体育俱乐部','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15010,'体育培训','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15011,'体育媒体及社区','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15012,'体育游戏','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15013,'体育彩票','Y','Y',now(),1,2,15);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(15999,'其他体育运动健身相关','Y','Y',now(),1,2,15);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(16,'广告营销','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16001,'社交网络广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16002,'移动广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16003,'户外广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16004,'网络广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16005,'视频广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16006,'传统广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16007,'原生广告','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16008,'广告公司','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16009,'广告科技','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16010,'整合营销','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16011,'O2O营销','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16012,'广告技术','Y','Y',now(),1,2,16);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(16999,'其他广告营销相关','Y','Y',now(),1,2,16);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(17,'餐饮','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17001,'连锁餐厅','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17002,'外卖品牌','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17003,'餐饮物流','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17004,'中央厨房外包','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17005,'餐饮管理公司','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17006,'餐饮CRM系统','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17007,'餐饮供应链','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17008,'盒饭贩卖机','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17009,'连锁咖啡厅','Y','Y',now(),1,2,17);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(17999,'其他餐饮相关','Y','Y',now(),1,2,17);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(18,'B2B','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(18001,'钢铁煤炭','Y','Y',now(),1,2,18);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(18002,'五金建材','Y','Y',now(),1,2,18);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(18003,'电子元器件','Y','Y',now(),1,2,18);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(18004,'食材生鲜','Y','Y',now(),1,2,18);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(18005,'大宗农产品','Y','Y',now(),1,2,18);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(18999,'其他B2B','Y','Y',now(),1,2,18);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(19,'农业','Y','Y',now(),1);
+
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19001,'农产品供应链','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19002,'农资电商','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19003,'农业金融','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19004,'产品众筹','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19005,'土地众筹','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19006,'农业旅游','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19007,'都市农业','Y','Y',now(),1,2,19);
+insert sector(id,sectorName,verify,active,createTime,confidence,level,parentId) values(19999,'其他农业相关','Y','Y',now(),1,2,19);
+
+
+insert sector(id,sectorName,verify,active,createTime,confidence) values(999,'其他','Y','Y',now(),1);

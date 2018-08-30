@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.company.dao.DealScoreVODao">
+	<resultMap id="dealScoreVOResult" type="DealScoreVO">
+	</resultMap>
+	
+	<select id="countAssigned" resultType="int">
+	<![CDATA[
+		select 
+			count(*)
+		from deal d 
+		join deal_user_rel dur 
+			on d.id=dur.dealId
+		where 
+			d.organizationId=#{organizationId} and 
+			dur.userId=#{userId} and 
+			dur.type=#{type} and
+			dur.createTime>=#{fromDate} and
+			dur.createTime<#{toDate}
+	]]>
+	</select>
+	
+	<select id="countTODO" resultType="int">
+		select 
+			count(*)
+		from deal d 
+		join company c
+			on d.companyId=c.id
+		join deal_user_rel dur 
+			on d.id=dur.dealId 
+		join user u
+			on u.id=dur.userId
+		left join deal_user_score dus 
+			on d.id=dus.dealId and 
+			dus.type=22010 and 
+			dus.userId=dur.userId 
+		where 
+			d.organizationId=#{organizationId} and 
+			dur.userId=#{userId} and 
+			dur.type=#{type} 
+			<if test="filter == 0">
+			and dus.id is null 
+			</if>
+			<if test="filter != 0 and filter!=999">
+			and dus.score=#{filter}
+			</if>
+	</select>
+	
+	<select id="listTODO" resultMap="dealScoreVOResult">
+		select 
+			d.id as dealId,
+			c.code as companyCode,
+			c.name as companyName,
+			c.fullName as companyFullName,
+			dur.userId as assigneeId,
+			u.username as assignee,
+			dur.createTime as assignTime,
+			dus.score as score
+		from deal d 
+		join company c
+			on d.companyId=c.id
+		join deal_user_rel dur 
+			on d.id=dur.dealId 
+		join user u
+			on u.id=dur.userId
+		left join deal_user_score dus 
+			on d.id=dus.dealId and 
+			dus.type=22010 and 
+			dus.userId=dur.userId 
+		where 
+			d.organizationId=#{organizationId} and 
+			dur.userId=#{userId} and 
+			dur.type=#{type} 
+			<if test="filter == 0">
+			and dus.id is null 
+			</if>
+			<if test="filter != 0 and filter!=999">
+			and dus.score=#{filter}
+			</if>
+		order by dur.createTime desc
+		limit #{from},#{pageSize}
+	</select>
+	
+	<select id="getNextScoring" resultMap="dealScoreVOResult">
+		select 
+			d.id as dealId,
+			c.code as companyCode,
+			c.name as companyName,
+			c.fullName as companyFullName,
+			dur.userId as assigneeId,
+			u.username as assignee,
+			dur.createTime as assignTime,
+			dus.score as score
+		from deal d 
+		join company c
+			on d.companyId=c.id
+		join deal_user_rel dur 
+			on d.id=dur.dealId 
+		join user u
+			on u.id=dur.userId
+		left join deal_user_score dus 
+			on d.id=dus.dealId and 
+			dus.type=22010 and 
+			dus.userId=dur.userId 
+		where 
+			d.organizationId=#{organizationId} and 
+			dur.userId=#{userId} and 
+			(dur.type=23020 or dur.type=23030)
+			and dus.id is null 
+			and c.id != #{companyId}
+		order by dur.createTime desc
+		limit 1
+	</select>
+</mapper>

@@ -1,0 +1,1 @@
+mongoexport -h 10.44.176.22 -d crawler_v3 -c projectdata -o tianyancha --query '{source:13090,type:36008}'

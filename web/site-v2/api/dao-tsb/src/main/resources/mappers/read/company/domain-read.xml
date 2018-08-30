@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.DomainReadDao">
+	<resultMap id="domainResult" type="Domain">
+	</resultMap>
+	<select id="getByCompanyId" resultMap="domainResult">
+		select * from domain where companyId = #{companyId} and active='Y' order by beianDate
+	</select>
+
+	<select id="getByDomain" resultMap="domainResult">
+		select * from domain where domain=#{domain} limit 1
+	</select>
+</mapper>

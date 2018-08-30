@@ -1,0 +1,76 @@
+.line {
+  height: 1px;
+  background: #179d82;
+  overflow: hidden;
+  position: absolute;
+  margin-top: 20px;
+  width: 100%;
+}
+
+div.line-wrap {
+  position: relative;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 20px;
+}
+
+.item {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 120px;
+  position: relative;
+
+}
+
+.vline {
+  width: 0px;
+  height: 0px;
+  margin: 10px auto 14px;
+  display: block;
+  background: #179d82;
+}
+
+.spot {
+  border: 1px solid #8dbcff;
+  border-radius: 50%;
+  display: block;
+  width: 11px;
+  height: 11px;
+  margin-bottom: 0px;
+  margin-left:50px;
+  background: #8dbcff;
+  box-sizing: content-box;
+}
+
+.info {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.info > p{
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.info > p >a{
+  color: #333;
+}
+
+.time{
+  font-size: 12px;
+  color:#888;
+}
+
+.i-more{
+  float: right ! important;
+  margin-top: -5px;
+  color: @blue;
+}

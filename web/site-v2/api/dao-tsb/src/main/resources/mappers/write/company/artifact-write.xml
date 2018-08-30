@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.ArtifactWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Artifact">
+		insert artifact
+			(
+			companyId,
+			name,
+			description,
+			link,
+			domain,
+			alexa,
+			type,
+			productId,
+			tags,
+			others,
+			verify,
+			active,	
+			createTime,
+			createUser,
+			confidence
+			)
+		values(
+			#{companyId},
+			#{name},
+			#{description},
+			#{link},
+			#{domain},
+			#{alexa},
+			#{type},
+			#{productId},
+			#{tags},
+			#{others},
+			#{verify}, 
+			#{active}, 
+			#{createTime}, 
+			#{createUser},
+			#{confidence}
+		)
+	</insert>
+
+</mapper>

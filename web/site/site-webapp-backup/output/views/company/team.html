@@ -1,0 +1,26 @@
+<div class="pnl">
+
+	<div class="col-md-4" ng-repeat="item in company.memberRelList">
+            <div class="ibox float-e-margins" >
+                <div>
+                	<!--  
+                	<div class="ibox-content no-padding border-left-right">
+                           <img alt="image" class="img-circle" src="img/profile_small.jpg">
+                    </div>
+                    -->
+                    <div class="ibox-content profile-content">
+                    
+                        <h4><strong>{{item.member.memberName}}</strong></h4>
+
+
+                        <p>Position: {{item.memberPosition}}</p>
+                        
+                        <p ng-show="item.joinDate != null">Join: {{item.joinDate}}</p>
+                        <p ng-show="item.member.educationExperience != null && item.member.educationExperience != ''">Education: {{item.member.educationExperience}}</p>
+						<p ng-show="item.member.workExperience != null">Worked: {{item.member.workExperience}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ </div>

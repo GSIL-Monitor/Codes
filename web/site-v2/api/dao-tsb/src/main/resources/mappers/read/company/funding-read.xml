@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.FundingReadDao">
+	<resultMap id="fundingResult" type="Funding">
+	</resultMap>                                    
+	
+	<select id="getByCompanyId" resultMap="fundingResult">
+		select * from funding where companyId=#{companyId} and active='Y' order by fundingDate 
+	</select>
+	
+	<select id="getById" resultMap="fundingResult">
+		select * from funding where id=#{id}
+	</select>
+
+</mapper>

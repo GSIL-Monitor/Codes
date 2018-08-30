@@ -1,0 +1,47 @@
+.
+停止task-01和task-02上的原任务
+
+.
+备份数据库
+备份web, task程序
+
+.
+阿里云mongo 索引检查(mongodb_index.txt)
+mongo --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p
+
+.
+清洗数据
+clean_company_name.py
+
+.
+迁移数据
+完成 trend-alexa  (alexa.txt)
+trend-android   一个月数据 (android_2_mongo.py)
+完成 trend-itunes    (itunes_2_mongo.py)
+完成 info-beian  (domain_2_beian.py)
+完成 info-gongshang (gongshang_2_mongo.py)
+完成 info-website 提前运行 (website_generate.py)
+完成 gridfs  (gridfs.txt)
+完成 article-news    (news.txt)
+
+.
+mysql 更新
+完成 20150612_spider_refactor.sql
+清洗数据
+完成 prepare_source_artifact_domain.py
+
+.
+部署web应用
+完成 node-gridfs-http-frontend
+
+.
+36kr, itjuzi Parser运行
+
+.
+expand运行测试
+
+.
+aggregator运行测试
+
+
+

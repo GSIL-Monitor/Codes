@@ -1,0 +1,27 @@
+#36kr
+
+we need to login in 36kr first(BaseCrawler.login function)
+
+#Company:
+http://rong.36kr.com/api/company/#key
+
+#Investfirm:
+http://rong.36kr.com/api/organization/#key/basic
+
+#Download Mode:
+Increase增量
+
+db.checklist.update({investorId:"3271"},{$set:{kr36InvestorId:"895","itjuziSourceInvestorId" : "None"}})
+db.checklist.update({investorId:"2911"},{$set:{kr36InvestorId:"None","itjuziSourceInvestorId" : "7953"}})
+db.checklist.update({investorId:"4518"},{$set:{kr36InvestorId:"None","itjuziSourceInvestorId" : "10203"}})
+db.checklist.update({investorId:"4989"},{$set:{kr36InvestorId:"74","itjuziSourceInvestorId" : "None"}})
+db.checklist.update({investorId:"6301"},{$set:{kr36InvestorId:"None","itjuziSourceInvestorId" : "12071"}})
+db.checklist.update({investorId:"7348"},{$set:{kr36InvestorId:"None","itjuziSourceInvestorId" : "13134"}})
+db.checklist.update({investorId:"12353"},{$set:{kr36InvestorId:"2127","itjuziSourceInvestorId" : "None"}})
+db.checklist.update({investorId:"13391"},{$set:{kr36InvestorId:"2231","itjuziSourceInvestorId" : "None"}})
+db.checklist.update({investorId:"14993"},{$set:{kr36InvestorId:"None","itjuziSourceInvestorId" : "None"}})
+db.checklist.update({investorId:"14994"},{$set:{kr36InvestorId:"391","itjuziSourceInvestorId" : "None"}})
+
+
+
+

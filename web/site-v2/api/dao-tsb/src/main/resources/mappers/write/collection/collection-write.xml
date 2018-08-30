@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.collection.CollectionWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="CollectionSys">
+		insert collection(
+			name, description,type,sort,mark,rule,verify,active,createUser,createTime
+		)
+		values(
+			#{name}, #{description},#{type},#{sort},#{mark},#{rule}, #{verify}, #{active},#{createTime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="CollectionSys">
+		update
+			collection
+		set 
+			name=#{companyId}, 
+			description=#{description},
+			type=#{type},
+			sort=#{sort},
+			mark=#{mark},
+			rule=#{rule}, 
+			verify=#{verify}, 
+			active=#{active},
+			createTime=#{createTime},
+			modifyTime=#{modifyTime}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.ArtifactReadDao">
+	<resultMap id="artifactResult" type="Artifact">
+	</resultMap>
+
+
+	<select id="getById" parameterType="Integer" resultMap="artifactResult">
+		select *
+		from artifact where id = #{id} and active='Y'
+	</select>
+
+	<select id="getByCompanyId" resultMap="artifactResult">
+		select * from artifact
+		where companyId = #{companyId} and active='Y'
+		order by createTime desc
+		limit #{start}, #{pageSize}
+	</select>
+
+	<select id="getByCompIdAndType" resultMap="artifactResult">
+		select * from artifact
+		where companyId = #{companyId} and active='Y'
+		and type=#{type}
+		order by rank desc limit #{start}, #{pageSize}
+	</select>
+
+	<select id="getTypes" resultType="Integer">
+		select distinct type from
+		artifact where companyId = #{companyId} and active='Y'
+	</select>
+	
+	<select id="countByCompanyId" resultType="Integer">
+		select count(*)  from
+		artifact where companyId = #{companyId} and active='Y'
+	</select>
+	
+	<select id="countByCompanyIdAndType" resultType="Integer">
+		select count(*)  from
+		artifact where companyId = #{companyId} and type=#{type} and active='Y'
+	</select>
+	
+</mapper>

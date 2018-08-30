@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.user.dao.write.UserCompanyFollowWriteDao">
+	
+	<update id="update" parameterType="UserCompanyFollow">
+		update
+			user_company_follow
+		set 
+			active = #{active},
+			modifyTime = #{modifyTime}
+		where 
+			userId = #{userId}
+		and 
+			companyId = #{companyId}
+		
+	</update>
+	
+	<update id="updateStatsu" parameterType="UserCompanyFollow">
+		update
+			user_company_follow
+		set 
+			status=#{status},
+			active = #{active},
+			modifyTime = #{modifyTime}
+		where 
+			userId = #{userId}
+		and 
+			companyId = #{companyId}
+		
+	</update>
+	
+	
+	<insert id="insert" parameterType="UserCompanyFollow" 	
+	useGeneratedKeys="true" keyProperty="id">
+		insert into 
+			user_company_follow(userId, companyId, followDate, status, active,createTime)
+		values
+		(
+			#{userId},
+			#{companyId},
+			#{followDate},
+			#{status},
+			#{active},
+			#{createTime}
+		)
+	</insert>
+
+</mapper>

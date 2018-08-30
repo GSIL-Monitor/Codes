@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.UsersInfoReadDao">
+	<resultMap id="orgUserResult" type="UsersInfoVO">
+	</resultMap>
+	
+	<select id="getById" resultMap="orgUserResult">
+		select 
+			u.id as userId, 
+			u.username as username,
+			u.email as email,
+			u.createTime as createTime 
+		from 
+			organization o
+		left join
+			user_organization_rel uor
+		on
+			uor.organizationId=o.id
+		left join
+			user u
+		on
+			u.id = uor.userId
+		where o.id=#{id} and u.active='Y' order by u.createTime desc
+	</select>
+
+	<select id="get" resultMap="orgUserResult">
+		select 
+			u.id as userId, 
+			u.username as username,
+			u.email as email,
+			u.createTime as createTime 
+		from 
+			organization o
+		left join
+			user_organization_rel uor
+		on
+			uor.organizationId=o.id
+		left join
+			user u
+		on
+			u.id = uor.userId
+		where o.id=#{id} and u.active='Y' order by u.createTime desc
+		limit #{from},#{pageSize}
+	</select>
+	<select id="getUsersNum" resultType="Integer">
+		select 
+			count(u.id)
+		from 
+			organization o
+		left join
+			user_organization_rel uor
+		on
+			uor.organizationId=o.id
+		left join
+			user u
+		on
+			u.id = uor.userId
+		where o.id=#{id} and u.active='Y'
+	</select>
+
+</mapper>

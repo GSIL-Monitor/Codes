@@ -1,0 +1,91 @@
+<link href="js/plugins/nstSlider/jquery.nstSlider.css" rel="stylesheet">
+
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h3 >{{'FILTER' | translate}}&nbsp;{{'FINANCE' | translate}}</h3>
+</div>
+<div class="modal-body form-group">
+	<!-- specify data-aria_enabled="true" -->
+	<div class="nstSlider" data-aria_enabled="true"
+	    data-range_min="0" data-range_max="100000000"
+	    data-cur_min="0" data-cur_max="100000000" slider-filter>
+	    <div class="bar">0</div>
+	    <div class="leftGrip">
+	    	<div class="leftValue"></div>
+	    </div>
+	    <div class="rightGrip">
+	    	<div class="rightValue"></div>
+	    </div>
+	</div>
+	
+	<div class="slider-hint">
+		<div class="hint hint-a">1m</div>
+		<div class="hint hint-b">10m</div>
+		<div class="hint hint-c">25m</div>
+		<div class="hint hint-d">50m</div>
+		<div class="hint hint-d1">75m</div>
+		<div class="hint hint-e">100m</div>
+	</div>
+	
+	<div class="div-fill">
+		<div class="col-xs-6 ">
+	       <input class="form-control" id="left-input" 
+	       placeholder="no minimum" type="text" finance-filter='left' value = '{{financeLeft}}'> 
+	    </div>
+	    <div class="col-xs-6 ">
+	       <input  class="form-control" id="right-input" 
+	       placeholder="no maximum" type="text" finance-filter='right' value='{{financeRight}}'>
+	    </div>
+	</div>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()" close-finance-modal>OK</button>
+</div>
+
+
+<!-- nstSilder -->
+<script src="js/plugins/nstSlider/jquery.nstSlider.min.js"></script>
+
+<script>
+$('.nstSlider').nstSlider({
+	"rounding": {
+        "100000": "1000000",
+        "1000000": "10000000"
+    },
+    "left_grip_selector": ".leftGrip",
+    "right_grip_selector": ".rightGrip",
+    "value_bar_selector": ".bar",
+    "value_changed_callback": function(cause, leftValue, rightValue, prevLeft, prevRight) {
+        var $grip = $(this).find('.leftGrip'),
+            whichGrip = 'left grip';
+        if (leftValue === prevLeft) {
+            $grip = $(this).find('.rightGrip');
+            whichGrip = 'right grip';
+        }
+        
+        var leftVal = leftValue+''
+        var leftLen = leftVal.length;
+        var rightVal = rightValue+''
+        var rightLen = rightVal.length;
+        if(leftLen > 9) leftVal = leftVal.substring(0, leftLen-9)+'b';
+        else if(leftLen > 6) leftVal = leftVal.substring(0, leftLen-6)+'m';
+        else if(leftLen > 3) leftVal = leftVal.substring(0, leftLen-3)+'k';
+        
+        if(rightLen > 9) rightVal = rightVal.substring(0, rightLen-9)+'b';
+        else if(rightLen > 6) rightVal = rightVal.substring(0, rightLen-6)+'m';
+        else if(rightLen > 3) rightVal = rightVal.substring(0, rightLen-3)+'k';
+        
+        if(rightVal == '100m') rightVal = '100m+';
+
+        $(".leftValue").html(leftVal);
+        $(".rightValue").html(rightVal);
+        
+        $("#left-input").val(leftValue);
+        $("#right-input").val(rightValue);
+    }
+});
+
+</script>

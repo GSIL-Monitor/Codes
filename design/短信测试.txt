@@ -1,0 +1,11 @@
+1. 查询余额
+pwd=md5(sn+password), 一定要转大写
+
+curl "http://sms.combmobile.com/sdk/balance?sn=SDK-OPA-010-00007&pwd=623ABD9EC50151F2638D85D8D50817A1"
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">100</string>
+
+2. 发送短信
+
+http://sms.combmobile.com/sdk/gxmt
+curl "http://sms.combmobile.com/sdk/gxmt?sn=SDK-OPA-010-00007&pwd=623ABD9EC50151F2638D85D8D50817A1&mobile=18917853279&content=verifycode:1234&ext=&stime=&rrid="

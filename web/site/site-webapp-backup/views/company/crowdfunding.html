@@ -1,0 +1,88 @@
+<div class="detail-body overview-left-part m-t"  ng-controller="CrowdfundingDetailCtrl" >   
+	  
+	 <!-- company detail -->
+	  <div class="panel-body pnl">
+	  	  <div class="container-fluid m-b" >
+	  	  	
+	  	  	
+	  	  	<div class="text-right" ng-show="cf.comments> 0 || cf.supporters>0">
+	  	  		<i class="fa fa-comments"></i>
+	  	  		<strong>{{cf.comments}}</strong>
+	  	  		&nbsp;&nbsp;&nbsp;&nbsp;
+	  	  		<i class="fa fa-thumbs-up"></i>
+		  		<strong>{{cf.supporters}}</strong>
+	  	  	</div>
+	  	  
+	  	  </div>
+	  		
+		  <div class="div-desc m-t-sm m-b-md">
+		  	{{cf.cfDesc}}
+		  </div>
+
+   		  <div class="pull-right">
+   		  	<strong> {{'FROM'|translate}}:</strong>
+   		  	
+   		  	<strong class="m-r-xs">
+   		  		<a href="{{cf.sourceUrl}}" target="_blank">{{cf.sourceName}}</a>
+   		  	</strong>
+   		  	
+   		  	
+   		  </div>
+	  </div>
+	  
+    
+	 <div style="height:20px"></div>
+	  
+     <!--  -->
+     <div class="overview-right-part" >
+     	<h3>
+  	  		<span ng-class="(cf.status == 1901 || cf.status ==1902)?'default-color': 'inactive-color'">
+        		{{cf.statusName}}
+       		</span>
+     	</h3>
+     	
+     	<div class="m-t">
+	     	<p>
+	            <span>{{'SUCCESS_RAISING' | translate}}:<strong>{{cf.successRaising}}</strong></span>
+	            <div class="first-line" >
+		            <div class="first-flag"></div>
+		        </div>
+	     	</p>
+	     		
+	     	<p>
+	     		<span>{{'AMOUNT_RAISING' | translate}}:<strong>{{cf.amountRaising}}</strong></span>
+	           <div class="second-line">
+		            <div class="second-flag"></div>
+		        </div>
+	     		
+	     	</p>
+     	
+     	</div>
+     	
+     	
+     </div>
+   
+   <script>
+   $(document).ready(function(){
+	   fix_company();
+	
+   })
+   
+   $(window).bind("load resize scroll", function() {
+	   fix_company();
+   })
+   
+   function fix_company(){
+	   // company page
+       var windowWidth = $( window ).width();
+       if(windowWidth <1024) {
+       	$(".overview-left-part").css('width', '100%');
+       	$(".overview-right-part").css('display', 'none');
+       }
+       else {
+       	$(".overview-left-part").css('width', '75%');
+       	$(".overview-right-part").css('display', 'block');
+       }
+   }
+   
+   </script>

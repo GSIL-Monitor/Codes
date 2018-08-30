@@ -1,0 +1,12 @@
+# Lagou
+
+Download lagou company info and job_position info from below two links:
+
+#Company Base info:
+http://www.lagou.com/gongsi/#key.html
+
+#Company jobs detail:
+#http://www.lagou.com/gongsi/searchPosition.json?companyId=#key&pageSize=1000
+
+#Download Mode:
+Increase增量

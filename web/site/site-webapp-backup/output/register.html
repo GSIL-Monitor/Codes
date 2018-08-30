@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gobi | Sedna - Sign Up</title>
+
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min_6336ba0.css">
+<link type="text/css" rel="stylesheet" href="/css/plugins/validation/css/formValidation.min_a4bd656.css">
+<link type="text/css" rel="stylesheet" href="/pkg/aio_551579e.css">
+</head>
+
+<body class="gray-bg">
+
+<div class="text-center pvl full-width">
+
+    <h1 class="pvl">Sedna</h1>
+
+</div>
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+
+            <h3>Sign Up</h3>
+
+            <form id="registerForm" class="m-t" role="form" method="post" >
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" name="username">
+                   		 <small id="small-username" class="help-block" data-fv-result="INVALID" style="display: none; color:red">
+               				The username is already taken 
+               			</small>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    	<small id="small-email" class="help-block" data-fv-result="INVALID" style="display: none; color:red">
+               				The email is already taken 
+               			</small>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                </div>
+                <div class="form-group">
+                        <input type="checkbox" checked><i></i> Agree the terms and policy
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Sign Up</button>
+
+                <a class="btn btn-sm btn-white btn-block" href="login.html">Sign in</a>
+            </form>
+            
+			<hr/>
+             <div class="row">
+		        <div class="col-md-6">
+		        </div>
+		        <div class="col-md-6 text-right">
+		            <small>Gobi © 2015</small>
+		        </div>
+    		</div>
+
+        </div>
+    </div>
+</body>
+
+
+<script type="text/javascript" charset="utf-8" src="/js/jquery/jquery-2.1.1.min_aa7f2b3.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/plugins/validation/js/formValidation.min_5ae2442.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/plugins/validation/js/framework/bootstrap.min_943ed90.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/plugins/validation/js/language/zh_CN_99ba440.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+		    $('#registerForm').formValidation({
+		        message: 'This value is not valid',
+		        icon: {
+		            valid: 'glyphicon glyphicon-ok',
+		            invalid: 'glyphicon glyphicon-remove',
+		            validating: 'glyphicon glyphicon-refresh'
+		        },
+		        fields: {
+		            username: {
+		                message: 'The username is not valid',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The username is required and can\'t be empty'
+		                    },
+		                    stringLength: {
+		                        min: 3,
+		                        max: 10,
+		                        message: 'The username must be more than 3 and less than 10 characters long'
+		                    },
+		                    regexp: {
+		                        regexp: /^[a-zA-Z0-9_\.]+$/,
+		                        message: 'The username can only consist of alphabetical, number, dot and underscore'
+		                    },
+		                    duplicate:{
+		                    	enabled: false,
+		                    	message: 'The username is duplicated, please input another one'
+		                    }
+		                }
+		            },
+		            email: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The email address is required and can\'t be empty'
+		                    },
+		                    regexp: {
+		                        regexp: /^[a-zA-Z0-9_\.]+@gobivc.com$/,
+		                        message: 'Only support email address from gobivc (@gobivc.com)'
+		                    },
+		                    emailAddress: {
+		                        message: 'The input is not a valid email address'
+		                    }
+		                }
+		            },
+		            password: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The password is required and can\'t be empty'
+		                    },
+		                    stringLength: {
+		                        min: 6,
+		                        message: 'The password must be more than 6 characters long'
+		                    },
+		                }
+		            }
+		            
+		        }
+		    })
+		    .on('focusout', '[name="username"],[name="email"]', function(){
+		    	
+		    	if($(this).parent().hasClass('has-success')){
+		    		var ele = $(this);
+		    		var name = $(this)[0].name;
+		    		var type = 1;
+		    		if(name =='email') type=2;
+		    		
+		    		$.ajax({
+		            	method: 'post',
+		                url: './api/user/check',
+		                data: 'param='+ $(this).val() +'&type='+type
+		            }).success(function(resp) {
+						if(!resp.result){
+						//	$('#profileForm')
+	                     //   .formValidation('enableFieldValidators', 'username', true, 'duplicate')
+	                       // .formValidation('revalidateField', 'username');
+							
+							ele.closest('.form-group')     // Get the field parent
+				                .removeClass('has-success')
+				                .addClass('has-warning')
+				                
+				                if(type == 1)
+				              	  $('#small-username').css('display','block');
+				                else 
+			                	  $('#small-email').css('display','block');
+							
+						}else{
+							ele.closest('.form-group')     // Get the field parent
+			                	.addClass('has-success')
+			               		.removeClass('has-warning')
+
+			               		if(type == 1)
+					              	  $('#small-username').css('display','none');
+					                else 
+				                	  $('#small-email').css('display','none');
+						
+						}
+						
+		            });
+		    	}
+		    })
+		    .on('success.form.fv', function(e) {
+	            // Prevent form submission
+	            e.preventDefault();
+
+	            // Get the form instance
+	            var $form = $(e.target);
+
+	            // Get the FormValidation instance
+	            var bv = $form.data('formValidation');
+
+	            if(!$('input[name=username]').closest('.form-group').hasClass('has-success')){
+	            	$('input[name=username]').focus();
+	            	return;
+	            }
+	            
+	            if(!$('input[name=email]').closest('.form-group').hasClass('has-success')){
+	            	$('input[name=email]').focus();
+	            	return;
+	            }
+	            
+	            
+	            // Use Ajax to submit form data
+	            $.ajax({
+	            	method: 'post',
+	                url: './api/user/register',
+	                data: $form.serialize()
+	            }).success(function(resp) {
+					if(resp.result){
+						document.cookie = 'username='+resp.user.username;
+						location.href="./index.html";
+					}
+	            });
+	            
+	        });
+		});
+	</script>
+
+</html>

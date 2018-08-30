@@ -1,0 +1,7 @@
+#dump from host:10.44.176.22 trends.alexa
+mongoexport -h 10.44.176.22 -d trends -c alexa -o alexa20160625
+mongoexport -h 10.44.176.22 -d crawler_v2 -c trends_alexa -o alexa_raw20160625
+
+#restore to trend.alexa
+mongoimport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p -d trend -c alexa alexa20160625
+mongoimport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p -d trend -c alexa_raw alexa_raw20160625

@@ -1,0 +1,143 @@
+0. 停止的服务
+
+.tshbao-web-01
+    nginx (不用停止)
+    elasticsearch (不用停止)
+    tomcat
+        /opt/tomcat/bin/shutdown.sh 
+    flask(supervisord)
+        wechat
+        search_v2
+    node
+        gridfs-http-frontend (不用停止)
+
+.tshbao-task-01
+    jetty-maven-repository (不用停止)
+    crontab
+        coldcall
+            cd /data/task-201606/coldcall; coldcall_email.py
+            cd /data/task-201606/nlp/pipelines; emailer.py
+        trend
+            cd /data/task-201606/spider2/crawler/trend;
+        aggregator market
+            cd /data/task-201606/spider2/aggregator/market; market_track.py
+        artifact rank recalc
+            cd /data/task-201606/spider2/aggregator/artifact; set_artifact_rank.py
+        artifact recommend
+            cd /data/task-201606/spider2/aggregator/artifact; artifact_recommend.py
+        monitor
+            cd /data/task-201606/monitor;   stat_summary.py
+    supervisord
+        incremental-create-tag (remove)
+        incremental-process-coldcall (remove)
+
+.tshbao-task-02
+    crontab
+        /data/task-201606/search/
+        /data/task-201606/nlp
+    supervisord
+        
+
+.tshbao-mongodb-01
+    nginx (不用停止)
+    tomcat (history)
+        /opt/tomcat/bin/shutdown.sh  
+    kafka/zookeepr (不用停止)
+    elasticsearch (不用停止)
+    crontab
+        update index every day
+            cd /var/www/tsb2/search/search; sh create_index_all.sh
+    flask(supervisord)
+        search_v2
+
+
+1.
+cd /data/backup/mysql
+mysqldump -h rdsm16067lly73nopw4i.mysql.rds.aliyuncs.com -ugobi --password=tb67168 --default-character-set=utf8 tsb_v2 > tsb_201610.sql
+
+mysqldump -h rdsm16067lly73nopw4i.mysql.rds.aliyuncs.com -ugobi --password=tb67168 --default-character-set=utf8 crawler_v2 > crawler_201610.sql
+
+
+2.
+新mysql host: rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com  username: gobi password: Tb_67168
+
+#CREATE DATABASE `tsb_v2` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+#CREATE DATABASE `crawler_v2` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+
+cd /data/backup/mysql/tsb_v2/mysqlbackup
+mysql -h rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com -ugobi --password=Tb_67168 --default-character-set=utf8 tsb_v2 < tsb_201610.sql
+
+cd /data/backup/mysql/crawler_v2/mysqlbackup
+mysql -h rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com -ugobi --password=Tb_67168 --default-character-set=utf8 crawler_v2 < crawler_201610.sql
+
+
+
+3. 配置文件
+.tshbao-web-01
+    tomcat
+#jdbc.password=Tb_67168
+#jdbc.url=jdbc:mysql://rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com:3306/tsb_v2?autoReconnect=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+#jdbc.crawlerUrl=jdbc:mysql://rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com:3306/crawler_v2?autoReconnect=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+
+        api-admin
+        /var/www/tsb201607/api/api-admin/WEB-INF/classes/jdbc.properties 
+
+        api-company
+        /var/www/tsb201607/api/api-company/WEB-INF/classes/jdbc.properties 
+
+        api-demoday
+        /var/www/tsb201607/api/api-demoday/WEB-INF/classes/jdbc.properties 
+
+        api-monitor
+        /var/www/tsb201607/api/api-monitor/WEB-INF/classes/jdbc.properties
+
+        api-user
+        /var/www/tsb201607/api/api-user/WEB-INF/classes/jdbc.properties 
+
+        /opt/tomcat/bin/startup.sh 
+
+    flask(supervisord)
+        wechat
+        /var/www/tsb2/wechat/wechat/dbconfig.py
+#DB_HOST="rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com"
+#DB_PASSWD="Tb_67168"
+
+        search_v2
+        /var/www/tsb2/search/conf/main.conf 
+#DB_HOST=rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com
+#DB_PASSWD=Tb_67168
+
+
+.tshbao-task-01
+    jetty-maven-repository (不用停止)
+    crontab
+    supervisord
+        incremental-create-tag (remove)
+        incremental-process-coldcall (remove)
+
+    /data/task-201606/conf/main.conf
+#DB_HOST=rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com
+#DB_PASSWD=Tb_67168
+
+.tshbao-task-02
+    crontab
+    supervisord
+
+/data/task-201606/conf/main.conf
+#DB_HOST=rm-2zez8kikh91xe2b59.mysql.rds.aliyuncs.com
+#DB_PASSWD=Tb_67168
+
+
+.tshbao-mongodb-01
+    nginx (不用停止)
+    tomcat (history)
+        /opt/tomcat/bin/shutdown.sh  
+    kafka/zookeepr (不用停止)
+    elasticsearch (不用停止)
+    crontab
+        update index every day
+            cd /var/www/tsb2/search/search; sh create_index_all.sh
+    flask(supervisord)
+        search_v2
+
+    /var/www/tsb2/search/conf/main.conf 

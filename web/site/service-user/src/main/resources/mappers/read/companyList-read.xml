@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.user.dao.read.CompanyListReadDao">
+	<resultMap id="clResult" type="CompanyList">
+	</resultMap>
+
+	<select id="get" resultMap="clResult">
+		select * from company_list where id = #{id} and active='Y'
+	</select>
+	<select id="getByName" parameterType="String" resultMap="clResult">
+		select * from company_list where name = #{name}
+	</select>
+	
+	<select id="getIdByName" parameterType="String" resultType="int">
+		select id from company_list where name = #{name}
+	</select>
+</mapper>

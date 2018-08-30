@@ -1,0 +1,93 @@
+insert user(id,username,email,password,active,createTime) values(2,'Avery','avery@gobivc.com',md5('241145813318058567242test'),'Y',now());
+insert user_email(userId,email,verify) values(2,'avery@gobivc.com',true);
+insert user_email(userId,email,verify) values(2,'avery@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,2,now());
+insert user_role(userId,role,createTime) values(2,25040,now());
+
+#准备avery的portfolios
+#随手攒 43944  oldDealId=26332  bjshcfkjxgs
+insert deal(id,organizationId,type,status,priority,declineStatus,createTime,companyId)
+values(4,1,23010,19050,20030,18010,now(),43944);
+insert deal_user_rel(userId,dealId,userIdentify,createTime)
+values(2,4,21020,now());
+
+#直客通	oldDealId=19604	zhiketong
+insert deal(id,organizationId,type,status,priority,declineStatus,createTime,companyId)
+values(1,1,23010,19050,20030,18010,now(),14485);
+insert deal_user_rel(userId,dealId,userIdentify,createTime)
+values(2,1,21020,now());
+
+#UCNest 19612 oldDealId=18467 UCNESTchhl
+insert deal(id,organizationId,type,status,priority,declineStatus,createTime,companyId)
+values(5,1,23010,19050,20030,18010,now(),19612);
+insert deal_user_rel(userId,dealId,userIdentify,createTime)
+values(2,5,21020,now());
+
+#十方旅行 oldDealId=10770	shifanglvxing
+insert deal(id,organizationId,type,status,priority,declineStatus,createTime,companyId)
+values(2,1,23010,19050,20030,18010,now(),11963);
+insert deal_user_rel(userId,dealId,userIdentify,createTime)
+values(2,2,21020,now());
+
+#摩诘金融
+
+#先花花 oldDealId=6804	xianhuahua
+insert deal(id,organizationId,type,status,priority,declineStatus,createTime,companyId)
+values(3,1,23010,19050,20030,18010,now(),8132);
+insert deal_user_rel(userId,dealId,userIdentify,createTime)
+values(2,3,21020,now());
+
+#岭南嘉荟POS贷
+
+#8D
+
+#Quark Finance (夸客微金融服务公司）9481 oldDealId=2378	kuakejinrong
+insert deal(id,organizationId,type,status,priority,declineStatus,createTime,companyId)
+values(6,1,23010,19050,20030,18010,now(),9481);
+insert deal_user_rel(userId,dealId,userIdentify,createTime)
+values(2,6,21020,now());
+
+#飞盒教育
+#id=656		code=kechengpai
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(9,1,19050,20030,18010,now(),656);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(2,9,21020,23010,now());
+
+
+#求解答
+#id=1650		code=shanghaijizhixinxi
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(10,1,19050,20030,18010,now(),1650);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(2,10,21020,23010,now());
+
+#Palmap +
+#id=925			code=Palmaptj
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(11,1,19050,20030,18010,now(),925);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(2,11,21020,23010,now());
+
+#technode
+
+#微驴儿
+#id=582		code=weilvwangluo
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(12,1,19050,20030,18010,now(),582);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(2,12,21020,23010,now());
+
+#游多多
+#id=3175	code=youduoduolvhangwang
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(13,1,19050,20030,18010,now(),3175);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(2,13,21020,23010,now());
+
+#零号线
+#id=1323	code=nanjinglinghaoxian
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(14,1,19050,20030,18010,now(),1323);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(2,14,21020,23010,now());

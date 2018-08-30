@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="CompanySearchVO" type="com.tsb.company.vo.CompanySearchVO" />
+		<typeAlias alias="CompanyVO" type="com.tsb.company.vo.CompanyVO" />
+		<typeAlias alias="CompanyDescVO" type="com.tsb.company.vo.CompanyDescVO" />
+		
+		<typeAlias alias="ColdcallVO" type="com.tsb.company.vo.ColdcallVO" />
+		<typeAlias alias="DealScoreVO" type="com.tsb.company.vo.DealScoreVO" />
+		<typeAlias alias="DemodayPreScoreVO" type="com.tsb.company.vo.DemodayPreScoreVO" />
+		<typeAlias alias="DemodayScoreVO" type="com.tsb.company.vo.DemodayScoreVO" />
+		<typeAlias alias="DemodayAllUserScoreVO" type="com.tsb.company.vo.DemodayAllUserScoreVO" />
+		<typeAlias alias="DemodayOrgResultVO" type="com.tsb.company.vo.DemodayOrgResultVO" />
+		<typeAlias alias="UserVO" type="com.tsb.company.vo.UserVO" />
+		<typeAlias alias="SourceVO" type="com.tsb.company.vo.SourceVO" />
+		<typeAlias alias="CollectionVO" type="com.tsb.company.vo.CollectionVO" />
+		
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/read/companyVO-read.xml" />
+		<mapper resource="mappers/read/coldcallVO-read.xml" />
+		<mapper resource="mappers/read/dealScoreVO-read.xml" />
+		<mapper resource="mappers/read/demodayVO-read.xml" />
+		<mapper resource="mappers/read/userVO-read.xml" />
+		<mapper resource="mappers/read/collectionVO-read.xml" />
+	</mappers>
+</configuration>

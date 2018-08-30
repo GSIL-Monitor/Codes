@@ -1,0 +1,89 @@
+<div id="my-list" class="my-list m-t"    ng-controller="CrowdfundingCtrl">
+    <div class="row pull-right" ng-controller="BasicModalCtrl">
+    </div>
+    
+    <div class="row list-show">
+	 	<h3>{{'CROWD_FUNDING' |  translate}}</h3>	
+	 	
+    	 <ul id="cfStatus" class="list-inline" style="line-height: 30px;">
+    	 	<li class="li-start">Status:</li>
+            <li class="filter selected-bg" cf-status="All">All</li>
+            <!--<li class="filter" ng-repeat="item in cfStatus" cf-status="{{item.name}}">-->
+            	<!--{{item.name | translate}}-->
+            <!--</li>                                                  -->
+			 <li class="filter" cf-status="Ready">Ready</li>
+			 <li class="filter" cf-status="Raising">Raising</li>
+			 <li class="filter" cf-status="Closed">Closed</li>
+    	</ul>
+    	
+    	<ul id="cfSource" class="list-inline" style="line-height: 30px;">
+    	 	<li class="li-start">Source:</li>
+    	 	<li class="filter selected-bg" cf-source="All">All</li>
+            <!--<li class="filter" ng-repeat="item in cfSource" cf-source="{{item.name}}">-->
+            	<!--{{item.name | translate}}-->
+            <!--</li>-->
+			<li class="filter" cf-source="JD">JD</li>
+			<li class="filter" cf-source="36Kr">36Kr</li>
+            <li class="pull-right">
+            	{{'TOTAL' |  translate}}:
+           		 <strong> {{total}}</strong>
+            </li>
+    	</ul>
+    </div>
+    
+    
+    
+   	 <div class="row"  ng-show="cfList.length == 0">
+    	<div class="container-fluid">
+    		<span class="pll text-muted">
+                <!--  {{'CROWD_FUNDING_NULL' | translate}}.  -->
+            </span>
+    	</div>
+   	 </div>
+    
+     <div class="row"   ng-repeat="item in cfList track by $index">
+    	<div class="container-fluid cf-row" select-row ng-class="($index%2==0) ? 'odd' : 'even'">
+	          <div class="cf-name text-left">
+	            <a href="#/crowdfunding/{{item.cfId}}/view">
+	          	   <span>{{ item.name}}</span>
+	            </a> 
+	          </div>
+	          
+	          
+	          <div class="cf-desc col-md-9 ">
+					{{ item.description}}
+	          </div>
+	          
+	          <div class="cf-others text-right">
+	          		<p ng-class="(item.status == 'Raising' || item.status ==1902)?'default-color': 'inactive-color'">
+	          			{{item.status}}
+	          		</p>
+	          		
+	          		<span>
+		          		<a href="{{item.sourceUrl}}" target="_blank">{{item.sourceName}}</a>
+	          		</span>
+	          </div>
+	          
+	          
+	          
+         </div>
+    </div>
+    
+    
+    <div class="last-row form-group div-load" ng-show="cfList.length < total">
+    	<div class="container-fluid">
+    		<button class=' btn load-btn' load-more-data='cf'>
+    			<i class="fa fa-arrow-down"></i>
+    			 {{'LOAD_MORE_DATA' | translate}}
+    		</button>
+    	</div>
+    </div>
+    
+    <!-- shared list -->
+    
+    <div style='height: 20px'></div>
+</div>
+
+
+
+

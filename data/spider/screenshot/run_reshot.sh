@@ -1,0 +1,1 @@
+python screenshot.py reshot >> logs/makeup_screenshot.log 2>&1 &

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crawler.dao.write.ProxyTYCWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="ProxyTYC">
+		insert proxy_tyc(
+			ip, port, type, createTime
+		)
+		values(
+			#{ip}, #{port}, #{type}, #{createTime}
+		)
+	</insert>
+
+</mapper>

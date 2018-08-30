@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.ColdcallReadDao">
+	<resultMap id="coldcallResult" type="Coldcall">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="coldcallResult">
+		select * from coldcall where id = #{id}
+	</select>
+	<select  id="getTotal" resultType="Integer">
+		select count(id) from coldcall where processed='Y'  ;
+	</select>
+	<select  id="getUnMatched" resultType="Integer">
+		select count(id) from coldcall where processed='Y' and id not in 
+		(select distinct coldCallId  from  coldcall_company_rel where companyId is not null);
+	</select>
+	
+</mapper>

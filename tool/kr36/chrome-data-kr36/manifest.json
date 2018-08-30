@@ -1,0 +1,13 @@
+{
+  "name": "数据k",
+  "version": "1.0",
+  "minimum_chrome_version": "10.0",
+  "description": "数据kr36",
+  "devtools_page": "devtools.html",
+  "background": { "scripts": ["background.js"] },
+  "permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}

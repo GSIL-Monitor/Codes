@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body >
+    <div style="font-size: 15px; display: inline-block; width: 100%; padding: 0 20px; text-align: center">
+        <div style="margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="padding: 10px 0; font-size: 36px; margin:10px auto 0;width:500px">
+                以下公司昨日新增融资事件，但内容未完全确认：
+            </div>
+            % for item in data["items"]:
+            <div style="font-size: 11px;">
+                user: ${item["fundingCreator"]}, round: ${item["round"]}, companyId: ${item["id"]}, companyCode: ${item["code"]}, companyName: <a href="http://pro.xiniudata.com/validator/#/company/${item['code']}/overview">${item['name']}</a>
+            </div>
+            % endfor
+        </div>
+        <div style="margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="padding: 10px 0; font-size: 36px; margin:10px auto 0;width:500px">
+                以下公司昨日新增融资事件：
+            </div>
+            % for item in data["allItems"]:
+            <div style="font-size: 11px;">
+                user: ${item["fundingCreator"]}, round: ${item["round"]}, companyId: ${item["id"]}, companyCode: ${item["code"]}, companyName: <a href="http://pro.xiniudata.com/validator/#/company/${item['code']}/overview">${item['name']}</a>
+            </div>
+            % endfor
+        </div>
+        <div>
+            <div>
+            昨日新增融资事件:
+            </div>
+            <div>
+                1. 昨日增加的记录
+            </div>
+            <div>
+                2. 如果有publishDate, publishDate30天内的
+            </div>
+            <div>
+                3. 如果没有publishDate, fundingDate2年内的
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+[26745, 169396, 9055, 3615, 2465, 11704, 12450, 22608, 168981, 132501, 108206, 121077, 93544, 45433, 35559, 27103, 19557, 18160,
+13082, 12218, 8811, 8746, 6485, 6483, 6357, 5987, 4237, 30189, 18201, 11135, 9584, 3054, 1177, 7703, 30533, 10483, 7705, 55628,
+5655, 10721, 37037, 28048, 2617]
+
+[37037, 7705, 7703, 3054, 5987, 6483, 30533, 10483, 5655]
+
+company : 77622|shunfengguojidianshang|顺丰优选 has 21 source companies
+company : 77301|alilvxingqua|阿里巴巴 has 48 source companies
+company : 42307|TCLduomeiti|TCL has 19 source companies
+company : 15268|fenzhongchuanmei|分众传媒 has 10 source companies
+company : 12875|toumiwang|宜信 has 58 source companies
+company : 8745|shilianhang|世联行 has 12 source companies
+company : 5115|jshbgrjWPSOffice|WPS has 8 source companies
+company : 4172|rongjinhuiyin|银天下 has 11 source companies
+company : 2421|ltjshLightinthebox|兰亭集势 has 6 source companies
+company : 6493|dazhongdianpingwang|大众点评 has 22 source companies
+company : 2853|meituanwang|美团 has 31 source companies
+company : 27379|guomeizaixian|国美在线 has 9 source companies
+company : 3733|jd100hl|世纪佳缘 has 12 source companies
+company : 13869|yimazaixian|亿玛 has 9 source companies
+company : 6702|bf-bfkj|暴风影音 has 20 source companies
+company : 9055|zhonghuayingcaiwang|58同城 has 25 source companies
+company : 3420|37youxi|37游戏 has 10 source companies
+company : 6770|yijuzhongguo|乐居 has 4 source companies
+company : 98746|soufangwangzhuhai|搜房网 has 19 source companies
+company : 2485|honghuyiyou|携程 has 15 source companies
+company : 12180|kaolahaigou|网易 has 40 source companies
+company : 3885|360Top|京东 has 27 source companies
+company : 11704|yulongtongxin|酷派美国 has 8 source companies
+
+
+company : 6541|huanjushidai|100教育 has 22 source companies
+
+
+Cloudedge kuaiyouzhinengjiasuqi

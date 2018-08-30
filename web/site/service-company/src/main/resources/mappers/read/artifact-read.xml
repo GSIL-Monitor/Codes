@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.ArtifactReadDao">
+	<resultMap id="artifactResult" type="Artifact">
+	</resultMap>
+
+	<select id="getByCompanyId" resultMap="artifactResult">
+		select * from artifact where companyId = #{companyId}
+		order by createTime
+	</select>
+	
+	<select id="getByCompIdAndType" resultMap="artifactResult">
+		select * from artifact where companyId = #{companyId}
+		 and type=#{type} 
+		 order by createTime
+	</select>
+
+
+</mapper>

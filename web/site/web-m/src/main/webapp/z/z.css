@@ -1,0 +1,471 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+ul,ol{list-style:none; margin:0px; padding:0px;}
+
+a {
+	transition: all 0.1s ease;
+	text-decoration: none;
+	color: #305274;
+}
+
+p{
+	line-height:22px;
+}
+
+img{
+	max-width: 600px;
+	text-align: center;
+}
+
+.page-wrap {
+	width: 100%;
+	height: 100%;
+	padding:5px;
+	position: relative;
+	z-index: 0;
+	max-width: 750px;
+	margin: 0 auto;
+	font-size: 14px;
+	line-height: 22px;
+	display: none;
+}
+
+
+/******* home page ********/
+.home-page{
+	text-align: center;
+}
+
+.c-name{
+	margin-top:20px;
+	height: 30px;
+}
+
+.ft26{
+	font-size: 26px;
+}
+
+.page2{
+	margin-top: -25px;
+}
+
+.page-top{
+	margin-top:50px;
+	margin-bottom: 25px;
+	font-size: 18px;
+	color:#333;
+}
+
+.page-title{
+	
+	padding:3px 20px 4px 10px;
+	border-bottom: 2px solid #5f8bc1;
+}
+
+
+/*** develop***/
+.develop-div > div{
+	line-height: 32px;
+}
+
+.time-info{
+	float: left;
+	width: 70px;
+}
+
+.time-info-s{
+	float: left;
+	width: 58px;
+}
+
+.time-info-span{
+	margin-right: 10px;
+}
+
+
+.develop-info{
+	float: left;
+}
+
+.funding-investor{
+	line-height: 22px;
+}
+
+.investor-span{
+	margin-right: 10px;
+}
+
+.product-pic {
+	text-align: center;
+	overflow: hidden;
+}
+
+.item > img{
+	text-align: center;
+}
+
+/** member **/
+.member{
+	min-height:60px;
+}
+
+
+.member-position{
+	line-height: 25px;
+}
+
+.p-underline{
+	text-decoration: underline;
+}
+
+
+.header-logo{
+	font-size: 16px;
+	position: absolute;
+}
+
+
+.android-logo{
+	/*color: #8cde7b;*/
+	margin-left:18px;
+	margin-top: 12px;
+}
+
+.apple-logo{
+	/*color: #d5d5d5;*/
+	margin-left:17px;
+	margin-top: 13px;
+}
+
+
+.load-failed,.fakeloader{
+	margin-top:20px;
+	text-align: center;
+	display: none;
+}
+
+
+/****** common element  ********/
+
+.basic-info > div, .basic-d >div{
+	float: left;
+}
+
+
+.basic-header{
+	width:60px;
+	height:60px;
+	border-radius:30px;
+	line-height:22px;
+	font-size: 15px;
+	background: #6aa0d1;
+	color:#fff;
+}
+
+.basic-content {
+	margin-bottom: 25px;
+	margin-left: 10px;
+	line-height:25px;
+	min-height: 60px;
+}
+
+.basic-d{
+	line-height: 32px;
+}
+
+.c-d{
+	width: 70px;
+}
+
+.c-c{
+}
+
+.member-name{
+	/**background: #5b85a3;**/
+}
+
+
+
+/**** custom ****/
+
+.header-c{
+	position: absolute;
+	margin-left: 15px;
+}
+
+.name2{
+	margin-top: 18px;
+}
+
+.name3{
+	margin-top: 18px;
+	margin-left:8px;
+}
+
+.name4{
+	margin-top: 8px;
+}
+
+.name-a1{
+	margin-left:20px;
+}
+
+.name-a2{
+	margin-left:18px;
+}
+
+.name-a3{
+	margin-left:17px;
+}
+
+.name-a4{
+	margin-left:15px;
+}
+
+.name-a5{
+	margin-left:10px;
+}
+
+.name-a6{
+	margin-left:8px;
+}
+
+.name-a7{
+	margin-left:15px;
+}
+
+.name-a8{
+	margin-left:15px;
+}
+
+
+
+
+
+/*********  ********/
+
+.label {
+    padding: .2em .6em .3em;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    height: 15px;
+    color: #000;
+	border: 1px solid #000;
+	font-weight: 500;
+	font-size: 12px;
+	margin-right: 6px;
+	margin-top:5px;
+	line-height:16px;
+	display: inline-block;
+}
+
+
+
+/*** job ***/
+
+
+.t-detail {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: 100%;
+	margin-bottom: 30px;
+	margin-top: -10px;
+}
+
+
+.line {
+    height: 1px;
+    background: #179d82;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 36px;
+    width: 98%;
+}
+
+.horizonal-timeline, div.line-wrap {
+    position: relative;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+}
+
+.horizonal-timeline, .item {
+	display: inline-block;
+    vertical-align: bottom;
+    width: 120px;
+    position: relative;
+}
+
+.vline {
+    width: 0px;
+    height: 0px;
+    margin: 10px auto 30px;
+    display: block;
+    background: #179d82;
+}
+
+.spot {
+    border: 1px solid #8dbcff;
+    border-radius: 50%;
+    display: block;
+    width: 11px;
+    height: 11px;
+    margin-bottom: 0px;
+    margin-left:50px;
+    background: #8dbcff;
+    box-sizing: content-box;
+}
+
+.info {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin-top: 10px;
+}
+
+.more{
+	float: right ! important;
+	margin-bottom: -5px;
+	color: #5f8bc1;
+}
+
+.phase{
+	font-size: 13px;
+}
+
+.time{
+	font-size: 12px;
+	margin-top: -3px;
+	color:#888;
+}
+
+.news-detail{
+	margin-top: 200px;
+}
+
+/************Timeline**************/
+/* Timeline Container */
+.vertical-timeline {
+  border-left: 2px solid #ccc;
+  margin-top:5px;
+  padding-bottom:5px;
+  margin-left:10px;
+  position: relative; 
+}
+.vertical-timeline:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: #ccc;
+    border: 2px solid #ccc;
+}
+
+
+/* Individual Timeline Item */
+
+.tl-node {
+	padding-left: 1em;
+	margin-top: 1em;
+	margin-bottom: 1.2em;
+	position: relative;
+}
+.tl-node a {
+	display: block;
+}
+.tl-node:before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: -7px;
+	width: 8px;
+	height: 8px;
+	border-radius: 8px;
+	background: #fff;
+	border: 2px solid #ccc;
+}
+
+.tl-node > div{
+	
+}
+
+/* Timestamp */
+.tl-stamp {
+	color:#888;
+	font-size: 12px;
+}
+
+.tl-website{
+	color:#ccc;
+	font-size: 12px;
+	margin-left: 10px;
+	color: #333;
+}
+
+.tl-title{
+	font-size: 14px;
+	font-weight: 400;
+	float: left;
+	width: 100%;
+}
+
+.tl-title:hover {
+	cursor: pointer;
+	color: #179d82;
+}
+
+/************End Timeline**************/
+
+
+
+/****** slide ********/
+ .swiper-container {
+     width: 100%;
+     height: 100%;
+     display: none;
+ }
+ .swiper-slide {
+     text-align: center;
+     font-size: 18px;
+     background: #fff;
+
+     /* Center slide text vertically */
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     -webkit-justify-content: center;
+     justify-content: center;
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     -webkit-align-items: center;
+     align-items: center;
+ }
+
+ 
+ .banner { position: relative; overflow: auto; }
+    .banner li { list-style: none; }
+        .banner ul li { float: left; }
+
+
+@media screen and (max-device-width: 320px){body{-webkit-text-size-adjust:none}}
+@media screen and (max-device-width: 480px){body{-webkit-text-size-adjust:none}}
+@media only screen and (-webkit-min-device-pixel-ratio: 2){body{-webkit-text-size-adjust:none}}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){body{-webkit-text-size-adjust:none}}
+
+

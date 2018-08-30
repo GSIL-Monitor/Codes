@@ -1,0 +1,1 @@
+forever start oss-reportserver.js  -o /var/www/oss-fileserver/logs/report-out.log -e /var/www/oss-fileserver/logs/report-err.log -l /var/www/oss-fileserver/logs/report-forever.log -a

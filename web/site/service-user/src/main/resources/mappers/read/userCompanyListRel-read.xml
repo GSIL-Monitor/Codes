@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.user.dao.read.UserCompanyListRelReadDao">
+
+	<select id="getCompanyListIds" resultType="int">
+		select 
+			ucl.companyListId 
+		from 
+			user_company_list_rel ucl  
+		left join 
+			company_list cl 
+		on 
+			ucl.companyListId=cl.id 
+		where 
+			ucl.userId=#{userId} and cl.active='Y' 
+		order by cl.modifyTime
+		 limit #{start}, 20
+	</select>
+	
+	<select id="getclIdsByUserId" resultType="int">
+		select 
+			ucl.companyListId 
+		from 
+			user_company_list_rel ucl  
+		left join 
+			company_list cl 
+		on 
+			ucl.companyListId=cl.id 
+		where 
+			ucl.userId=#{userId} and cl.active='Y' 
+		order by cl.modifyTime
+	</select>
+
+</mapper>

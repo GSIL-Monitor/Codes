@@ -1,0 +1,91 @@
+<div class="my-list m-t"   ng-controller="SaveSearchCtrl">
+    <div class="row pull-right m-t-n-sm">
+       	<button class="btn btn-primary" ui-sref="index.search">
+          {{'CREATE_A_NEW_SEARCH' |  translate}}
+        </button>
+    </div>
+    
+    <div class="row list-show">
+    	<h3>{{'SAVED_SEARCHES' |  translate}}</h3>
+    </div>
+    
+    
+     <div class="row"  ng-show="searchList.length == 0">
+    	<div class="container-fluid">
+    		<span class="pll text-muted">
+                {{'SAVED_SEARCHES_NULL' | translate}} 
+                <a ui-sref="index.search">
+                	{{'COMPANY_SEARCH_PAGE' | translate}} 
+                </a>.
+              </span>
+    	</div>
+   	 </div>
+    
+     <div class="row"  ng-repeat="item in searchList track by $index">
+    	<div class="container-fluid" select-row ng-class="($index%2==0) ? 'odd' : 'even'">
+    		  <div class="list-operate-no">
+	          	   <span>{{$index+1}}</span>
+	          </div>
+	          <div class="list-operate-name list-operate-name-lg">
+	          	   <span type="date">{{ item.date}}</span>
+	          </div>
+	          
+	          <div class="list-operate-params">
+	          
+	          	 <div class="search-param label" ng-hide="item.params.names == null">
+	          		{{'NAME' | translate}}: {{item.params.names}}
+	          	 </div>
+
+				<div class="search-param label" ng-hide="item.params.keywords == null">
+					{{'KEYWORD' | translate}}: {{item.params.keywords}}
+				</div>
+				
+				<div class="search-param label" ng-hide="item.params.locations == null">
+					{{'LOCATION' | translate}}: {{item.params.locations}}
+				</div>
+				
+				<div class="search-param label" ng-hide="item.params.investors == null">
+      				{{'INVESTORS' | translate }}: {{item.params.investors}} 
+      			</div>
+
+				<div class="search-param label" ng-hide="item.params.stages == null">
+          		  {{'STAGE' | translate}}: {{item.params.stages}} 
+          		</div>
+	          
+	            <div class="search-param label" ng-hide="item.params.foundedAfter == null && item.params.foundedBefore == null">
+	            	{{'FOUNDED' | translate}}: 
+	            	{{item.params.foundedAfter}} ~ {{item.params.foundedBefore}}
+	            </div>
+	          </div>
+	          
+	          
+	          <div class="list-operate operate-last m-r-n-md">
+	          	 
+	          	 <span class='operate-save m-r-sm' tooltip-placement="top" tooltip="{{'SEARCH'|translate}}"
+	          	  new-search='{{item.ussId}}'>
+		          <i class="fa fa-search fa-lg"></i>
+		        </span>
+	          	 
+	            <span class="text-danger" tooltip-placement="top" tooltip="{{'DELETE'|translate}}" 
+	            	delete-saved-search='{{item.ussId}}'>
+		          <i class="fa fa-close fa-lg"></i>
+		        </span>
+	          </div>
+	          
+         </div>
+    </div>
+    
+    
+     <div class="last-row  form-group div-load" ng-show="searchList.length < total">
+    	<div class="container-fluid">
+    		<button class=' btn btn-default load-btn' load-more-data='search'>
+    			<i class="fa fa-arrow-down"></i>
+    			{{'LOAD_MORE_DATA'| translate}}
+    		</button>
+    	</div>
+    </div>
+    
+    <div style='height: 20px'></div>
+    
+</div>
+

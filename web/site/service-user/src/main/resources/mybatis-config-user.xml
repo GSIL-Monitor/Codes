@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+	</settings>
+
+
+	<typeAliases>
+		<typeAlias alias="User" type="com.tsb.user.model.User" />
+		<!--follow -->
+		<typeAlias alias="UserCompanyFollow" type="com.tsb.model.user.UserCompanyFollow" />
+		<typeAlias alias="UserCompanyNote" type="com.tsb.model.user.UserCompanyNote" />
+		<!-- user list -->
+		<typeAlias alias="CompanyList" type="com.tsb.model.user.CompanyList" />
+		<typeAlias alias="CompanyListRel" type="com.tsb.model.user.CompanyListRel" />
+		<typeAlias alias="UserCompanyListRel" type="com.tsb.model.user.UserCompanyListRel" />
+	</typeAliases>
+	
+	<mappers>
+		
+		<mapper resource="mappers/read/user-read.xml" />
+		<mapper resource="mappers/write/user-write.xml" />
+		<!-- follow -->
+		<mapper resource="mappers/read/userCompanyFollow-read.xml" /> 
+		<mapper resource="mappers/read/userCompanyNote-read.xml" /> 
+		<!--user list  -->
+		<mapper resource="mappers/read/userCompanyListRel-read.xml" /> 
+		<mapper resource="mappers/write/userCompanyListRel-write.xml" /> 
+		<mapper resource="mappers/read/companyList-read.xml" />
+		<mapper resource="mappers/write/companyList-write.xml" /> 
+		<mapper resource="mappers/read/companyListRel-read.xml" /> 
+		<mapper resource="mappers/write/companyListRel-write.xml" />
+		<mapper resource="mappers/write/userCompanyFollow-write.xml" /> 
+		<mapper resource="mappers/write/userCompanyNote-write.xml" /> 
+	</mappers>
+</configuration>

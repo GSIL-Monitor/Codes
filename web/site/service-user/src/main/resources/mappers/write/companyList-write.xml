@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.user.dao.write.CompanyListWriteDao">
+
+	<update id="updateDesc" parameterType="CompanyList">
+		update
+			company_list
+		set
+			description = #{description},
+			modifyTime = #{modifyTime}
+		where
+			id = #{id}
+
+	</update>
+
+	<update id="delete" parameterType="CompanyList">
+		update
+			company_list
+		set
+			active =#{active},
+			modifyTime = #{modifyTime}
+		where
+			id = #{id}
+
+	</update>
+
+	<insert id="insert" parameterType="CompanyList"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+			company_list(name, description, status, active,createTime,modifyTime)
+		values
+		(
+			#{name},
+			#{description},
+			#{status},
+			#{active},
+			#{createTime},
+			#{modifyTime}
+		)
+	</insert>
+	
+	<update id="updateModifyTime" parameterType="CompanyList">
+		update
+			company_list
+		set
+			modifyTime = #{modifyTime}
+		where
+			id = #{id}
+
+	</update>
+
+</mapper>

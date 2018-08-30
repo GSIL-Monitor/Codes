@@ -1,0 +1,12 @@
+insert user(id,username,email,password,active,createTime) values(10,'Neil','Neil@gobivc.com',md5('2411458133180585672410Gobi5292'),'Y',now());
+insert user_email(userId,email,verify) values(10,'neil@gobivc.com',true);
+insert user_email(userId,email,verify) values(10,'neil@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,10,now());
+insert user_role(userId,role,createTime) values(10,25040,now());
+
+#20234	百米需
+#baimixu 91149
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(30,1,19050,20030,18010,now(),91149);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(10,30,21020,23010,now());

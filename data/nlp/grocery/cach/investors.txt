@@ -1,0 +1,3332 @@
+106#厚朴基金
+107#挚信资本
+108#启明创投
+109#IDG资本
+110#高榕资本Banyan Fund
+111#贝塔斯曼亚洲投资基金/Betafund
+112#阿米巴资本
+113#祥峰投资Vertex
+114#红杉资本中国
+115#蓝驰创投
+116#高瓴资本Hillhouse Capital
+117#腾讯产业共赢基金/腾讯
+118#纪源资本GGV
+119#清科创投
+120#51talk
+121#网易
+122#真格基金
+123#薛蛮子
+124#雄牛资本
+125#经纬中国
+126#险峰华兴
+127#和玉基金
+128#富达亚洲风险投资
+129#凯旋创投
+130#麦顿投资
+131#软银中国/软银集团
+132#北极光创投
+133#五岳天下资本
+134#金沙江创投
+135#国微技术
+136#苏河汇
+137#赛领资本
+138#云锋基金
+139#Star VC
+140#Temasek淡马锡/兰亭投资
+141#光速安振/光速创投
+142#KPCB凯鹏华盈中国
+143#和光资本
+144#华软投资CSIC
+145#银泰资本Ventech
+146#Mr.I互联网创新基地/陈瑞贵
+147#宽带资本CBC
+148#青松基金
+149#戈壁投资
+150#春华资本Primavera
+151#红点投资Redpoint Ventures
+152#JOY Capital愉悦资本
+153#中信资本
+154#君联资本
+155#H Capital
+156#老虎基金中国投资
+157#VY Capital
+158#DST/Yuri Milner(中国投资)
+159#基因资本
+160#华平投资
+161#成为资本
+164#海通开元/海通证券
+165#九合创投
+166#钟鼎创投
+167#基石资本
+168#晨光文具
+169#和君资本
+170#顺为基金
+171#鼎晖投资
+172#盛大资本
+173#江南资本
+174#中路集团
+175#PreAngel镭厉资本
+176#PartnerAngel伙伴创投戴志康
+177#鼎晟天平投资
+178#Accel Partners
+179#时尚传媒
+180#CA创投/CyberAgent国内
+181#湖南电广传媒
+182#达泰资本
+183#伯藜创投
+184#VANGOO盘古创富
+185#中金公司
+186#如山创投
+187#百度
+188#Coatue Management
+189#DCM中国
+190#长江国弘投资
+191#富德资本
+192#凯雷亚洲基金/凯雷
+193#风和投资
+194#汉能投资
+195#上海致景投资
+196#明势资本
+197#高通Qualcomm Ventures
+198#磐谷创投
+199#SIG海纳亚洲
+200#K2基金
+201#联创策源
+202#创新工场
+203#起点创业营
+204#微玺投资
+205#乐视网
+206#GIC新加坡政府投资公司
+207#携程
+208#乐搏资本
+209#英诺天使基金
+210#华映资本
+211#今日资本
+212#泽厚资本
+213#原子创投
+214#现代传播
+215#新天域资本
+216#湖畔山南资本
+217#阿里巴巴
+218#中国平安/平安创新投资基金
+219#中信产业基金
+220#天使投资人王刚
+221#易宝支付
+222#集结号资本
+223#信天创投
+224#英特尔投资Intel Capital
+225#洪泰基金
+226#国科嘉和
+227#凤凰传媒
+229#松禾资本
+230#初创投资
+231#德迅投资
+232#创业工场VenturesLab
+233#报喜鸟
+234#永宣联创
+235#线性资本LinearVenture
+236#赛富基金/赛富亚洲基金SAIF
+237#小米科技
+238#奇虎360
+239#维西资本/Vcwill Capital
+240#阅文集团
+241#Sierra Ventures
+242#广发信德-广发证券
+243#HAXLR8R
+244#SOS Ventures
+245#汤臣倍健
+246#隆领投资
+247#天使湾
+248#新浪微博/新浪
+249#亚信联创
+250#常春藤资本Ivy Capital
+251#同创伟业
+252#新进创投
+253#力合清源
+254#TCL创投/TCL
+255#长石资本
+256#复星昆仲资本
+257#紫辉创投
+258#DFJ/德丰杰中国
+259#墨池山创投
+260#金山软件
+262#ClearVue锴明投资
+263#光信资本
+264#神州泰岳/泰岳梧桐资本
+265#Cybernaut赛伯乐投资
+266#国富源投资
+267#深圳市创新投资集团(深创投)
+268#丰厚资本
+269#美国中经合集团
+270#天图资本
+271#协立投资
+272#深圳世为投资
+273#分享投资
+275#金石投资/中信证券
+276#AB Capital
+277#优联资本
+278#联想之星
+279#高原资本
+280#华创资本
+281#浙江传化股份有限公司
+282#毅达资本
+283#上海融翼资本
+284#纽信创投Newsion Venture
+285#大唐电信
+286#唯品会
+287#景林投资
+288#老鹰基金EaglesFund
+289#InnoSpace创智空间
+291#合力投资
+292#JJ比赛
+293#安芙兰创投
+295#启迪创投/启迪控股
+296#挚盈资本
+297#Samsung Ventures三星
+298#复励投资
+299#蓝色光标
+300#深圳启赋资本
+301#华欧创投基金
+302#东方富海
+303#网秦
+304#野马国际
+305#京东
+306#奥飞动漫
+307#825新媒体产业基金
+308#架桥投资
+310#杭州盈动投资Incapital
+311#用友幸福投资/用友
+312#华兴资本
+313#极客帮
+314#达晨创投
+315#宏达电HTC
+316#日本KDDI电信
+317#中富投资
+318#Lightspeed Venture Partners美国光速
+319#Lakestar
+321#Sequoia Capital(红杉海外)
+322#IDG Venture (海外)
+323#传媒梦工场
+324#和通国际
+325#芳晟股权投资基金
+326#信中利资本
+327#新东方
+328#易一天使
+329#数码视讯
+331#上海国际创投SIGVC
+332#上海浦软创投
+333#太平洋网络
+334#AngelVest天使谷
+335#Artesian Capital Management
+336#安思晟投资ACEON
+337#北软天使基金
+338#快创营
+339#A8音乐
+340#中国远镜连锁成长基金
+341#全明星投资All-Stars Investment
+342#雅诗阁Ascott
+343#HomeAway
+344#21世纪天使创投
+345#诺基亚成长基金
+346#盛景网联
+347#海银资本
+348#元禾控股/苏州创投/原点创投
+349#科冕木业/天神互动
+350#泓域资本
+351#RIC棕泉资本
+352#泰山兄弟创始基金TXD Ventures
+353#热酷游戏
+354#Korea Investment Partners韩投伙伴
+355#TMI台湾创意工场
+356#湖杉资本
+357#华登国际投资
+358#浙商创投
+359#创新谷Innovalley
+361#秉鸿资本
+362#恩惟资本
+363#集富亚洲JAFCO
+364#汉理资本
+365#Chinaccelerator中国加速
+366#云天使基金Cloud Angel Fund
+367#联发科MTK
+368#伟高达创投Vickers Capital
+369#华威国际集团CID
+370#招商和腾创投
+371#逐鹿资本
+372#500 Startups
+373#长安私人资本
+374#旦恩创投
+375#好望角投资
+376#九易资本
+377#欢聚时代/YY多玩
+378#光大集团/光大资本
+379#Cherubic Ventures心元资本
+380#创东方投资
+381#渣打银行
+382#新鸿基
+384#万嘉创投
+385#源渡创投
+386#弘俊财富
+387#德同资本
+389#天风证券
+390#金种子创投
+391#FreesFund峰瑞资本
+392#坚果资本
+393#东方弘道(弘合基金)
+394#General Atlantic泛大西洋投资
+395#欧比特
+397#斯凯网络投资
+398#普华资本
+399#58同城
+400#北京泰腾博越资本
+401#北京中民银发投资
+402#北京正阳富时投资
+403#东方元鼎资本
+404#日照义聚投资
+405#日照银杏树
+406#日照众聚投资
+407#互联网电影集团IFG
+408#泰山天使
+409#真顺基金
+410#UCWEB优视科技
+411#成都金亚科技
+412#璞玉投资Jade Invest
+413#抱团科技/尼毕鲁科技Tap4fun
+414#中国文化产业投资基金
+415#太浩创投
+416#IFC国际金融公司
+417#赛马资本
+418#银杏谷投资
+419#基本概念BiCi启孜
+420#合鲸资本
+421#搜狗
+422#华人文化产业基金
+423#帮实资本
+424#曼图资本Mandra Capital
+425#海通创意资本
+426#今日头条
+427#Infinity Venture Partners
+428#歌德盈香
+429#掌趣科技
+430#光线传媒
+431#深圳点石投资
+432#雷雨资本
+433#深圳中青宝
+434#KTB投资集团
+435#聚美优品
+436#千合资本
+437#易方达基金
+439#浩然资本
+440#日本乐天Rakuten
+441#思伟投资/迪斯尼
+442#起源资本
+443#东方证券(东方星晖)
+444#国泰创投
+445#德沃创业/德沃基金
+446#民享财富
+447#丰图投资
+448#沃衍资本
+449#联想乐基金
+451#创势资本
+452#弘毅投资
+453#世铭投资
+454#艺龙旅行网
+455#开物投资
+456#东软集团Neusoft
+457#大众点评网
+458#蚂蚁金服-阿里巴巴
+460#LB投资(LB Investment)
+461#点亮资本
+462#春晓资本
+464#普思投资-王思聪
+466#猎豹移动
+467#完美世界
+468#东方华盖创投
+469#美盛创投
+470#新湖中宝
+472#皖新传媒
+473#磐石资本
+474#民生银行
+475#中汇国投
+476#高盛集团(中国)
+477#银翎资本Silverlink Capital
+478#朗姿股份
+479#源码资本
+480#昆仑万维
+481#宋城演艺
+482#朗玛峰创投
+483#美丽说
+484#天使汇
+485#蜗牛移动
+486#蓝湖资本
+487#黑马基金-创业家
+488#华瓯创投
+489#华溢资本
+490#嘉御基金
+491#曲速资本
+492#上海融川投资
+493#云启创投
+494#歌石投资
+495#深圳力合创投
+496#兰馨亚洲
+497#易车网
+498#元素资本
+499#志成资本
+500#拓维信息
+501#博雅互动
+502#中泽嘉盟
+503#乾明投资
+504#美拓资本
+505#名信中国成长基金
+506#中文传媒
+507#招商局
+509#爱施德
+510#凤凰新媒体
+511#天星资本
+512#凯兴资本
+513#WPP集团
+514#久奕投资
+515#迅游网络
+516#陌陌科技
+517#元璟资本-吴泳铭
+518#伯乐纵横投资
+519#太冠资本
+520#数元创投-宇海数园
+521#龙腾资本
+522#迅雷
+523#佛山东方汇银资本
+524#同威创投
+525#游族网络
+526#雷柏科技
+527#北信源
+528#星辉互动娱乐
+529#三井物产环球投资/三井创投MGI
+530#通鼎互联
+531#Militello Capital
+533#陶石资本
+534#银来集团
+535#正海资本
+536#滴滴出行-滴滴快的
+537#华联股份
+540#丰实资本- 嘉实基金
+541#appWorks之初创投
+542#源政投资杨向阳
+543#元钛基金
+544#辰海资本
+546#华睿投资
+547#中讯软件
+548#力鼎资本
+549#国泰君安
+550#万达院线
+551#周大福
+552#凯辉私募股权投资基金
+553#川岳投资
+554#商业价值
+555#杭州江畔投资管理有限公司
+556#熊猫烟花
+557#会唐网
+559#兰天控股
+560#好贷网
+561#锦江国际
+562#Investec英国天达集团
+564#熊猫资本
+565#暴龙投资
+566#人民网
+567#成都高新区创业天使投资基金
+568#浙江九仁资本
+569#德力股份
+570#顺荣三七
+571#空中网
+572#TA Associates
+573#Ignition Partners
+574#京北投资-京北天使
+575#NEA恩颐投资
+576#涌金集团
+577#汉鼎股份
+578#Macquarie麦格理
+579#华为
+580#华盛基金
+581#麦星投资管理
+582#趣游科技
+583#263网络通信(二六三)
+584#福田投资
+585#住友商事亚洲资本
+586#龙渊云腾
+587#顺网科技
+588#华谊兄弟
+589#梧桐树资本
+590#中技控股
+591#神州租车
+592#银瑞达Investor AB
+593#天堂硅谷
+594#龙城英才创业投资公司
+595#小牛资本
+596#宝诚股份
+597#三五互联
+598#Advantage Capital Partners
+599#Silicon Valley Bank
+600#Vegas Tech Fund
+601#广东弘图广电
+602#升华拜克
+603#天润控股
+604#久邦数码/3G门户
+605#北京厚持投资
+606#上汽创投
+607#怡和创投
+608#赫斯特资本
+609#清控科创控股
+610#迭代资本
+611#顺融资本
+613#一加投资
+614#天奇阿米巴基金
+615#中关村发展集团
+616#银湖投资SilverLake
+617#Mayfield Fund
+618#Tenaya Capital
+619#Incubate Fund
+620#Pinehurst Advisors
+621#B Dash Ventures
+622#Forgame
+623#长友基金
+624#今日投资何伯权
+625#远东宏信
+626#TOM集团
+627#Iconiq Capital
+628#Unity游戏产业投资基金
+629#触控科技
+630#时代伯乐
+631#粤传媒/广东广州日报传媒
+632#群兴玩具
+633#昆吾九鼎投资
+634#贝雅资本
+635#FLAG Capital Management
+636#北京创客空间
+637#创投圈拓璞基金
+638#Oaktree Capital橡树资本
+639#江苏高科技投资/邦盛资本
+640#乐游资本
+641#宜华木业
+642#富春通信
+643#方广资本
+644#国投高科技投资
+645#宝利来
+647#富厚资本
+648#凯撒股份
+649#创业邦天使基金
+650#大河创投
+651#瑞银华信
+652#游久游戏(爱使股份)
+653#好大夫在线
+654#涌铧投资
+655#康恩贝
+656#新国都
+657#CSDN
+658#英飞尼迪Infinity
+659#火柴快鹿投资基金
+660#北京旋极信息
+661#中关村兴业投资
+663#维思资本
+664#艾格拉斯
+665#Atlas Venture
+666#海尔投资
+667#华策影视
+668#罗莱家纺
+669#青宥仟和投资
+670#中科招商
+671#青云创投
+672#复星集团
+673#嘉麟杰
+674#成都掌娱天下
+675#探路者
+676#WestSummit Capital
+677#早鸟基金
+678#慧聪网
+679#澳银资本
+680#九盈投资
+681#贝恩资本BainCapital
+682#贵阳朗玛信息
+683#网龙网络(M Fund)
+684#兰亭集势
+685#JAIC日本亚洲投资
+686#英雄互娱
+687#天鸽互动
+688#金字火腿
+689#北京众海投资
+690#中美创投
+691#美团
+692#众信旅游
+693#华谊嘉信
+694#若水合投
+695#浙创投/浙江省创业投资集团
+696#骅威科技
+697#山水文化
+698#四川圣达
+699#上海中金资本
+701#智基创投IDT VC/宏碁创投
+702#齐星铁塔
+703#初灵信息
+705#融银资本
+706#高恒资产
+707#上海掌门科技
+708#观唐投资
+709#瑞盈卓越
+710#金鹰商贸集团
+711#银之杰
+712#UMeWorld
+713#松树资本
+714#沃尔玛
+715#正和磁系资本
+716#星美国际
+717#综艺股份
+718#长城集团
+719#亚商资本
+720#世纪华通
+721#安大略省教师退休基金Ontario Teachers
+722#六禾投资
+723#韩都衣舍
+724#正赛联资本
+725#动域资本
+726#深圳红十三投资
+727#万达集团
+728#Google Ventures谷歌投资
+729#绿盟科技
+730#凯欣亚洲投资Crescent Group
+731#重山资本
+732#盈峰资本
+733#长青资本
+734#赛为智能
+735#博信资本
+736#立思辰
+737#中投公司
+738#虎童基金
+739#刚泰控股
+740#上海塔人网络
+741#Shasta Ventures
+742#Thrive capital
+743#Lowercase Capital
+744#红马资本
+745#捷成世纪
+746#同渡创投
+747#Atlantic Bridge
+748#Naya Ventures
+749#T-Venture
+750#Floreat
+751#MMC Ventures
+752#White Star Capital
+753#Uniseed Ventures
+754#One Ventures
+755#Yellow Brick Capital Advisers (UK) Limited
+756#Greylock Partners
+757#Index Ventures
+758#Benchmark Capital
+759#Fortress Investment Group
+760#Entrepreneur Venture
+761#LIOR INVESTISSEMENTS
+762#ESSEC
+763#Launchpad LA
+764#谱润投资
+765#T. Rowe Price
+766#银富集团
+767#心动游戏
+768#零一创投
+769#宁波君润资本
+770#广联达
+771#蓝色经济区产业投资基金
+772#易孚泽投资-林广茂
+773#博派资本
+774#上海跨国采购发展(集团)有限公司
+775#Battery Ventures
+776#启明星辰
+777#北京马力天使投资中心
+778#银河资本
+779#iSpeak
+781#南京新百
+783#亚杰天使投资/亚杰商会
+784#Institutional Venture Partners
+785#Kleiner Perkins Caufield & Byers
+786#Imagination Technologies
+787#IndusAge Partners
+788#Walden Riverwood Ventures
+789#Samsung Catalyst Fund
+790#西班牙电信
+791#OMERS Ventures
+792#August Capital
+793#Raine Ventures
+794#Northleaf Capital Partners
+795#Golden Venture Partners
+796#Union Square Ventures
+797#Khosla Ventures
+798#W Media Ventures
+799#SoftBank capital软银海外
+800#IA Ventures
+801#Commerce Ventures
+802#Second Century Ventures
+803#Coppel Capital
+804#Adams Street Partners
+805#Industry Ventures
+806#Vulcan Capital
+807#Twitter
+808#Lynda
+809#东方港湾
+810#Granite Ventures
+811#ROTH Capital Partners
+812#Javelin Venture Partners
+813#Tiger Global Management
+814#去哪儿
+815#Formation 8
+816#Life Science Angels
+817#Mangrove Capital Partners
+818#North Bridge Venture Partners
+819#Sparkbox Ventures
+820#Valar Ventures
+821#Park Road Associates Ltd.
+822#iControl Networks
+823#Foundation Capital
+824#General Catalyst Partners
+825#Scale Venture Partners
+826#InterWest Partners
+827#VMware
+828#Accenture
+829#Amazon亚马逊
+830#JPMorgan摩根大通
+831#Foundry Group
+832#iNovia Capital
+833#StarVest Partners
+834#Mithril Capital Management
+835#Freestyle Capital
+836#Founders Fund
+837#Spark Capital
+838#Nyca Partners
+839#Blumberg Capital
+840#Greycroft Partners
+841#e.ventures
+842#Mousse Partners
+843#Adyoulike
+844#Techno Group
+845#FCA Venture Partners
+846#Bauer Media
+847#SparkLabs Global Ventures
+848#Lux Capital
+849#RRE Ventures
+850#Kalaari Capital
+851#GMO Venture Partners
+852#Globis Capital Partners
+853#Global Brain Corporation
+854#East Ventures
+855#World Innovation Lab
+856#Itochu Technology Ventures
+857#Andreessen Horowitz
+858#Reddit
+859#The Walt Disney Company迪士尼
+860#Revolution Ventures
+861#Highland Capital Partners
+862#SV Angel
+863#Triangle Peak Partners
+864#Third Point Ventures
+865#Ribbit Capital
+866#The Social+Capital Partnership
+867#DAG Ventures
+868#北京明致无限科技
+869#Canaan Partners
+870#Azure Capital Partners
+871#Madrona Venture Group
+872#Altimeter Capital
+873#Great Oaks Venture Capital
+874#Scout Ventures
+875#Sutter Hill Ventures
+876#Blackberry
+877#Northwestern Mutual
+878#American Express
+879#Unilazer Ventures
+880#Nexus Venture Partners
+881#Ronald Lauder Ventures
+882#18 Partners
+883#Jafco Ventures
+884#Jawbone
+885#Y Combinator-YC
+886#Brunswick
+887#OurCrowd
+888#Almaz Capital
+889#InVenture Partners
+890#ESN Group
+891#Bpifrance
+892#Elliott Management
+893#Eutelsat欧洲卫星通信
+894#Air Liquide法国液化空气
+895#GDF SUEZ法国燃气苏伊士
+896#NTT Docomo Ventures
+897#SK电讯创投
+898#IDInvest Partners
+899#Elaia Partners
+900#Partech Ventures
+901#Media Ventures
+902#Dawn Capital
+903#Gemini Israel Ventures
+904#True Ventures
+905#Collaborative Fund
+906#Maveron
+907#QED Investors
+908#Rose Park Advisors
+909#Data Collective
+911#太和投资
+912#米仓资本
+913#Menlo Ventures
+914#Anthemis Group
+915#Citi Ventures
+916#Globespan Capital Partners
+917#Lending Club
+918#Village Ventures
+919#Five Elms Capital
+920#zPark Venture
+921#Juniper Networks
+922#DominateFund
+923#Amidi Group
+924#Wellington Management
+925#GS Group
+926#Nikkei Business Publications
+927#Dropbox
+928#Redmile Group
+929#Maverick Capital
+930#Oak Investment Partners
+931#Balderton Capital
+932#Connect Ventures
+933#Norwest Venture Partners
+934#Digital Luxury Group
+935#Facebook
+936#GSV Capital
+937#Salesforce
+938#AITV - AccelerateIT Ventures
+939#Felicis Ventures
+940#News Corp
+941#惠普
+942#Dragoneer Investment Group
+943#雅虎/Yahoo
+944#Passport Capital
+945#BlackRock
+946#Lightbank
+947#SoftTech VC
+948#Moore Venture Partners
+949#Bright Capital
+950#Guard Capital
+951#Aurora Funds
+952#BC Partners
+953#Naspers
+954#Arbor Ventures
+955#ff Venture Capital
+956#盖茨基金会（Bill & Melinda Gates Foundation）
+957#Birchmere Ventures
+958#网信金融
+959#Mumbai Angels
+960#Inventus Capital Partners
+961#Viking Global Investors
+962#First Round Capital
+963#Advanced Technology Ventures
+964#Technology Crossover Ventures
+965#Tribeca Venture Partners
+966#The Mustang Group
+967#Alta Communications
+968#Harrison Metal
+969#Randstad Holding NV
+970#Version One Ventures
+971#Maven Ventures Growth Labs
+972#FLOODGATE Fund
+973#Allegro Venture Partners
+974#Correlation Ventures
+975#Western Technology Investment
+976#Mohr Davidow Ventures
+977#Northgate Capital
+978#Icon Venture Partners
+979#El Dorado Ventures
+980#Meritech Capital Partners
+981#Line
+982#Lifeforce Ventures
+983#DCM海外
+984#Emergence Capital Partners
+985#Rock Health
+986#Ovo Fund
+987#Novak Biddle Venture Partners
+988#Salmon River Capital
+989#The Raine Group
+990#Allegis Capital
+991#In-Q-Tel
+992#CrunchFund
+993#Golden Gate Ventures
+994#LionRock Capital (Hong Kong)
+995#Mustang Ventures愈奇创投
+996#世联行
+997#Farallon Capital法拉龙资本
+998#Brookside Capital
+999#DST Global(国外投资)
+1001#Start Fund
+1002#Ironfire Capital
+1003#Catamount Ventures
+1004#TTV Capital
+1005#Contour Venture Partners
+1006#Etsy
+1007#Mitsubishi UFJ Capital
+1008#CB Alliance
+1009#Vimeo
+1010#Trinity Ventures
+1011#MHS Capital
+1012#Lerer Ventures
+1013#Learn Capital
+1014#Bay Partners
+1015#Hummer Winblad Venture Partners
+1016#SAP Ventures
+1017#Cisco思科
+1018#Morgenthaler Ventures
+1019#Valor Capital Group
+1020#Bowery Capital
+1021#Insight Venture Partners
+1022#Bessemer Venture Partners
+1023#Rethink Education
+1024#NewSchools Venture Fund
+1025#Susquehanna Growth Equity（SIG）
+1026#Frog Capital
+1027#Accion’s Frontier Investments Group
+1028#TA Ventures
+1029#RI Digital Ventures
+1030#KRW Schindler Investments
+1031#Warburg Pincus(海外投资)
+1032#Nokia growth partners
+1033#Omidyar Networ
+1034#Kinnevik
+1035#Extend Capital
+1036#Sigma Gestion
+1037#A Plus Finance
+1038#北京华山投资
+1039#华数传媒
+1040#红岭创投王忠平
+1041#远望谷
+1042#华晟资本-华兴资本
+1043#Francisco Partners
+1044#DBL Investors
+1045#Expansion Venture Capital
+1046#Unified
+1047#Condé Nast
+1048#Translink Capital
+1049#DeNA
+1050#Bain Capital Ventures
+1051#Georgian Partners
+1052#International Finance Corporation
+1053#SJF Ventures
+1054#Apple苹果
+1055#无锡坚果创投
+1056#Octopus Investments
+1057#Upfront Ventures
+1058#普洛斯GLP
+1060#Founder Collective
+1061#Techstars
+1062#Glynn Capital Management
+1063#Goldcrest Investments
+1064#vizio
+1065#Innovate Partners
+1066#nordic venture partners
+1067#The TCW Group
+1068#Lumia Capital
+1069#Thomvest Ventures
+1070#UPS Strategic Enterprise Fund
+1071#Blue Chip Venture Company
+1072#Alven Capital
+1073#Spark
+1074#MaRS Investment Accelerator Fund
+1075#New York Times
+1076#Polaris Partners
+1077#Blacksmith Capital
+1078#富智康（FIH Mobile）
+1079#Morgan Stanley摩根士丹利
+1080#Axon Partners Group
+1081#mediaset
+1082#清控创投-清控三联创投
+1083#百视通
+1084#Resolute.vc
+1085#Kapor Capital
+1086#博润投资
+1087#Northzone
+1088#Creandum
+1089#Zouk Capital
+1090#MasterCard Worldwide
+1091#SEB Private Equity
+1092#General Electric
+1093#Wicklow Capital
+1094#Signia Venture Partners
+1095#TripAdvisor
+1096#Serena Capital
+1097#Otium Capital
+1098#Laboratory Corporation of America
+1099#BoxGroup
+1100#Google
+1101#Palo Alto Venture Science
+1102#Right Side Capital Management
+1103#Flybridge Capital Partners
+1104#Fuel Capital
+1105#Homebrew
+1106#AME Cloud Ventures
+1107#Promus Ventures
+1108#Anthem Venture Partners
+1109#Pacific Partners
+1110#Bloomberg Beta
+1111#DN Capital
+1112#Deep Fork Capital
+1113#Borealis Ventures
+1114#Cedar Fund
+1115#Marker llc
+1116#Lightbox Ventures
+1117#Warner Music华纳唱片
+1118#Mistral Equity Partners
+1120#Acadia Woods Partners
+1121#EPIC Ventures
+1122#无穹创投
+1123#龙翌资本
+1124#Vaizra Investments
+1125#Two Sigma Ventures
+1126#Advance Digital
+1127#Community Newspaper Holdings
+1128#岩桥投资
+1129#Duchossois Capital Partners
+1130#Fontinalis Partners
+1131#Forerunner Ventures
+1132#Creative Artists Agency
+1133#Acxiom
+1134#北京中海投资
+1135#Pitango Venture Capital
+1136#A-Grade Investments
+1137#Luxor Capital Group
+1138#Jupiter Golf Network
+1139#凤凰资本
+1140#Monashees Capital
+1141#Scrum Ventures
+1142#XG Ventures
+1143#Fortinet
+1144#DoCoMo Capital
+1145#Rembrandt Venture Partners
+1146#Southern Cross Venture Partners
+1147#Blackbird
+1148#华夏人合资本
+1149#辰德资本
+1151#Charles River Ventures
+1152#Smedvig Capital
+1153#FirstMark Capital
+1154#Universal Music Group
+1155#Baillie Gifford
+1156#Google Capital
+1158#Mercury Fund
+1159#Corinthian Health Services
+1160#Arcadia Home Care
+1161#Avalon Venture
+1162#New York Angels
+1163#复娱文化-复星
+1164#Tengelmann Ventures/Tengelmann Group
+1165#利欧集团股份
+1166#NextView Ventures
+1167#IDEA Fund Partners
+1168#Techstars Ventures (前Bullet Time Ventures)
+1169#Trilogy Equity Partnership
+1170#Abundance Partners
+1171#I Mercury Capital/Mixi
+1172#荷兰汇盈资产管理公司
+1173#华闻传媒
+1174#SpeedInvest
+1175#Enterprise Ireland
+1176#Investor Growth Capital
+1177#Sigma Partners
+1178#Split Rock Partners
+1179#OrbiMed Advisors
+1180#Reed Elsevier Ventures
+1181#TELUS Ventures
+1182#New Leaf Venture Partners
+1183#New Science Ventures
+1184#Easton Capital
+1185#Valhalla Partners
+1186#Bertelsmann
+1187#CODE Advisors
+1188#betaworks
+1189#Science
+1190#Metamorphic Ventures
+1191#Mack Capital
+1192#TomorrowVentures
+1193#Innovation Endeavors
+1194#新文化
+1195#Chegg
+1196#TPG Growth
+1197#Hydrazine Capital
+1198#Times Internet
+1199#Discovery Communications
+1200#CIT GAP Funds
+1201#Petco
+1202#Notion Capital
+1203#国采科技股份有限公司
+1204#MSD Capital
+1205#HealthCare Ventures
+1206#Greenspring Associates
+1207#Delphi Ventures
+1208#Anthem Capital Management
+1209#MentorTech Ventures
+1210#Active Venture Partners
+1211#Fidelity Investments
+1212#Summit Partners
+1213#北纬通信
+1214#Digicel
+1215#Rocket Internet
+1216#Victory Park Capital
+1217#North Hill Ventures
+1218#智联招聘
+1219#Carmel Ventures
+1220#Vintage Investment Partners
+1221#Kima Ventures
+1222#CarSales
+1223#Bullpen Capital
+1224#Revolution Growth
+1225#Slow Ventures
+1226#Chicago Ventures
+1227#OCA Ventures
+1228#Pritzker Group Venture Capital
+1229#Delta Partners
+1230#Spotify
+1231#Access Industries
+1232#Allen & Company
+1233#MK Capital
+1234#Warner Bros.华纳兄弟
+1235#Verizon Ventures
+1236#Blue Cloud Ventures
+1237#光源资本
+1238#盈信投资集团
+1239#Millhouse
+1240#Genesis Partners
+1241#Opus Capital
+1242#5AM Ventures
+1243#Beckman Group
+1244#Venture United
+1245#Frontline Ventures
+1246#海汇投资
+1247#Flipboard
+1248#Nike
+1249#Comcast Ventures
+1250#Radar Partners
+1251#Bridgescale Partners
+1252#SanDisk
+1253#Caixa Capital Risc
+1254#Kibo Venture
+1255#GE Ventures通用电气
+1256#QuestMark Partners
+1257#Riverwood Capital
+1258#Knight Foundation
+1259#Alsop Louie Partners
+1260#CME Group
+1261#Boston Seed Capital
+1262#CNF Investments
+1263#Stonebridge Capital
+1264#Passion Capital
+1265#澳洲电讯Telstra
+1266#Life.SREDA
+1267#Golden Oriole Investments
+1268#Jungle Ventures
+1269#Altos Ventures
+1270#IMM Investment
+1271#Cyberagent Ventures（国外投资）
+1272#Double M Partners
+1273#Social Leverage
+1274#Lazerow Ventures
+1275#Karlin Ventures
+1276#Amplify Partners
+1277#Fortisure Ventures
+1278#Shah Capital Partners
+1279#Diaz Nesamoney Opus Capital
+1280#Square
+1281#Wal-Mart
+1282#暾澜天使基金
+1283#Vaizra Capital Russia
+1284#Blackbaud
+1285#GSN
+1286#PLUS Ventures
+1287#新途基金
+1288#Mixin Capital
+1289#Phenomen Ventures
+1290#Asia Pacific Capital
+1291#Ardent Capital
+1292#Path
+1293#Laconia Ventures
+1294#645 Ventures
+1295#Magna Capital Partners
+1296#Crosscut Ventures
+1297#William Morris Endeavor
+1298#Monsanto Company
+1299#Red Swan
+1300#AOL Ventures
+1301#吴通通讯
+1302#Secret Escapes
+1303#Monster
+1304#IBM
+1305#Oracle Corporation
+1306#Banco Bilbao Vizcaya Argentaria
+1307#eBay
+1308#Capstone Partners
+1309#SmileGate Ventures
+1310#Oculus VR
+1311#Giza Venture Capital
+1312#AOL美国在线
+1313#Smile Group
+1314#AngelPrime
+1315#Episode 1 Ventures
+1316#Samos Investments
+1317#RTA Capital
+1318#Groupon
+1319#Sherpalo Ventures
+1320#Stanford University
+1321#TEEC Angel Fund
+1322#InnoSpring
+1323#Shea Ventures
+1324#Alloy Ventures
+1325#Catalyst Investors
+1326#W Capital Partners
+1327#Montreux Equity Partners
+1328#Storm Ventures
+1329#Lead Edge Capital
+1330#Meakem Becker Venture Capital
+1331#以太资本
+1332#Walden International
+1333#UOB Venture
+1334#Plaza Ventures
+1335#Real Ventures
+1336#Structure Capital
+1337#The Westly Group
+1338#Arsenal Venture Partners
+1339#North Coast Technology Investors
+1340#RSL Venture Partners
+1341#HV Holtzbrinck Ventures
+1342#Luminary Labs Ventures
+1343#Oregon Angel Fund
+1344#万达信息
+1345#Launch Fund
+1346#AngelList
+1347#Ascent Capital Group
+1348#邦讯技术
+1349#Jumpspeed Ventures
+1350#Sinar Mas Group/金光集团
+1351#Winklevoss Capital
+1352#Expedia
+1353#Arrowgrass Capital Partners
+1354#Acacia Capital
+1355#Common Fund
+1356#Time Warner Investments
+1357#The Social Internet Fund
+1358#天地华宇集团
+1359#金葵花资本
+1360#Liberty Media
+1361#Scripps Networks Interactive
+1362#Cabiedes & Partners
+1363#Baseline Ventures
+1364#Red Hills Ventures
+1365#Rothenberg Ventures
+1366#Sherpa Ventures
+1367#Access Venture Partners
+1368#Open Ocean Capital
+1369#Recruit Strategic Partners
+1370#Butterfly Ventures
+1371#S3 Ventures
+1372#Frontier Capital
+1373#Travefy
+1374#键桥通讯
+1375#Pelion Venture Partners
+1376#Rincon Venture Partners
+1377#Cloud Power Capital
+1378#唯猎资本
+1379#度周末
+1380#NXTP Labs
+1381#South Ventures
+1382#Commercialisation Australia
+1383#Alta Ventures Mexico
+1384#Angel Ventures Mexico
+1385#Naranya Labs
+1386#瑞业投资
+1387#Singapore Press Holdings/新加坡报业控股SPH
+1388#Chernin Group
+1389#Elevation Partners
+1390#Silver Creek ventures
+1391#Jump Capital
+1392#BDC Venture Capital
+1393#Grishin Robotics
+1394#Launch Capital
+1395#Hyde Park Venture Partners
+1396#Origin Ventures
+1397#North Coast Angel Fund
+1398#Touzimsky Airlines
+1399#Northcap
+1400#金刚玻璃
+1402#AMD Ventures
+1403#BOLDstart Ventures
+1404#Piton Capital
+1405#Texas Atlantic Capital
+1406#Atlantic Capital Partners
+1407#Drive Capital
+1408#Huron River Ventures
+1409#Alpha Capital
+1410#Trident Capital
+1411#Venrock
+1412#RDSeed
+1413#Lion Wells Capital
+1414#Activant Capital
+1415#Gloabal Founders Capital
+1416#Beyond Digital Media
+1417#Talis Capital
+1418#AVentures Capital
+1419#River Cities Capital Funds
+1420#Apex Venture Partners
+1421#NewSpring Capital
+1422#GitHub
+1423#深圳厚德前海基金
+1424#Medtronic
+1425#The Danish National Advanced Technology Found
+1426#Arthur Ventures
+1427#NextBig三万弘合投资/3W创业基金
+1428#阳光游戏
+1429#Qualitas Equity Partners
+1430#FJME Ventures
+1431#2B Angels
+1432#Rhodium
+1433#SmartCap AS
+1434#TMT Investments
+1435#Wiser Financial Advisors
+1436#IAC
+1437#Himalaya Capital Ventures
+1438#Madrone Capital Partners
+1439#Rogue Venture Partners
+1440#Portland Seed Fund
+1441#Kite Ventures
+1442#搜房网
+1443#盈富泰克
+1444#Chinergy Capital/信能资本
+1445#Pinterest
+1446#Updata Partners
+1447#New Markets Venture Partners
+1448#Social Starts
+1449#Austin Ventures
+1450#OpenView Venture Partners
+1451#Claremont Creek Ventures
+1452#TPG Biotech
+1453#FireEye
+1454#Siemer Ventures
+1455#Dream Incubator
+1456#PS27 Ventures
+1457#365 Retail Markets
+1458#NBC News
+1459#Windsor Media
+1460#Europlay Capital Advisors
+1461#Raven Capital
+1462#PTC
+1463#DG Incubation/Digital Garage
+1464#华夏资本
+1465#艾云创投
+1466#Rho Ventures
+1467#LinkedIn
+1468#贝祥投资集团
+1469#东方国信
+1470#爱康国宾
+1471#云创资本
+1472#ScribbleLive
+1473#PivotNorth Capital
+1474#lool ventures
+1475#XSeed Capital
+1476#Sunstone Capital
+1477#United Ventures
+1478#Quest Venture Partners
+1479#大道至简资本
+1480#Motorola Solutions Venture Capital
+1481#紫光集团有限公司/清华紫光
+1482#深圳协同创新基金
+1483#Xilinx
+1484#Kapipal
+1485#Advance Publications
+1486#.406 Ventures
+1487#Riverside Partners
+1488#Digital Magics
+1489#Illuminate Ventures
+1490#TVC Capital
+1491#Square Peg Capital
+1492#Vanedge Capital
+1493#High Peaks Venture Partners
+1494#Cambia Health Solutions
+1495#Iris Capital
+1496#神州信息/神州数码
+1497#华旦天使投资
+1498#众诚资本
+1499#Crest Capital Ventures
+1500#Project A Ventures
+1501#ABS Capital Partners
+1502#Signal Peak Ventures
+1503#Relay Ventures
+1504#Kindler Capital
+1505#MI Ventures
+1506#Cayuga Venture Fund
+1507#I2BF Global Ventures
+1508#ICG Ventures
+1509#Maryland Venture Fund
+1510#Fairhaven Capital Partners
+1511#Kickstart Seed Fund
+1512#LionBird
+1513#狮享家新媒体基金
+1514#Pejman Mar Ventures
+1515#金固股份
+1516#Albion Ventures
+1517#Prime Ventures
+1518#Sussex Place Ventures
+1519#Playfair Capital
+1520#Jerusalem Venture Partners
+1521#Gefinor Capital
+1522#Rand Capital
+1523#TriplePoint Capital
+1524#Aspect Ventures
+1525#Nippon Venture Capital
+1526#Lakewest Venture Partners
+1527#Red Dot Ventures
+1528#IMJ Investment Partners Pte. Ltd
+1529#Initial Capital
+1530#FirstData
+1531#K CUBE VENTURES
+1532#CardCash.com
+1533#腾邦国际
+1534#KKR
+1535#Wing Venture Partners
+1536#Tech Coast Angels
+1537#友阿股份
+1538#金蝶国际
+1539#Baroda Ventures
+1540#Aeris Capital
+1541#EDB Investments
+1542#TenOneTen Ventures
+1543#Susa Ventures
+1544#Saama Capital
+1545#LVenture Group
+1547#世纪互联
+1548#融创投资
+1549#博汇源创投
+1550#SG VC
+1551#Point Nine Capital
+1552#Bezos Expeditions
+1553#五甲万京
+1554#崇德投资
+1555#华泽资本
+1556#MFund魔量基金
+1557#盛世景
+1558#弘晖资本
+1559#新沃资本
+1560#Sydney Angels Sidecar Fund
+1561#Optus Innov8
+1562#Columbus Nova Technology Partners
+1563#鸣客资本
+1564#DBJ Capital
+1565#Mizuho Venture Capital
+1566#21st Century Fox
+1567#Union Grove Venture Partners
+1568#德联资本(联和运通)
+1569#汉威电子
+1570#万好万家
+1571#富海银涛
+1572#Finnish Industry Investment
+1573#Lifeline Ventures
+1574#Draper Associates
+1575#粤科金融
+1576#尚心资本Shining Capital Management
+1577#蓝港互动
+1578#玖富
+1579#Northwater Capital
+1580#Valiant Capital Partners
+1581#Ru-net
+1582#Sofina
+1583#荣之联
+1584#合一天使基金
+1585#安卓信创投
+1586#Earlybird Venture Capital
+1587#AngelPad
+1589#方源资本
+1590#奥维通信
+1591#麦子金服
+1592#美的集团
+1593#凤博投资
+1594#天使投资人鲍岳桥
+1595#江粉磁材
+1596#飞利信
+1597#富德胜创投
+1598#分众传媒
+1599#蘑菇街
+1600#时代地产
+1601#暴风科技
+1602#小马蜂创投
+1603#瀚霖资本
+1604#乐顺创投
+1605#Tembusu Partners
+1606#Great Hill Partners
+1607#众为资本
+1608#Target Partners
+1610#Crosslink Capital
+1611#Ludlow Ventures
+1612#和盟创投
+1613#七海资本
+1614#翰潭投资
+1615#浙富控股
+1616#光合创投/光合基金
+1617#Lerer Hippeau Ventures
+1619#百姓网
+1620#珠江钢琴
+1621#杭州多牛资本
+1622#江南化工
+1623#威盛电子
+1624#天润仪器
+1625#分期乐
+1626#任飞资本
+1627#初心资本
+1628#青骢资本
+1629#鼎峰资本
+1630#Shutterfly
+1631#东华软件
+1632#红塔创投
+1633#Altpoint Ventures
+1634#Spectrum Equity
+1635#Venture51
+1636#国金投资
+1637#RockPort Capital Partners
+1638#衡锐资本
+1639#厚德创新谷
+1640#红石诚金
+1641#Sigma West
+1642#联众世界-联众游戏
+1643#掌趣创享基金
+1644#BMW i Ventures
+1645#北汽产业投资基金
+1646#Lighthouse Capital Partners
+1647#Sapphire Ventures
+1648#天使投资人吴宵光
+1649#天泽投资
+1650#邦易投资
+1651#Middleland Capital
+1652#中国动力控股(China Dynamics)
+1653#深圳中电投资股份有限公司
+1654#LookSharp
+1655#Allos Ventures
+1656#Fits.me
+1657#Flipkart
+1658#Paladin Capital Group
+1659#Twitch
+1660#新宁物流
+1661#信雅达
+1662#康达尔集团
+1663#Runa Capital
+1664#SolarCity
+1665#恺英网络
+1666#Adobe Systems
+1667#Snapdeal
+1668#Mantella Venture Partners
+1669#复星医药
+1670#Snapchat
+1671#学大教育
+1672#上海长鹰投资
+1673#香格里拉
+1674#太火鸟
+1675#徽瑾创投
+1676#KiwiTech
+1677#歌华有线
+1678#Aeria Games
+1679#互爱科技
+1680#淘米网络
+1681#西证股权投资
+1682#小村资本
+1683#索芙特
+1684#Blume Ventures
+1685#Rebright Partners
+1686#VSCO
+1687#Tinder
+1688#洋葱基金
+1689#博叡创投
+1690#和润集团
+1691#科达股份/科达集团
+1692#莉莉丝/刀塔传奇
+1693#上海德智和投资
+1694#Slack
+1695#虎扑
+1696#张量/黑洞投资
+1697#广东融邦惠众
+1698#联建光电
+1699#正源资本
+1700#上海综艺控股
+1701#全通教育
+1702#美图
+1703#PBA
+1704#金刚游戏
+1705#Alliance Venture
+1706#NSI Ventures
+1707#百奥财富
+1708#AirTree Ventures
+1709#Starfish Ventures
+1710#Canon佳能
+1711#Culture Convenience Club (CCC)
+1712#Advancit Capital
+1713#亚联资本
+1714#Mirae Asset Venture Investment
+1715#Aarin Capital
+1716#RiverPark Ventures
+1717#彩生活
+1718#中邮资本
+1719#大湖股份
+1720#Visa
+1721#Eastlink Capital
+1722#链家地产
+1723#光华弘人资本
+1724#PayPal
+1725#Columbia Capital
+1726#K9 Ventures
+1727#GAME
+1728#NTT Communications
+1729#PCH International
+1730#uber
+1731#百分点
+1732#RRJ资本
+1733#新加坡华侨银行
+1734#鼎典资本
+1735#全时
+1736#360 Capital Partners
+1737#富贵鸟
+1738#崭越资本
+1739#粤商创投
+1740#国海创新资本/国海证券
+1741#途牛旅游网
+1742#绿网天下
+1743#上海丰瑞投资
+1744#AA投资
+1745#晨晖资本
+1746#三泰控股
+1747#乾祥海泉投资(胡海泉)
+1748#挖财
+1749#琢石投资
+1750#点到按摩
+1751#泰蕴资本
+1752#星瀚资本
+1753#苏州凯风创投
+1754#风云天使基金
+1755#Kreos Capital
+1756#麟龙股份
+1757#功夫熊
+1758#奥瑞金
+1759#麒麟资本Kylin Capital
+1760#前程无忧
+1762#蓝鼎控股
+1763#当升科技
+1764#天津安正路投资
+1765#合众思壮
+1766#远方光电
+1767#Box
+1768#Foxlink台湾正崴集团
+1769#阿里影业
+1770#创吧投资
+1771#文资华夏文化产业基金
+1772#信业基金
+1773#引力创投
+1774#众米资本
+1775#恒生电子
+1776#Dreamit Ventures
+1777#东湖天使基金
+1778#Start-Up Chile
+1779#上海羽时资本
+1780#中兴国投
+1781#百圆裤业
+1782#蓝山中国资本
+1783#APUS
+1784#葳尔资本
+1786#德美化工
+1787#联新资本
+1788#杉杉创投
+1789#顺丰速运
+1790#深圳高特佳
+1791#Eniac Ventures
+1792#Seed Capital
+1793#Hyde Park Angels
+1794#I2A Fund
+1795#Magma Venture Partners
+1796#Telegraph Hill Capital
+1797#克拉天使
+1798#未来工场
+1799#Evergreen Venture Partners
+1800#P101
+1801#Priceline
+1802#华西股份
+1803#歌斐资产
+1804#Pine River Capital Management
+1805#SanDisk Ventures
+1806#Band of Angels
+1807#Amplify.LA
+1808#Basset Investment Group
+1809#Sofinnova Partners
+1810#奥马电器
+1811#高览资本
+1812#欧拉资本Euler Capital
+1813#Highway 12 Ventures
+1814#Siemens Venture Capital
+1815#沃珑港资本
+1816#禹杉投资
+1817#博彦科技
+1818#新华都
+1819#晶凯资本
+1820#泰有投资
+1821#先锋新材
+1822#Red Sea Ventures
+1823#Heritage Group
+1824#Tekton Ventures
+1825#光谷创业咖啡
+1826#XAnge Private Equity
+1827#联创光电
+1828#明家科技
+1829#Kae Capital
+1830#Twitter Ventures
+1831#浅石创投
+1832#金利科技
+1833#是成资本
+1834#雷锋网/林军
+1835#通用技术创投
+1836#奥迈资本
+1837#三行资本
+1838#兴业资管-兴业证券
+1839#新华资本-新华信托
+1840#中国诚通
+1841#实益达
+1842#Acton Capital Partners
+1843#聚秀资本
+1844#蝙蝠资本
+1845#疆域基金
+1846#广州科技风投
+1847#约瑟投资
+1848#中大创投
+1849#湾海投资
+1850#上医养生
+1851#无极道投资
+1852#Scottish Equity Partners
+1853#沃石投资
+1854#Webb Investment Network
+1855#Arch Venture Partners
+1856#浙大友创
+1857#联合利华
+1858#财晟资本
+1859#MakeMyTrip
+1860#深大通
+1861#云毅投资
+1862#华录百纳
+1863#FundersClub
+1864#Streamlined Ventures
+1865#Bobby Yazdani
+1866#Draper Triangle
+1867#Hearst Ventures
+1868#每日优鲜
+1869#恒泰华盛
+1870#Daher Capital
+1871#潮星集团
+1872#建元天华投资
+1873#华资汇通
+1874#连力创投
+1875#春风创投/春雨医生
+1876#济峰资本
+1877#聚腾时尚产业基金/盛坤聚腾
+1878#搜于特服装
+1879#Unilever Ventures
+1880#新鼎明影视投资
+1881#盛万投资
+1882#Tenfore Holdings
+1883#Atomico
+1884#顶尖学院孵化器
+1885#箭速资本
+1886#麦腾创投
+1887#凯启投资
+1888#盛宇投资
+1889#盖娅互娱
+1890#黑桃资本
+1891#前海汇能
+1892#松源资本
+1893#国金证券/鼎兴量子
+1894#凯美特气
+1895#大舍资本
+1896#深科技
+1897#乾彭资本
+1898#中传集团
+1899#中钰资本
+1900#中科创星
+1901#荣正投资
+1902#千方科技
+1903#海淀国投
+1904#Zynga
+1905#Voyager Capital
+1907#复聚投资
+1908#执一资本Yi Capital
+1909#越榕资本
+1910#创维集团
+1911#优客工场
+1912#创客总部
+1913#瀚晖投资
+1914#稳国基金
+1915#团贷网
+1916#浙江文创控股集团
+1917#QueensBridge Venture Partners
+1918#聚心资本
+1919#乐邦乐成
+1920#酷6网
+1921#Airbnb
+1922#大北农集团
+1923#国光电器
+1924#漫步者Edifier
+1925#英飞拓
+1926#沃捷传媒
+1927#天天投
+1928#点量兴业投资
+1929#中南重工
+1930#联创股份
+1931#91农业
+1932#吴中创投-吴中集团
+1933#丰利财富
+1934#Verisilicon芯原微电子
+1935#达内科技
+1936#中瀛鑫
+1937#引力传媒
+1938#翰宇药业
+1939#卓翼科技
+1940#万安科技
+1941#乐动卓越
+1942#诚成资本
+1943#Rachel Zoe Ventures
+1944#StartX
+1945#常州高新投
+1946#中科曙光
+1947#禾欣股份-慈文传媒
+1948#鲁证创投
+1949#卫宁软件
+1950#观澜湖集团
+1951#重庆商界传媒
+1952#Saffelberg Investments
+1953#秉诚资本
+1954#中原证券
+1955#力帆集团
+1956#峰谷资本
+1957#同程旅游
+1958#FDT金融创新工场
+1959#上海喜氏金融
+1960#礼来亚洲基金
+1961#鼎智集团
+1962#天鹰资本
+1964#好药师大药房
+1965#和才基金
+1966#广东文投国富
+1967#腾邦梧桐基金
+1968#蓝山投资
+1969#Canvas Venture Fund
+1970#联通
+1971#宝马金融
+1972#黑石集团Blackstone
+1974#简鸣资本(阿甘众筹)
+1975#国旅联合
+1976#西科天使基金
+1977#IBB Beteiligungsgesellschaft mbH
+1978#神州付
+1980#中卫基金
+1981#泰格医药
+1982#金浦投资
+1983#红星美凯龙
+1984#校导网
+1985#十方创投
+1986#华犇创投
+1987#银江股份(银江资本)
+1988#天使投资人沈海寅
+1989#美盛文化
+1990#合众集团
+1991#500彩票网
+1992#源石资本
+1993#嘉达早教
+1994#佳一教育
+1995#中沃投资
+1996#紫牛基金
+1998#洪涛股份
+2000#阿米巴股权基金
+2001#易车
+2002#杭州暾澜投资管理有限公司
+2006#Freesvc
+2008#深圳市启赋资本管理有限公司
+2010#iDOTOOLS
+2011#权品机构
+2014#心元资本
+2015#天音通信公司
+2016#杭州红星美凯龙
+2017#万通控股
+2018#百果园
+2019#中国双语科教集团
+2020#深圳前海大营资本管理有限公司
+2021#飞马旅
+2022#中国风险投资有限公司
+2023#华大基因
+2024#江苏辰龙投资有限公司
+2026#北京天下秀科技有限公司
+2028#德威集团
+2029#车网互联
+2030#南派投资
+2031#江苏光芒集团
+2032#沃禾资本
+2033#北京北软汇智投资管理有限公司
+2034#天神互动
+2036#品致幻享
+2037#晨兴资本
+2038#腾讯
+2041#橡树投资集团
+2042#海通开元投资有限公司
+2043#愉悦资本
+2044#上海创业接力科技金融集团有限公司
+2046#Rizvi Traverse Management
+2047#搜狗狗
+2049#好未来
+2050#清流资本
+2051#海通创新资本管理有限公司
+2052#深圳市国富源投资管理有限责任公司
+2053#新浪微博基金
+2055#新电投资公司
+2056#UT斯达康通讯有限公司
+2057#德丰杰龙脉基金
+2060#招商局科技集团有限公司
+2063#清华企业家协会天使基金
+2066#凤凰网
+2068#新希望集团
+2069#天龙集团
+2070#安吉斯媒体集团
+2071#华光资本
+2072#peel
+2073#PingWest
+2074#云天使基金
+2075#Cyber Agent Ventures
+2077#神州数码
+2079#北京华创盛景投资管理有限公司
+2080#优点资本
+2082#森合投资
+2083#光大资本有限公司
+2084#东方星空创业投资有限公司
+2085#盛达矿业
+2086#老虎环球基金
+2087#梅花网
+2088#鲨鱼公园
+2089#智度投资
+2090#新浪微博
+2091#广州盛世润都股权投资管理有限公司
+2092#华扬联众
+2093#深圳市前海泰岳梧桐投资基金管理有限公司
+2094#华南城
+2096#深圳国泰君安力鼎投资管理有限公司
+2097#浙江佐力资本管理股份有限公司佐
+2098#上海市天使基金创业投资管理有限公司
+2099#B Dash Ventures Inc.
+2100#Viling Venture Partners
+2101#Coent Venture Partners
+2103#拓尔思
+2105#北京东方弘道资产管理有限责任公司
+2106#杭州阿思拓电子商务有限公司
+2108#易淘食
+2109#高鸿股份
+2110#中国科技产业投资管理有限公司
+2111#ARM公司
+2113#绿野户外网
+2114#世纪佳缘
+2115#北京鼎元合创投资有限公司
+2116#华岩资本
+2117#嘉丰资本
+2118#Moraun Investments SA
+2119#华晟资本
+2120#杭州融锋投资管理有限公司
+2121#久其格格
+2124#清控科创
+2125#BroadWebAsia
+2126#乐视体育
+2128#尼曼玛戈
+2129#昆山博雅资本股权投资企业（有限合伙）
+2130#人人网
+2131#深圳高新投资集团
+2133#清控金信资本管理（北京）有限公司
+2135#递四方速递
+2136#大润发&飞牛网
+2137#苏宁易购
+2138#UMC资本
+2139#默多克家族基金
+2140#三胞集团
+2141#Kingdom Holding Company
+2142#美国衣路集团
+2143#凯雷集团
+2145#广东文化产业投资基金
+2147#上海远东集团
+2149#盈创智信
+2151#星美控股
+2152#FTV Capital
+2154#东方汇富创业投资管理有限公司
+2155#新加坡顶华投资
+2156#毅创投资
+2158#天际网
+2159#中视金桥
+2160#上海马赛投资管理有限公司
+2161#中国民生投资股份有限公司
+2162#重庆中汇金投资管理有限公司
+2163#贵人鸟
+2164#梅花天使创投
+2165#高诚资产管理有限公司
+2166#SBI集团
+2167#某门户网站
+2168#山东省高新技术投资有限公司
+2169#海通证券
+2170#卓凡创业投资公司
+2172#澳洲电信
+2173#联龙科技
+2175#上海汉昕创业投资管理有限公司
+2176#挂号网
+2177#外卖超人
+2178#美澳居
+2179#上海科技投资公司
+2180#太安堂
+2181#Naver
+2182#西安航天新能源产业基金
+2184#星美
+2185#杭州元道投资合伙企业（有限合伙）
+2186#量子策略基金
+2187#TCL股权投资有限公司
+2188#e袋洗
+2190#中关村兴业（北京）投资管理有限公司
+2191#上海宝浩投资管理有限公司
+2193#口碑网
+2194#浩宁达
+2195#深圳市香江股权投资管理有限公司
+2196#美蓝资本
+2197#华菱津杉（天津）产业投资管理有限公司
+2198#湖南海捷投资有限公司
+2199#高洁丝
+2200#北京经典融商投资有限公司
+2201#北京富德兴盛投资基金管理中心（有限合伙）
+2202#爱尔兰尚龙集团
+2203#翱科创投
+2204#优酷土豆
+2205#凯洲资本
+2206#玩校app
+2207#鼎鑫国际资本
+2209#海隆软件
+2210#佛山市科技风险投资有限公司
+2211#Harbor Pacific Capital LLC
+2212#中欧基金
+2215#游心旅行
+2216#天舟文化
+2217#中航信托
+2218#浙商资管
+2219#青岛华通
+2220#安徽国富产业投资基金管理有限公司
+2221#西子联合控股
+2223#北京雷岩投资管理顾问有限公司
+2224#李笑来比特基金
+2225#正轩投资
+2226#二十一世纪天使创业投资有限公司
+2227#快的打车
+2228#基本粒子投资
+2229#量子汇
+2230#韩国NHN集团
+2231#伟德沃富
+2232#wind资讯
+2233#丹华资本
+2234#巨人网络
+2235#韩国YG娱乐
+2236#优势资本（私募投资）/优势成长股权投资基金
+2237#乐刷
+2238#太证资本管理有限责任公司
+2239#湖南高新创业投资集团有限公司
+2240#北京厚生投资管理中心（有限合伙）
+2241#中大联合
+2242#苏大天宫
+2244#酷我音乐盒
+2245#上海乐奕创业投资中心（有限合伙）
+2246#保易捷
+2247#北京三万弘合投资中心（有限合伙）
+2248#富士康
+2251#深圳市中天普创投资管理有限公司
+2254#新恒利达
+2256#深圳市琴江投资管理有限公司
+2257#Wicklow Capital, Inc.
+2258#金杜律所
+2259#上海文化产业股权投资基金
+2260#新浪
+2261#Recruit
+2262#深圳市胤锋资本投资有限公司
+2263#天津创业投资管理有限公司
+2264#漫游天下（北京）投资管理有限公司
+2265#北京华璟海纳国际投资管理有限公司
+2266#安持投资管理（上海）有限公司
+2267#华夏资本管理有限公司
+2268#深圳震泰资本管理有限公司
+2269#北京和嘉瑞兴投资有限公司
+2270#瑞茂通
+2272#杭州乐君投资管理有限公司
+2273#深圳市杰仕博资本管理有限公司
+2274#广东融易创业投资有限公司
+2275#Geo集奥聚合
+2277#天泽信息
+2278#北大千方
+2279#上海嘉定创业投资管理有限公司
+2281#口袋兼职
+2282#熙金资本
+2283#深圳市五岳盛泰投资管理有限公司
+2284#江苏悦达创业投资有限公司
+2285#广东文投国富股权投资基金管理有限公司
+2286#浙江联德创业投资有限公司
+2287#武汉市科创天使投资基金管理有限公司
+2288#畅游
+2289#鸿海集团
+2290#浙江兰德创业投资有限公司
+2291#文化长城
+2292#嘉信资本管理有限公司
+2293#天使成长营
+2294#海航旅游
+2295#上海中技桩业股份有限公司
+2296#香港亚太金融资本
+2297#和海创投
+2298#粤汇风投
+2299#国投高科技投资有限公司
+2300#方兴科技
+2301#洪泰成都
+2302#GREE Ventures
+2303#日本乐天
+2304#深圳市富坤创业投资有限公司
+2305#seek公司
+2306#深圳市一格数据天使投资企业（有限合伙）
+2307#成都高投创业投资有限公司
+2308#Capvent
+2310#Route 66 Ventures, LLC
+2311#Velocity Capital Private Equity
+2312#Leitmotiv Private Equity
+2314#云月投资
+2315#2B Holdings
+2316#烽火通信
+2317#凯瑞德
+2318#金鼎盛集团
+2319#宝马中国
+2320#艾瑞资本
+2321#中国数码
+2322#宝通科技
+2323#厦门太武
+2324#瞧瞧网
+2325#Butler Capital Partners
+2326#东方网力
+2327#新加坡大华创业投资管理公司
+2328#华住酒店集团（原汉庭）
+2330#深圳国金纵横投资管理有限公司
+2331#视觉中国
+2332#凌志软件
+2333#友众信业
+2334#真为投资基金管理（北京）有限公司
+2335#聚信达
+2336#北大企业家创投基金
+2337#百莲凯
+2338#3w孵化器
+2339#微软
+2340#珠峰工业
+2341#北京千山信远投资管理有限公司
+2342#东莞搜谷计算机系统有限公司
+2343#长城会
+2344#多点
+2345#钱袋宝
+2346#易到用车
+2347#有米广告
+2348#智能交通公司
+2349#前海首润投资管理有限公司
+2350#浙报传媒
+2351#北京春风十里投资中心（有限合伙）
+2352#大道创投
+2353#亚洲搭档种子基金
+2354#中传
+2355#德福资本
+2356#游久网
+2357#上海德智和投资有限公司
+2358#法宝问答
+2359#1919酒类直供
+2360#易居中国
+2362#申通快递
+2363#中通快递
+2364#金通韵达
+2365#二三四五投资基金
+2366#目标软件
+2368#北京初者之心投资管理有限公司
+2369#上海医药集团股份有限公司
+2370#上海祖禾投资管理有限公司
+2371#力迈集团
+2372#广东国科蓝海投资基金
+2373#新美互通
+2374#科技金融对接基地
+2376#福创集团
+2378#精锐教育
+2379#中国国家开发银行
+2380#成都克雷投资有限公司
+2381#追梦网
+2382#美匠网
+2383#劲邦资本
+2384#北京密云天水开元航空科技开发公司
+2385#掌信传媒
+2386#中科乐创
+2387#北京初心远景投资管理有限公司
+2388#保密
+2389#优米投
+2390#环境
+2391#瀛晟娱乐
+2392#林海宜舍
+2393#广东康美药业
+2394#东兴证券股份有限公司
+2395#中银国际
+2397#深圳前海和惠资本有限公司
+2398#湖北省高新技术产业投资有限公司
+2399#众引传播
+2400#杭州知本投资管理有限公司
+2402#东莞市熔岩创业投资合伙企业（有限合伙）
+2403#东北袜业
+2404#天津泰达科技投资股份有限公司
+2405#海讯（Hiscene）
+2406#浚源资本
+2407#雄九控股
+2409#北京海天网联公关顾问有限公司
+2410#重庆悦银成长股权投资基金管理有限公司
+2411#澎湃资本
+2412#上海力智创业投资管理有限公司
+2413#南京紫金科技创业投资有限公司
+2414#舒糖
+2415#个推
+2416#北京中联国新投资基金管理有限公司
+2417#贝壳社
+2418#北京深思洛克软件技术股份有限公司
+2419#双龙航软创业投资基金
+2420#无融资经历
+2421#谁叫我起床
+2422#阿尔法公社
+2423#北京高捷资产管理有限公司
+2425#上海星浩股权投资管理有限公司
+2426#北京永惠投资基金管理有限公司
+2427#妈妈资本
+2428#北京丽贝亚投资控股有限公司
+2429#宁波暴风动漫
+2430#青锐创投
+2431#杭州青巢创业投资合伙企业(有限合伙)
+2433#盈华创业投资有限公司
+2434#中国信达资产管理股份有限公司
+2435#南京特银资产管理有限公司
+2436#中山证券有限责任公司
+2437#OKVoice
+2438#上海羽时资产管理有限公司
+2439#中植企业集团
+2441#武汉海之杰教育咨询有限公司
+2442#ICAN Capital
+2443#University Venture Fund
+2444#民生电商
+2445#紫光比威
+2446#前海人寿保险
+2447#达华智能
+2448#苏州创投
+2449#高晟融信
+2450#集结号
+2451#中国高科
+2452#深圳彩梦想创新工场有限公司
+2453#云端创投
+2454#帝峰衫国
+2455#纷享销客
+2456#唯恒投资
+2457#浙江浙大科发股权投资管理有限公司
+2458#杭州立元创业投资有限公司
+2459#亿华机构
+2460#浙江思考投资管理股份有限公司
+2461#YY语音
+2462#中国光大银行
+2463#荣科科技
+2465#正和岛基金
+2466#友友贷
+2468#宁波东融资本
+2469#F50
+2470#深圳市高特佳投资集团有限公司
+2471#找钢网
+2472#赶集网
+2473#途家网
+2475#安信诚基金公司
+2476#杭州泰恒投资管理有限公司
+2477#龙运国际
+2478#口袋购物
+2479#嘉软创投
+2482#深圳优讯通信息技术有限公司
+2483#西陇化工
+2484#Jumpstart NJ Angel Network
+2485#丰源睿利
+2486#成都大千云联科技有限公司
+2487#Luxury Insider Group
+2488#深圳市鹏德创业投资有限公司
+2489#Transcosmos株式会社
+2490#凯石长江投资管理有限公司
+2491#卓远锐达
+2492#乐元素
+2493#松柏资本
+2494#上海道杰投资有限公司
+2495#上海汇纳科技
+2496#高鸿信息
+2497#北大软银教育投资有限公司
+2498#南山风险投资俱乐部
+2499#All Focus Ltd
+2500#软银赛富
+2501#36kr
+2502#浙江向上创业投资管理有限公司
+2503#上海时空五星创业投资管理有限公司
+2504#3W咖啡
+2505#正大鸿福集团
+2506#骏瑞
+2507#大合投资
+2508#36氪
+2509#龙帆传媒集团
+2510#万科集团
+2511#Greenspring Assciates
+2512#生活科技（北京）有限责任公司
+2513#珠海横琴沃土创业投资管理有限公司
+2515#北京中睿元同投资管理股份有限公司
+2516#伯乐遇马
+2517#浦发银行
+2518#上海张江科技创业投资有限公司
+2519#绵世股份
+2520#腾信创新
+2521#钱包金服
+2522#平行线教育
+2523#西拉姆资产管理（上海）有限公司
+2524#北京世纪华通有限公司
+2527#北京纯粹旅行有限公司
+2528#北京慧摩尔科技有限公司
+2529#Capital Health
+2530#杭州先睿投资管理有限公司
+2531#远东控股
+2532#远光软件股份有限公司
+2533#金一创投
+2534#河南华夏海纳创业投资集团
+2535#游戏橘子Gamania
+2536#北京中关村创业投资发展有限公司
+2537#申银万国投资有限公司
+2538#广东富成创业投资有限公司
+2539#广州凯得科技创业投资有限公司
+2540#永新视博
+2541#乾宁健康产业有限公司
+2544#龙图游戏
+2546#上海冠太创业投资合伙企业
+2548#积木盒子
+2549#中国高新投资集团公司
+2550#北京富莱晨思特许经营商业投资中心（有限合伙）
+2552#上海梵顿投资管理有限公司
+2553#拉萨楚源投资管理有限责任公司
+2554#深圳前海海润国际并购基金管理有限公司
+2555#和晶科技
+2556#天会（上海）投资有限公司
+2558#一闪街
+2559#凤凰资本资产管理有限公司
+2560#宁波鼎锋明道投资管理合伙企业
+2561#乾道投资控股集团有限公司
+2562#奥瑞金金属包装
+2563#CVC Credit Partners
+2564#上海光雅投资中心（有限合伙）
+2565#上海科惠价值投资管理有限公司
+2566#概念资本
+2567#Sirius Venture Capital
+2568#佳都科技
+2569#马力创业投资有限公司
+2570#中生金控投资有限公司
+2571#Focus Media
+2572#道明光学
+2573#苏州华创赢达创业投资基金企业（有限合伙）
+2574#紫石投资有限公司
+2575#和瑞控股有限公司
+2576#苏州金枫创业投资有限公司
+2577#广东慧勤投资中心产业投资基金
+2578#深圳市源政投资发展有限公司
+2579#北京高新技术创业投资股份有限公司
+2580#康十医疗投资（北京）有限公司
+2581#台湾信邦电子股份有限公司
+2582#沃达丰
+2583#北京嘉和时代科技有限公司
+2584#北京中金汇财投资管理有限公司
+2585#西安曲江文化产业风险投资有限公司
+2586#上海容银投资有限公司
+2587#浙江乐创投资管理有限公司
+2588#中瑞思创
+2589#上海鸿立股权投资有限公司
+2590#广州日报
+2591#武汉科技创新投资有限公司
+2592#中新苏州工业园区创业投资有限公司
+2593#平安鼎创股权投资管理（上海）有限公司
+2594#北京华山投资管理中心（有限合伙）
+2595#平安财智投资管理有限公司
+2596#永威投资有限公司
+2597#德邦物流股份有限公司
+2598#菜鸟网络
+2599#九州通医药集团
+2600#宜信
+2601#中皓资本
+2602#I Mercury Capital
+2603#Inspire Invest
+2604#浙江蓝源投资管理有限公司
+2605#新桥联合
+2606#PPTV
+2607#维梧资本
+2608#精硕科技
+2609#LOVO家居商城
+2610#黄太吉
+2611#分享阳光投资
+2612#唱吧
+2613#平义国际
+2614#磐安集团
+2615#武岳峰资本
+2616#9588旅行网
+2617#华夏国泰
+2618#海石股权投资基金管理公司
+2619#原始会
+2620#Softbank
+2622#法国阳狮广告集团
+2623#京桥资本管理有限公司
+2624#深圳市华澳资本管理有限公司
+2625#J.H.Whitney & Co
+2626#启峰资金管理有限公司
+2627#泰康人寿
+2628#阳光融汇资本投资管理有限公司
+2629#鸿利光电
+2630#领航资本合伙人有限公司
+2631#SMG Overseas Investment Ltd
+2632#粤商高科
+2633#湖南二三创业投资管理有限公司
+2634#集素投资
+2635#Testin云测试
+2636#正威集团
+2637#长沙通正投资管理有限公司
+2638#承树投资
+2639#时空电动
+2640#美林控股
+2642#中金甲子（北京）投资基金管理有限公司
+2643#大数据实验室
+2644#西塔德资本
+2645#大东南
+2646#凯美特气体
+2647#复思基金
+2648#美圣投资
+2649#辽宁东软创业投资有限公司
+2650#启创资本
+2651#泛华诚业
+2652#光谷联合
+2653#孝昌水木投资(唐彬森)
+2654#探针创投
+2655#汇财私人资本
+2656#首业君京投资
+2657#大米创投基金
+2658#远瞻资本
+2659#中弘股份
+2660#Valence Ventures
+2661#北帆投资
+2662#8天在线
+2663#中文在线
+2664#罗斯柴尔德家族（RothschildFamily）
+2665#微盟
+2666#深圳市泰丰移和投资企业
+2667#中国移动(中移创新产业基金)
+2668#边锋游戏
+2669#创业基金会
+2670#新开普电子
+2671#天使创业村/晨脉创投
+2672#国开金融
+2673#中广文影
+2674#百合网
+2675#士兰创投(士兰控股)
+2676#本见投资
+2677#中手游
+2678#中国恒天(恒天资产)
+2679#Smilegate
+2680#Atlanta Ventures
+2681#Odyssey Venture Partners
+2682#Openfund
+2683#Harmony Partners
+2684#汇丰银行HSBC
+2685#Hellman &Friedman;
+2686#Watson/IBM
+2687#Greenoaks Capital Management
+2688#LaunchTime
+2689#筱光资本
+2690#Penguin Random House
+2691#Palo Alto Networks
+2692#Wealthfront
+2693#Novus Ventures
+2694#Scentan Ventures
+2695#Corus Entertainment
+2696#R&R Ventures
+2697#Rogers Venture Partners
+2698#AlphaPrime  Ventures
+2699#Difference Capital
+2700#ironSource
+2701#Camden Partners
+2702#Blue Sky Capital
+2703#华控基金
+2704#互动娱乐
+2705#泰笛洗涤
+2706#智金汇
+2707#Opera
+2708#宝宝树
+2709#星河互联
+2710#Romulus Capital
+2711#Bee Partners
+2712#Catterton
+2713#道生投资
+2714#同道齐创
+2715#西京投资
+2716#Alliance of Angels
+2717#Longworth Venture Partners
+2718#润土投资
+2719#左驭资本
+2720#环球易购
+2721#上海物联网创业投资基金
+2723#春泉创投
+2724#道彤投资
+2725#永达汽车
+2726#猪八戒网
+2727#微影资本(微影时代)
+2728#南山资本
+2729#乐创会
+2730#Donews迪凯投资
+2731#石基信息
+2732#微派创投基金
+2733#Brentwood Associates
+2734#聚宝网络
+2735#珠南集团
+2736#首旅酒店集团
+2737#东方资产
+2738#燧石资本
+2739#沱沱工社
+2740#张江火炬创投
+2741#风投侠
+2742#才金资本
+2743#山蓝资本
+2744#康联药业
+2745#太盟投资集团
+2746#中海达
+2747#建投华科
+2748#西安银博科技发展公司
+2749#花甲之友/金色人生
+2751#太极股份
+2752#中搜
+2753#森马
+2754#深圳前海正时启迪投资咨询有限公司
+2755#和智资本
+2756#山谷资本
+2758#金慧丰投资
+2759#暴风魔镜
+2760#同系（北京）资本管理有限公司
+2761#芒果圈
+2762#中国平安集团
+2763#st海龙股份
+2764#广州安赐企业管理咨询有限公司
+2765#上海仪电控股（集团）公司中央研究院
+2766#光大金控（浙江）资产管理有限公司
+2767#头狼金服
+2768#盟云移软
+2769#中国南方航空股份有限公司
+2770#Volition Capital
+2771#Peninsula Ventures
+2772#Argosy Capital
+2773#Aurinvest
+2774#考拉资本
+2775#启迪之星(启迪孵化器孵化投资基金)
+2776#鱼跃科技
+2777#中海软银
+2778#Reaktor Ventures
+2779#Inventure
+2780#清华x-lab创业DNA基金
+2781#Obvious Ventures
+2782#南方公园 South Park Ventures
+2783#远东 Far East Ventures
+2784#盛邦裕廊 Surbana Jurong Private Limited
+2785#博观资本
+2786#天鑫洋金业
+2787#冷笑话(飞博共创)
+2789#小饭桌
+2790#乐尧创投
+2791#东煕资本
+2792#题梦资本
+2793#佳讯飞鸿
+2794#冠英资本
+2795#兰璞创投
+2796#西山天使会
+2797#上海交大产业投资管理集团
+2798#鑫游资本
+2799#诺辉投资
+2800#瑞财基金
+2801#Wellington Partners
+2802#华天资本( 华天控股)
+2803#百事佳集团
+2804#雷曼光电
+2805#山行资本
+2806#星汉资本
+2807#天玖创投(天玖元润基金)
+2808#青鸟基金
+2809#正保远程教育
+2810#筋斗云投资
+2811#谆朴投资
+2812#光大瑞华
+2813#开发金控CDIB Venture Capital
+2814#Kingsland Development
+2815#Venturra Capital
+2816#KK Fund
+2817#飞鱼科技
+2818#昆药集团
+2819#尚势资本(尚势投资)
+2820#联科创盈
+2821#创丰资本
+2822#宁波辰海星河投资管理有限公司
+2823#南极圈
+2824#要出发旅行网
+2825#天津新动金鼎体育资产管理有限公司
+2826#江苏聚合创意新兴产业投资基金（有限合伙）
+2827#seedvc
+2828#深圳市火星人互动娱乐有限公司
+2829#熠帆资本
+2830#中金前海基金
+2831#友田资本
+2832#蔚蓝生物
+2834#麟玺创投
+2835#新华网
+2836#华滨创投
+2837#上海巨如资产管理有限公司
+2838#弘信创业工场(云创业)
+2839#慧鑫泉投资
+2840#游酷科技
+2841#上海弘信股权投资基金管理有限公司
+2842#重庆战略性新兴产业股权投资基金
+2843#支付宝
+2844#新秀集团(开创资本)
+2845#耀途资本
+2846#贵格天使
+2847#棕泉资本管理
+2848#北京四维图新科技股份有限公司
+2849#鹏博士
+2850#岚悦科技
+2851#联络互动
+2852#跨星创投
+2853#罗辑思维
+2854#点点客
+2855#中国泛海控股集团有限公司
+2856#维港投资
+2857#金泰富资本管理有限责任公司
+2858#梅花伞
+2859#Montage Ventures
+2860#国家集成电路产业投资基金
+2861#飞图创投
+2862#创湃资本
+2863#浙银资本
+2864#天使投资人庞升东
+2865#通用汽车
+2866#大洋电机
+2867#升达林业
+2868#梦洁家纺
+2869#约印创投
+2870#德丰浩创业投资
+2871#金砖资本
+2872#纵联资本
+2873#丰元创投Amino Capital
+2874#禾生资本
+2875#盈科资本
+2876#永太科技
+2877#PartechVentures
+2878#Draper Esprit
+2879#HR Ventures
+2880#鸟羽资本
+2881#鸿凯投资
+2882#博将资本
+2883#鸿凯资本
+2884#云椿资本
+2885#华的艺术投资
+2886#国开开元
+2887#苏州元禾
+2888#凯泰资本
+2889#捷顺科技
+2890#凯撒旅游
+2891#大汉控股集团
+2892#莱茵体育
+2893#领势投资
+2894#凯盈资本
+2895#南京未来网络
+2896#京西创投(首钢基金)
+2897#中泰证劵(齐鲁证券)
+2898#招银国际
+2899#浙江金控
+2900#融汇资本
+2901#比特大陆
+2902#源创投资
+2903#雅瑞天使
+2904#易真资本
+2905#红实资本
+2906#体育之窗
+2907#西部优势资本(西部证券)
+2908#中投中财基金
+2909#创客100基金
+2910#Khazanah Nasional Berhad
+2911#金茂资本
+2912#阿里健康(阿里巴巴)
+2913#乔景资本
+2914#利亚德光电
+2915#远致富海
+2916#德诺资本Dinova Capital
+2917#万融资本
+2918#考拉产业基金(拉卡拉)
+2919#红秀资本
+2920#玖创资本
+2921#ATA集团
+2922#普禾资产
+2923#重庆市产业基金
+2924#停车宝-真来电科技
+2925#西部优势资本投资有限公司
+2926#北京骊悦金实投资中心（有限合伙）
+2927#竞技创投
+2928#能图资本
+2929#Abraaj Group
+2930#盐光加速器
+2931#永柏投资
+2932#微众享股权投资基金
+2933#富睿财智股权基金
+2934#徽起京金股权基金
+2935#容联云通讯
+2936#河南旺田集团
+2937#乐赟资本
+2938#永不落幕资本
+2939#汇源集团
+2940#Playground Global
+2941#Draper Nexus
+2942#Salesforce Ventures
+2943#NovelTmT
+2944#Singularity Investments
+2945#Spider Capital
+2946#景峰医药(康景资本)
+2947#广州全社通传媒广告
+2948#孔雀资本
+2949#上海垠壹投资发展有限公司
+2950#7天连锁酒店
+2951#灏德资本
+2952#唯嘉资本
+2953#Reach Capital
+2954#SignalFire
+2955#EQT Ventures
+2956#Money Partners Group
+2957#金鼎投资
+2958#中信建投资本
+2959#元生资本
+2960#沃福金信
+2961#海尔产业金融
+2962#WeMedia 新媒体集团
+2963#三六五网络
+2964#红邑资本
+2965#国富绿景创投GRC
+2966#TPTF基金
+2967#佳浩投资
+2968#三坤宝蚨
+2969#三体水滴
+2970#张江高科
+2971#Paytm
+2972#盛世投资
+2973#君创资本
+2974#洛可可创新设计集团
+2975#京东金融
+2976#鼎翔资本
+2977#凤凰财富
+2978#至信药业
+2979#Arena Ventures
+2980#Monk’s Hill
+2981#B Capital Group
+2982#YJ Capital
+2983#HBO
+2984#姚记扑克
+2985#中投汉富(汉富控股)
+2986#恒泰艾普
+2987#遨问投资
+2988#Siguler Guff & Company
+2989#朗盛投资
+2990#旷智投资
+2991#中国联通
+2992#山水创投
+2993#深圳大美金杉
+2994#58到家
+2995#REV
+2996#Caffeinated Capital
+2997#通和资本
+2998#矽谷雯科创投基金
+2999#Broadway Angels
+3000#Next Equity
+3001#Springboard Fund二手奢侈品寄售网站The RealReal获4000万美元E轮融资
+3002#乾源资本
+3003#海通新创
+3004#乐视体育(乐体创投)
+3005#Haim Dabah of HDS Capital
+3006#FirstTime Capital’ s Jonathan Benartzi
+3007#White Cloud Capital
+3008#AXA Strategic Ventures
+3009#IQ Capital
+3010#基石广汇车联网基金
+3011#Sheel Mohnot
+3012#Auren Hoffman
+3013#LOVO家纺
+3014#Rakishev
+3015#Hogege
+3016#信达资产
+3017#菁葵资本
+3018#深圳中圆
+3019#如川基金
+3020#哔哩哔哩动画
+3021#Tandem Capital
+3022#Bojiang Capital
+3023#S-Cubed Capital
+3024#Astia Angels
+3025#仁和集团
+3026#观释资本
+3027#Catholic Health Initiatives
+3028#Dignity Health
+3029#Evan Rachlin
+3030#Peter Hudson
+3031#Sutter Health
+3032#Tri
+3033#前海行健
+3034#Plug & Play Ventures
+3035#Wargaming
+3036#上海菁葵创投
+3037#乐逗游戏
+3038#远洋资本
+3039#联梦空间
+3040#台湾联合报集团
+3041#陀螺创投
+3042#铂涛集团
+3043#正坤集团
+3044#上海观臻股权投资基金
+3045#binggo天使
+3046#远翼投资
+3047#立元创投
+3048#Via-ID
+3049#Ecotechnology
+3050#Cathay Innovation
+3051#Solamere Capital
+3052#Oak HC/FT
+3053#Suncorp Group
+3054#Rally Ventures
+3055#Costanoa Venture Capital
+3056#Inven Capital
+3057#Statkraft Ventures
+3058#BayBG
+3059#重庆高新创投红马资本资本管理有限公司
+3060#比科斯集团
+3061#上海沃体
+3062#明嘉资本
+3063#远毅资本
+3064#潇阳投资
+3065#浙大网新
+3066#铂涛酒店集团
+3067#云起资本
+3068#茂硕电源
+3069#沃尔核材
+3070#天使成长营AC加速器
+3071#南通锻压
+3072#世纪金胜
+3073#恒信移动
+3074#竞佳境体育
+3075#启嘉创投
+3076#莲花兄弟
+3077#宁波鸿景集团
+3078#上海徐汇科技创业投资有限公司
+3079#高樟资本
+3080#上海雍贤投资管理中心
+3081#沃富金信
+3082#Guild Capital
+3083#新榜
+3084#Skywood Capital
+3085#快快金融
+3086#依文集团
+3087#星空创联
+3088#瑞力投资
+3089#上海长誉物流
+3090#快快贷
+3091#日本GMO
+3092#Mediatek
+3093#Treeline Asia
+3094#氪空间
+3095#中华开发工业银行
+3096#Ucan文化传信
+3097#一号外卖
+3098#棕榈园林
+3099#北京明嘉投资管理有限公司
+3100#游戏多
+3101#极致迅游
+3102#广东天使会
+3103#bilibili
+3104#富道投资
+3105#微地带
+3106#中国房地产开发集团
+3107#Fang Fund
+3108#iAngels
+3109#Claltech
+3110#CampOne Ventures
+3111#华智汇金创投基金
+3112#火线资本
+3113#创客星
+3114#SBI
+3115#DSC Investment
+3116#Eurazeo
+3117#Vitruvian Partners
+3118#陈方毅
+3119#BGF Ventures
+3120#河石资本
+3121#昂若资本
+3122#宝德股份
+3123#Accomplice
+3124#Maiden Lane Ventures
+3125#乐体创投
+3126#未名资本
+3127#新加坡报业集团
+3128#和通资本
+3129#君海投资
+3130#Centurion Private Equity
+3131#Harbert Venture Partners、Noro-Moseley Partners 领投
+3132#New Richmond Ventures跟投。
+3133#浪淘沙基金
+3134#华畅创投
+3135#无届投资
+3136#国轩集团
+3137#特锐德
+3138#百舸资本
+3139#史努克创投
+3140#巨杉资产
+3141#华融证券
+3142#知卓资本
+3143#福特
+3144#EMC
+3145#人人游戏
+3146#Linse Capital
+3147#Braemar Energy Ventures（宝马能源）
+3148#ConstellationEnergy（美国联合能源）
+3149#Statoil Energy Ventures（挪威石油
+3150#溪山天使会
+3151#广州外服
+3152#凤凰光学
+3153#裕晋资本
+3154#合一资本
+3155#领医创造
+3156#有成资本
+3157#清华银杏天使基金
+3158#华兴金汇资本
+3159#CM投资
+3160#中岭燕园创投
+3161#陕西易久贸易有限公司
+3162#彩虹精化
+3163#国信基金
+3164#L Catterton
+3165#Hydra Ventures
+3166#Eminent II VC
+3167#华南创投
+3168#President International Development
+3169#CoBuilder VC
+3170#广东省文化投资有限公司
+3171#光大体育文化投资
+3172#Fintech基金
+3173#广田控股
+3174#磐霖资本
+3175#珅奥基医药
+3176#稼沃资本
+3177#杭州银之利
+3178#深圳创享投资
+3179#北京互联
+3180#美盛文化集团
+3181#黄晓明
+3182#欢乐时光
+3183#迅游科技董事长章建伟
+3184#棕榈股份
+3185#深圳海萨尔投资
+3186#广州聚物霸投资
+3187#1号生活
+3188#前海汇潮
+3189#投资网
+3190#海贝资本
+3191#Kyowon Group
+3192#Red Dot Capital Partners
+3193#蓝烯资本
+3194#温青
+3195#Brooklyn Bridge Venture
+3196#德睿启源
+3197#远境创投
+3198#爱数EISOO
+3199#昊君资本
+3200#SAIF Partners
+3201#Aspada
+3202#Adveq
+3203#全美在线
+3204#前海首润投资
+3205#Fonds Ambition Numérique
+3206#ISAI
+3207#巨江电源
+3208#掌上灵通
+3209#去玩资本
+3210#Carthona Capital
+3211#Cthulhu Ventures
+3212#Redbus Group
+3213#Black River Investments
+3214#Carlos Blanco
+3215#Tandem Portfolio
+3216#Tribeva Venture Partners
+3217#AlpineMeridian Ventures
+3218#张洪禹
+3219#黎万强
+3220#济诺医疗
+3221#Materialia
+3222#围海科技
+3223#Marc Benioff
+3224#Sam Altman
+3225#Slack Fund
+3226#一下科技
+3227#淳信投资
+3228#光亮资本
+3229#CFG Offshore Holdings
+3230#Amplify Education Partners
+3231#芒果文创基金
+3232#广州越秀产业基金
+3233#中信证券
+3234#敦鸿资产
+3235#涌裕股权
+3236#Seaya Ventures
+3237#Inveready
+3238#Bankinter
+3239#Media Digital Ventures
+3240#易至通达
+3241#坚果蓝翠
+3242#Rana Capital Partners
+3243#B.V.
+3244#Salem Partners
+3245#沈博阳
+3246#联创鸿影
+3247#嘉广资产
+3248#众鑫汇联
+3249#AT&T
+3250#精一天使公社
+3251#联金邦
+3252#美敦力
+3253#盛世高金
+3254#上海恒越投
+3255#易联昌元
+3256#Boost VC
+3257#Canyon Creek Capital
+3258#Colopl VR Fund
+3259#GREE Inc
+3260#Kai Huang
+3261#The Venture Reality
+3262#CRCM VC
+3263#Sinovat
+3264#YourNest
+3265#豪信(香港)控股有限公司
+3266#Creades
+3267#SEB Venture Capital
+3268#Sherpa Foundry
+3269#SK Ventures
+3270#Lemnos Labs
+3271#娱乐工厂
+3272#均胜电子
+3273#车音网
+3274#清科华盖
+3275#北京佐盛投资顾问有限公司
+3276#东方金奇投资
+3277#Cowboy Ventures
+3278#Greenfield Cities Holdings
+3279#StageOne Ventures
+3280#Hummingbird Ventures
+3281#中融启点投资
+3282#华图资本
+3283#承阳资本
+3284#XL Innovate
+3285#Ben Franklin
+3286#Rittenhouse
+3287#Jefferson
+3288#康耐特
+3289#中源协和
+3290#双安资产
+3291#上海鸿立
+3292#October Venture
+3293#重庆中以股权投资基金
+3294#润和软件
+3295#TalkingData腾云天下
+3296#达鑫电子
+3297#太乙汽车技术
+3298#磐缔资本
+3299#上海旌灏投资管理有限公司
+3300#亚豪资本
+3301#麒麟游戏
+3302#安持资本
+3303#新青年资本
+3304#七匹狼
+3305#Athyrium Capital Management, LP
+3306#沙丘资本
+3307#赤子城SOLO
+3308#易凯资本
+3309#中国先锋金融集团
+3310#四川汇元
+3311#冯涛
+3312#艺龙合投
+3313#联创
+3314#无穹资本
+3315#暴龙资本
+3316#长江汇英
+3317#古玉资本
+3318#广州天使投资
+3319#蓝巨投资
+3320#天善资本
+3321#凡星资本
+3322#观由国际资本
+3323#APC 基金
+3324#德商资本
+3325#Accel-KKR
+3326#Celebes
+3327#Nullabor
+3328#Tuas Capital Partners
+3329#Anfield Equities
+3330#Genacast Ventures
+3331#Singapore Economic Development Board
+3332#Signal Ventures
+3333#鑫旺环球投资有限公司
+3334#大众汽车
+3335#Cherry Ventures
+3336#Hoxton Ventures
+3337#AWS Founders Fund
+3338#招商财富
+3339#明曜投资
+3340#清华经管加速器
+3341#集素资本
+3342#童石网络
+3343#掌玩互娱
+3344#乐奕创投
+3345#高和翰同
+3346#万丰友方投资
+3347#凤凰祥瑞
+3348#风云资本
+3349#Fenox Venture Capital
+3350#上海精熠投资中心
+3351#上海德锌股权投资基金管理合伙企业
+3352#上海达顺创业投资中心
+3353#Merck GHI Fund 默克全球健康创新基金
+3354#Adage Capital Management
+3355#Excel Venture Management
+3356#Alexandria Venture Investments
+3357#Hudson River Capital
+3358#海邦投资
+3359#朱雀投资
+3360#杭州商盈投资管理有限公司
+3361#北京雅瑞天使投资合伙企业（有限合伙）
+3362#北京乾祥海泉投资管理有限公司
+3363#Social Capital
+3364#中科国嘉
+3365#Nevada Iron
+3366#Egarden Ventres
+3367#Local Globe
+3368#The Family
+3369#Wildcat Ventures
+3370#Casdin Capital
+3371#Nexus Ventures
+3372#Refa
+3373#香港中国汽车移动互联网有限公司
+3374#Mirae Asset Ventures
+3375#Posco Ventures
+3376#盛山资本
+3377#Graguate
+3378#TransUnion
+3379#天津安果科技
+3380#国灏创投
+3381#Blue Cross Blue Shield Venture Partners
+3382#Sandbox Industries
+3383#曦域资本
+3384#Workday Corporate Ventures
+3385#孚惠资本(华谊兄弟)
+3386#乐速投基金
+3387#Owl Ventures
+3388#Corigin Ventures
+3389#SSM Partners
+3390#First Analysis
+3391#西藏华霖创投
+3392#广州基金
+3393#Asia Plus
+3394#S Chand & Co. Pvt. Ltd
+3395#AdvantEdge Partners
+3396#Venture Catalysts
+3397#HOWZAT Partners
+3398#Anaxago
+3399#TheFamily
+3400#融睿集团
+3401#清科华璟创投
+3402#杭州君溢创投
+3403#华澍资本
+3404#Vast Ventures
+3405#IT-Farm
+3406#Ventech China
+3407#香港新世界集团
+3408#BAI
+3409#DCM
+3410#嘉御资本
+3411#鸵鸟电台
+3412#Eight Road Ventures
+3413#Mirai Creation Investment Limited Partnership
+3414#Golden Asia Fund II
+3415#建发股份
+3416#九弦资本
+3417#温氏投资
+3418#Boldstart
+3419#Fundfire
+3420#Space Pirates
+3421#Mike Germano
+3422#旦恩投资
+3423#中国图书进出口(集团)总公司
+3424#上海新华发行集团有限公司
+3425#智德投资
+3426#朝乾投资
+3427#金斧子
+3428#济南华科创投
+3429#悦途资本
+3430#杭州言和投资
+3431#壹投基金
+3432#Public Investment Fund
+3433#同道资本
+3434#Cervin Ventures
+3435#New Ground Ventures
+3436#ReachCapital
+3437#Beringea
+3438#红移投资
+3439#创梦创投
+3440#拉隆基金
+3441#北辰创投
+3442#科大讯飞
+3443#程铂瀚创投
+3444#融玺创投
+3445#晨灿投资
+3446#伯乐遇马天使投资
+3447#上海德晖投资管理有限公司
+3448#Naspers Ventures
+3449#Breakwater Investment Management
+3450#Time Inc.
+3451#Downey Ventures
+3452#Digital Garage
+3453#Beenext
+3454#Beenos Partners
+3455#麦达数字
+3456#中南茂创投资
+3457#西藏融众投资
+3458#西征创新投资
+3459#上海新文化传媒集团
+3460#联创博瑞文化产业并购基金
+3461#Formation8
+3462#吉融网
+3463#
+3464#网上厨房eCook
+3465#270
+3466#投哪儿
+3467#徐博春
+3468#链动投资
+3469#吉博控股
+3470#Scott Sandell
+3471#中华开发资本
+3472#红杉资本
+3473#Unitus Seed Fund
+3474#鸿沛资本
+3475#深圳齐心集团股份有限公司
+3476#Microsoft Ventures
+3477#上实集团文化产业投资基金
+3478#83North
+3479#恒宝股份
+3480#南京高科
+3481#YeahMobi
+3482#小南国
+3483#深圳恒裕
+3484#黑蝶资本
+3485#High Alpha
+3486#Temasek Holdings
+3487#德塔资本
+3488#华创盛景
+3489#金科君创
+3490#Viola Private Equity
+3491#FTVCapital
+3492#Emergence Capital
+3493#Tola Capital
+3494#Unitus Seed
+3495#Data Collective (DCVC)
+3496#Kennet Partners
+3497#Project A
+3498#绩优资本
+3499#文资数码投资基金
+3500#IDG
+3501#锋瑞资本
+3502#U.S. Venture Partners
+3503#中国人寿
+3504#拉夏贝尔
+3505#Axiata Digita
+3506#COLOPL NEXT
+3507#沙特公共投资基金
+3508#晨兴创投
+3509#牛投股权
+3510#众善创投
+3511#绩优投资
+3512#汉鼎亚太
+3513#Venture Shares
+3514#Alpha JWC Ventures
+3515#Skystar Capital
+3516#接力基金
+3517#HitFox Group
+3518#哈弗商业学校天使基金
+3519#宝洁校友会旗下基金
+3520#一线资本
+3521#T Rowe Price
+3522#新丽传媒
+3523#奇瑞汽车股份有限公司
+3524#Stephens Inc
+3525#UPS Capital
+3526#Tomorrow Ventures
+3527#ONES Ventures
+3528#FJ Labs
+3529#Steve Goodman
+3530#BessemerVenture Partners
+3531#体坛传媒
+3532#引爆点资本
+3533#共建创投
+3534#米其林集团
+3535#赫基国际集团
+3536#浙江永强
+3537#City Light Capital
+3538#TNPI
+3539#嘉里物流
+3540#福建省拓锋投资
+3541#Greycroft Growth基金
+3542#Phi Group
+3543#复盛创投
+3544#新美大
+3545#千味央厨
+3546#J.P. Morgan
+3547#Citigroup
+3548#Bank of America
+3549#Morado Ventures
+3550#合力资本
+3551#泛微
+3552#弘励创投
+3553#盈动资本
+3554#道森资本
+3555#华宇经济
+3556#Octopus Ventures
+3557#Capnamic Ventures
+3558#NRW.BANK
+3559#酉金资本
+3560#Edenred Capital Partners
+3561#Grupa Pracuj
+3562#Columbia Partners
+3563#陈-扎克伯格计划
+3564#Wellington Management Company
+3565#CormorantAsset Management
+3566#Arrowpoint Partners
+3567#Takeda Pharmaceutical Co
+3568#招商银行
+3569#Testin云测
+3570#米其林
+3571#前海梦创
+3572#Goldman Sachs Group Inc.
+3573#华住酒店集团
+3574#WiFi万能钥匙
+3575#银泰置地
+3576#中融信托
+3577#龙腾出行
+3578#百年人寿
+3579#Highland Europe
+3580#Mosaic Ventures
+3581#Aleph
+3582#Sovereign’ s Capital
+3583#众造未来

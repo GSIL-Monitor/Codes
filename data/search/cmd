@@ -1,0 +1,140 @@
+test 10.44.202.51:9202
+	 10.44.202.51:5001
+localhost 127.0.0.1:9200
+          0.0.0.0:5007
+search1 10.27.73.209:9200
+        10.27.73.209:5001
+search2 10.27.73.237:9200
+        10.27.73.237:5001
+new-search1 10.25.142.96
+            60.205.3.49
+new-search2 10.27.83.226
+            59.110.43.206
+search_new1 cn-0pp0k8l0m000oxpv0.elasticsearch.aliyuncs.com: 9200
+
+
+# 全部删除
+curl -XDELETE 'http://60.205.3.49:9200/xiniudata'
+curl -XDELETE 'http://59.110.43.206:9200/xiniudata2'
+curl -XDELETE 'http://10.44.202.51:9202/xiniudata'
+curl -XDELETE 'http://localhost:9200/xiniudata_test'
+
+
+# 删除某一块
+curl -XDELETE 'http://10.27.73.209:9200/xiniudata/completion/_query' -d '{"query": {"term": {"_prompt": "keyword"}}}'
+curl -XDELETE 'http://10.27.73.237:9200/xiniudata2/event/_query' -d '{"query": {"match_all": {}}}'
+curl -XDELETE 'http://10.44.202.51:9202/tshbao2/completion/_query' -d '{"query": {"match_all": {}}}'
+curl -XDELETE 'http://10.44.202.51:9202/xiniudata/dealCompletion/299323232'
+curl -XDELETE 'http://10.44.202.51:9202/tshbao2/deal/_query' -d '{"query": {"match_all": {}}}'
+curl -XDELETE 'http://10.27.73.209:9200/tshbao2/deal/_query' -d '{"query": {"match_all": {}}}'
+curl -XDELETE 'http://10.27.73.209:9200/tshbao2/dealCompletion/n189386'
+curl -XDELETE 'http://10.27.73.237:9200/xiniudata/digital_token/_mapping'
+
+# 获得一个doc的信息
+curl -XGET http://60.205.3.49:9200/xiniudata2/_mapping?pretty
+curl -XGET http://localhost:9200/xiniudata_test/amac/44266?pretty
+curl -XGET http://60.205.3.49:9200/xiniudata2/universal/sanshang22?pretty
+curl -XGET http://59.110.43.206:9200/xiniudata/token/l371?pretty
+curl -XGET http://60.205.3.49:9200/xiniudata2/report/5b487030b1d37e1b37ceb74a?pretty
+curl -XGET http://10.27.73.209:9200/xiniudata/completion/i109
+
+curl -XGET cn-0pp0k8l0m000oxpv0.elasticsearch.aliyuncs.com: 9200/_mapping?pretty
+
+
+# 全部查询,可以用来测试elasticsearch连通性
+curl -XGET http://127.0.0.1:9200/xiniudata/event/_search?pretty -d '{"sort": {"created": {"order": "desc"}}}'
+curl -XGET http://127.0.0.1:9200/xiniudata/news/_search?pretty -d '{"query": {"match_all": {}}}'
+
+
+# 通过名字进行一个elasticsearch查询
+curl -XGET http://10.44.202.51:9202/tshbao2/dealCompletion/_search?pretty -d '{"query":{"term":{"did":{"value":2}}}}'
+
+
+# 查询, general
+curl -H "Content-type: application/json" -X POST -d '{"input": "", "filter": {"domestic": true}, "start": 0, "highlight": true}' http://
+curl -XGET http://60.205.3.49:9200/xiniudata2/_mapping?pretty
+/api/search/general
+curl -H "Content-type: application/json" -X POST -d '{"input": "德鼎创新基金", "filter": {}}' http://10.27.73.237:5001/api/search/general
+curl -H "Content-type: application/json" -X POST -d '{"input":"大数据","filter":{"date":[],"round":[],"domestic": false,"tag":["区块链"],"yellow":[]}}' http://10.27.73.237:5001/api/search/general
+curl -H "Content-type: application/json" -X POST -d '{"input": {"and": ["金融"], "or": ["大数据"]},"filter":{"date":[],"round":[],"location":[],"tag":[],"yellow":[]}}' http://0.0.0.0:5007/api/search/general
+curl -H "Content-type: application/json" -X POST -d '{"input": "旅游", "filter": {"round":[]}, "start": 0}' http://10.27.73.237:5001/api/search/general
+
+
+# 查询一个名称,可以用来测试flask连通性,complete
+
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"data":"ab"}}' http://personal.xiniudata.com/api/search/complete
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"data":"italy", "field":"location", "language": "cn"}}' http://personal.xiniudata.com/api/search/complete
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"data":"IDG资本", "field":"investor", "strict": true}}' http://www.xiniudata.com/api/search/complete
+curl -H "Content-type: application/json" -X POST -d '{"data":"小程序"}' http://10.27.73.209:5001/api/search/complete
+
+
+
+# 集合 新版
+curl -H "Content-type: application/json" -X POST -d '{"id":30, "input": {"and":[],"or":["信用卡"],"not":[]}, "filter": {}, "update":true}' http://0.0.0.0:5007/api/search/collection2
+curl -H "Content-type: application/json" -X POST -d '{"id":795,"input":{"and":[],"or":["金融"],"not":[]},"filter":{"yellow":[],"location":[],"round":[],"team":[],"investor":[],"date":[]}}' http://0.0.0.0:5007/api/search/collection2
+
+
+# 集合
+curl -H "Content-type: application/json" -X POST -d '{"id": 593, "keyword":{"and":["机器人"],"or":["工业机器人", "工业"],"not":[]},"location":[],"round":[1000,1010,1020,1030],"team":[],"investor":[],"date":[2016,2015,2014], "update":true}' http://10.45.141.3:5001/api/search/collection
+curl -H "Content-type: application/json" -X POST -d '{"id": 407, "keyword":{"and":["机器人"],"or":["家用机器人","家庭"],"not":[]},"location":[],"round":[],"team":[],"investor":[],"date":[2014, 2015, 2016], "update":true}' http://10.45.141.3:5001/api/search/collection
+
+# deal complete
+curl -H "Content-type: application/json" -X POST -d '{"data": "加", "orgId": 1}' http://10.27.73.209:5001/api/search/deal/complete
+
+# deal extend
+curl -H "Content-type: application/json" -X POST -d '{"input": "靠谱金服", "orgId": 54}' http://10.27.73.209:5001/api/search/deal/extend
+curl -H "Content-type: application/json" -X POST -d '{"input": "靠谱金服", "orgId": 54}' http://10.44.202.51:5001/api/search/deal/extend
+
+
+# deal
+curl -H "Content-type: application/json" -X POST -d '{"input": "靠谱金服", "orgId": 51, "filter": {"sponsor": []}, "sort": "round", "order": "desc", "size": 30}' http://10.27.73.209:5001/api/search/deal
+curl -H "Content-type: application/json" -X POST -d '{"input": "全民财富", "orgId": 1, "filter": {"stage": [1]}, "sort": "round", "order": "desc"}' http://10.44.202.51:5001/api/search/deal
+curl -H "Content-type: application/json" -X POST -d '{"input": "", "orgId": 1, "filter": {"sponsor": [3]}, "sort": "round", "order": "desc", "size": 20}' http://10.27.73.237:5001/api/search/deal
+
+# interior
+curl -H "Content-type: application/json" -X POST -d '{"data": "我爱我家", "actives": ["Y", "P", "A"]}' http://10.27.73.237:5001/api/search/interior
+
+# news
+curl -H "Content-type: application/json" -X POST -d '{"input": "迅雷首任CTO做了币圈“雪球”: 行情指导小白投资 上线俩月拿下10万用户", "filter": ""}' http://10.27.83.226:5001/api/search/universal_news
+curl -H "Content-type: application/json" -X POST -d '{"input": "投资人观点", "filter": ""}' http://10.27.83.226:5001/api/search/universal_news
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "start": 0, "size": 10}}' http://www.xiniudata.com/api/search/universal_report
+
+# digital token
+curl -H "Content-type: application/json" -X POST -d '{"input": "区块链", "start": 0, "size": 10}' http://10.27.73.209:5001/api/search/token
+
+# universal
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "start": 0, "size": 10, "sort": 76003, "filter": {"domestic": false}}}' http://personal.xiniudata.com/api/search/universal
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "start": 0, "size": 10, "sort": 76004, "filter": {"tag": ["人工智能", "区块链"], "operator": "or"}}}' http://10.27.83.226:5001/api/search/universal
+
+
+# universal industry
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "industry": 645, "start": 0, "size": 10, "filter": {"tag": []}, "order": "desc"}}' http://personal.xiniudata.com/api/search/universal_industry
+
+# universal topic
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "topic": 26, "start": 0, "size": 10, "sort": 76005, "order": "desc", "filter": {"tag": [], "round": [], "status": []}}}' http://personal.xiniudata.com/api/search/universal_topic
+
+# universal ranklist
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "start": 0, "size": 10, "sort": 76001, "order": "desc", "filter": {"tag": ["2017创业邦中国企服创新成长50强"], "round": [], "status": []}}}' http://personal.xiniudata.com/api/search/universal_ranklist
+
+
+# universal funding
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"start": 0, "size": 20, "sort": 76004, "filter": {"investor": ["创新工场"], "domestic": true}}}' http://www.xiniudata.com/api/search/universal_event
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"start": 0, "size": 10, "sort": 76001, "filter": {"sector": [], "investor": ["阿里巴巴"], "public": true}}}' http://personal.xiniudata.com/api/search/universal_event
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"start": 0, "size": 10, "sort": 76001, "filter": {"tag": ["人工智能", "区块链"], "operator": "and"}}}' http://10.27.83.226:5001/api/search/universal_event
+
+# universal investor
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "", "start": 0, "size": 20, "sort": 76001, "filter": {"tag": ["区块链"]}}}' http://10.25.142.96:5001/api/search/universal_investor
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "高榕", "start": 0, "size": 20, "sort": 76001}}' http://www.xiniudata.com/api/search/universal_investor
+
+
+# comps
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"company": 13371, "start": 0}}' http://personal.xiniudata.com/api/search/universal_comps
+
+# combined
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "IP", "start": 0, "size": 10, "filter": {}}}' http://10.27.83.226:5001/api/search/universal_combined
+
+
+# amac
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "小米", "start": 0, "size": 10}}' http://www.xiniudata.com/api/search/universal_amac_fund
+curl -H "Content-type: application/json" -X POST -d '{"payload": {"input": "真格", "start": 0, "size": 10}}' http://10.25.142.96:5001/api/search/universal_amac_manager
+

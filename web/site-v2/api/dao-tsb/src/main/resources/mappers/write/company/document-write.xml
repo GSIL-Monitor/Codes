@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.DocumentWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Document">
+		insert document
+			(
+			companyId,
+			name,
+			description,
+			link,
+			type,
+			verify,
+			active,	
+			createTime,
+			createUser
+			)
+		values(
+			#{companyId},
+			#{name},
+			#{description},
+			#{link},
+			#{type},
+			#{verify}, 
+			#{active}, 
+			#{createTime}, 
+			#{createUser}
+		)
+	</insert>
+	
+	
+	<delete id="delete"  parameterType="Document" >
+		update
+			document 
+		set 
+			active=#{active},
+			modifyTime = #{modifyTime},
+			modifyUser = #{modifyUser}
+		 where 
+		 	id = #{id}
+	</delete>
+
+</mapper>

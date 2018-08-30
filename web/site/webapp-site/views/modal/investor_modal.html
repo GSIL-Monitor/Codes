@@ -1,0 +1,39 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h3 >{{'FILTER' | translate}}&nbsp;{{'INVESTOR' | translate}}</h3>
+</div>
+<div class="modal-body form-group">
+	<span class='ember-view' >
+		<div class="m-t-xs m-b-sm"  ng-controller='InvestorSwitchCtrl'>
+	    	{{'RELATION' | translate}}: &nbsp;
+	    	<input
+		    bs-switch
+		    ng-model="isSelected"
+		    type="radio"
+		    switch-on-text="{{ onText }}"
+		    switch-off-text="{{ offText }}"
+		    switch-animate="{{ animate }}"
+		    switch-size="{{ size }}"
+		    switch-radio-off="{{ radioOff }}"
+			 >	    	
+	    </div>
+	
+   		<div class="search-param label" ng-repeat= 'item in investorItems track by $index'> 
+    		{{item}}
+	    	<i class="fa fa-times close-filter"  item-close-filter='investor' ></i>
+	    </div>
+    </span>
+    <input type="text" id='input-investor' filter  ng-model='investor' placeholder="Gobi" class="form-control filter-input" name="filter-location" 
+    onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;">
+	<span class="tt-dropdown-menu">
+		<div class="div-result" investor-auto-complete  ng-repeat='item in ajaxInvestorItems track by $index'>
+			<span>{{item}}</span>
+		</div>
+	</span>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+</div>

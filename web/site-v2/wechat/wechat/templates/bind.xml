@@ -1,0 +1,10 @@
+<xml>
+	<ToUserName><![CDATA[{{ model.user }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ model.app }}]]></FromUserName>
+	<CreateTime>{{ model.createTime }}</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[★你还没有绑定账户
+★绑定账户<a href='http://wx1.gobivc.com/bind?user={{ model.user }}&app={{ model.app }}'>请点击这里</a>
+
+★如有问题，请联系管理员]]></Content>
+</xml>

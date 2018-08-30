@@ -1,0 +1,23 @@
+easy_install-2.7 supervisor
+
+source /opt/py-env/bin/activate
+pip install gunicorn
+
+echo_supervisord_conf > /etc/supervisord.conf
+
+[program:search_v2]
+command=/opt/py-env/bin/gunicorn -w 4 -b 0.0.0.0:5001 api:app
+directory=/var/www/tsb2/search/search
+user=root
+autostart=true
+autorestart=true
+redirect_stderr=true
+
+
+/etc/init.d/supervisord
+
+chkconfig supervisord on
+
+supervisorctl
+restart search_v2
+

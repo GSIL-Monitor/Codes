@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.read.FundingReadDao">
+	<resultMap id="fundingResult" type="Funding">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="fundingResult">
+		select * from funding f
+		where companyId = #{companyId} and active='Y' order by id desc
+	</select>
+	
+	<select id="getByFundingId" parameterType="Integer" resultMap="fundingResult">
+		select * from funding f
+		where id = #{fundingId}  and active='Y' order by id desc
+	</select>
+	
+
+</mapper>

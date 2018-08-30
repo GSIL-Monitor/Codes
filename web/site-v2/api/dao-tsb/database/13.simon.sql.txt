@@ -1,0 +1,75 @@
+insert user(id,username,email,password,active,createTime) values(13,'Simon','simon@gobivc.com',md5('2411458133180585672413Gobi5292'),'Y',now());
+insert user_email(userId,email,verify) values(13,'simon@gobivc.com',true);
+insert user_email(userId,email,verify) values(13,'simon@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,13,now());
+insert user_role(userId,role,createTime) values(13,25040,now());
+
+#13147	人人湘
+#renrenxiang	10809
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(31,1,19050,20030,18010,now(),10809);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,31,21020,23010,now());
+
+#3896	迈迪加科技
+#Sleepaceshp-mdjkj	4841
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(32,1,19050,20030,18010,now(),4841);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,32,21020,23010,now());
+
+#3337	睿仁医疗-体温计
+#iThermonitorfshzj 20219
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(33,1,19050,20030,18010,now(),20219);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,33,21020,23010,now());
+
+#2450	可滋泉
+#keziquan	31222
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(34,1,19050,20030,18010,now(),31222);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,34,21020,23010,now());
+
+#2386	Pachira
+#pqkjPachira	5122
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(35,1,19050,20030,18010,now(),5122);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,35,21020,23010,now());
+
+#2115	Latin
+#pPICOOC		2685
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(36,1,19050,20030,18010,now(),2685);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,36,21020,23010,now());
+
+#1675	iKair
+#iKairjthjgj-chgshk 	3948
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(37,1,19050,20030,18010,now(),3948);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,37,21020,23010,now());
+
+#1605	北京创客空间
+#chuangkekongjian		39393
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(38,1,19050,20030,18010,now(),39393);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,38,21020,23010,now());
+
+#1015	Wiz
+#weizhibijiWiz		1360
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(39,1,19050,20030,18010,now(),1360);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,39,21020,23010,now());
+
+#2404	DigiLinx
+#zhidexuntong 		26596
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(40,1,19050,20030,18010,now(),26596);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(13,40,21020,23010,now());

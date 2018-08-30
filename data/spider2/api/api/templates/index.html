@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+
+
+<script>
+function my_clock(el){
+    var today=new Date();
+    el.innerHTML = today;
+    setTimeout(function(){my_clock(el)}, 1000);
+}
+
+
+function doit(){
+var clock_div = document.getElementById('clock_div');
+my_clock(clock_div);
+}
+</script>
+
+
+<div class="page-header">
+    <h1>Bonjour</h1>
+</div>
+{{ wtf.quick_form(form) }}
+
+<div class="page-body">
+    {% if newsid %}<a href= {{ newsid }} target="_blank">{{ newsid }}</a>{% else %}no newsid{% endif %}
+</div>
+
+<div id="clock_div" onclick="doit()" >click</div>
+
+
+{% endblock %}

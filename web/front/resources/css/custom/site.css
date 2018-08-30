@@ -1,0 +1,180 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\000031}}
+.company-header {
+  vertical-align: middle;
+  position: relative;
+  min-height: 70px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\000037}}
+.company-logo {
+  width: 70px;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000312}}
+.company-basic {
+  position: relative;
+  margin-left: 90px;
+  width: 650px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000319}}
+.company-basic > p {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000325}}
+.company-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000330}}
+.company-brief {
+  font-size: 13px;
+  color: #333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000335}}
+.company-round {
+  font-size: 14px;
+  font-weight: 400;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000340}}
+.top-operate {
+  width: 340px;
+  top: 50px;
+  float: left;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000347}}
+.company-nav {
+  position: absolute;
+  right: 0;
+  top: 150px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000353}}
+.company-nav > ul {
+  list-style: circle;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000358}}
+.company-nav > ul > li {
+  padding: 5px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000364}}
+.section {
+  padding: 30px 0;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000369}}
+.section-header {
+  font-size: 16px;
+  padding: 3px 20px 4px 10px;
+  border-bottom: 2px solid #5f8bc1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000376}}
+.section-body {
+  position: relative;
+  padding: 20px 0;
+  width: 860px;
+  line-height: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000383}}
+.section-left {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  line-height: 22px;
+  font-size: 15px;
+  background: #6aa0d1;
+  color: #fff;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\0000395}}
+.section-right {
+  position: relative;
+  margin-left: 15px;
+  padding-top: 3px;
+  margin-bottom: 20px;
+  min-height: 60px;
+  width: 760px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003105}}
+.section-right-part {
+  position: relative;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003110}}
+.section-right-name {
+  display: inline;
+  width: 65px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003116}}
+.section-right-content {
+  display: inline;
+  width: 690px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003124}}
+.section-left-name {
+  position: absolute;
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003129}}
+.name2 {
+  margin-top: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003133}}
+.name3 {
+  margin-top: 18px;
+  margin-left: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003138}}
+.name4 {
+  margin-top: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003141}}
+.name5 {
+  margin-top: 9px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003147}}
+.name-a1 {
+  margin-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003151}}
+.name-a2 {
+  margin-left: 18px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003155}}
+.name-a3 {
+  margin-left: 17px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003159}}
+.name-a4 {
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003163}}
+.name-a5 {
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003167}}
+.name-a6 {
+  margin-left: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003171}}
+.name-a7 {
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003175}}
+.name-a8 {
+  margin-left: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/haiming\/GobiBuildProject\/tshbao\/web\/front\/resources\/less\/custom\/site\.less}line{font-family:\00003180}}
+.comps-develop,
+.comps-desc {
+  margin-bottom: 8px;
+}

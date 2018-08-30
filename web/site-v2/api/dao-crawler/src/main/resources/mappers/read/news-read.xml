@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crawler.dao.read.NewsReadDao">
+	<resultMap id="newsResult" type="News">
+	</resultMap>
+	<select id="get" resultMap="newsResult">
+		select * from news#{tableId} where companyId = #{companyId} order by date desc limit 20
+	</select>
+	
+	<select id="getByNewsId" resultMap="newsResult">
+		select * from news#{tableId} where id = #{newsId} order by date desc limit 20
+	</select>
+
+</mapper>

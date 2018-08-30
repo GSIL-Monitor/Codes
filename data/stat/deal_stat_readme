@@ -1,0 +1,48 @@
+select * from deal_flow where dealId=20907;
+select d.id,d.companyid,d.organizationId,d.status, d1.* from deal d join deal_flow d1 on d.id=d1.dealId where d.id=20907;
+select d.id,d.companyid,d.organizationId,d.status, d1.* from deal d join deal_flow d1 on d.id=d1.dealId where d.organizationId=1;
+select id,companyId,organizationId,status,modifyTime from deal where organizationiD=1 and status>19000;
+select id,companyId,organizationId,status,modifyTime,declineStatus,declineStatus from deal where organizationId=1 and declineStatus!=18010;;
+''
+
+deal_flow_calc:
+id
+dealId,
+companyId,
+organizationId,
+dealStatus,
+dealflowStatus,
+dealLastModifyTime,
+dealflowLastModifyTime,
+declineStatus,
+
+MySQL [tsb_v2]> select * from deal_flow where dealid=1204;
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| id  | dealId | status | declineStatus | active | createUser | createTime          | modifyTime |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| 165 |   1204 |  19000 |         18020 | Y      |          4 | 2016-06-17 14:18:44 | NULL       |
+| 478 |   1204 |  19010 |         18010 | Y      |         15 | 2016-08-11 15:18:38 | NULL       |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+
+MySQL [tsb_v2]> select * from deal_flow where dealid=187219;
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| id  | dealId | status | declineStatus | active | createUser | createTime          | modifyTime |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| 941 | 187219 |  19010 |         18010 | Y      |         15 | 2016-10-23 17:10:17 | NULL       |
+| 942 | 187219 |  19000 |         18010 | Y      |         15 | 2016-10-23 17:10:18 | NULL       |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+
+MySQL [tsb_v2]> select * from deal_flow where dealId=37185;
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| id  | dealId | status | declineStatus | active | createUser | createTime          | modifyTime |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| 294 |  37185 |  19020 |         18010 | Y      |          6 | 2016-07-11 00:26:40 | NULL       |
+| 403 |  37185 |  19040 |         18010 | Y      |         11 | 2016-08-01 10:08:44 | NULL       |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| id  | dealId | status | declineStatus | active | createUser | createTime          | modifyTime |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+
+| 143 |  15618 |  19050 |         18010 | Y      |         15 | 2016-06-16 20:19:09 | NULL       |
+| 144 |  15618 |  19050 |         18010 | Y      |         15 | 2016-06-16 20:19:10 | NULL       |
++-----+--------+--------+---------------+--------+------------+---------------------+------------+

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.crowdfunding.CrowdfundingReadDao">
+	<resultMap id="crowdfundingResult" type="Crowdfunding">
+	</resultMap>
+	<resultMap id="scfResult" type="SourceCrowdfunding">
+	</resultMap>
+
+	<select id="getById" resultMap="crowdfundingResult">
+		select 
+			* 
+		from 
+			crowdfunding
+		where 
+			id = #{cfId}
+	</select>
+
+	<select id="getByPage" resultMap="scfResult">
+		select 
+			scf.*  
+		from 
+			source_crowdfunding scf
+		left join
+			crowdfunding cf
+		on 
+			 scf.cfId=cf.id
+			 
+		order by status
+		limit #{start}, 20
+	</select>
+
+	<select id="getBySource" resultMap="scfResult">
+		select
+			scf.*
+		from
+			source_crowdfunding scf
+		left join
+			crowdfunding cf
+		on 
+			scf.cfId=cf.id
+		where
+			scf.source = #{source}
+		order by status
+		limit #{start}, 20
+	</select>
+	
+	<select id="getByStatus" resultMap="scfResult">
+		select
+			 scf.*
+		from 
+			source_crowdfunding scf 
+		left join
+			crowdfunding cf
+		on 
+		scf.cfId = cf.id	
+		where 
+			scf.status = #{status}
+		
+		order by status
+		limit #{start}, 20
+	</select>
+
+	<select id="getByStatusAndSource" parameterType="CfDBVO" resultMap="scfResult">
+	   select
+			scf.*
+		from
+			source_crowdfunding scf 
+		left join
+			crowdfunding cf
+		on
+			cf.id= scf.cfId
+		where
+		scf.status = #{status}
+		and
+		scf.source =#{source}
+		order by status
+		limit #{start}, 20
+	</select>
+	<select id="count" resultType="int">
+		select 
+			count(*)
+	  	from 
+	  		crowdfunding cf 
+	  	left join 
+	  		source_crowdfunding scf 
+	  	on
+	  		 cf.id = scf.cfId
+	</select>
+	
+	<select id="countByStatus" resultType="int">
+		select 
+			count(*) 
+		from crowdfunding cf 
+		left join 
+			source_crowdfunding scf
+	 	 on 
+			cf.id = scf.cfId 
+		where scf.status = #{status}
+	</select>
+	
+	<select id="countBySource" resultType="int">
+		select 
+			count(*) 
+		from 
+			crowdfunding  cf
+		left join 
+			source_crowdfunding scf
+		on 
+		 	cf.id=scf.cfId
+		where 
+			scf.source = #{source}
+	</select>
+	
+	<select id="countByStatusAndSource" resultType="int">
+		select 
+			count(*) 
+		from 
+			crowdfunding cf
+		left join 
+			source_crowdfunding scf
+		on
+			cf.id=scf.cfId
+		 where 
+		 	scf.status = #{status} and 
+			scf.source = #{source}
+	</select>
+	
+	
+</mapper>

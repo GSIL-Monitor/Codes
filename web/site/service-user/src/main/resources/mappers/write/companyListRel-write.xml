@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.user.dao.write.CompanyListRelWriteDao">
+
+	<insert id="insert" parameterType="CompanyListRel"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+			company_list_rel(companyId, companyListId, active,createTime)
+		values
+		(
+			#{companyId},
+			#{companyListId},
+			#{active},
+			#{createTime}
+		)
+	</insert>
+	<update id="updateModifyTime" parameterType="CompanyListRel">
+		update
+			company_list_rel
+		set
+			modifyTime = #{modifyTime}
+		where
+			companyId = #{companyId}
+		and 
+			companyListId = #{companyListId}
+
+	</update>
+
+</mapper>

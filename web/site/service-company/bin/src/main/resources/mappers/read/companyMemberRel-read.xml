@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.CompanyMemberRelReadDao">
+	<resultMap type="CompanyMemberRel" id="cmrResult">
+	<result property="id" column="id" />
+	<result property="companyId" column="companyId" />
+	<result property="memberId" column="memberId" />
+	<result property="position" column="position" />
+	<result property="joinDate" column="joinDate" />
+	<result property="leaveDate" column="leaveDate" />
+	<result property="type" column="type" />
+	<result property="verify" column="verify" />
+	<result property="active" column="active" />
+	</resultMap>
+	<resultMap type="MemberExperience" id="meResult">
+		<result property="companyCode" column="code" />
+		<result property="companyName" column="name" />
+		<result property="companyFullName" column="fullName" />
+		<result property="companyLogo" column="logo" />
+		<association property="companyMemberRel" resultMap="cmrResult" />
+
+	</resultMap>
+	<select id="count" resultType="int">
+		select
+			count(*)
+		from
+			company_member_rel
+		where
+			companyId=#{companyId}
+	</select>
+
+	<select id="getMemberExperience" parameterType="int" resultMap="meResult">
+		select
+			 *
+		from
+			company_member_rel cml
+		left join
+			company c
+		on
+			c.id =cml.companyId
+		where
+			cml.memberId=#{memberId}
+		order by cml.joinDate
+	</select>
+
+</mapper>

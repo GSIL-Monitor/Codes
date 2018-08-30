@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.user.UserSettingWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="UserSetting">
+		insert 
+		user_setting
+			(userId, language, recommendNum)
+		values(
+			#{userId}, #{language}, #{recommendNum}
+		)
+	</insert>
+
+	<update id="update" parameterType="UserSetting">
+		update 
+			user_setting 
+		set 
+			recommendNum=#{recommendNum}
+		where userId = #{userId}
+	</update>
+	
+</mapper>

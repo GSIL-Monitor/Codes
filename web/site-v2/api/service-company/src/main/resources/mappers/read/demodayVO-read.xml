@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.company.dao.DemodayVODao">
+	<resultMap id="ddPreScoreResult" type="DemodayPreScoreVO">
+	</resultMap>
+	
+	<select id="getPreScores" resultMap="ddPreScoreResult">
+		select 
+			c.code as code,
+			c.name as name, 
+			c.investment as investment,
+			c.currency as currency, 			
+			l.locationName as location,
+			o.name as orgName,
+			dp.score as score,
+			dc.rank as rank,
+			dc.scoringStatus as scoringStatus,
+			dc.joinStatus as joinStatus,
+			dc.createTime as createTime
+		from
+			demoday_company dc
+		left join
+			company c
+		on
+			dc.companyId = c.id
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		left join 
+			organization o
+		on
+			dc.organizationId = o.id
+		left join
+			demoday_prescore dp
+		on
+			dp.userId = #{userId}
+		and 
+			dp.dealDemodayId=dc.id	
+				
+		where 
+			dc.demodayId  = #{demodayId}
+			and dc.pass='Y'
+			<if test="status==26020">
+				 order by  dc.scoringStatus 
+			</if>
+			<if test="status==26010">
+				 order by dc.createTime desc
+			</if>
+			
+	</select>
+	
+	<resultMap id="ddScoreResult" type="DemodayScoreVO">
+	</resultMap>
+	
+	<select id="getScores" resultMap="ddScoreResult">
+		select 
+			c.code as code,
+			c.name as name, 
+			c.investment as investment,
+			c.currency as currency, 			
+			l.locationName as location,
+			o.name as orgName,
+			u.userName as userName,
+			ds.industry as industry,
+			ds.team as team,
+			ds.product as product,
+			ds.gain as gain,
+			ds.preMoney as preMoney,
+			dc.rank as rank,
+			dc.scoringStatus as scoringStatus,
+			dc.joinStatus as joinStatus,
+			dp.score as preScore
+		from
+			demoday_company dc
+		left join
+			company c
+		on
+			dc.companyId = c.id
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		left join 
+			organization o
+		on
+			dc.organizationId = o.id
+		left join 
+			user u
+		on 
+			u.id=#{userId}
+		left join
+			demoday_score ds
+		on
+			ds.userId = #{userId}
+
+		and 
+			ds.dealDemodayId=dc.id
+		left join 
+			demoday_prescore dp
+		on
+			dp.userId =#{userId}
+		and 
+			 dp.dealDemodayId=dc.id
+		where 
+			dc.demodayId  = #{demodayId} 
+			and dc.pass='Y'
+			order by dc.rank desc
+	</select>
+
+	<resultMap id="allUserScoreResult" type="DemodayAllUserScoreVO">
+	</resultMap>
+	<select id="getAllUserScore" resultMap="allUserScoreResult">
+		select 
+			ds.industry as industry,
+			ds.team as team,
+			ds.product as product,
+			ds.gain as gain,
+			ds.preMoney as preMoney,
+			u.userName as userName
+		from
+			demoday_score ds
+		left join 
+			 user u
+		on
+			u.id = ds.userId
+		left join 
+			company c 
+		on 
+			c.id = #{companyId}
+		where 
+			ds.dealDemodayId  = #{dealDemodayId}
+	</select>
+	
+	<resultMap id="orgResult" type="DemodayOrgResultVO">
+	</resultMap>
+	<select id="getOrgResults" resultMap="orgResult">
+		select 
+			o.id as orgId,
+			o.name as orgName ,
+			dr.result as result
+		from
+			demoday_organization do
+		left join 
+			
+			organization o
+		on
+		    o.id=do.organizationId
+	
+		left join 
+			demoday_result dr
+		on 
+			dr.organizationId=do.organizationId
+		and 
+        	dr.demodayCompanyId=#{demodayCompanyId}
+		where 
+			do.status=28030 and do.demodayId=#{demodayId}
+	</select>
+	
+	
+	<select id="getJoinDemodayOrgs" resultType="String">
+		select 
+			o.name as name
+		from
+			demoday_organization do
+		left join 
+			organization  o 
+		on 
+			do.organizationId=o.id
+		where 
+			do.status  = #{status}
+	</select>
+	
+	<select id="getNotJoinOrgs" resultType="String">
+		select 
+		 	o.name as name
+		from
+			organization  o 
+       where o.id not in 
+       		(
+       		 select 
+       		 	id
+       		 from 
+       		 	demoday_organization do
+       		 where 
+       	 	 	do.status=#{status} 
+       	 	 and 
+       	 	 	do.demodayId=#{demodayId}
+       	 	 and 
+       	 	 	do.id is not null
+       	 	 )
+	</select>
+	
+	<select id="getNotPassedList" resultMap="ddPreScoreResult">
+		select 
+			c.code as code,
+			c.name as name, 
+			c.investment as investment,
+			c.currency as currency, 			
+			l.locationName as location,
+			o.name as orgName,
+			dp.score as score,
+			dc.rank as rank,
+			dc.scoringStatus as scoringStatus,
+			dc.joinStatus as joinStatus,
+			dc.createTime as createTime
+		from
+			demoday_company dc
+		left join
+			company c
+		on
+			dc.companyId = c.id
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		left join 
+			organization o
+		on
+			dc.organizationId = o.id
+		left join
+			demoday_prescore dp
+		on
+			dp.userId = #{userId}
+		and 
+			dp.dealDemodayId=dc.id	
+		where 
+			dc.demodayId  = #{demodayId}
+			and dc.pass='N'  
+			order by dc.rank desc, dc.createTime desc 
+			limit #{start},#{pageSize}
+			
+	</select>
+	
+</mapper>

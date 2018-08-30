@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.demoday.DemodayOrganizationReadDao">
+	<resultMap id="demodayOrganizationResult" type="DemodayOrganization">
+	</resultMap>
+	
+	<select id="getByDemodayId" resultMap="demodayOrganizationResult">
+		select * from demoday_organization  where demodayId=#{demodayId} order by createTime desc
+	</select>
+	<select id="getDemodayOrg" resultMap="demodayOrganizationResult">
+		select * from demoday_organization  where demodayId=#{demodayId} and organizationId=#{orgId}
+	</select>
+	<select id="getJoinDemodayOrg" resultMap="demodayOrganizationResult">
+		select * from demoday_organization  where demodayId=#{demodayId} and organizationId=#{orgId} 
+		and status=#{status}
+	</select>
+	<select id="getJoinOrgs" resultMap="demodayOrganizationResult">
+		select * from demoday_organization  where demodayId=#{demodayId} and status=#{status}
+	</select>
+	<select id="getOrgIds" resultType="Integer">
+		select organizationId from demoday_organization  where demodayId=#{demodayId} and status=#{status}
+	</select>
+
+</mapper>

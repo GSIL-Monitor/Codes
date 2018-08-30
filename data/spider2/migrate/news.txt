@@ -1,0 +1,5 @@
+#dump from news.news
+mongoexport -h 10.44.176.22 -d news -c news -o news20160625
+
+#restore to article.news
+mongoimport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p -d article -c news news20160625

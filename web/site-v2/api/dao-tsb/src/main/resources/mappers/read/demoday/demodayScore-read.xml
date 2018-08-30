@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.demoday.DemodayScoreReadDao">
+	<resultMap id="demodayScoreResult" type="DemodayScore">
+	</resultMap>
+	
+	<select id="get" resultMap="demodayScoreResult">
+		select * from demoday_score  where dealDemodayId=#{dealDemodayId} order by createTime desc
+	</select>
+	<select id="getDemodayScore" resultMap="demodayScoreResult">
+		select * from demoday_score  where dealDemodayId=#{dealDemodayId} and userId=#{userId}
+	</select>
+
+</mapper>

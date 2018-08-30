@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+
+<script>
+function myrefresh()
+{
+   window.location.reload();
+}
+setTimeout('myrefresh()',1000*200)
+</script>
+
+<div class="page-header">
+    <h1>enter the item u want to insert to {{string}}</h1>
+</div>
+{{ wtf.quick_form(form) }}
+
+<h2>top 20 fresh items</h2>
+<div class="page-body">
+    <!--{% if newsid %}<a href= {{ newsid }} target="_blank">{{ newsid }}</a>{% else %}no newsid{% endif %}-->
+    {% if hasdata %}{{ data.to_html(classes="table table-striped") | safe}}{% endif %}
+
+</div>
+
+{% endblock %}

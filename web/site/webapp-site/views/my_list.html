@@ -1,0 +1,152 @@
+<div id="my-list" class="my-list m-t"    ng-controller="ListCtrl">
+	<div class="row pull-right" ng-controller="BasicModalCtrl">
+		<button class="btn btn-primary" ng-click="open('create_list')">
+			{{'START_A_NEW_LIST' |  translate}}
+		</button>
+	</div>
+
+
+	<div class="row list-show">
+		<h3>{{'CREATED_LISTS' |  translate}}</h3>
+	</div>
+
+	<!--
+     <div class="row">
+       <div class="container-fluid" select-row >
+          <div class="list-operate-name">
+                <a ui-sref="follow.data">
+                  <i class="fa fa-heart"></i>
+                 <span>{{'FOLLOWING' | translate}}</span>
+               </a>
+             </div>
+
+             <div class="list-operate-count">
+              <span>
+                  {{heartList.length}}
+              </span>
+              <span ng-show = "heartList.length <2">
+                  {{'COMPANY' | translate}}
+              </span>
+              <span ng-show = "heartList.length >1">
+                 {{'COMPANIES' | translate}}
+              </span>
+
+
+             </div>
+
+             <div class="list-operate-desc">
+              {{'FOLLOWING_DESC' | translate}}
+             </div>
+
+             <div class="list-operate-m">
+             </div>
+
+             <div class="list-operate-m">
+                <a>
+                   <i class="fa fa-bell-o"></i>
+                   {{'SET_ALERT' | translate}}
+                </a>
+             </div>
+
+             <div class="list-operate operate-last m-r-n-md" ng-controller="EditModalCtrl">
+               <span class='operate-edit m-r-sm'   tooltip-placement="top" tooltip="Share">
+                  Share
+              </span>
+             </div>
+
+       </div>
+       </div>
+        -->
+
+	<div class="row"  ng-show="listCount.length == 0">
+		<div class="container-fluid">
+          <span class="pll text-muted">
+                {{'MY_LIST_NULL' | translate}}.
+            </span>
+		</div>
+	</div>
+
+	<div class="row"  ng-show="listCount>0"  ng-repeat="item in companyListVOList track by $index">
+		<div class="container-fluid" select-row ng-class="($index%2==0) ? 'odd' : 'even'">
+			<div class="list-operate-name"  >
+				<a href="#/list/{{item.companyList.id}}/data">
+					<i class="fa fa-star"></i>
+					<span>{{ item.companyList.name}}</span>
+				</a>
+			</div>
+
+			<!--<div class="list-operate-name"  ng-show="item.companyCount == 0">-->
+				<!--<i class="fa fa-star"></i>-->
+				<!--<span>{{ item.companyList.name}}</span>-->
+			<!--</div>-->
+
+
+			<div class="list-operate-count">
+              <span>
+                  {{item.companyCount}}
+              </span>
+              <span ng-show = "item.companyCount <2">
+                  {{'COMPANY' | translate}}
+              </span>
+              <span ng-show = "item.companyCount >1">
+                 {{'COMPANIES' | translate}}
+              </span>
+
+
+			</div>
+
+			<div class="list-operate-desc ">
+              <textarea class="form-control m-t-xs m-b-xs" style="height:40px;"
+						placeholder="{{'WRITE_DESCRIBTION'|translate}}"
+						list-desc='{{item.companyList}}'>{{ item.companyList.description.trim()}}</textarea>
+			</div>
+
+			<div class="list-operate-m">
+				<i class="fa fa-lock" ng-show='item.companyList.status == 1001'></i>
+				<i class="fa fa-unlock-alt" ng-show='item.companyList.status == 1002'></i>
+				<span ng-show="item.companyList.status == 1001"> {{'PRIVATE'|translate}}</span>
+				<span ng-show="item.companyList.status == 1002"> {{'PUBLIC'|translate}}</span>
+			</div>
+
+			<div class="list-operate-m">
+				<a>
+					<i class="fa fa-bell-o"></i>
+					{{'SET_ALERT' | translate}}
+				</a>
+			</div>
+
+			<div class="list-operate operate-last m-r-n-md" ng-controller="EditModalCtrl">
+
+				<!--
+                  <span class='operate-save m-r-sm' tooltip-placement="top" tooltip="Save">
+                   <i class="fa fa-save fa-lg"></i>
+                   </span>
+                   -->
+
+               <span class='operate-edit m-r-sm' tooltip-placement="top" tooltip="{{'EDIT'|translate}}"
+					 ng-click="open('edit_list', '{{item}}')">
+               <i class="fa fa-edit fa-lg"></i>
+               </span>
+               <span class="text-danger" tooltip-placement="top" tooltip="{{'DELETE'|translate}}"
+					 delete-owner='{{item.companyList.id}}'>
+                <i class="fa fa-close fa-lg"></i>
+              </span>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="last-row form-group div-load" ng-show="userList.length < total">
+		<div class="container-fluid">
+			<button class=' btn load-btn' load-more-data='list'>
+				<i class="fa fa-arrow-down"></i>
+				{{'LOAD_MORE_DATA' | translate}}
+			</button>
+		</div>
+	</div>
+
+	<!-- shared list -->
+
+	<div style='height: 20px'></div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.collection.CollectionUserRelWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="CollectionCompanyRel">
+		insert collection_user_rel(
+			collectionId, userId,verify,active,createUser,createTime
+		)
+		values(
+			#{collectionId}, #{userId},#{verify},#{active},#{createUser},#{createTime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="CollectionCompanyRel">
+		update
+			collection_user_rel
+		set 
+			collectionId=#{collectionId}, 
+			userId=#{userId},
+			verify=#{verify},
+			active=#{active},
+			createUser=#{createUser},
+			createTime=#{createTime}, 
+			modifyTime=#{modifyTime}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

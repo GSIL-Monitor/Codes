@@ -1,0 +1,7 @@
+#pip install requesocks
+
+https://github.com/dvska/requesocks
+手工安装
+
+https://github.com/kennethreitz/requests/pull/2953
+requests 2.10后支持socks

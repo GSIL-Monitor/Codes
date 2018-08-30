@@ -1,0 +1,2 @@
+alter table source_job modify position varchar(200) default null;
+alter table job modify position varchar(200) default null;

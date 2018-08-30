@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.UserOrganizationRelReadDao">
+	<resultMap id="userOrgRelResult" type="UserOrganizationRel">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="userOrgRelResult">
+		select * from user_organization_rel where userId = #{userId}
+	</select>
+	<select id="getList" parameterType="Integer" resultMap="userOrgRelResult">
+		select * from user_organization_rel where userId = #{userId}
+	</select>
+	<select id="getUserIds" parameterType="Integer" resultType="Integer">
+		select  userId from user_organization_rel where organizationId = #{orgId}
+	</select>
+
+	<select id="getUserIdsByOrgId" resultType="Integer">
+			select
+				userId
+			from
+				user_organization_rel 
+		where 
+			organizationId  = #{orgId}
+	</select>
+		
+</mapper>

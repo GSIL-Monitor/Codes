@@ -1,0 +1,16 @@
+<xml>
+	<ToUserName><![CDATA[{{ model.user }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ model.app }}]]></FromUserName>
+	<CreateTime>{{ model.createTime }}</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[保存成功
+
+请指定项目负责人:
+
+{% for user in model.users %}
+回复“{{user.id}}”，将负责人改为{{user.username}}
+{% endfor %}
+十分钟内修改有效！
+
+如有问题，请联系管理员]]></Content>
+</xml>

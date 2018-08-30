@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+	</settings>
+
+	<typeAliases>
+	<!-- company -->
+		<typeAlias alias="CompanyVO" type="com.tsb.model.vo.CompanyVO" />
+		<typeAlias alias="Company" type="com.tsb.model.Company" />
+		<typeAlias alias="CompanyTagRel" type="com.tsb.model.CompanyTagRel"/>
+		<typeAlias alias="Artifact" type="com.tsb.model.Artifact" />
+		<typeAlias alias="Funding" type="com.tsb.model.Funding" />
+		<typeAlias alias="FundingInvestorRel" type="com.tsb.model.FundingInvestorRel" />
+		<typeAlias alias="Investor" type="com.tsb.model.Investor" />
+		<typeAlias alias="Footprint" type="com.tsb.model.Footprint" />
+		<typeAlias alias="Domain" type="com.tsb.model.Domain" />
+		<typeAlias alias="SourceCompany" type="com.tsb.model.source.SourceCompany" />
+		<typeAlias alias="CompanyAlias" type="com.tsb.model.CompanyAlias" />
+		<typeAlias alias="CompanyMemberRel" type="com.tsb.model.CompanyMemberRel" />
+		<typeAlias alias="Member" type="com.tsb.model.Member" />
+		<typeAlias alias="CompanyHeadVO" type="com.tsb.model.vo.CompanyHeadVO" />
+		<typeAlias alias="MemberExperience" type="com.tsb.model.vo.MemberExperience" />
+		
+		 <!--crowdfunding  --> 
+		<typeAlias alias="Crowdfunding" type="com.tsb.model.crowdfunding.Crowdfunding" />
+		<typeAlias alias="SourceCrowdfunding" type="com.tsb.model.crowdfunding.SourceCrowdfunding" />
+		<typeAlias alias="SourceCfDocument" type="com.tsb.model.crowdfunding.SourceCfDocument" /> 
+		<typeAlias alias="SourceCfLeader" type="com.tsb.model.crowdfunding.SourceCfLeader" />
+		<typeAlias alias="SourceCfMember" type="com.tsb.model.crowdfunding.SourceCfMember" />
+		<typeAlias alias="CfDBVO" type="com.tsb.model.vo.CfDBVO" /> 
+		<typeAlias alias="CfHeadVO" type="com.tsb.model.vo.CfHeadVO" /> 
+		<!-- user follow company -->
+		<typeAlias alias="FollowCompany" type="com.tsb.model.vo.FollowCompany" />
+		<typeAlias alias="CompanyTagRelVO" type="com.tsb.model.vo.CompanyTagRelVO" />
+		
+		</typeAliases>
+	
+	
+	<mappers>
+		<!-- company -->
+		<mapper resource="mappers/read/company-read.xml" />
+		<mapper resource="mappers/read/companyTagRel-read.xml" />
+		<mapper resource="mappers/read/artifact-read.xml" />
+		<mapper resource="mappers/read/funding-read.xml" />
+		<mapper resource="mappers/read/footprint-read.xml" />
+		<mapper resource="mappers/read/domain-read.xml" />
+		<mapper resource="mappers/read/fundingInvestorRel-read.xml" />
+		<mapper resource="mappers/read/investor-read.xml" />
+		<mapper resource="mappers/read/sourceCompany-read.xml" />
+		<mapper resource="mappers/read/companyAlias-read.xml" />
+		<mapper resource="mappers/read/tag-read.xml" />
+		<mapper resource="mappers/read/member-read.xml" />
+		<mapper resource="mappers/read/companyMemberRel-read.xml" />
+		<mapper resource="mappers/read/job-read.xml" />
+		<mapper resource="mappers/write/company-write.xml" />
+		<!-- crowdfunding -->
+		<mapper resource="mappers/read/crowdfunding/crowdfunding-read.xml" />
+		<mapper resource="mappers/read/crowdfunding/sourceCrowdfunding-read.xml" />
+		<mapper resource="mappers/read/crowdfunding/sourceCfDocument-read.xml" />
+		<mapper resource="mappers/read/crowdfunding/sourceCfLeader-read.xml" />
+		<mapper resource="mappers/read/crowdfunding/sourceCfMember-read.xml" />
+	</mappers>
+	
+	
+	
+</configuration>

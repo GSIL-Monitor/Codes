@@ -1,0 +1,17 @@
+{
+  "name": "oss-fileserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "ali-oss": "^4.8.0",
+    "co": "^4.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node oss-fileserver.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

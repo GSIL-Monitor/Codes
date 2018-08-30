@@ -1,0 +1,17 @@
+delete from deal_assignee where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N');
+--update deal_note set dealId=15898 where dealid=15;
+delete from deal_user_score where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N');
+delete from user_deal_panel where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N');
+delete from deal_flow where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N');
+delete from deal_user_rel where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N');
+delete d from deal d join company c on d.companyId=c.id where c.active='N';
+
+
+select * from deal_note where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N');
+
+
+select d.id from deal d join company c on d.companyId=c.id where c.active='N';
+
+
+update company set active=null where id in (select companyId from deal where id in (select dealId from deal_note where dealId in (select d.id from deal d join company c on d.companyId=c.id where c.active='N')));
+

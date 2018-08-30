@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.write.CompanyWriteDao">
+
+	<update id="update" parameterType="Company">
+		update
+			company
+		set 
+			name = #{name},
+			fullName = #{fullName},
+			description = #{description},
+			brief = #{brief},
+			round = #{round},
+			roundDesc = #{roundDesc},
+			companyStatus = #{companyStatus},
+			fundingType = #{fundingType},
+			preMoney = #{preMoney},
+			currency = #{currency},
+			headCountMin = #{headCountMin},
+			headCountMax = #{headCountMax},
+			locationId = #{locationId},
+			address = #{address},
+			phone = #{phone},
+			verify= #{verify},
+			modifyTime = #{modifyTime},
+			modifyUser = #{modifyUser}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

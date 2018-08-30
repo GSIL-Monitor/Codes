@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.CompanyReadDao">
+	<resultMap id="companyResult" type="Company">
+		<result property="id" column="id" />
+		<result property="code" column="code" />
+		<result property="name" column="name" />
+		<result property="fullName" column="fullName" />
+		<result property="description" column="description" />
+		<result property="brief" column="brief" />
+		<result property="round" column="round" />
+		<result property="roundDesc" column="roundDesc" />
+		<result property="companyStatus" column="companyStatus" />
+		<result property="fundingType" column="fundingType" />
+		<result property="preMoney" column="preMoney" />
+		<result property="currency" column="currency" />
+		<result property="headCountMin" column="headCountMin" />
+		<result property="headCountMax" column="headCountMax" />
+		<result property="establishDate" column="establishDate" />
+		<result property="locationId" column="locationId" />
+		<result property="address" column="address" />
+		<result property="logo" column="logo" />
+	</resultMap> 
+	<resultMap id="CompanyVOResult" type="CompanyVO" >
+		<result property="location" column="locationName" />
+		<association property="company" resultMap="companyResult"/>
+	</resultMap>
+	<resultMap id="followCompanyResult" type="FollowCompany" >
+		<result property="location" column="locationName"/>
+		<result property="followStatus" column="status" />
+		<result property="followDate" column="followDate" />
+	<association property="company" resultMap="companyResult"/>
+	</resultMap>
+	<resultMap  id="cmrResult" type="CompanyMemberRel">
+	</resultMap>
+	<resultMap id="headResult" type="CompanyHeadVO">
+		<result property="companyId" column="id" />
+		<result property="companyCode" column="code" />
+		<result property="name" column="name" />
+		<result property="logo" column="logo" />
+		<result property="verify" column="verify" />
+	</resultMap>
+	
+	<select id="getIdsByCodes"  resultType="int">
+		select  id
+		from 
+			company c
+		where c.code in 
+		 	<foreach collection="codeList" item="item" index="index"  open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		order by c.createTime
+	</select>
+	<select id="getIdByCode" parameterType="String"  resultType="int">
+		select id from company
+		where code = #{code}
+	</select>
+	<select id="get" parameterType="String" resultMap="companyResult">
+		select * from company where code = #{code}
+	</select>
+	
+	<select id="getCompanyVO" parameterType="int" resultMap="CompanyVOResult" >
+		select 
+			*
+		from 
+			company c
+	    
+        left join
+			location l
+		on
+			c.locationId = l.locationId 
+		where 
+			c.id=#{companyId} 
+	</select>
+	
+	<select id="getFollowCompanies" resultMap="followCompanyResult">
+		select 
+			*
+		from 
+			company c
+        left join
+			location l
+		on
+			c.locationId = l.locationId 
+		
+		left join
+			user_company_follow ucf
+		on
+			c.id = ucf.companyId
+
+		where 
+			ucf.userId = #{userId}
+		and
+			c.id in 
+		<foreach item="item" index="index" collection="companyIds" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		order by ucf.createTime desc
+	</select>
+	
+	<select id="getComMemRelById" resultMap="cmrResult">
+		select 
+			* 
+		from
+			company_member_rel 
+		where companyId=#{companyId}
+	</select>
+	
+	<select id="getCompanyHeadVO" parameterType="int"  resultMap="headResult">
+		select * from company
+		where id = #{companyId}
+	</select>
+	
+	
+	
+	<select id="getFollowCompany" resultMap="followCompanyResult">
+		select 
+			*
+		from 
+			company c
+        left join
+			location l
+		on
+			c.locationId = l.locationId 
+		
+		left join
+			user_company_follow ucf
+		on
+			c.id = ucf.companyId
+
+		where 
+			ucf.userId = #{userId}
+		and
+			c.id =#{companyId}
+	</select>
+	
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.DealReadDao">
+	<resultMap id="dealResult" type="Deal">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="dealResult">
+		select * from deal where id = #{id}
+	</select>
+	
+	<select id="getByOrganization" resultMap="dealResult">
+		select * from deal where companyId = #{companyId} and organizationId=#{organizationId}
+	</select>
+	
+</mapper>

@@ -1,0 +1,1 @@
+!function(){angular.module("gobi",["ngCookies","ngTouch","ui.grid","ui.grid.selection","ui.grid.resizeColumns","ui.grid.infiniteScroll","frapontillo.bootstrap-switch","ui.router","oc.lazyLoad","ui.bootstrap","pascalprecht.translate"])}();

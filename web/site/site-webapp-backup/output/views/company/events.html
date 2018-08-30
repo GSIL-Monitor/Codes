@@ -1,0 +1,36 @@
+<div class="panel-company pnl company-events"  ng-controller= "CompanyEventsCtrl">
+  	 <div class="news-container m-b-md" ng-repeat="item in newsList track by $index">
+        
+       <div class="row" >
+         <div class="news-title">
+             <a href="#/index/news?{{item.newsId}}">
+	              {{item.newsTitle}}
+             </a>
+         </div>
+
+         <span class="text-muted"> {{item.newsDate}}</span>
+         
+         <div >
+         	 <!--  Source: <a href="{{item.newsUrl}}" target='_blank'>{{item.newsUrl}} </a>
+         	 -->
+         </div>
+       </div>
+       
+       <div class="row news-content" >
+         	  <p ng-show='item.newsContent != ""'>
+         	  	{{item.newsContent}} ...
+         	  </p>
+         	  
+         	  <!--
+         	   <p ng-hide='item.imageUrl != ""'>
+         	  		<img src="{{item.imageUrl}}" />
+         	   </p>
+         	    -->
+         	  
+        	  <a href="#/index/news?{{item.newsId}}" class="pull-right m-r">{{'READ_MORE'|translate}}</a>
+       </div>
+       
+       
+     </div>
+ </div>
+	  

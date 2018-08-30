@@ -1,0 +1,183 @@
+
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-width: 1100px;
+  background-color: @gray;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  position: relative;
+  z-index: 999;
+
+}
+
+.header-bar{
+  position: absolute;
+  top:12px;
+  left: 20px;
+  width: 30px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid @nav-bg;
+}
+
+.header-bar:hover{
+  background: @nav-bg;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+
+.header-logo{
+  line-height: 30px;
+}
+
+.header-logo > h3>a{
+  color: @text-color;
+}
+
+.header-search{
+  width: 300px;
+  float: left;
+}
+
+.header-nav {
+  line-height: 30px;
+  font-size: 15px;
+  list-style: none;
+  vertical-align: middle;
+  color: #222;
+}
+
+.header-nav > li > a {
+  font-weight: 600;
+  padding: 14px 20px 14px 25px;
+}
+
+.header-nav > li > a:hover{
+  color: @blue;
+
+}
+
+.user-nav {
+  list-style: none;
+}
+
+.user-nav > li{
+  margin-left: 8px;
+}
+
+.user-login{
+  vertical-align: bottom;
+  line-height: 30px;
+  width: 100px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.user-login:hover{
+  cursor: pointer;
+  z-index: 100;
+}
+
+.user-popover{
+  display: none;
+  left: auto;
+  margin-right: 0;
+  margin-top: -10px;
+  border-radius: 0;
+  background: @gray;
+  width: 100px;
+  margin-left: -10px;
+}
+
+.user-popover > ul{
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.user-popover > ul > li{
+  line-height: 25px;
+}
+
+.user-popover > ul > li:hover{
+  background: @blue;
+  color: #fff;
+}
+
+
+.header-nav > li, .user-nav > li{
+  float: left;
+}
+
+.search{
+  float: left;
+  margin-right: 10px;
+}
+
+
+.search-input {
+  background: #fff;
+  font-weight: 600;
+  color: #111;
+  border: 0;
+  display: inline-block;
+  padding: 4px 2px;
+  line-height: 20px;
+  min-height: 28px;
+  width: 280px;
+}
+
+
+.search-hint{
+  background: #fff;
+  position: absolute;
+  width: 500px;
+  height: auto;
+  border: 1px solid rgba(0,0,0,0.15);
+  z-index: 2000;
+}
+
+.search-divider{
+  border-bottom: 1px solid @dark-gray;
+  background: #eee;
+  color: #000;
+  font-size: 12px;
+  padding: 5px 8px;
+}
+
+
+.hint-type{
+  z-index: 2000;
+}
+
+.hint-type > ul{
+  list-style: none;
+}
+
+.hint-element{
+  padding: 10px;
+  color: #222;
+}
+
+.hint-selected, .hint-selected>span{
+  background: @blue;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.accessibility-aid {
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+  margin: 0;
+}
+
+
+

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+ <head>
+  <title></title>
+  <!--[if !mso]><!-- -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style type="text/css">  #outlook a { padding: 0; }  .ReadMsgBody { width: 100%; }  .ExternalClass { width: 100%; }  .ExternalClass * { line-height:100%; }  body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }  table, td { border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }  img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }  p { display: block; margin: 13px 0; }</style>
+  <!--[if !mso]><!-->
+  <style type="text/css">  @media only screen and (max-width:480px) {    @-ms-viewport { width:320px; }    @viewport { width:320px; }  }</style>
+  <!--<![endif]-->
+  <!--[if mso]><xml>  <o:OfficeDocumentSettings>    <o:AllowPNG/>    <o:PixelsPerInch>96</o:PixelsPerInch>  </o:OfficeDocumentSettings></xml><![endif]-->
+  <!--[if lte mso 11]><style type="text/css">  .outlook-group-fix {    width:100% !important;  }</style><![endif]-->
+  <!--[if !mso]><!-->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet" type="text/css" />
+  <style type="text/css">        @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);    </style>
+  <!--<![endif]-->
+  <style type="text/css">  @media only screen and (min-width:480px) {    .mj-column-per-100 { width:100%!important; }  }</style>
+ </head>
+ <body style="background: #FFFFFF;">
+  <div class="mj-container" style="background-color:#FFFFFF;">
+   <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;">        <tr>          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">      <![endif]-->
+   <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;" border="0">
+    <tbody>
+     <tr>
+      <td>
+       <div style="margin:0px auto;max-width:600px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;" align="center" border="0">
+         <tbody>
+          <tr>
+           <td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:9px 0px 9px 0px;">
+            <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0">        <tr>          <td style="vertical-align:top;width:600px;">      <![endif]-->
+            <div class="mj-column-per-100 outlook-group-fix" style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
+             <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+              <tbody>
+               <tr>
+                <td style="word-wrap:break-word;font-size:0px;padding:0px 20px 0px 20px;" align="left">
+                 <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:11px;line-height:22px;text-align:left;">
+                  <p><span style="font-size:12px;">Hi ${data['user']['username']}，</span></p>
+                  <p><span style="font-size:12px;">您在烯牛数据关注了【${len(data['user_industries_data'])}】个热门领域，
+                      % if data['message_count'] == 0:
+                        今天暂时没有动态。
+                      % else:
+                        今天为您追踪到【${data['message_count']}】条动态。
+                      % endif
+                  </span></p>
+                  <p><span style="font-size:12px;"><span style="color:#bdc3c7;">(点击下划线内容可跳转烯牛数据网站查看详情)</span></span></p>
+                  <p><span style="font-size:12px;">追踪时间：${data['start']} ~ ${data['end']}</span></p>
+                 </div></td>
+               </tr>
+              </tbody>
+             </table>
+            </div>
+            <!--[if mso | IE]>      </td></tr></table>      <![endif]--></td>
+          </tr>
+         </tbody>
+        </table>
+       </div></td>
+     </tr>
+    </tbody>
+   </table>
+   <!--[if mso | IE]>      </td></tr></table>      <![endif]-->
+   <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;">        <tr>          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">      <![endif]-->
+   <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;" border="0">
+    <tbody>
+     <tr>
+      <td>
+       % if data['message_count'] != 0:
+       <div style="margin:0px auto;max-width:600px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;" align="center" border="0">
+         <tbody>
+          <tr>
+           <td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:9px 0px 9px 0px;">
+            <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0">        <tr>          <td style="vertical-align:top;width:600px;">      <![endif]-->
+            <div class="mj-column-per-100 outlook-group-fix" style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
+             <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+              <tbody>
+               % for industry in data['user_industries_data']:
+               <tr>
+                <td style="word-wrap:break-word;font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;"><p style="font-size:1px;margin:0px auto;border-top:1px solid #B6AEAE;width:100%;"></p>
+                 <!--[if mso | IE]><table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="font-size:1px;margin:0px auto;border-top:1px solid #B6AEAE;width:100%;" width="600"><tr><td style="height:0;line-height:0;"> </td></tr></table><![endif]--></td>
+               </tr>
+               <tr>
+                <td style="word-wrap:break-word;font-size:0px;padding:0px 20px 0px 20px;" align="left">
+                 <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:11px;line-height:22px;text-align:left;">
+                  <table border="0" cellpadding="1" cellspacing="1">
+                   <tbody>
+                    <tr>
+                     <td style="width: 20px;"><span style="font-size:12px;">${loop.index+1}.</span></td>
+                     <td><span style="font-size:12px;"><strong>热门领域</strong>：<a href="http://www.xiniudata.com/industry/${industry['code']}/overview">${industry["name"]}</a></span></td>
+                    </tr>
+                    <tr>
+                     <td></td>
+                     <td>
+                      <table align="left" border="0" cellpadding="0" cellspacing="0">
+                       <tbody>
+                        <tr>
+                         <td style="width: 60px; vertical-align: top;"><span style="font-size:12px;"><strong>今日收录</strong>：</span></td>
+                         <td><span style="font-size:12px;">
+                             % if len(industry["new_coming_companies"]) > 0:
+                               % for company in industry["new_coming_companies"]:
+                                <a href="http://www.xiniudata.com/company/${company['code']}/overview">${company["name"]}</a>
+                                % if len(industry["new_coming_companies"]) != loop.index+1:
+                                、
+                                % endif
+                               % endfor
+                             % else:
+                             无
+                             % endif
+                         </span></td>
+                        </tr>
+                       </tbody>
+                      </table> </td>
+                    </tr>
+                    <tr>
+                     <td></td>
+                     <td></td>
+                    </tr>
+                    <tr>
+                     <td></td>
+                     <td>
+                       <table align="left" border="0" cellpadding="0" cellspacing="0">
+                       <tbody>
+                        <tr>
+                         <td style="width: 60px; vertical-align: top;"><span style="font-size:12px;"><strong>已有公司</strong>：</span></td>
+                         <td><span style="font-size:12px;">
+                         % if len(industry['companies_with_mesasge']) == 0:
+                             今天暂无动态
+                         % endif
+                         </span></td>
+                        </tr>
+                       </tbody>
+                      </table>
+                     </td>
+                    </tr>
+                    % for company in industry['companies_with_mesasge']:
+                    <tr>
+                     <td></td>
+                     <td><span style="font-size:12px;">${loop.index+1}) <a href="http://www.xiniudata.com/company/${company['code']}/overview">${company["name"]}</a></span></td>
+                    </tr>
+                    % for message in company["messages"]:
+                    <tr>
+                     <td></td>
+                     <td><span style="font-size:12px;">
+                         % if message['relateType'] == 10:
+                         <span>新闻 <a href="http://www.xiniudata.com/news/${message['relateId']}" target="_blank">《${message["message"]}》</a></span>
+                        % elif message['relateType'] == 20:
+                        <span style="color:#999999;">产品 ${message["message"]}</span>
+                        % elif message['relateType'] == 30:
+                        <span style="color:#999999;">产品 ${message["message"]}</span>
+                        % elif message['relateType'] == 40:
+                         <span style="color:#999999;">招聘 ${message["message"]}</span>
+                        % elif message['relateType'] == 50:
+                         <span style="color:#999999;">工商 ${message["message"]}</span>
+                        % elif message['relateType'] == 60:
+                         <span style="color:#999999;">竞品 ${message["message"]}</span>
+                        % elif message['relateType'] == 70:
+                         <span style="color:#999999;">融资 ${message["message"]}</span>
+                        % elif message['relateType'] == 80:
+                         <span style="color:#999999;">正在融资 ${message["message"]}</span>
+                        % else:
+                         <span style="color:#999999;">${message["message"]}</span>
+                        % endif
+                     </span></td>
+                    </tr>
+                    % endfor
+                    % endfor
+                   </tbody>
+                  </table>
+                 </div></td>
+               </tr>
+               % endfor
+               <tr>
+                <td style="word-wrap:break-word;font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;"><p style="font-size:1px;margin:0px auto;border-top:1px solid #B6AEAE;width:100%;"></p>
+                 <!--[if mso | IE]><table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" style="font-size:1px;margin:0px auto;border-top:1px solid #B6AEAE;width:100%;" width="600"><tr><td style="height:0;line-height:0;"> </td></tr></table><![endif]--></td>
+               </tr>
+              </tbody>
+             </table>
+            </div>
+            <!--[if mso | IE]>      </td></tr></table>      <![endif]--></td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       % endif
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <!--[if mso | IE]>      </td></tr></table>      <![endif]-->
+   <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:600px;">        <tr>          <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">      <![endif]-->
+   <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;" border="0">
+    <tbody>
+     <tr>
+      <td>
+       <div style="margin:0px auto;max-width:600px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" style="font-size:0px;width:100%;" align="center" border="0">
+         <tbody>
+          <tr>
+           <td style="text-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:9px 0px 9px 0px;">
+            <!--[if mso | IE]>      <table role="presentation" border="0" cellpadding="0" cellspacing="0">        <tr>          <td style="vertical-align:top;width:600px;">      <![endif]-->
+            <div class="mj-column-per-100 outlook-group-fix" style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
+             <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+              <tbody>
+               <tr>
+                <td style="word-wrap:break-word;font-size:0px;padding:0px 20px 0px 20px;" align="left">
+                 <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:11px;line-height:22px;text-align:left;">
+                  <p><span style="font-size:12px;">以上为本次追踪内容。</span></p>
+                  <p><span style="font-size:12px;">如有疑问，欢迎联系我们：）</span></p>
+                  <p><span style="font-size:12px;">烯牛数据团队</span></p>
+                  <p><span style="font-size:12px;"><a href="http://www.xiniudata.com" target="_blank">www.xiniudata.com</a></span></p>
+                 </div></td>
+               </tr>
+               <tr>
+                <td style="word-wrap:break-word;font-size:0px;padding:0px 20px 0px 20px;" align="center">
+                 <div style="cursor:auto;color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:11px;line-height:22px;text-align:center;">
+                  <p><img src="http://www.xiniudata.com/resources/image/icon-system/verify/ios-normal.jpeg" /></p>
+                 </div></td>
+               </tr>
+              </tbody>
+             </table>
+            </div>
+            <!--[if mso | IE]>      </td></tr></table>      <![endif]--></td>
+          </tr>
+         </tbody>
+        </table>
+       </div></td>
+     </tr>
+    </tbody>
+   </table>
+   <!--[if mso | IE]>      </td></tr></table>      <![endif]-->
+  </div>
+ </body>
+</html>

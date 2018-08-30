@@ -1,0 +1,7 @@
+<xml>
+	<ToUserName><![CDATA[{{ model.user }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ model.app }}]]></FromUserName>
+	<CreateTime>{{ model.createTime }}</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[★欢迎使用项目小助手！]]></Content>
+</xml>

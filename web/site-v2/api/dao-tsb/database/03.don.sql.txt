@@ -1,0 +1,9 @@
+#deployed
+insert user(id,username,email,password,active,createTime) values(3,'Don','don@gobivc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(3,'don@gobivc.com',true);
+insert user_email(userId,email,verify) values(3,'don@gobi.cn',true);
+insert user_email(userId,email,verify) values(3,'jiangtao@me.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,3,now());
+insert user_role(userId,role,createTime) values(3,25030,now());
+
+update user set password=md5('241145813318058567243Gobi5292') where id=3;

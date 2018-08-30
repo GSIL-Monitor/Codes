@@ -1,0 +1,29 @@
+database： article
+collection： news
+记录结构：
+{
+    "_id":,
+    "companyId":,
+    "date":,
+    "title":,
+    "link":,
+    "confidence":,
+    "verify":,
+    "active":,
+    "createTime":,
+    "contents": [
+        {
+            "rank":1,
+            "content":,
+            "image":,
+            "image_src":,
+        },
+        {
+            "rank":2,
+            "content":,
+            "image":
+            "image_src":,
+        }
+    ],
+    "oldNewsId":    //从mysql导入时记录原id, 防止重复导入
+}

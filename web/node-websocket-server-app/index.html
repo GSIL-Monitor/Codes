@@ -1,0 +1,54 @@
+Welcome!
+
+<script>
+    function register(ws, token){
+        if(token){
+            var message = {
+                "type":"register",
+                "token":token
+            };
+            //console.log(message);
+            ws.send(JSON.stringify(message));
+        }
+    }
+
+    var init_websocket = function(){
+        var ws = new WebSocket("ws://push.xiniudata.com/app");
+
+        ws.onopen = function() {
+            //console.log("Opened");
+            register(ws, "0U9G2MRC6YP3T9UQJ23LSVI056FN07WETJDU5GLVIP9ZLCYW0RJUYL9SWZ65CCX3");
+        };
+
+        ws.onmessage = function (evt) {
+            //console.log(evt.data);
+            var msg = JSON.parse(evt.data);
+            if(msg["action"]=="notify_new_message"){
+                var type = msg["type"];
+                console.log("message: %s", JSON.stringify(msg));
+            }
+            else if(msg["type"]=="connection"){
+                console.log("connection: %s", msg["message"]);
+            }
+            else if(msg["type"]=="register"){
+                console.log("register: %s", msg["message"]);
+            }
+        };
+
+        ws.onclose = function(evt) {
+           //console.log("Closed");
+           //console.log(evt);
+           //console.log(evt.code);
+           if(evt.code != 4000){
+               window.setTimeout(init_websocket,30*1000);
+           }
+        };
+
+        ws.onerror = function(err) {
+           //console.log(err);
+        };
+    };
+
+    init_websocket();
+
+</script>

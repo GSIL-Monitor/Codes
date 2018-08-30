@@ -1,0 +1,20 @@
+insert user(id,username,email,password,active,createTime) values(5,'Bill','bill@gobivc.com',md5('241145813318058567245Gobi5292'),'Y',now());
+insert user_email(userId,email,verify) values(5,'bill@gobivc.com',true);
+insert user_email(userId,email,verify) values(5,'bill@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,5,now());
+insert user_role(userId,role,createTime) values(5,25040,now());
+
+#28008	车萝卜HUD
+#ljkj-chlbCarRobot	15889
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(28,1,19050,20030,18010,now(),15889);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(5,28,21020,23010,now());
+
+
+#22912	iGrow室内智能微种植
+#zhgkjiGrow			16794
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(29,1,19050,20030,18010,now(),16794);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(5,29,21020,23010,now());

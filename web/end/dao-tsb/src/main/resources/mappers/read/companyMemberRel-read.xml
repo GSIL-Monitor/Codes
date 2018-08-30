@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.CompanyMemberRelReadDao">
+	<resultMap id="cmrResult" type="CompanyMemberRel">
+	</resultMap>
+	
+	<select id="get" parameterType="Integer" resultMap="cmrResult">
+		select * from company_member_rel where id = #{id}
+	</select>
+	
+	<select id="listByCompanyId" parameterType="Integer" resultMap="cmrResult">
+		select * from company_member_rel
+		where active='Y' and companyId = #{id}
+	</select>
+	
+	<select id="listByMemberId" parameterType="Integer" resultMap="cmrResult">
+		select * from company_member_rel
+		where active='Y' and memberId = #{id}
+	</select>
+	
+</mapper>

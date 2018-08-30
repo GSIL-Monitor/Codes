@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crawler.dao.read.AndroidReadDao">
+	<resultMap id="androidResult" type="Android">
+	</resultMap>
+	
+	<select id="get" resultMap="androidResult">
+		select * from android#{tableId} where artifactId = #{artifactId} order by date desc limit 20
+	</select>
+	
+	<select id="getByType" resultMap="androidResult">
+		select * from android#{tableId} where artifactId = #{artifactId} and type= #{type} order by date desc limit 20
+	</select>
+	
+	<select id="getByTypeExpand" resultMap="androidResult">
+		select * from android#{tableId} where artifactId = #{artifactId} and type= #{type} 
+			and date &gt;=SUBDATE(now(),interval #{expand} day) and date &lt; now()
+		order by date desc limit #{expand}
+	</select>
+
+</mapper>

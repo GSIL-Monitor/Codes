@@ -1,0 +1,44 @@
+insert organization(id,name,type,status,grade,createTime) values(3,'原子创投',17020,null,33020,now());
+insert organization_conf(id,coldcall,api) values(3,0,0);
+
+#冯一名 raymond@atomvc.com
+insert user(id,username,email,password,active,createTime) values(40,'冯一名','raymond@atomvc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(40,'raymond@atomvc.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(3,40,now());
+insert user_role(userId,role,createTime) values(40,25030,now());
+update user set password=md5('2411458133180585672440raymond@atomvc.com') where id=40;
+
+#姚嘉 yaojia@atomvc.com
+insert user(id,username,email,password,active,createTime) values(41,'姚嘉','yaojia@atomvc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(41,'yaojia@atomvc.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(3,41,now());
+insert user_role(userId,role,createTime) values(41,25040,now());
+update user set password=md5('2411458133180585672441yaojia@atomvc.com') where id=41;
+
+#游然 youran@atomvc.com
+insert user(id,username,email,password,active,createTime) values(42,'游然','youran@atomvc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(42,'youran@atomvc.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(3,42,now());
+insert user_role(userId,role,createTime) values(42,25040,now());
+update user set password=md5('2411458133180585672442youran@atomvc.com') where id=42;
+
+#杨阳 yangyang@atomvc.com
+insert user(id,username,email,password,active,createTime) values(43,'杨阳','yangyang@atomvc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(43,'yangyang@atomvc.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(3,43,now());
+insert user_role(userId,role,createTime) values(43,25040,now());
+update user set password=md5('2411458133180585672443yangyang@atomvc.com') where id=43;
+
+#曹文霄 wenxiao@atomvc.com 
+insert user(id,username,email,password,active,createTime) values(44,'曹文霄','wenxiao@atomvc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(44,'wenxiao@atomvc.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(3,44,now());
+insert user_role(userId,role,createTime) values(44,25040,now());
+update user set password=md5('2411458133180585672444wenxiao@atomvc.com') where id=44;
+
+#孙缬丽 xieli@atomvc.com 
+insert user(id,username,email,password,active,createTime) values(45,'孙缬丽','xieli@atomvc.com',md5('241145813318058567243test'),'Y',now());
+insert user_email(userId,email,verify) values(45,'xieli@atomvc.com',true);
+insert user_organization_rel(organizationId,userId,createTime) values(3,45,now());
+insert user_role(userId,role,createTime) values(45,25040,now());
+update user set password=md5('2411458133180585672445xieli@atomvc.com') where id=45;

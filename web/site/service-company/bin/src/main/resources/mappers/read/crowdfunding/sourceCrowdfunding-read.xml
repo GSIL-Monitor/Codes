@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.crowdfunding.SourceCrowdfundingReadDao">
+	<resultMap id="sourceCrowdfundingResult" type="SourceCrowdfunding">
+	</resultMap>
+	<resultMap id="cfHeadVOResult" type="CfHeadVO">
+		<result property="cfName" column="name" />
+		<result property="cfId" column="cfId" />
+	</resultMap>
+
+	<select id="getBycfId" resultMap="sourceCrowdfundingResult" >
+		select * from source_crowdfunding where cfId = #{cfId}
+	</select>
+	<select id="getCfHeadInfo" resultMap="cfHeadVOResult">
+		select * from source_crowdfunding where cfId=#{cfId}
+	</select>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.CompanyMemberRelWriteDao">
+
+	<update id="update" parameterType="CompanyMemberRel">
+		update
+			company_member_rel
+		set 
+			position = #{position},
+			joinDate = #{joinDate},
+			leaveDate = #{leaveDate},
+			type = #{type},
+			active = #{active},
+			verify = #{verify},
+			modifyTime = #{modifyTime},
+			modifyUser= #{modifyUser}
+		where 
+			id = #{id}
+	</update>
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="CompanyMemberRel">
+		insert company_member_rel(
+			companyId, memberId,position,joinDate,leaveDate,type,
+			active, verify, createTime, createUser
+		)
+		values(
+			#{companyId}, #{memberId}, #{position}, #{joinDate}, #{leaveDate},#{type},
+			#{active},#{verify}, #{createTime}, #{createUser}
+		)
+	</insert>
+
+</mapper>

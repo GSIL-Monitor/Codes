@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.read.source.SourceInvestorReadDao">
+	<resultMap id="sourceInvestorResult" type="SourceInvestor">
+	</resultMap>
+
+	<select id="getById" parameterType="Integer" resultMap="sourceInvestorResult">
+		select * from source_investor where id = #{id}
+	</select>
+	
+	<select id="listByInvestorId" parameterType="Integer" resultMap="sourceInvestorResult">
+		select * from source_investor where investorId = #{id}
+	</select>
+	
+</mapper>

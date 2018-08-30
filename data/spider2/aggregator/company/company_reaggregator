@@ -1,0 +1,91 @@
+#Action 1
+
+re-do company_info_expand
+
+#Action 2
+new table for extended company names (for these names, we limit them for aggregation under company_alias)
+
+import find_company
+
+
+def aggregator(company_id, source_company_id):
+    logger.info("sourceCompanyId=%s was found, companyId=%s", source_company_id, company_id)
+    aggregator_db_util.update_source_company_found(company_id, source_company_id)
+    company_aggregator_baseinfo.aggregate(company_id, source_company_id)
+    #merge others
+    company_aggregator_artifact.aggregate_artifact(company_id, source_company_id)
+    company_aggregator_member.aggregate_member(company_id, source_company_id)
+    company_aggregator_funding.aggregate_funding(company_id, source_company_id)
+    company_aggregator_footprint.aggregate_footprint(company_id, source_company_id)
+    company_aggregator_job.aggregate_job(company_id, source_company_id)
+    #news ITjuzi news parser直接聚合, toutian单独聚合
+
+    company_aggregator_baseinfo.add_company_alias(company_id)
+    conn = db.connect_torndb()
+    company = conn.get("select * from company where id=%s", company_id)
+    if company["verify"] == "Y":
+        pass
+    else:
+        company_aggregator_baseinfo.patch_company_establish_date(company_id)
+    conn.close()
+
+    set_sourcecompany_processstatus(source_company_id)
+
+    send_message(company_id)
+
+
+
+if __name__ == '__main__':
+    conn = db.connect_torndb()
+    companies = list(conn.query("select id from company where (active is null or active='Y') order by id desc"))
+    conn.close
+    for company in companies:
+        company_id = company["id"]
+        conn = db.connect_torndb()
+        scs = list(conn.query("select * from source_company where (active is null or active='Y') and companyId=%s", company_id))
+        if len(sc) == 0:
+
+            #check Deal, then mark company as active='N'
+
+        else:
+            conn = db.connect_torndb()
+            #delete from artifact where companyId=company["id"];
+            delete from job where companyId=company["id"];
+            delete from company_alias where companyId=company["id"];
+            delete from company_member_rel where companyId=company["id"];
+            delete from funding where
+            update source_company set processStatus=1, companyId=null where companyId=company["id"];
+            conn.close
+            #re-do aggregator for each source_company:
+
+            round_max= len(scs)
+            round = 0
+            while True:
+                ids ={}
+                scs_new = []
+                for sc in scs:
+
+                    company_newid = find_company.find_company(sc)
+                    logger.info("source_company_id: %s matched company_id=%s", sc["id"], company_id)
+
+                    if company_newid is not None:
+                        if ids.has_key(company_newid) is False:
+                            ids[company_newid] = []
+                        ids[company_newid].append(sc["id"])
+
+                    if company_newid != company_id:
+                        scs_new.append(sc)
+
+
+                if len(company_newids) == 0:
+                    break
+                elif ids.has_key(company_id):
+                    for sc_id in ids[company_id]:
+                        aggregator(company_id, sc_id)
+
+                scs = scc_new
+                round += 1
+
+                if round > round_max
+                    break
+

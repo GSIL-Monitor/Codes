@@ -1,0 +1,119 @@
+insert user(id,username,email,password,active,createTime) values(16,'Wing','wing@gobivc.com',md5('2411458133180585672416Gobi5292'),'Y',now());
+insert user_email(userId,email,verify) values(16,'wing@gobivc.com',true);
+insert user_email(userId,email,verify) values(16,'wing@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,16,now());
+insert user_role(userId,role,createTime) values(16,25040,now());
+
+#6621	旅行加
+#lvxingjia1206 		100089
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(46,1,19050,20030,18010,now(),100089);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,46,21020,23010,now());
+
+#4763	Autobot
+
+
+#4209	车置宝
+#chezhibao1205		78681
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(47,1,19050,20030,18010,now(),78681);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,47,21020,23010,now());
+
+#4094	MolaSync
+#MolaSynchqkj		12327
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(48,1,19050,20030,18010,now(),12327);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,48,21020,23010,now());
+
+#3551	刻通
+#ktKeyToneCloud		8933
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(49,1,19050,20030,18010,now(),8933);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,49,21020,23010,now());
+
+
+#2423	快说
+#kuaishuoyuyinzhushou	1120
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(50,1,19050,20030,18010,now(),1120);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,50,21020,23010,now());
+
+
+#2384	Camera360
+#Camera360			1519
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(51,1,19050,20030,18010,now(),1519);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,51,21020,23010,now());
+
+#2380	驻云
+#zhuyunkeji			10142
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(52,1,19050,20030,18010,now(),10142);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,52,21020,23010,now());
+
+#2032	简书
+#jianshu			1236
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(53,1,19050,20030,18010,now(),1236);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,53,21020,23010,now());
+
+
+#1965	云智慧（监控宝）
+#yunzhihuikeji		3260
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(54,1,19050,20030,18010,now(),3260);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,54,21020,23010,now());
+
+
+#1273	智能360
+#xzhjqgjshzhn		796
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(55,1,19050,20030,18010,now(),796);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,55,21020,23010,now());
+
+#1208	Teambition
+#shanghaihuiyikeji	881
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(56,1,19050,20030,18010,now(),881);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,56,21020,23010,now());
+
+#1022	粉粉手机日记
+#fenfenriji			337
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(57,1,19050,20030,18010,now(),337);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,57,21020,23010,now());
+
+
+#1021	点我吧
+#dianwoba			790
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(58,1,19050,20030,18010,now(),790);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,58,21020,23010,now());
+
+#1003	Gokuai	
+#goukuaiwangpan		284
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(59,1,19050,20030,18010,now(),284);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,59,21020,23010,now());
+
+#2933	报修一站通
+#baoxiuyizhantong	10313
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(60,1,19050,20030,18010,now(),10313);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(16,60,21020,23010,now());
+

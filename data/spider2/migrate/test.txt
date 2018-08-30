@@ -1,0 +1,35 @@
+mongoexport -d trend -c android -o trend_android_10days --query '{"date":{$gt:ISODate("2016-06-20T00:00:00Z")}}'
+
+mongoimport -d article -c news article_news
+mongoimport -d info -c gongshang info_gongshang
+mongoimport -d trend -c alexa trend_alexa_10days
+mongoimport -d trend -c android trend_android_10days
+mongoimport -d trend -c itunes trend_itunes_20days
+
+use trend
+db.alexa.ensureIndex({"domain":-1 ,"date":-1}, {unique:false})
+db.android.ensureIndex({"appmarket":-1 ,"apkname":-1, "date":-1}, {unique:false})
+db.itunes.ensureIndex({"trackId":-1 ,"date":-1}, {unique:false})
+
+use info
+db.goshang.ensureIndex({"name":-1}, {unique:true})
+
+use article
+db.news.ensureIndex({"companyId":-1}, {unique:false})
+
+
+mongoexport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p tb67168 -d market -c android -o mogujie.dump --query '{apkname:{$in:['com.mogujie','com.mogujie.top','com.mogujie.littlestore','com.mogujie.uni','com.kksoho.knight','com.mogujie.youdian','com.mogujie.vwcheaper','io.dcloud.stream.__W2A__H5F4563E8','com.mogujie.tt','com.xiaodian.washcar','com.dianying.tuan.client2578524','com.ahxdnet.linquanapp']}}'
+
+mongoexport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p tb67168 -d raw -c news -o news_test.dump --queryFile=news_text_query.txt
+
+
+mongoexport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p tb67168 -d article -c news -o news_60002.dump --query '{type:60002, createTime:{$gt:ISODate("2016-08-17T12:00:00.000Z")}}'
+
+
+mongoexport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p tb67168 -d trend -c android -o teambition.dump --query '{apkname:"com.teambition.teambition"}'
+
+mongoexport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p tb67168 -d company -c funding_news -o funding_news.dump --query '{title:"工商变更"}'
+
+
+
+mongoexport --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p tb67168 -d raw -c qmp -o qmp.dump

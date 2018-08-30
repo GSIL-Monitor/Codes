@@ -1,0 +1,163 @@
+
+<div class="search-page no-scrollbars" ng-controller="SearchCtrl" >
+    <!-- modal Part-->
+    <div class="filter-page filter-bar" ng-controller="ModalCtrl">
+
+        <!-- searchBy -->
+        <ul class="list-inline">
+            <li class="filter-title">{{ 'SEARCHBY' | translate}} :</li>
+            <li class="filter" ng-repeat="item in searchItems" ng-click="open(item.name)">
+            	<a> {{item.name | translate}} </a>
+            </li>
+            
+            
+            <li class="pull-right" ng-controller="BasicModalCtrl">
+            	<span class="operate-hint-danger text-danger m-r">
+					{{'ADD_FILTER'|translate}}...
+				</span>
+				
+				<span class="operate-hint text-navy m-r">
+					<i class='fa fa-check'></i>
+					{{'SAVE_SEARCH_SUCCESS'|translate}}
+				</span>
+                 
+                <div class="dropdown pull-right" dropdown>
+	                <a class="dropdown-toggle"  dropdown-toggle>
+	                   {{'MORE' | translate}}<i class="fa fa-chevron-down m-l-xs"></i>
+	                </a>
+	                <ul class="dropdown-menu m-r-n">
+	                    <li id="export" ng-click="export()"> <a>{{'EXPORT' |  translate}}</a> </li>
+					  
+	                </ul>
+	            </div>
+	                      
+            </li>
+        </ul>
+
+        <!-- search Type -->
+        <ul class="list-inline category">
+            <li class="cate-active">
+				<span class="fa-stack ft15">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-table fa-stack-1x"></i>
+				</span> 
+				{{ 'DATA' | translate}}
+            </li>
+            <!--  
+            <li category-filter>
+				<span class="fa-stack fa-lg">
+                 <i class="fa fa-circle-thin fa-stack-2x"></i> 
+                 <i class="fa fa-flag fa-stack-1x"></i>
+				</span>
+				{{ 'EVENTS' | translate}}
+            </li>
+            -->
+            <li class="last-li pull-right" id="li-data" ng-controller="BasicModalCtrl">
+                <ul class="list-inline m-r-xs">
+                
+                    <span class="company-count m-r" ng-hide="total ==null">
+                   		{{total}} 
+                   		
+                   		<span ng-show = "total <2">
+		          		 	{{'COMPANY' | translate}}
+		          		</span>
+	          			<span ng-show = "total >1">
+                   			{{'COMPANIES' | translate}}
+                   		</span>
+                    </span>
+                    
+                    <button id="save-search" class="btn btn-primary" ng-click="saveSearch()">
+	                 	{{'SAVE_SEARCH' |  translate}}
+	                 </button>
+                    
+                    <button class="btn btn-success" ng-hide=' dataCount == null|| dataCount == 0'
+	                  ng-click="open('list')">
+	               	  {{'ADD'|translate}} {{dataCount}} {{'TO_MY_LIST'|translate}}
+	                 </button>
+                    
+                </ul>
+                
+                
+            </li>
+            
+            <!-- 
+             <li class="pull-right" id="li-event">
+                <ul class="list-inline search-change-actions">
+                    <li class="ptm prs event-count">
+                   		{{total}} {{'EVENTS' | translate}}
+                    </li>
+                    
+                    <li class="prs">
+                        	<button class="btn btn-success">
+                        		<i class="fa fa-gear"></i>
+	                          	  Change Event Types
+                            </button>
+                    </li>
+                    
+                </ul>
+            </li>
+             -->
+        </ul>
+        <div class='filter-selected m-b-sm m-t-sm'>
+        	 <div id="div-name" class="search-param label" ng-hide='nameSelected == null'>
+                <span ng-click='open("name")'>
+                {{'NAME' | translate}}: {{nameSelected}}
+                </span>
+                <i class="fa fa-times" close-filter='name'></i>
+            </div>
+        
+            <div id="div-keyword" class="search-param label" ng-hide='keywordSelected == null'>
+                <span ng-click='open("keyword")'>
+                {{'KEYWORD' | translate}}: {{keywordSelected}}
+                </span>
+                <i class="fa fa-times" close-filter='keyword'></i>
+            </div>
+
+            <div id="div-location" class="search-param label" ng-hide='locationSelected == null'>
+                <span ng-click='open("location")'>
+                {{'LOCATION' | translate}}: {{locationSelected}}
+                </span>
+                <i class="fa fa-times" close-filter='location'></i>
+            </div>
+
+            <div id="div-investor"  class="search-param label" ng-hide='investorSelected == null'>
+               	<span ng-click='open("investor")'>
+                {{'INVESTORS' | translate }}: {{investorSelected}} 
+               	</span>
+                <i class="fa fa-times"  close-filter='investor'></i>
+            </div>
+
+            <div id="div-stage"  class="search-param label" ng-hide='stageSelected == null'>
+                <span ng-click='open("stage")'>
+                {{'STAGE' | translate}}: {{stageSelected}} 
+                </span>
+                <i  class="fa fa-times" close-filter='stage'></i>
+            </div>
+            
+            <div id="div-finance"  class="search-param label" ng-hide='financeLeft == null && financeRight == null'>
+                <span ng-click='open("finance")'>
+               	 		{{'FINANCE' | translate}}:  {{financeLeft}} ~ {{financeRight}}
+                </span>
+                <i  class="fa fa-times" close-filter='finance'></i>
+            </div>
+            
+            <div id="div-founded"  class="search-param label" ng-hide='foundedAfter == null && foundedBefore == null'>
+                <span ng-click='open("founded")'>
+               	 		{{'FOUNDED' | translate}}: {{foundedAfter}} ~ {{foundedBefore}}
+                </span>
+                <i  class="fa fa-times" close-filter='founded'></i>
+            </div>
+
+        </div>
+    </div>
+
+
+	<!-- UI grid / Data part -->
+    <div  ng-controller="GridCtrl" >
+        <div grid-change ui-grid="gridOptions" class="grid" ui-grid-resize-columns
+         ui-grid-auto-resize ui-grid-selection ui-grid-infinite-scroll>
+        </div>
+    </div>
+
+    
+</div>

@@ -1,0 +1,7 @@
+packages 2 install:
+
+pandas
+flask_wtf
+flask_bootstrap
+flask_moment
+wtforms

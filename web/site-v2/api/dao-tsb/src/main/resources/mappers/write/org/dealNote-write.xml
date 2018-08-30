@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.org.DealNoteWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="DealNote">
+		insert deal_note(
+			dealId,userId,note,createTime,modifyTime
+		)
+		values(
+			#{dealId},#{userId},#{note},now(),now()
+		)
+	</insert>
+		
+	<update id="update" parameterType="DealNote">
+		update
+			deal_note
+		set 
+			dealId=#{dealId},
+			userId=#{userId}, 
+			note=#{note},
+			createTime=#{createTime},
+			modifyTime=now()
+		where 
+			id = #{id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		delete from deal_note where id=#{id}
+	</delete>
+
+</mapper>

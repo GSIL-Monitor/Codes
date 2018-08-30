@@ -1,0 +1,13 @@
+#记录所有已知的公司名称，不论有用没用
+database： info
+collection： company_idx
+记录结构：
+{
+    "_id":,
+    "name":,
+    "name_md5":,	#用户搜索
+    "createTime":
+    "gongshangCheckTime":
+}
+
+db.company_idx.ensureIndex({"name_md5":-1},{unique:true})

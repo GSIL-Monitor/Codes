@@ -1,0 +1,9 @@
+#记录需要拓展检查的investor
+database： investor
+collection： checklist
+记录结构：
+{
+    "_id":,
+    "investorName":,
+    "investorId":
+}

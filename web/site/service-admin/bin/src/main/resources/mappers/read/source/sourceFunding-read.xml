@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.read.source.SourceFundingReadDao">
+	<resultMap id="sourceFundingResult" type="SourceFunding">
+	</resultMap>
+
+	<select id="getByFundingId" parameterType="Integer" resultMap="sourceFundingResult">
+		select * from source_funding f
+		where fundingId = #{fundingId}
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,1 @@
+rsync -vzrt --exclude "*.pyc" --exclude ".*" --exclude "logs" --exclude main.conf --exclude "build" --exclude "project.egg-info" --progress -e ssh --delete crawler/  root@tshbao-task-01:/data/task-v2/spider/crawler

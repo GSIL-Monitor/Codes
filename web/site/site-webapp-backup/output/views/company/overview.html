@@ -1,0 +1,398 @@
+<div class="detail-body overview-left-part" style="min-height:600px;" ng-controller="CompanyOverviewCtrl" >   
+	  
+	 <!-- company detail -->
+     <div class="pnl">
+	    <div class="panel-heading summary-row">
+	      <div class="container-fluid">
+	          <div class="div-logo" ng-show="logo != null">
+	          	<img src="{{logo}}" width='50' height='50' class="m-t-xxs"/>
+	          </div>
+	        
+	          <div class="col-sm-3 summary-cell">
+	            <h3>{{ 'STAGE' | translate}}</h3>
+	            <span>
+	                {{company.stage}}
+	            </span>
+	          </div>
+	
+	          <div class="col-sm-3 summary-cell">
+	              <h3>{{ 'FOUNDED' | translate}}</h3>
+	              <span ng-hide="company.establishDate != null">
+	              	 N/A
+	              </span>
+	              <span ng-show="company.establishDate != null">
+	              	{{company.establishDate.slice(0,7)}}
+	              </span>
+	          </div>
+	
+	          <div class="col-sm-3 summary-cell">
+	            <h3>{{ 'STATUS' | translate}}</h3>
+	            <span>
+	            	{{company.status}}
+	            </span>
+	          </div>
+	          
+	          <div class="col-sm-3 summary-cell summary-last">
+	            <h3>{{'LOCATION' | translate}}</h3>
+	            <span>
+	            	{{company.location}}
+	            </span>
+	          </div>
+	          
+	      </div>
+	    </div>
+
+	</div>
+
+	  <div class="panel-body pnl">
+	  	  <div class="container-fluid  m-b-md">	
+	  	  	<div class="div-info div-website">
+	  	  		<span> {{'WEBSITE'  | translate}}:</span>
+		  	  	  <span ng-hide="company.website == null || company.website == ''" >
+	  	  	  		<a href="{{company.website}}" target="_blank">{{company.website}}</a> 
+		  	  	  </span>
+		  	  	  
+		  	  	  <span ng-show="company.website.trim() == null || company.website == ''" >
+		  	  	  		<a>N/A</a>
+		  	  	 </span>
+	  	  	</div>
+	  	  
+	  		<div class="div-info ">
+		  		<div class="div-rel">
+		  	  	 <span ng-show="headCount!=null">{{ 'HEADCOUNT' | translate}}: <strong>{{headCount}}</strong></span>
+		  	 	 </div>
+		  	 </div>
+		  	 
+		  	 <div class="div-info">
+		  		<strong>{{company.companyFullName}}</strong>
+		  	 </div>
+	  	  </div>
+	  		
+		  <div class="div-desc m-t-sm m-b-md">
+		  	<p ng-repeat="item in desc track by $index">
+			  {{item}}
+			 </p>
+			 
+			 <a ng-show="descMore == true" ng-click="more()"> {{'MORE' | translate}}</a>
+			 
+		  </div>
+		  
+		 
+		  
+		  <div class="search-param label div-tag "  tooltip-placement="top" tooltip="{{'SEARCH'|translate}}: {{item.tagName}}"
+		  		search-keyword ng-repeat="item in company.tagRelList track by $index" ng-show="company.tagRelList.length > 0 && company.tagRelList != null">
+        		{{item.tagName}}
+   		 </div>
+	  </div>
+	  
+	  <!--  website image -->
+	  <div class="panel-overview pnl"  ng-show= "company.material !=null ">
+	  		<div class="pnl-head m-t-sm" >
+	  			{{ 'WEBSITE' | translate}}
+	   	 	</div>
+	   	 	
+	   	 <div class="container-fluid" >
+	   		 <div class="row">
+	   		 	<img src="/file/{{company.material.gridfsId}}/cover.png"  width="100%" />
+	   		 </div>
+   		 </div>
+ 	  </div>
+	  
+	  
+	  <!-- funding info -->
+	  <div class="panel-overview pnl" ng-hide="company.funding.length == 0" >
+	  		<div class="pnl-head m-t-sm" >
+	  			{{ 'FUNDING_ROUNDS' | translate}}
+	   	 	</div>
+	   	 <div class="container-fluid">
+	   		 <div class="row" >
+	          <div class="col-sm-3">
+	          	<h3>{{'ROUND' | translate}}</h3>
+	          	
+	          </div>
+	
+	          <div class="col-sm-3">
+	          	<h3>{{'AMOUNT' | translate}} </h3>
+	          </div>
+	
+	          <div class="col-sm-3">
+	            <h3>{{'DATE' | translate}}</h3>
+	          </div>
+	          
+	          <div class="col-sm-3">
+	          	<h3>{{'INVESTORS' | translate}}</h3>
+	          </div>
+	          
+	     	</div>
+	     	
+	        <div class="row"  select-row ng-repeat="item in company.funding track by $index"  ng-class="($index%2==0) ? 'odd' : 'even'">
+	          <div class="col-sm-3" style="font-size:14px;">
+	              <strong>{{item.round}}</strong>
+	          </div>
+	
+	          <div class="col-sm-3">
+	          	  <span ng-show= 'item.fundingInvestment == "0"'>{{'UNKNOWN'|translate}}</span>
+	          	  <a ng-show= 'item.fundingInvestment != "0"'>
+	          	  <span ng-show='item.fundingCurrency == 501'><i class="fa fa-usd"></i></span>
+	          	  <span ng-show='item.fundingCurrency == 502'><i class="fa fa-cny"></i></span>
+	          	  
+	          	  {{item.fundingInvestment}}
+	          	  </a>
+	          </div>
+	
+	          <div class="col-sm-3">
+	          	{{item.fundingDate.slice(0,7)}}
+	          </div>
+	          
+	          <div class="col-sm-3" style="line-height:20px; margin-top:10px;">
+	          	<p ng-repeat="investor in item.investorList track by $index">
+					<a search-investor tooltip-placement="top" tooltip="{{'SEARCH_INVESTOR'|translate}} {{investor.investor.investorName}}">
+						{{investor.investor.investorName}}
+					</a>
+	         	</p>
+	          </div>
+	          
+	        </div>
+	      </div>
+	  </div>
+	  
+	  <!-- similar company -->
+	  <div class="panel-overview pnl"  ng-show = 'company.relCompanies.length > 0'>
+	  		<div class="pnl-head m-t-sm" >
+	  			{{ 'SIMILAR_COMPANIES' | translate}}
+	   	 	</div>
+	   	 	
+	   	 <div class="container-fluid">
+	   		 <div class="row" >
+	          <div class="col-sm-2">
+	          	<h3>{{'Name' | translate}}</h3>
+	          	
+	          </div>
+	
+	          <div class="col-sm-2">
+	          	<h3>{{'STAGE' | translate}}</h3>
+	          </div>
+	
+	          <div class="col-sm-2">
+	            <h3>{{'FOUNDED' | translate}}</h3>
+	          </div>
+	          
+	          <div class="col-sm-2">
+	          	<h3>{{'STATUS' | translate}}</h3>
+	          </div>
+	          
+	          <div class="col-sm-2">
+	          	<h3>{{'LOCATION' | translate}}</h3>
+	          </div>
+	          
+	          <div class="col-sm-2">
+	          	<h3>{{'COMPARE' | translate}}</h3>
+	          </div>
+	          
+	     	</div>
+	   	 
+	   	 	<!-- start similar -->
+	        <div class="row" select-row   ng-repeat="item in company.relCompanies track by $index">
+	          
+		          <div class="col-sm-2 similar-name" company-popover>
+		          		<a href="#/company/overview?{{item.companyId}}"  target='_blank'
+		          			company-detail="{{item.companyId}}">
+			          		{{item.productName}}
+			          	</a>
+		          </div>
+		          
+		          <div class="div-company-popover">
+		          	<div class="pop-title">
+		          		{{item.productName}}
+		          	</div>
+		          	
+		          	<div class='text-muted m-t-n-xs'>
+		          		<!-- 
+		          		<span ng-hide="company.establishDate != null">
+			              	 N/A
+			              </span>
+			             -->
+			              <span ng-show="item.establishDate != null">
+			              	{{item.establishDate.slice(0,7)}}
+			              </span>
+		          	</div>
+		          	
+		            <div class="pop-info">
+		            	<div>
+			               {{'STAGE'|translate}}: 
+			               <a>
+			             	  {{item.stage}}
+			               </a>
+		                </div>
+		                
+		                <div>
+			               {{'LOCATION'|translate}}: 
+			               <a>
+			             	  {{item.location}}
+			               </a>
+		                </div>
+		                
+		                <div>
+			               {{'STATUS'|translate}}: 
+			               <a>
+			             	  {{item.status}}
+			               </a>
+		                </div>
+		            </div>
+			          
+		          	<div class="pop-desc m-b-sm">
+		          		{{item.companyDesc}}
+		          	</div>
+		          	
+		          	<div class="pop-keywords">
+		          		<div class="search-param label div-tag "  tooltip-placement="top" tooltip="{{'SEARCH'|translate}}: {{tag.tagName}}"
+					  		search-keyword ng-repeat="tag in item.tagRelList track by $index" ng-show="item.tagRelList.length > 0 && company.tagRelList != null">
+			        		{{tag.tagName}}
+			   		 </div>
+		          	</div>
+		          
+		          </div>
+		         
+		
+		          <div class="col-sm-2">
+	          		{{item.stage}}
+		          </div>
+		
+		          <div class="col-sm-2" >
+		          	<span ng-hide="item.establishDate != null">N/A</span>
+	              	<span ng-show="item.establishDate != null">{{item.establishDate.slice(0,7)}}</span>
+		          </div>
+		          
+		          <div class="col-sm-2">
+		          	{{item.status}}
+		          </div>
+		          
+		          <div class="col-sm-2">
+		          	{{item.location}}
+		          </div>
+		          
+		           <div class="col-sm-2">
+			           <a similar-add-list="{{item.companyId}}"  tooltip-placement="top" 
+			           	  tooltip="{{'ADD'|translate}} {{item.productName}} {{'TO_A_LIST'|translate}}">
+			           		<i class="fa fa-plus"></i>
+			           		{{'ADD_TO_A_LIST' |  translate}}
+			           </a>
+		          </div>
+		          
+	      </div>
+	       
+	      <!-- end similar -->
+	  </div>
+	  
+	</div>
+     
+    
+    
+     
+    
+     <!-- team -->
+     <div class="panel-overview pnl last-panel" ng-show="company.memberRelList != null && company.memberRelList.length > 0">
+     	<div class="pnl-head m-t-sm" >
+	  			{{ 'TEAM' | translate}}
+   	 	</div>
+	   	 	
+	   	 <div class="container-fluid">
+	     	<div class="col-md-4" ng-repeat="item in company.memberRelList">
+	            <div class="ibox float-e-margins" >
+	                <div>
+	                	<!--  
+	                	<div class="ibox-content no-padding border-left-right">
+	                           <img alt="image" class="img-circle" src="img/profile_small.jpg">
+	                    </div>
+	                    -->
+	                    <div class="ibox-content profile-content">
+	                    
+	                        <h4><strong>{{item.member.memberName}}</strong></h4>
+	
+	
+	                        <p>{{'POSITION'| translate}}: {{item.memberPosition}}</p>
+	                        
+	                        <p ng-show="item.joinDate != null">{{'JOIN_DATE'| translate}}: {{item.joinDate}}</p>
+	                        <p ng-show="item.member.educationExperience != null && item.member.educationExperience != ''">{{'EDUCATION'| translate}}: {{item.member.educationExperience}}</p>
+							<p ng-show="item.member.workExperience != null && item.member.workExperience != ''">{{'EXPERIENCE'| translate}}: {{item.member.workExperience}}</p>
+	                    </div>
+	                </div>
+	            </div>
+            </div>
+        </div>
+	 </div>
+	 <div style="height:20px"></div>
+	  
+     <!--  -->
+     <div class="overview-right-part" >
+      <h3>{{'LISTS_FEATURING' | translate}} {{company.productName}}</h3>
+		<span class="span-bold" tooltip-placement="top" 
+			           	  tooltip="{{'WITH'|translate}} {{company.productName}} {{ 'RELATED_HINT' | translate}}">
+			<strong>
+			{{ 'RELATED_LISTS' | translate}}
+			</strong>
+		</span>
+		<ul class="list-unstyled">
+		  <li class="m-t-xs" ng-repeat='item in userList track by $index'>
+ 			<a href="#/list/data?{{item.listId}}">
+	        	<i class="fa fa-star"></i>
+	        	<span>{{ item.listName}}</span>
+	      	</a>
+		  </li>
+		  <li class="m-t-xs" >
+		  	<a add-list>
+		  		<i class="fa fa-plus"></i>
+           		{{'ADD_TO_A_LIST' |  translate}}
+		  	</a>
+		  </li>
+		</ul>
+		
+		<div class="exsiting-list m-t-lg" ng-show= 'exsitingList.length > 0'>
+			<span class='span-bold'  tooltip-placement="top" 
+			           	  tooltip="{{ 'EXSIT' | translate}} {{company.productName}} {{ 'EXSITING_HINT' | translate}}">
+				<strong>
+				{{ 'EXSITING' | translate}} {{ 'LISTS' | translate}}
+				</strong>
+			</span>
+			<ul class="list-unstyled">
+			  <li class="m-t-xs" ng-repeat='item in exsitingList'>
+	 			<a href="#/list/data?{{item.listId}}">
+		        	<i class="fa fa-star"></i>
+		        	<span>{{ item.listName}}</span>
+		      	</a>
+			  </li>
+			</ul>
+		</div>
+		
+
+	<h3 class="m-t-xl">{{'NOTE' | translate}}</h3>
+    <textarea id="company-note" class="form-control" placeholder="{{'WRITE_NOTE'|translate}}">{{company.userCompanyRel.note}}</textarea>
+    <button class="btn btn-primary pull-right m-t-xs" ng-click="saveNote()">
+      {{'SAVE'|translate}}
+    </button>
+		
+    </div>
+   
+   <script>
+   $(document).ready(function(){
+	   fix_company();
+   })
+   
+   $(window).bind("load resize scroll", function() {
+	   fix_company();
+   })
+   
+   function fix_company(){
+	   // company page
+       var windowWidth = $( window ).width();
+       if(windowWidth <1024) {
+       	$(".overview-left-part").css('width', '100%');
+       	$(".overview-right-part").css('display', 'none');
+       }
+       else {
+       	$(".overview-left-part").css('width', '75%');
+       	$(".overview-right-part").css('display', 'block');
+       }
+   }
+   
+   </script>

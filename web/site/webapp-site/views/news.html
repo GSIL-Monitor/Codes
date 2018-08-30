@@ -1,0 +1,59 @@
+<div ng-controller ='NewsCtrl'>
+<div class="row wrapper  white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>{{'EVENTS' | translate}}</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a nav-href='home'>{{'HOME'| translate}}</a>
+            </li>
+            <li>
+                <a nav-href='search'>{{'COMPANY_SEARCH' | translate}}</a>
+            </li>
+            <li class="active">
+                <a href="#/company/{{companyCode}}/overview?"><strong>{{name}}</strong></a>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+<div class="wrapper wrapper-content  article m-b-n-xl">
+    
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                    </div>
+                    <div class="text-center m-b-md">
+                        <span class="text-muted"><i class="fa fa-clock-o"></i> {{news.news.newsDate }}</span>
+                        <p/>
+                        <h2>
+                            <strong>{{news.news.newsTitle}}</strong>
+                        </h2>
+                    </div>
+
+			         <div id="content">
+			         </div>
+                    <hr>
+                    <div class="row m-t-n">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small text-right" ng-show="news.news.title != null">
+                                <h5>{{ 'FROM' | translate }}: 
+                                	<a href="{{news.news.newsUrl}}" target="_blank">{{news.news.title}} </a>
+                                </h5>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>

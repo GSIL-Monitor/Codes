@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+	</settings>
+
+	<typeAliases>
+		<!--  Company  -->
+		<typeAlias alias="Artifact" type="com.tsb.model.company.Artifact" />
+		<typeAlias alias="Company" type="com.tsb.model.company.Company" />
+		<typeAlias alias="Document" type="com.tsb.model.company.Document" />
+		<typeAlias alias="ArtifactMarket" type="com.tsb.model.company.ArtifactMarket" />
+		<typeAlias alias="ArtifactPic" type="com.tsb.model.company.ArtifactPic" />
+		<typeAlias alias="CompanyAlias" type="com.tsb.model.company.CompanyAlias" />
+		<typeAlias alias="CompanyMemberRel" type="com.tsb.model.company.CompanyMemberRel" />
+		<typeAlias alias="CompanyTagRel" type="com.tsb.model.company.CompanyTagRel" />
+		<typeAlias alias="Domain" type="com.tsb.model.company.Domain" />
+		<typeAlias alias="Footprint" type="com.tsb.model.company.Footprint" />
+		<typeAlias alias="Funding" type="com.tsb.model.company.Funding" />
+		<typeAlias alias="FundingInvestorRel" type="com.tsb.model.company.FundingInvestorRel" />
+		<typeAlias alias="Investor" type="com.tsb.model.company.Investor" />
+		<typeAlias alias="Job" type="com.tsb.model.company.Job" />
+		<typeAlias alias="Member" type="com.tsb.model.company.Member" />
+		<typeAlias alias="Tag" type="com.tsb.model.company.Tag" /> 
+		<typeAlias alias="Sector" type="com.tsb.model.company.Sector" />
+		<typeAlias alias="CompaniesRel" type="com.tsb.model.company.CompaniesRel" />
+		<typeAlias alias="CompanySector" type="com.tsb.model.company.CompanySector" />
+		<typeAlias alias="GongShangBase" type="com.tsb.model.company.GongShangBase" />
+		
+		<typeAlias alias="Location" type="com.tsb.model.Location" />
+		
+		
+		<!-- Crowdfunding -->
+		<!-- <typeAlias alias="Crowdfunding" type="com.tsb.model.crowdfunding.Crowdfunding" />
+		<typeAlias alias="SourceCfDocument" type="com.tsb.model.source.SourceCfDocument" />
+		<typeAlias alias="SourceCfLeader" type="com.tsb.model.source.SourceCfLeader" />
+		<typeAlias alias="SourceCfMember" type="com.tsb.model.source.SourceCfMember" />
+		<typeAlias alias="SourceCrowdfunding" type="com.tsb.model.source.SourceCrowdfunding" /> -->
+		
+		<!-- Organization -->
+		<typeAlias alias="Organization" type="com.tsb.model.org.Organization" />
+		<typeAlias alias="OrganizationConf" type="com.tsb.model.org.OrganizationConf" />
+		<typeAlias alias="Deal" type="com.tsb.model.org.Deal" />
+		<typeAlias alias="DealUserRel" type="com.tsb.model.org.user.DealUserRel" />
+		<typeAlias alias="DealHistory" type="com.tsb.model.org.DealHistory" />
+
+		<typeAlias alias="UserOrganizationRel" type="com.tsb.model.org.UserOrganizationRel" />
+		<typeAlias alias="DealUserScore" type="com.tsb.model.org.user.DealUserScore" />
+		<typeAlias alias="DealNote" type="com.tsb.model.org.user.DealNote" />
+
+		<typeAlias alias="Coldcall" type="com.tsb.model.org.Coldcall" />
+		<typeAlias alias="ColdcallFile" type="com.tsb.model.org.ColdcallFile" />
+		<typeAlias alias="ColdcallCompanyRel" type="com.tsb.model.org.ColdcallCompanyRel" />
+		<typeAlias alias="ColdcallForward" type="com.tsb.model.org.ColdcallForward" />
+		<typeAlias alias="ColdcallUserRel" type="com.tsb.model.org.user.ColdcallUserRel" />
+		
+		
+		<!-- User  -->
+		<typeAlias alias="Recommendation" type="com.tsb.model.user.Recommendation" />
+		<typeAlias alias="User" type="com.tsb.model.user.User" />
+		<typeAlias alias="UserSector" type="com.tsb.model.user.UserSector" />
+		<typeAlias alias="UserEmail" type="com.tsb.model.user.UserEmail" />
+		<typeAlias alias="UserRole" type="com.tsb.model.user.UserRole" />
+		<typeAlias alias="UserSetting" type="com.tsb.model.user.UserSetting" />
+		
+		<!-- Source -->
+		<typeAlias alias="SourceCompany" type="com.tsb.model.source.SourceCompany" />
+		<typeAlias alias="SourceArtifact" type="com.tsb.model.source.SourceArtifact" />
+		<typeAlias alias="SourceDocument" type="com.tsb.model.source.SourceDocument" />
+		<!--Demoday  -->
+		<typeAlias alias="Demoday" type="com.tsb.model.demoday.Demoday" />
+		<typeAlias alias="DemodayCompany" type="com.tsb.model.demoday.DemodayCompany" />
+		<typeAlias alias="DemodayOrganization" type="com.tsb.model.demoday.DemodayOrganization" />
+		<typeAlias alias="DemodayScore" type="com.tsb.model.demoday.DemodayScore" />
+		<typeAlias alias="DemodayPreScore" type="com.tsb.model.demoday.DemodayPreScore" />
+		<typeAlias alias="DemodayResult" type="com.tsb.model.demoday.DemodayResult" />
+		<!--Collection  -->
+		<typeAlias alias="CollectionCompanyRel" type="com.tsb.model.collection.CollectionCompanyRel" />
+		<typeAlias alias="CollectionSys" type="com.tsb.model.collection.Collection" />
+		<typeAlias alias="CollectionUserRel" type="com.tsb.model.collection.CollectionUserRel" />
+		
+	</typeAliases>
+	
+	<mappers>
+		<!-- ************ Read *************** -->
+		<!--  Company  -->
+		<mapper resource="mappers/read/company/artifact-read.xml" />
+		<mapper resource="mappers/read/company/company-read.xml" />
+		<mapper resource="mappers/read/company/document-read.xml" />
+		<mapper resource="mappers/read/company/artifactMarket-read.xml" />
+		<mapper resource="mappers/read/company/artifactPic-read.xml" />
+		<mapper resource="mappers/read/company/companyAlias-read.xml" />
+		<mapper resource="mappers/read/company/companyMemberRel-read.xml" />
+		<mapper resource="mappers/read/company/companyTagRel-read.xml" />
+		<mapper resource="mappers/read/company/domain-read.xml" />
+		<mapper resource="mappers/read/company/footprint-read.xml" />
+		<mapper resource="mappers/read/company/funding-read.xml" />
+		<mapper resource="mappers/read/company/fundingInvestorRel-read.xml" />
+		<mapper resource="mappers/read/company/investor-read.xml" />
+		<mapper resource="mappers/read/company/job-read.xml" />
+		<mapper resource="mappers/read/company/member-read.xml" />
+		<mapper resource="mappers/read/company/tag-read.xml" />
+		<mapper resource="mappers/read/company/sector-read.xml" />
+		<mapper resource="mappers/read/company/companiesRel-read.xml" />
+		<mapper resource="mappers/read/company/companySector-read.xml" />
+		<mapper resource="mappers/read/company/gongShangBase-read.xml" />
+		
+		<mapper resource="mappers/read/location-read.xml" />
+		
+		<!-- User -->
+		<mapper resource="mappers/read/user/recommendation-read.xml" />
+		<mapper resource="mappers/read/user/user-read.xml" />
+		<mapper resource="mappers/read/user/userSector-read.xml" />
+		<mapper resource="mappers/read/user/userEmail-read.xml" />
+		<mapper resource="mappers/read/user/userRole-read.xml" />
+		<mapper resource="mappers/read/user/userSetting-read.xml" />
+		
+		<!-- Organization -->
+		<mapper resource="mappers/read/org/organization-read.xml" />
+		<mapper resource="mappers/read/org/organizationConf-read.xml" />
+		<mapper resource="mappers/read/org/deal-read.xml" />
+		<mapper resource="mappers/read/org/dealHistory-read.xml" />
+		<mapper resource="mappers/read/org/user/dealUserRel-read.xml" />
+
+		<mapper resource="mappers/read/org/userOrganizationRel-read.xml" />
+		<mapper resource="mappers/read/org/user/dealUserScore-read.xml" />
+		<mapper resource="mappers/read/org/dealNote-read.xml" />
+
+		<mapper resource="mappers/read/org/coldcall-read.xml" />
+		<mapper resource="mappers/read/org/coldcallFile-read.xml" />
+		<mapper resource="mappers/read/org/coldcallCompanyRel-read.xml" />
+		<mapper resource="mappers/read/org/coldcallForward-read.xml" />
+		<mapper resource="mappers/read/org/user/coldcallUserRel-read.xml" />
+		
+		<!-- Demoday -->
+		<mapper resource="mappers/read/demoday/demoday-read.xml" />
+		<mapper resource="mappers/read/demoday/demodayCompany-read.xml" />
+		<mapper resource="mappers/read/demoday/demodayOrganization-read.xml" />
+		<mapper resource="mappers/read/demoday/demodayScore-read.xml" />
+		<mapper resource="mappers/read/demoday/demodayPreScore-read.xml" />
+		<mapper resource="mappers/read/demoday/demodayResult-read.xml" />
+		
+		<!--Collection  -->
+		<mapper resource="mappers/read/collection/collectionCompanyRel-read.xml" />
+		<mapper resource="mappers/read/collection/collection-read.xml" />
+		<mapper resource="mappers/read/collection/collectionUserRel-read.xml" />
+		
+		
+		<!-- ************ Write *************** -->
+		<mapper resource="mappers/write/company/company-write.xml" />
+		<mapper resource="mappers/write/company/footprint-write.xml" />
+		<mapper resource="mappers/write/company/artifact-write.xml" />
+		<mapper resource="mappers/write/company/document-write.xml" />
+		<mapper resource="mappers/write/company/companyTagRel-write.xml" />
+		<mapper resource="mappers/write/company/domain-write.xml" />
+		<mapper resource="mappers/write/company/companyAlias-write.xml" />
+		<mapper resource="mappers/write/company/companySector-write.xml" />
+		<mapper resource="mappers/write/company/member-write.xml" />
+		<mapper resource="mappers/write/company/companyMemberRel-write.xml" />
+		<mapper resource="mappers/write/company/companiesRel-write.xml" />
+		<mapper resource="mappers/write/company/tag-write.xml" />
+		<mapper resource="mappers/write/company/funding-write.xml" />
+		<mapper resource="mappers/write/company/fundingInvestorRel-write.xml" />
+		
+		<mapper resource="mappers/write/user/user-write.xml" />
+		<mapper resource="mappers/write/user/userSector-write.xml" />
+		<mapper resource="mappers/write/user/userSetting-write.xml" />
+		<mapper resource="mappers/write/user/userRole-write.xml" />
+		
+		<mapper resource="mappers/write/org/deal-write.xml" />
+		<mapper resource="mappers/write/org/coldcall-write.xml" />
+		<mapper resource="mappers/write/org/coldcallCompanyRel-write.xml" />
+		<mapper resource="mappers/write/org/coldcallForward-write.xml" />
+		<mapper resource="mappers/write/org/user/coldcallUserRel-write.xml" />
+		
+		<mapper resource="mappers/write/org/user/dealUserRel-write.xml" />
+		<mapper resource="mappers/write/org/user/dealUserScore-write.xml" />
+		<mapper resource="mappers/write/org/dealNote-write.xml" />
+		<mapper resource="mappers/write/org/organization-write.xml" />
+		<mapper resource="mappers/write/org/userOrganizationRel-write.xml" />
+		
+
+		<!-- Source -->
+		<mapper resource="mappers/write/source/sourceCompany-write.xml" />
+		<mapper resource="mappers/write/source/sourceArtifact-write.xml" />
+		<mapper resource="mappers/write/source/sourceDocument-write.xml" />
+		<!-- Demoday -->
+		<mapper resource="mappers/write/demoday/demoday-write.xml" />
+		<mapper resource="mappers/write/demoday/demodayCompany-write.xml" />
+		<mapper resource="mappers/write/demoday/demodayOrganization-write.xml" />
+		<mapper resource="mappers/write/demoday/demodayScore-write.xml" />
+		<mapper resource="mappers/write/demoday/demodayPreScore-write.xml" />
+		<mapper resource="mappers/write/demoday/demodayResult-write.xml" />
+		
+			<!-- collection -->
+		<mapper resource="mappers/write/collection/collection-write.xml" />
+		<mapper resource="mappers/write/collection/collectionUserRel-write.xml" />
+	
+	</mappers>
+</configuration>

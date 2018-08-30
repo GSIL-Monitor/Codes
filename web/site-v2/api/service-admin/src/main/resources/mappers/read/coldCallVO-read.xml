@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.ColdCallVOReadDao">
+	<resultMap id="coldcallVOResult" type="ColdCallVO">
+	</resultMap>
+		
+	
+	<select id="getUnMatchedList" resultMap="coldcallVOResult">
+		select 
+			c.id as coldcallId,
+			c.declineStatus as declineStatus,
+			c.coldcallType as coldcallType,
+			c.name as coldcallName,
+			c.createTime as coldcallCreateTime,
+			curs.userId as sponsorId,
+			u.userName as sponsor,
+			o.id as orgId,
+            o.name as orgName
+		from coldcall c 
+		left join coldcall_user_rel curs 
+			on curs.coldcallId=c.id 
+		and 
+			curs.userIdentify=21030 
+		left join user u
+        on
+            curs.userId = u.id 
+            
+		left join organization o
+        on
+            o.id=c.organizationId
+			
+		where 
+			c.processed='Y' and
+			c.id not in 
+			(select distinct coldCallId  from  coldcall_company_rel  where companyId is not null)
+		order by c.createTime desc 
+		limit #{from},#{pageSize}
+	</select>
+	
+	
+	<select id="getmatchedList" resultMap="coldcallVOResult">
+		select 
+			c.id as coldcallId,
+			c.declineStatus as declineStatus,
+			c.coldcallType as coldcallType,
+			c.name as coldcallName,
+			c.createTime as coldcallCreateTime,
+			curs.userId as sponsorId,
+            p.name as companyName,
+            p.code as companyCode,
+            p.fullName as companyFullName,
+            o.id as orgId,
+            o.name as orgName,
+            u.username as sponsor
+		from coldcall c 
+        
+        left join coldcall_company_rel cmr
+        on 
+			cmr.coldcallId=c.id
+		left join company p
+        on 
+			p.id=cmr.companyId
+            
+		left join coldcall_user_rel curs 
+		on 
+            curs.coldcallId=c.id 
+		and 
+			curs.userIdentify=21030 
+         left join user u
+            on
+            curs.userId = u.id 
+            
+		left join organization o
+            on
+            o.id=c.organizationId
+		where 
+			c.processed='Y' and
+			c.id in 
+			(select coldCallId  from  coldcall_company_rel  where companyId is not null)
+		order by c.createTime desc 
+		limit #{from},#{pageSize}
+	</select>
+	
+	
+</mapper>

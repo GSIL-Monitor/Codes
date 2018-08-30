@@ -1,0 +1,3 @@
+rsync -vzrtopg --exclude WEB-INF/classes --exclude .DS_Store --progress -e ssh --delete api-user/target/api-user/  root@tshbao-web-01:/var/www/tsb2/api/api-user
+rsync -vzrtopg --exclude WEB-INF/classes --exclude .DS_Store --progress -e ssh --delete api-company/target/api-company/  root@tshbao-web-01:/var/www/tsb2/api/api-company
+rsync -vzrtopg --exclude WEB-INF/classes --exclude .DS_Store --progress -e ssh --delete api-admin/target/api-admin/  root@tshbao-web-01:/var/www/tsb2/api/api-admin

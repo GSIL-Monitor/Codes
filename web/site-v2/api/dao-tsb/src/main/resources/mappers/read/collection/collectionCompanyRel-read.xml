@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.collection.CollectionCompanyRelReadDao">
+	<resultMap id="ccrResult" type="CollectionCompanyRel">
+	</resultMap>
+
+	<select id="getColComRelByUserId" parameterType="Integer" resultMap="ccrResult">
+		select ccr.* from collection_timeline ct
+		left join
+		collection_company_rel ccr
+		on
+		ccr.id = ct.collectionCompanyId
+		and
+		ccr.active='Y'
+		where ct.userId = #{userId} order by ct.time desc
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getColComRelByCollectionId" parameterType="Integer" resultMap="ccrResult">
+		select * from collection_company_rel  where collectionId=#{collectionId} 
+		and active='Y' order by  createTime desc limit #{start},#{pageSize}
+	</select>
+	
+	<select id="getCompanyIds" parameterType="Integer" resultMap="ccrResult">
+		select companyId from collection_company_rel  where collectionId=#{collectionId} 
+		and active='Y' order by  createTime desc
+	</select>
+	
+	<select id="countTimeLine" parameterType="Integer" resultType="Integer">
+		select 
+				count(ccr.companyId) 
+		from 
+			collection_timeline ct
+		left join
+			collection_company_rel ccr
+		on
+			ccr.id = ct.collectionCompanyId
+		and
+			ccr.active='Y'
+		where ct.userId = #{userId}
+	</select>
+	
+	<select id="countCollComp" parameterType="Integer" resultType="Integer">
+		select 
+			count(companyId) 
+		from 
+			collection_company_rel ccr
+		where collectionId = #{collectionId} and active='Y'
+	</select>
+	<select id="getByUserIdColId" parameterType="Integer" resultMap="ccrResult">
+		select * from collection_company_rel  where userId = #{userId} and collectionId= #{collectionId}
+	</select>
+	
+	<select id="countSort" parameterType="Integer" resultType="Integer">
+		select 
+			count(*)
+		from
+			collection_timeline ct
+		left join
+			collection_company_rel ccr
+		on
+			ccr.id = ct.collectionCompanyId
+		and
+			ccr.active='Y'
+		left join 
+			company c
+		on 
+			c.id=ccr.companyId
+		left join 
+			location l 
+		on 
+			l.locationId=c.locationId
+		left join 
+			company_sector cs
+		on 
+			ccr.companyId=cs.companyId
+		where 
+			ct.userId= #{userId}
+		 and 
+		 <if test="round!=null">
+               c.round=#{round}
+          </if>
+         and 
+         <if test="locationId!=null">
+              l.locationId=#{locationId}
+          </if>
+         and 
+          <if test="sectorId!=null">
+               cs.sectorId=#{sectorId}
+          </if>     
+	</select>
+	
+	<select id="countColCompSort" parameterType="Integer" resultType="Integer">
+		select 
+			count(*)
+		from
+			collection_company_rel ccr
+		left join 
+			company c
+		on 
+			c.id=ccr.companyId
+		left join 
+			location l 
+		on 
+			l.locationId=c.locationId
+		left join 
+			company_sector cs
+		on 
+			ccr.companyId=cs.companyId
+		where  
+			ccr.collectionId = #{collectionId}
+	 	and 
+		 <if test="round!=null">
+               c.round=#{round}
+          </if>
+         and 
+         <if test="locationId!=null">
+              l.locationId=#{locationId}
+          </if>
+         and 
+          <if test="sectorId!=null">
+               cs.sectorId=#{sectorId}
+          </if>     
+	</select>
+	
+	
+
+</mapper>

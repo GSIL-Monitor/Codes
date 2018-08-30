@@ -1,0 +1,5 @@
+insert user(id,username,email,password,active,createTime) values(9,'Michael','michael@gobivc.com',md5('241145813318058567249Gobi5292'),'Y',now());
+insert user_email(userId,email,verify) values(9,'michael@gobivc.com',true);
+insert user_email(userId,email,verify) values(9,'michael@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,9,now());
+insert user_role(userId,role,createTime) values(9,25030,now());

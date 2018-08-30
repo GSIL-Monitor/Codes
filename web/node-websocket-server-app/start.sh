@@ -1,0 +1,1 @@
+forever start -o /var/www/node-websocket-server-app/logs/out.log -e /var/www/node-websocket-server-app/logs/err.log -l /var/www/node-websocket-server-app/logs/forever.log -a app.js

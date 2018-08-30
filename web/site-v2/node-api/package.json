@@ -1,0 +1,28 @@
+{
+  "name": "node-api",
+  "description": "node api use Koa",
+  "version": "0.0.1",
+  "dependencies": {
+    "co-body": "^0.0.1",
+    "koa": "^1.0.0",
+    "koa-compose": "^2.3.0",
+    "koa-logger": "^1.2.1",
+    "koa-route": "^1.1.4",
+    "koa-session": "^3.1.0",
+    "koa-static": "^2.0.0",
+    "mongodb": "^2.1.0",
+    "bluebird": "^3.3.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^3.3.2",
+    "supertest": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.11.13"
+  },
+  "license": "MIT"
+}

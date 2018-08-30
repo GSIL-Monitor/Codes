@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.CompanyTagRelReadDao">
+	<resultMap id="ctrResult" type="CompanyTagRel">
+	</resultMap>
+
+	<select id="getByCompanyId"  resultMap="ctrResult">
+		select * from company_tag_rel where companyId = #{companyId} and (active  !='N' or active is null)
+	</select>
+	
+	<select id="getByCompanyIdAndTagId"  resultMap="ctrResult">
+		select * from company_tag_rel where companyId = #{companyId} and tagId = #{tagId} limit 1
+	</select>
+
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.user.DealUserScoreReadDao">
+	<resultMap id="dusResult" type="DealUserScore">
+	</resultMap>
+
+	<select id="listByUserId" parameterType="Integer" resultMap="dusResult">
+		select * from deal_user_score where userId = #{userId}
+	</select>
+	
+	<select id="listByDealId" parameterType="Integer" resultMap="dusResult">
+		select * from deal_user_score where dealId = #{dealId}
+	</select>
+	
+	<select id="listByDealIdAndType"  resultMap="dusResult">
+		select * from deal_user_score where dealId = #{dealId} and type= #{type}
+	</select>
+	
+	<select id="getByUserIdAndDealId"  resultMap="dusResult">
+		select * from deal_user_score where dealId = #{dealId} and userId= #{userId}
+	</select>
+	
+
+</mapper>

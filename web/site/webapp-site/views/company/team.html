@@ -1,0 +1,108 @@
+<div ng-controller="CompanyTeamCtrl">
+<div class="team-info" ng-show="team.length > 0">
+	<div class="team-left-part">
+		<div class="t-title">
+	        <span class="ft16"> {{'MEMBER_INFO' | translate}}</span>
+	    </div>
+		<div class="team-detail container-fluid team-container">
+			<div class="col-md-4 m-b"  ng-repeat="item in team">
+				<div class="ibox-card "  ng-show="item.member != null">
+					<!--here define the member pic style-->
+					<div class="ibox-card-content-left">
+						<image ng-show="item.member.photo!=null"; style="width: 100%" src="{{item.member.photo}}">
+						</image>
+					</div>
+
+					<div class="ibox-card-content-right">
+						<!--class="btn btn-primary btn-lg"-->
+								<div>
+									<button type="button" class="btn btn-primary btn-xs btn-outline pull-left" data-toggle="modal" data-target="#{{item.member.name}}">
+										<h4>{{item.member.name}}</h4>
+									</button>
+								</div>
+
+					<div style="width:100%;float:left">
+						<p></p>
+						<p ng-show="item.companyMemberRel.position != null">{{item.companyMemberRel.position}}</p>
+					</div>
+
+							<!--/**弹出框 datat部分*/-->
+							<!-- Modal -->
+							<div class="modal fade" id="{{item.member.name}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">Member Info</h4>
+										</div>
+										<div class="modal-body">
+											<p ng-show="item.companyMemberRel.joinDate != null">{{item.companyMemberRel.joinDate}}</p>
+											<p
+													ng-show="item.member.education != null && item.member.education != ''">
+												{{item.member.education}}</p>
+											<p ng-show="item.member.work != null && item.member.work != ''">
+												{{item.member.work}}
+											</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<!--<button type="button" class="btn btn-primary">Save changes</button>-->
+										</div>
+									</div>
+								</div>
+							</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="team-right-part m-t">
+	 	<h3>{{'SUMMARY' | translate}}</h3>
+
+	</div>
+</div>
+<div class="job-info" ng-show="jobs.length > 0">
+	<div class="team-left-part">
+		<div class="t-title">
+	        <span class="ft16"> {{'RECRUIT_INFO' | translate}} </span>
+	    </div>
+		
+		<div class='t-detail'>
+		<div class="horizontal-timeline">
+			<div class="line"></div>
+		  	<div class="line-wrap ps-container ">
+		  		<div class="item" ng-repeat="item in jobs">
+					 <span class="vline"></span>
+		             <span class="spot"></span>
+		             <span class="info">
+		                  <span class="phase" ng-class="(item.bornTime.slice(0,4) == year)?'new':'old'">
+		                  	{{item.positionName}}
+		                  </span>
+		                  <br>
+		                  <span class="time">
+		                      {{item.bornTime.slice(0,10)}}
+		                  </span>
+		             </span>
+	             </div>
+				
+		     </div>
+	   	  </div>
+	     </div>
+     </div>
+     <div class="team-right-part m-t" ng-show="recruit.size >0">
+     
+     	<div ng-repeat="item in recruit" ng-show="item.isMajor == 'Y'">
+	     	<p class="m-t-xl">{{'FIELD' | translate}}: <strong>{{item.fieldName}}</strong>  </p>
+	     	<p>{{'SPEED' | translate}}: <strong>{{item.overallSpeedName}}</strong> </p>
+	     	<p>{{'SALARY' | translate}}: <strong>{{item.similarSalaryName}}</strong> </p>
+     	</div>
+     </div>
+</div>
+</div>
+
+
+
+
+

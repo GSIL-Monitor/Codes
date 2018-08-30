@@ -1,0 +1,179 @@
+.page-title{
+  font-size: 1.3em;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.tab-ul {
+  margin-top:10px;
+  height: 36px;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  border-bottom: 1px solid @dark-gray;
+}
+.tab-ul:before {
+  display: table;
+  content: "";
+}
+
+.tab-ul:after {
+  clear: both;
+}
+
+.tab-li {
+  display: inline-block;
+  position: relative;
+  float: left;
+  margin-right: 5px;
+  padding: 8px 15px;
+  height: 36px;
+  min-width: 100px;
+}
+
+.tab-li.active{
+  border: 1px solid @dark-gray;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-li.active > a {
+  color: @blue;
+}
+
+.tab-li-xl{
+  width: 150px;
+  margin-right:20px;
+}
+
+.task-count{
+  float: left;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  background: @red;
+  color: #fff;
+  font-size: 0.8em;
+  margin-left: 8px;
+  margin-top: -2px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.show-change{
+  font-size: 1em;
+  color: #999;
+}
+
+.user-home-list{
+}
+
+.user-home-list >div{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}
+
+.user-home-list >div:hover{
+  cursor: pointer;
+  background: @soft-gray;
+}
+
+.user-home-list >div.active{
+  color: @text-blue;
+  background: #f9f9f9;
+}
+
+.task-filter-bar{
+  padding: 10px 0;
+  border-top: 1px solid @gray;
+  border-bottom: 1px solid @gray;
+  font-size: 1.1em;
+}
+
+.task-filter-bar > div{
+  padding: 5px 0;
+}
+
+.task-filter-bar > div > a{
+  padding: 0 10px;
+}
+
+.task-filter-bar > div > a.active{
+  color: @text-blue;
+  font-size: 1.1em;
+}
+
+.task-filter{
+  color: #1c9ddf;
+}
+
+.task-count-right{
+  float: right;
+  margin-top: -20px;
+}
+
+.match-info{
+  color: @blue;
+  font-size: 1.2em;
+  margin-top: 0;
+  float: left;
+}
+
+.match-info > a{
+  color: @blue;
+}
+
+.match-error{
+  color: @red;
+  float: left;
+}
+
+.match-error:hover{
+  color: @dark-red;
+  cursor: pointer;
+}
+
+.match-err-item{
+  border-top: 1px solid @red;
+}
+
+.drop-zone{
+  //margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.file-list{
+  margin-top: 15px;
+}
+
+.file{
+  margin-right: 20px;
+  float: left;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.file > a{
+  color: @light-blue;
+  text-decoration: underline
+}
+
+.file > a:hover{
+
+}
+
+.load-fail{
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: @blue;
+}
+
+.load-fail:hover{
+  cursor: pointer;
+  color: @dark-blue;
+}

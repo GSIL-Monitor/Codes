@@ -1,0 +1,13 @@
+部署：xiniudata-other-01
+supervisorctl start data
+
+
+data.conf
+[program:data]
+command=/opt/py-env/bin/gunicorn -w 4 -b 59.110.22.58:5001 data:app
+directory=/var/www/data
+user=root
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/var/www/data/logs/data.log

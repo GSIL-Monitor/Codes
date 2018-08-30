@@ -1,0 +1,15 @@
+{
+  "title": "Tshbao Addon",
+  "name": "tshbao",
+  "version": "0.0.7",
+  "description": "A basic add-on",
+  "main": "index.js",
+  "author": "",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}

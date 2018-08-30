@@ -1,0 +1,54 @@
+insert user_sector(userId,sectorId,active,createTime) values(2,7,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(2,10,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(4,5,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(4,8,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(4,10,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(4,11,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(4,12,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(4,18,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(5,4,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(5,5,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(6,14,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(6,15,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(6,16,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(7,6,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(7,11,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(10,3,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(10,4,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(10,5,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(10,8,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(10,9,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(10,13,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(12,7,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(12,9,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(12,10,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(12,14,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(13,4,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(13,17,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(13,19,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(14,1,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(14,7,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(14,18,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(15,1,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(15,2,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(15,10,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(15,12,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(15,17,'Y',now());
+
+insert user_sector(userId,sectorId,active,createTime) values(16,2,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(16,4,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(16,5,'Y',now());
+insert user_sector(userId,sectorId,active,createTime) values(16,8,'Y',now());
+
+
+
+

@@ -1,0 +1,57 @@
+Welcome!
+
+<script>
+    function register(ws, userId, token){
+        if( userId && token){
+            var message = {
+                "type":"register",
+                "userId":userId,
+                "token":token
+            };
+            //console.log(message);
+            ws.send(JSON.stringify(message));
+        }
+    }
+
+    var init_websocket = function(){
+        var ws = new WebSocket("ws://push.xiniudata.com/websocket");
+        //var ws = new WebSocket("ws://dev.xiniudata.com/websocket");
+
+        ws.onopen = function() {
+            //console.log("Opened");
+            register(ws, 877, "8ZN044NX8JW4AS0UZ2N5D5GM3A5NPASD");
+        };
+
+        ws.onmessage = function (evt) {
+            //console.log(evt.data);
+            var msg = JSON.parse(evt.data);
+            if(msg["type"]=="user_notify"){
+                var userId = msg["userId"];
+                var message_4_user_id = msg["message_4_user_id"];
+                console.log("message_4_user_id: %s", message_4_user_id);
+            }
+            else if(msg["type"]=="connection"){
+                console.log("connection: %s", msg["message"]);
+            }
+            else if(msg["type"]=="register"){
+                console.log("register: %s", msg["message"]);
+            }
+        };
+
+        ws.onclose = function(evt) {
+           //console.log("Closed");
+           //console.log(evt);
+           //console.log(evt.code);
+           if(evt.code != 4000){
+               window.setTimeout(init_websocket,30*1000);
+           }
+        };
+
+        ws.onerror = function(err) {
+           //console.log(err);
+        };
+    };
+
+    init_websocket();
+
+</script>

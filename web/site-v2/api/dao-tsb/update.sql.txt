@@ -1,0 +1,1016 @@
+salt=24114581331805856724
+salt + userId + password
+24114581331805856724151601618
+
+
+2015.12.24 by arthur (deployed)
+alter table user add token varchar(100);
+alter table user add tokenTime datetime;
+
+2016.1.2 by arthur (deployed)
+alter table user add loginFailTimes int;
+alter table user add loginIP varchar(50);
+alter table user add keepLoginSecret varchar(32);
+alter table user add lastLoginTime datetime;
+
+
+2016.1.5 by arthur (deployed)
+drop table user_company_note;
+drop table user_orgnization_rel;
+drop table org_investor_rel;
+drop table organization;
+
+CREATE TABLE IF NOT EXISTS `organization` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `type` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `organization_conf` (
+  `id` INT NOT NULL,
+  `salt` VARCHAR(50) NULL,
+  `coldcall` TINYINT(1) NOT NULL DEFAULT 0,
+  `coldcall_imap_server` VARCHAR(100) NULL,
+  `coldcall_imap_port` INT NULL,
+  `coldcall_username` VARCHAR(100) NULL,
+  `coldcall_password` VARCHAR(100) NULL,
+  `api` TINYINT(1) NOT NULL DEFAULT 0,
+  `apiUrlPrefix` VARCHAR(200) NULL,
+  INDEX `fk_organization_conf_organization1_idx` (`id` ASC),
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_organization_conf_organization1`
+    FOREIGN KEY (`id`)
+    REFERENCES `organization` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `user_organization_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `organizationId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_user_organization_rel_organization1_idx` (`organizationId` ASC),
+  INDEX `fk_user_organization_rel_user1_idx` (`userId` ASC),
+  CONSTRAINT `fk_user_organization_rel_organization1`
+    FOREIGN KEY (`organizationId`)
+    REFERENCES `organization` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_organization_rel_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `deal` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `companyId` INT NOT NULL,
+  `organizationId` INT NOT NULL,
+  `type` INT NOT NULL,
+  `status` INT NOT NULL,
+  `priority` INT NOT NULL,
+  `declineStatus` INT NOT NULL,
+  `organizationDealId` VARCHAR(20) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_deal_company1_idx` (`companyId` ASC),
+  INDEX `fk_deal_organization1_idx` (`organizationId` ASC),
+  CONSTRAINT `fk_deal_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_deal_organization1`
+    FOREIGN KEY (`organizationId`)
+    REFERENCES `organization` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `deal_history` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `dealId` INT NOT NULL,
+  `priority` INT NOT NULL,
+  `status` INT NOT NULL,
+  `declineStatus` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  `creatorId` INT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_deal_history_deal1_idx` (`dealId` ASC),
+  CONSTRAINT `fk_deal_history_deal1`
+    FOREIGN KEY (`dealId`)
+    REFERENCES `deal` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `deal_note` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `dealId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `note` TEXT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  INDEX `fk_deal_comment_deal1_idx` (`dealId` ASC),
+  PRIMARY KEY (`id`),
+  INDEX `fk_deal_comment_user1_idx` (`userId` ASC),
+  CONSTRAINT `fk_deal_comment_deal1`
+    FOREIGN KEY (`dealId`)
+    REFERENCES `deal` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_deal_comment_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `deal_user_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NOT NULL,
+  `dealId` INT NOT NULL,
+  `userIdentify` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_user_deal_rel_user1_idx` (`userId` ASC),
+  INDEX `fk_user_deal_rel_deal1_idx` (`dealId` ASC),
+  CONSTRAINT `fk_user_deal_rel_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_deal_rel_deal1`
+    FOREIGN KEY (`dealId`)
+    REFERENCES `deal` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `deal_user_score` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NOT NULL,
+  `dealId` INT NOT NULL,
+  `type` INT NULL,
+  `score` INT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_deal_user_score_user1_idx` (`userId` ASC),
+  INDEX `fk_deal_user_score_deal1_idx` (`dealId` ASC),
+  CONSTRAINT `fk_deal_user_score_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_deal_user_score_deal1`
+    FOREIGN KEY (`dealId`)
+    REFERENCES `deal` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `coldcall` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `organizationId` INT NOT NULL,
+  `name` VARCHAR(500) NOT NULL,
+  `nameMd5` VARCHAR(32) NOT NULL,
+  `content` TEXT NOT NULL,
+  `url` VARCHAR(500) NULL,
+  `createTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_coldcall_organization1_idx` (`organizationId` ASC),
+  INDEX `nameMd5_idx` (`nameMd5` ASC),
+  CONSTRAINT `fk_coldcall_organization1`
+    FOREIGN KEY (`organizationId`)
+    REFERENCES `organization` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `coldcall_user_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `coldcallId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `userIdentify` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_coldcall_user_rel_coldcall1_idx` (`coldcallId` ASC),
+  INDEX `fk_coldcall_user_rel_user1_idx` (`userId` ASC),
+  CONSTRAINT `fk_coldcall_user_rel_coldcall1`
+    FOREIGN KEY (`coldcallId`)
+    REFERENCES `coldcall` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_coldcall_user_rel_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `coldcall_file` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `coldcallId` INT NOT NULL,
+  `filename` VARCHAR(500) NULL,
+  `link` VARCHAR(50) NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_coldcall_file_coldcall1_idx` (`coldcallId` ASC),
+  CONSTRAINT `fk_coldcall_file_coldcall1`
+    FOREIGN KEY (`coldcallId`)
+    REFERENCES `coldcall` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `coldcall_source_company_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `coldcallId` INT NOT NULL,
+  `sourceCompanyId` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_coldcall_source_company_rel_coldcall1_idx` (`coldcallId` ASC),
+  INDEX `fk_coldcall_source_company_rel_source_company1_idx` (`sourceCompanyId` ASC),
+  CONSTRAINT `fk_coldcall_source_company_rel_coldcall1`
+    FOREIGN KEY (`coldcallId`)
+    REFERENCES `coldcall` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_coldcall_source_company_rel_source_company1`
+    FOREIGN KEY (`sourceCompanyId`)
+    REFERENCES `source_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `company_candidate` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sourceCompanyId` INT NOT NULL,
+  `companyId` INT NOT NULL,
+  `confidence` FLOAT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_company_candidate_source_company1_idx` (`sourceCompanyId` ASC),
+  INDEX `fk_company_candidate_company1_idx` (`companyId` ASC),
+  CONSTRAINT `fk_company_candidate_source_company1`
+    FOREIGN KEY (`sourceCompanyId`)
+    REFERENCES `source_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_company_candidate_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `user_email` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `verify` TINYINT(1) NOT NULL,
+  `verifyCode` VARCHAR(32) NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_user_email_user1_idx` (`userId` ASC),
+  INDEX `email_idx` (`email` ASC),
+  CONSTRAINT `fk_user_email_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `user_wechat` (
+  `userId` INT NOT NULL,
+  `wechatId` VARCHAR(100) NOT NULL,
+  `createTime` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`userId`),
+  INDEX `wechatId_idx` (`wechatId` ASC),
+  CONSTRAINT `fk_user_wechat_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `wechat_msg` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NOT NULL,
+  `coldcallId` INT NOT NULL,
+  `msgType` VARCHAR(50) NOT NULL,
+  `title` VARCHAR(1000) NOT NULL,
+  `description` TEXT NULL,
+  `url` VARCHAR(300) NULL,
+  `createTime` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_wechat_msg_user1_idx` (`userId` ASC),
+  INDEX `fk_wechat_msg_coldcall1_idx` (`coldcallId` ASC),
+  CONSTRAINT `fk_wechat_msg_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_wechat_msg_coldcall1`
+    FOREIGN KEY (`coldcallId`)
+    REFERENCES `coldcall` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+insert organization(id,name,type,createtime) values(1,'Gobi Partners',17020,now());
+insert organization_conf(id,coldcall,coldcall_imap_server,coldcall_imap_port,coldcall_username,coldcall_password)
+values(1,true,'imap.exmail.qq.com',993,'coldcall@gobi.com.cn','gbkr0419');
+
+
+2016.1.9 (deployed)
+alter table company add investment int default null after preMoney;
+alter table deal add `currency` INT NOT NULL DEFAULT 0 after declineStatus;
+alter table deal add `preMoney` INT default null after currency;
+alter table deal add `investment` INT default null after preMoney;
+
+2016.1.11 (deployed)
+alter table coldcall add coldcallType int not null after organizationId;
+
+2016.1.12 (deployed)
+CREATE TABLE IF NOT EXISTS `coldcall_company_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `coldcallId` INT NOT NULL,
+  `companyId` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_coldcall_company_rel_coldcall1_idx` (`coldcallId` ASC),
+  INDEX `fk_coldcall_company_rel_company1_idx` (`companyId` ASC),
+  CONSTRAINT `fk_coldcall_company_rel_coldcall1`
+    FOREIGN KEY (`coldcallId`)
+    REFERENCES `coldcall` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_coldcall_company_rel_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `sector` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sectorName` VARCHAR(100) NOT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `confidence` FLOAT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `idx_domain_domain` (`sectorName` ASC))
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `company_sector` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `companyId` INT NOT NULL,
+  `sectorId` INT NOT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `confidence` FLOAT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_company_sector_sector1_idx` (`sectorId` ASC),
+  INDEX `fk_company_sector_company1_idx` (`companyId` ASC),
+  CONSTRAINT `fk_company_sector_sector1`
+    FOREIGN KEY (`sectorId`)
+    REFERENCES `sector` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_company_sector_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `user_sector` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sectorId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `confidence` FLOAT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_user_sector_sector1_idx` (`sectorId` ASC),
+  INDEX `fk_user_sector_user1_idx` (`userId` ASC),
+  CONSTRAINT `fk_user_sector_sector1`
+    FOREIGN KEY (`sectorId`)
+    REFERENCES `sector` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_sector_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+#2016.1.13 (deployed)
+alter table deal_user_rel add type int not null after userIdentify;
+update deal_user_rel r,deal d set r.type=d.type where r.dealId=d.id;
+alter table deal drop type;
+
+#2016.1.15 (deployed)
+CREATE TABLE IF NOT EXISTS `recommendation` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NOT NULL,
+  `companyId` INT NOT NULL,
+  `confidence` FLOAT NOT NULL,
+  `createTime` TIMESTAMP NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_recommend_user1_idx` (`userId` ASC),
+  INDEX `fk_recommend_company1_idx` (`companyId` ASC),
+  CONSTRAINT `fk_recommend_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_recommend_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+#2016.1.19 (deployed)
+alter table source_company add investment int default null after preMoney;
+alter table source_document add name varchar(200) default null after documentId;
+
+#2016.1.21 (deployed)
+alter table user add oneTimePwd varchar(32) after lastLoginTime;
+
+#2016.1.22 (deployed)
+alter table company_candidate add completion varchar(100) after companyId;
+alter table sector add level int not null default 1;
+alter table sector add parentId int default null;
+alter table member add email varchar(100) default null after photo;
+alter table member add phone varchar(20) default null after email;
+
+alter table funding add shareRatio float default null after investment;
+alter table company add currentRound int default null after fundingType;
+alter table company add currentRoundDesc varchar(45) default null after currentRound;
+alter table company add postMoney int default null after investment;
+alter table company add shareRatio float default null after postMoney;
+
+alter table deal add fundingType int default null after declineStatus;
+alter table deal add currentRound int default null after fundingType;
+alter table deal add currentRoundDesc varchar(45) default null after currentRound;
+alter table deal add postMoney int default null after investment;
+alter table deal add shareRatio float default null after postMoney;
+
+
+#2016.1.26 (deployed)
+alter table coldcall add processed char(1) default 'N' after url;
+
+
+#2016.1.28
+alter table deal drop organizationDealId;
+
+
+#2016.2.15	demoday
+CREATE TABLE `demoday` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `preScoreDate` datetime NOT NULL,
+  `scoreDoneDate` datetime DEFAULT NULL,
+  `holdDate` datetime NOT NULL,
+  `status` int(11) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT NULL,
+  `modifyTime` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `demoday_company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `demodayId` int(11) NOT NULL,
+  `companyId` int(11) NOT NULL,
+  `organizationId` int(11) DEFAULT NULL,
+  `rank` int(11) DEFAULT NULL,
+  `scoringStatus` int(11) DEFAULT NULL,
+  `joinStatus` int(11) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT NULL,
+  `modifyTime` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_demoday_company_rel_demoday1_idx` (`demodayId`),
+  KEY `fk_demoday_company_rel_company1_idx` (`companyId`),
+  KEY `fk_deal_demoday_organization1_idx` (`organizationId`),
+  CONSTRAINT `fk_deal_demoday_organization1` FOREIGN KEY (`organizationId`) REFERENCES `organization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_demoday_company_rel_company1` FOREIGN KEY (`companyId`) REFERENCES `company` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_demoday_company_rel_demoday1` FOREIGN KEY (`demodayId`) REFERENCES `demoday` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `demoday_organization` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `demodayId` int(11) NOT NULL,
+  `organizationId` int(11) NOT NULL,
+  `status` int(11) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT NULL,
+  `modifyTime` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_demoday_organization_demoday1_idx` (`demodayId`),
+  KEY `fk_demoday_organization_organization1_idx` (`organizationId`),
+  CONSTRAINT `fk_demoday_organization_demoday1` FOREIGN KEY (`demodayId`) REFERENCES `demoday` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_demoday_organization_organization1` FOREIGN KEY (`organizationId`) REFERENCES `organization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `demoday_prescore` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL,
+  `dealDemodayId` int(11) NOT NULL,
+  `score` int(11) NOT NULL,
+  `createTime` timestamp NULL DEFAULT NULL,
+  `modifyTime` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_deal_demoday_score_user1_idx` (`userId`),
+  KEY `fk_deal_demoday_score_deal_demoday1_idx` (`dealDemodayId`),
+  CONSTRAINT `fk_deal_demoday_score_user1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_deal_demoday_score_deal_demoday1` FOREIGN KEY (`dealDemodayId`) REFERENCES `demoday_company` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `demoday_score` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dealDemodayId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `industry` int(11) DEFAULT NULL,
+  `team` int(11) DEFAULT NULL,
+  `product` int(11) DEFAULT NULL,
+  `gain` int(11) DEFAULT NULL,
+  `preMoney` int(11) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT NULL,
+  `modifyTime` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_demoday_score_deal_demoday1_idx` (`dealDemodayId`),
+  KEY `fk_demoday_score_user1_idx` (`userId`),
+  CONSTRAINT `fk_demoday_score_deal_demoday1` FOREIGN KEY (`dealDemodayId`) REFERENCES `demoday_company` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_demoday_score_user1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `demoday_result` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `organizationId` int(11) NOT NULL,
+  `demodayComapnyId` int(11) NOT NULL,
+  `result` int(11) DEFAULT NULL,
+  `createUser` int(11) DEFAULT NULL,
+  `createTime` timestamp NULL DEFAULT NULL,
+  `modifyUser` int(11) DEFAULT NULL,
+  `modifyTime` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `modifyUser_UNIQUE` (`modifyUser`),
+  KEY `fk_deal_demoday_result_organization1_idx` (`organizationId`),
+  KEY `fk_deal_demoday_result_deal_demoday1_idx` (`demodayComapnyId`),
+  CONSTRAINT `fk_deal_demoday_result_deal_demoday1` FOREIGN KEY (`demodayComapnyId`) REFERENCES `demoday_company` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_deal_demoday_result_organization1` FOREIGN KEY (`organizationId`) REFERENCES `organization` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `source_context` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sourceCompanyId` INT NOT NULL,
+  `type` INT NOT NULL,
+  `content` TEXT NULL,
+  `features` TEXT NULL,
+  `confidence` FLOAT NULL,
+  `createTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_source_context_source_company1_idx` (`sourceCompanyId` ASC),
+  CONSTRAINT `fk_source_context_source_company1`
+    FOREIGN KEY (`sourceCompanyId`)
+    REFERENCES `source_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+update
+source_funding f join source_company c on f.sourceCompanyId=c.id 
+set f.currency=20
+where c.source=13020 
+and f.currency=3010;
+
+update
+source_funding f join source_company c on f.sourceCompanyId=c.id 
+set f.currency=10
+where c.source=13020 
+and f.currency=3020;
+
+update source_funding set currency=3010 where currency=10;
+update source_funding set currency=3020 where currency=20;
+
+update source_funding f join source_company c on f.sourceCompanyId=c.id 
+join funding fd on f.fundingId=fd.id
+set fd.currency=f.currency
+where c.source=13020;
+
+#2016.2.24
+alter table user_setting add recommendNum int not null default 2;
+alter table coldcall add declineStatus int not null default 0 after processed;
+
+#2016.2.26
+alter table artifact add rank int not null default 0 after others;
+
+#2016.3.1
+alter table organization add grade int default 33020 after status;
+alter table demoday_company add recommendation text default null after rank;
+
+#2016.3.2
+alter table demoday add submitEndDate datetime not null after name;
+ALTER TABLE `demoday` CHANGE COLUMN `preScoreDate` `preScoreStartDate` DATETIME NOT NULL ;
+alter table demoday add preScoreEndDate datetime not null after preScoreStartDate;
+alter table demoday add connectStartDate datetime not null after preScoreEndDate;
+alter table demoday add connectEndDate datetime not null after connectStartDate;
+ALTER TABLE `demoday` CHANGE COLUMN `holdDate` `holdStartDate` DATETIME NOT NULL ;
+alter table demoday add holdEndDate datetime not null after holdStartDate;
+
+alter table demoday drop scoreDoneDate;
+
+#2016.3.15
+alter table source_company add productDesc text default null after description;
+alter table source_company add modelDesc text default null after productDesc;
+alter table source_company add operationDesc text default null after modelDesc;
+alter table source_company add teamDesc text default null after operationDesc;
+alter table source_company add marketDesc text default null after teamDesc;
+alter table source_company add compititorDesc text default null after marketDesc;
+alter table source_company add advantageDesc text default null after compititorDesc;
+alter table source_company add planDesc text default null after advantageDesc;
+
+alter table company add productDesc text default null after description;
+alter table company add modelDesc text default null after productDesc;
+alter table company add operationDesc text default null after modelDesc;
+alter table company add teamDesc text default null after operationDesc;
+alter table company add marketDesc text default null after teamDesc;
+alter table company add compititorDesc text default null after marketDesc;
+alter table company add advantageDesc text default null after compititorDesc;
+alter table company add planDesc text default null after advantageDesc;
+
+CREATE TABLE IF NOT EXISTS `source_contact` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sourceCompanyId` INT NOT NULL,
+  `type` INT NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `phone` VARCHAR(100) NULL,
+  `email` VARCHAR(100) NULL,
+  `wechat` VARCHAR(100) NULL,
+  `verify` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_source_contact_source_company1_idx` (`sourceCompanyId` ASC),
+  CONSTRAINT `fk_source_contact_source_company1`
+    FOREIGN KEY (`sourceCompanyId`)
+    REFERENCES `source_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `companyId` INT NOT NULL,
+  `type` INT NOT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `phone` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `wechat` VARCHAR(100) NOT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `confidence` FLOAT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_contact_company1_idx` (`companyId` ASC),
+  CONSTRAINT `fk_contact_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `coldcall_forward` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `coldcallId` INT NOT NULL,
+  `fromUserId` INT NULL,
+  `toUserId` INT NULL,
+  `createTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_coldcall_forward_coldcall1_idx` (`coldcallId` ASC),
+  CONSTRAINT `fk_coldcall_forward_coldcall1`
+    FOREIGN KEY (`coldcallId`)
+    REFERENCES `coldcall` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+#2016.3.21
+alter table artifact add nameIndex int default null after rank;
+alter table artifact add nameIndexTime timestamp null default null after nameIndex;
+
+
+#2016.4.5
+CREATE TABLE IF NOT EXISTS `gongshang_base` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `companyAliasId` INT NOT NULL,
+  `name` VARCHAR(200) NULL,
+  `regCapital` VARCHAR(100) NULL,
+  `industry` VARCHAR(100) NULL,
+  `regInstitute` VARCHAR(100) NULL,
+  `establishTime` DATETIME NULL,
+  `base` VARCHAR(100) NULL,
+  `regNumber` VARCHAR(100) NULL,
+  `regStatus` VARCHAR(100) NULL,
+  `fromTime` DATETIME NULL,
+  `toTime` DATETIME NULL,
+  `businessScope` TEXT NULL,
+  `regLocation` VARCHAR(300) NULL,
+  `companyOrgType` VARCHAR(100) NULL,
+  `legalPersonId` VARCHAR(100) NULL,
+  `legalPersonName` VARCHAR(100) NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `updateTime` TIMESTAMP NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `confidence` FLOAT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_gongshang_base_company_alias1_idx` (`companyAliasId` ASC),
+  CONSTRAINT `fk_gongshang_base_company_alias1`
+    FOREIGN KEY (`companyAliasId`)
+    REFERENCES `company_alias` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `source_gongshang_base` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `gongshangBaseId` INT NULL,
+  `source` INT NULL,
+  `sourceId` VARCHAR(100) NULL,
+  `name` VARCHAR(200) NULL,
+  `regCapital` VARCHAR(100) NULL,
+  `industry` VARCHAR(100) NULL,
+  `regInstitute` VARCHAR(100) NULL,
+  `establishTime` DATETIME NULL,
+  `base` VARCHAR(100) NULL,
+  `regNumber` VARCHAR(100) NULL,
+  `regStatus` VARCHAR(100) NULL,
+  `fromTime` DATETIME NULL,
+  `toTime` DATETIME NULL,
+  `businessScope` TEXT NULL,
+  `regLocation` VARCHAR(300) NULL,
+  `companyOrgType` VARCHAR(100) NULL,
+  `legalPersonId` VARCHAR(100) NULL,
+  `legalPersonName` VARCHAR(100) NULL,
+  `verify` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_source_gongshang_base_gongshang_base1_idx` (`gongshangBaseId` ASC),
+  INDEX `sgb_s_sid` (`source` ASC, `sourceId` ASC),
+  CONSTRAINT `fk_source_gongshang_base_gongshang_base1`
+    FOREIGN KEY (`gongshangBaseId`)
+    REFERENCES `gongshang_base` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+#2016.4.7
+alter table member add description text default null after work;
+
+#2016.4.11
+alter table source_funding_investor_rel add investorType int not null default 38001 after sourceFundingId;
+alter table source_funding_investor_rel add sourceCompanyId int default null after sourceInvestorId;
+alter table source_funding_investor_rel add CONSTRAINT `fk_source_funding_investor_rel_source_company1` FOREIGN KEY (`sourceCompanyId`) REFERENCES `source_company` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+alter table source_funding_investor_rel modify sourceInvestorId int default null;
+
+alter table funding_investor_rel add investorType int not null default 38001 after fundingId;
+alter table funding_investor_rel add companyId int default null after investorId;
+alter table funding_investor_rel add CONSTRAINT `fk_funding_investor_rel_company1` FOREIGN KEY (`companyId`) REFERENCES `company` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+alter table funding_investor_rel modify investorId int default null;
+
+#2016.4.26
+drop table collection_user_rel;
+drop table collection_rule;
+drop table collection_timeline;
+drop table collection_company_rel;
+drop table collection;
+
+CREATE TABLE IF NOT EXISTS `collection` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(200) NULL,
+  `description` TEXT NULL,
+  `type` INT NULL,
+  `sort` FLOAT NULL,
+  `mark` CHAR(1) NULL COMMENT '今天是否有增量',
+  `rule` TEXT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS `collection_company_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `collectionId` INT NOT NULL,
+  `companyId` INT NOT NULL,
+  `sort` FLOAT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_set_company_rel_set1_idx` (`collectionId` ASC),
+  INDEX `fk_set_company_rel_company1_idx` (`companyId` ASC),
+  CONSTRAINT `fk_set_company_rel_set1`
+    FOREIGN KEY (`collectionId`)
+    REFERENCES `collection` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_set_company_rel_company1`
+    FOREIGN KEY (`companyId`)
+    REFERENCES `company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS `collection_user_rel` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `collectionId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `verify` CHAR(1) NULL,
+  `active` CHAR(1) NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_collection_user_rel_user1_idx` (`userId` ASC),
+  INDEX `fk_collection_user_rel_collection1_idx` (`collectionId` ASC),
+  CONSTRAINT `fk_collection_user_rel_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_collection_user_rel_collection1`
+    FOREIGN KEY (`collectionId`)
+    REFERENCES `collection` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `collection_timeline` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `userId` INT NULL,
+  `collectionCompanyId` INT NOT NULL,
+  `time` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_collection-timeline_collection_company_rel1_idx` (`collectionCompanyId` ASC),
+  CONSTRAINT `fk_collection-timeline_collection_company_rel1`
+    FOREIGN KEY (`collectionCompanyId`)
+    REFERENCES `collection_company_rel` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `collection_rule` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `collectionId` INT NOT NULL,
+  `ruleId` INT NULL,
+  `type` INT NULL,
+  `active` CHAR(1) NULL,
+  `createUser` INT NULL,
+  `modifyUser` INT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_collection-rule_collection1_idx` (`collectionId` ASC),
+  CONSTRAINT `fk_collection-rule_collection1`
+    FOREIGN KEY (`collectionId`)
+    REFERENCES `collection` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+alter table company add column type int not null default 41010 after logo;
+alter table source_company add column type int not null default 41010 after logo;
+
+alter table demoday_company add column pass char(1) not null default 'Y' after recommendation;
+
+
+#2016/5/3
+drop table hot_tag;
+
+CREATE TABLE IF NOT EXISTS `hot_tag` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `sort` FLOAT NULL,
+  `createTime` TIMESTAMP NULL,
+  INDEX `fk_hot_tag_tag1_idx` (`id` ASC),
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_hot_tag_tag1`
+    FOREIGN KEY (`id`)
+    REFERENCES `tag` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+#2016/5/4
+CREATE TABLE IF NOT EXISTS `source_company_score` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sourceCompanyId` INT NOT NULL,
+  `score` INT NULL,
+  `verify` CHAR(1) NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_source_company_score_source_company1_idx` (`sourceCompanyId` ASC),
+  CONSTRAINT `fk_source_company_score_source_company1`
+    FOREIGN KEY (`sourceCompanyId`)
+    REFERENCES `source_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+#2016/5/5
+CREATE TABLE IF NOT EXISTS `source_company_aggregate_status` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sourceCompanyId` INT NOT NULL,
+  `type` INT NOT NULL,
+  `status` INT NOT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_source_company_aggregate_status_source_company1_idx` (`sourceCompanyId` ASC),
+  CONSTRAINT `fk_source_company_aggregate_status_source_company1`
+    FOREIGN KEY (`sourceCompanyId`)
+    REFERENCES `source_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+insert source_company_aggregate_status(sourceCompanyId,type,status) select id,45010,46020 from source_company where id < 145123;
+
+#2016/5/11
+alter table collection_user_rel add visitTime timestamp null default null after userId;
+
+#2016/5/17
+CREATE TABLE IF NOT EXISTS `demoday_note` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `demodayCompanyId` INT NOT NULL,
+  `organizationId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `privilege` INT NULL DEFAULT 47020,
+  `note` TEXT NULL,
+  `createTime` TIMESTAMP NULL,
+  `modifyTime` TIMESTAMP NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_demoday_note_demoday_company1_idx` (`demodayCompanyId` ASC),
+  INDEX `fk_demoday_note_organization1_idx` (`organizationId` ASC),
+  INDEX `fk_demoday_note_user1_idx` (`userId` ASC),
+  CONSTRAINT `fk_demoday_note_demoday_company1`
+    FOREIGN KEY (`demodayCompanyId`)
+    REFERENCES `demoday_company` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_demoday_note_organization1`
+    FOREIGN KEY (`organizationId`)
+    REFERENCES `organization` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_demoday_note_user1`
+    FOREIGN KEY (`userId`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+alter table demoday_company add `startTime` TIMESTAMP NULL after joinStatus;
+alter table demoday_company add `endTime` TIMESTAMP NULL after startTime;

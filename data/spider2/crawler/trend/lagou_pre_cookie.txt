@@ -1,0 +1,7 @@
+curl "https://activity.lagou.com/activityapi/icon/showIcon.json?type=COMPANY&ids=89456&_=1482302505901" -v
+curl "https://a.lagou.com/collect?v=1&_v=j31&a=1474436346&t=pageview&_s=1&dl=https://www.lagou.com/gongsi/j89456.html" -v
+
+
+curl "https://www.lagou.com/gongsi/searchPosition.json?companyId=89534&pageSize=1000&positionFirstType=%E6%8A%80%E6%9C%AF&pageNo=1" --cookie 'JSESSIONID=F1FC0DB3DC12D1762ADCCD3E9F1D6B9F; user_trace_token=20161221144910-fbfd028f565f4db69ed6c7a14af8f753; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1482302951; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1482302951; _ga=GA1.2.1497808930.1482302951; LGRID=20161221150847-51484d7c-c74c-11e6-845c-525400f775ce; LGUID=20161221144910-93dd5f42-c749-11e6-8450-525400f775ce; TG-TRACK-CODE=hpage_indexlist' --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:50.0) Gecko/20100101 Firefox/50.0" -v --proxy 183.184.194.106:9797
+
+curl "https://www.lagou.com/gongsi/searchPosition.json?companyId=6502&pageSize=1000&positionFirstType=%E5%B8%82%E5%9C%BA%E4%B8%8E%E9%94%80%E5%94%AE&pageNo=1" --cookie "user_trace_token=20161221142700-7aded37d-c746-11e6-841f-525400f775ce;LGUID=20161221142700-7aded745-c746-11e6-841f-525400f775ce;LGRID=20161221142700-7aded745-c746-11e6-841f-525400f775ce;" -v --proxy 183.184.194.106:9797

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crawler.dao.read.IOSReadDao">
+	<resultMap id="IOSResult" type="IOS">
+	</resultMap>
+	<select id="get" resultMap="IOSResult">
+		select * from ios#{tableId} where artifactId = #{artifactId} order by date desc limit 20
+	</select>
+			
+	<select id="getByType" resultMap="IOSResult">
+		select * from ios#{tableId} where artifactId = #{artifactId} and type= #{type} order by date desc limit 20
+	</select>
+	
+	<select id="getByTypeExpand" resultMap="IOSResult">
+		select * from ios#{tableId} where artifactId = #{artifactId} and type= #{type} 
+			and date >SUBDATE(now(),interval #{expand} day)
+		order by date desc limit #{expand}
+	</select>
+</mapper>

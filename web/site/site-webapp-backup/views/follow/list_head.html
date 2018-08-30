@@ -1,0 +1,88 @@
+<div class="company-head-page">
+   <ul class="company-header">
+        <li class="company-title" > 
+   	 	    <i class="fa fa-heart fa-x cate-active" ></i>
+        	<span>
+        		{{'FOLLOWING'|translate}}
+        	</span>
+        	
+        	
+        </li>
+ 		 
+   </ul>
+
+    <ul class="list-inline category" >
+		
+	    <li class="filter" id="li-data" ui-sref="follow.data" follow-filter ng-click="getFollowByStatus('0')">
+			<span>
+				{{ 'ALL' | translate}}
+			</span>
+        </li>
+
+		<li class="filter"  ng-repeat="item in followStatus" follow-filter  ng-click="getFollowByStatus('{{item.text}}')">
+			<span >
+				{{item.text}}
+			</span>
+		</li>
+        
+        <!-- 
+        <li id="li-trends" ui-sref="follow.trends" category-filter>
+	        <span class="fa-stack fa-lg">
+	        <i class="fa fa-circle-thin fa-stack-2x"></i>
+	        <i class="fa fa-signal fa-stack-1x"></i>
+	      </span>
+	      {{ 'TRENDS' | translate}}
+        </li>
+        
+         <li id="li-events" ui-sref="follow.events" category-filter >
+			<span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i> 
+                <i class="fa fa-flag fa-stack-1x"></i>
+			</span>
+			{{ 'EVENTS' | translate}}
+        </li>
+         -->
+        
+         <li class="last-li pull-right" id="li-data">
+         	
+              <ul class="list-inline" >
+                  
+                  <li>
+                  	<span class="company-count" ng-hide="total ==null">
+                   		{{total}} 
+                   		
+		        		<span ng-show = "total <2">
+		 		 			{{'COMPANY' | translate}}
+			  			</span>
+						<span ng-show = "total >1">
+		        			{{'COMPANIES' | translate}}
+		        		</span>
+			       	  </span>
+                  
+                  </li>
+                  
+                  <li ng-controller="BasicModalCtrl"   ng-hide=' listSelectedCount == null|| listSelectedCount == 0'>
+
+						 <button class="btn btn-success" ng-click="open('list')">
+                      	  {{'ADD'|translate}} {{listSelectedCount}} {{'TO_OTHER_LIST'|translate}}
+                        </button>
+
+                        <button class="btn btn-danger" ng-click='deleteSelected()' >
+                      	  {{'UNFOLLOW'|translate}} {{listSelectedCount}}
+                        </button>
+                  </li>
+              </ul>
+          </li>
+    </ul>
+
+  </div>
+  
+  <script>
+  	$(function(){
+    	var url = window.location.href;
+    	if(url.indexOf('data') > 0)	$('#li-data').addClass('cate-active');
+    	if(url.indexOf('trends') > 0)	$('#li-trends').addClass('cate-active');
+    	if(url.indexOf('events') > 0) $('#li-events').addClass('cate-active');
+  	})
+  
+  </script>

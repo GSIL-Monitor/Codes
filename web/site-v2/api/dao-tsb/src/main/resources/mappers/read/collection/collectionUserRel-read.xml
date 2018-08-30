@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.collection.CollectionUserRelReadDao">
+	<resultMap id="curResult" type="CollectionUserRel">
+	</resultMap>
+
+	<select id="getByUserIdColId" parameterType="Integer" resultMap="curResult">
+		  select * from collection_user_rel  where userId = #{userId}  and collectionId= #{collectionId}
+	</select>
+	
+</mapper>

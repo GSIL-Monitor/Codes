@@ -1,0 +1,84 @@
+.m-company-header{
+  width: 100%;
+  display: inline-block;
+  min-height: 70px;
+}
+
+.m-company-basic{
+  padding-left: 82px;
+  padding-right: 10px;
+  display: inline-block;
+  width: 80%;
+}
+
+.m-company-basic > p{
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+.company-name{
+  margin-top: -3px;
+}
+
+.section-content{
+  padding-left: 72px;
+}
+
+.ibox{
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+
+.ibox-content{
+
+}
+
+.funding-money{
+  position: relative;
+  float: left;
+}
+
+.funding-investors {
+  float: left;
+  padding-left: 0;
+  width: auto;
+}
+
+
+@media (max-width: 600px) {
+
+  .funding-money{
+    position: absolute;
+    float: none;
+  }
+
+  .funding-investors {
+    float: none;
+    width: 100%;
+    padding-left: 120px;
+    box-sizing: border-box;
+  }
+
+  div.funding-investors{
+    width: auto;
+    position: relative;
+    margin-left: -61px;
+    margin-top: 3px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+  }
+
+  div.investor-info{
+    margin-right: 0;
+  }
+
+  div.ibox-content{
+    padding: 20px 15px;
+  }
+
+  .funding-section > div > .section-sub-item,
+  .funding-section > .section-sub-item{
+    min-height: 0;
+    padding-bottom: 10px;
+  }
+}

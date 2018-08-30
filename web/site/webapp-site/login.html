@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gobi | Sign in</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/plugins/validation/css/formValidation.min.css">
+	
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+
+<div class="text-center pvl full-width">
+
+    <h1 class="pvl">Sedna</h1>
+
+</div>
+
+    <div class="middle-box text-center loginscreen">
+        <div>
+
+            <h3>Welcome Back</h3>
+
+			<div id="div-error" style="color: red"></div>
+            <form  id="loginForm" class="m-t" method='post' action="./api/user/login">
+            
+                <div class="form-group">
+                    <input type="text"  id="input-username" class="form-control" placeholder="Username/Email" required="" name="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="input-password" class="form-control" placeholder="Password" required="" name="password">
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" checked name="autoLogin"><i></i> Remeber me
+                </div>
+                
+                <button type="submit" class="btn btn-primary block full-width m-b" >Sign in</button>
+                <a href="forgot_password.html"><small>Forgot password?</small></a>
+                <p></p>
+                
+                <a class="btn btn-sm btn-white btn-block" href="register.html">Sign Up</a>
+            </form>
+
+			 <hr/>
+             <div class="row">
+		        <div class="col-md-6">
+		        </div>
+		        <div class="col-md-6 text-right">
+		            <small>Gobi © 2015</small>
+		        </div>
+    		</div>
+        </div>
+    </div>
+
+</body>
+
+<script src="js/jquery/jquery-2.1.1.min.js"></script>
+<script src="js/plugins/validation/js/formValidation.min.js"></script>
+<script src="js/plugins/validation/js/framework/bootstrap.min.js"></script>
+<script src="js/plugins/validation/js/language/zh_CN.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+		    $('#loginForm').formValidation({
+		        message: 'This value is not valid',
+		        icon: {
+		            valid: 'glyphicon glyphicon-ok',
+		            invalid: 'glyphicon glyphicon-remove',
+		            validating: 'glyphicon glyphicon-refresh'
+		        },
+		        fields: {
+		            username: {
+		                message: 'The username is not valid',
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The username is required and can\'t be empty'
+		                    },
+		                    stringLength: {
+		                        min: 3,
+		                        max: 30,
+		                        message: 'The username must be more than 3 and less than 30 characters long'
+		                    }
+		                }
+		            },
+		            password: {
+		                validators: {
+		                    notEmpty: {
+		                        message: 'The password is required and can\'t be empty'
+		                    },
+		                    stringLength: {
+		                        min: 6,
+		                        message: 'The username must be more than 6 characters long'
+		                    },
+		                }
+		            }
+		            
+		        }
+		    })
+		    .on('success.form.fv', function(e) {
+	            // Prevent form submission
+	            e.preventDefault();
+
+	            // Get the form instance
+	            var $form = $(e.target);
+
+	            // Get the FormValidation instance
+	            var bv = $form.data('formValidation');
+
+	            
+	            // Use Ajax to submit form data
+	            $.ajax({
+	            	method: 'post',
+	                url: './api/user/login',
+	                data: $form.serialize()
+	            }).success(function(resp) {
+					if(resp.result){
+						var now = new Date();
+						var time = now.getTime();
+						time += 12*30*24*3600*1000;
+						now.setTime(time);
+						
+						document.cookie = 'username='+resp.user.username+';expires='+now.toUTCString();
+						document.cookie = 'login_token='+resp.token+';expires='+now.toUTCString();
+						document.cookie = 'auto_login='+resp.autoLogin+';expires='+now.toUTCString();
+						location.href="./index.html";
+					}else{
+						$('#div-error').text('Username/Email Or Password is wrong');
+						$('#input-username').focus();
+					}
+					
+	            });
+	            
+	        });
+		});
+	</script>
+
+
+</html>

@@ -1,0 +1,77 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h3 >{{'ADD_COMPANY_TO_LIST' | translate}}</h3>
+</div>
+    
+<div class="modal-body form-horizontal list-modal m-t-sm"  ng-controller="ListModalCtrl">
+    
+     <div class="row m-t-n" style="cursor:default"> 
+   		<a class='pull-right' ng-click='createButton()' id="a-create-list">
+   			<i class="fa fa-plus"></i>
+   			{{'CREATE_A_NEW_LIST' |  translate}}
+   		</a>
+   		<a id="hide-create-list" ng-click='hideButton()'>
+   			{{'HIDE' |  translate}}
+   		</a>
+   		
+   		<div class="form-group text-center" id="div-create-list">
+        	<input id="list-name" type="text" class="form-control modal-list-name m-l" placeholder="List Name"/>
+        	<span tabindex="0" class="btn-success create-btn" create-list>
+		      {{'CREATE' |  translate}}
+		    </span>
+        </div><!--above is top: create a new list-->
+
+        <div  class="select-list m-b" >Please select a list</div>
+        
+        <div class="ember-view m-t-md" id="div-search-list">
+        	<input id="list-search" type="text" list-filter class="form-control" placeholder="Search List Name" />
+		    <!--show the search result-->
+		     <span class="tt-dropdown-menu list-search-dropdown">
+				<div class="div-result" list-auto-complete='{{item.companyList.id}}'  ng-repeat='item in searchList track by $index'>
+					<div class="col-sm-4">
+						<span>{{item.companyList.name}}</span>
+					</div>
+					
+					<div class="col-sm-4">
+						<span>{{item.companyCount}} Companies</span>
+					</div>
+					
+					<div class="col-sm-4">
+						<span ng-show="item.companyList.status == 1001"> {{'PRIVATE'|translate}}</span>
+						<span ng-show="item.companyList.status == 1002"> {{'PUBLIC'|translate}}</span>
+					</div>
+					
+					<input type="hidden" value="{{item.companyList.id}}" />
+				</div>
+			</span>
+			
+		
+      </div>
+        
+        <div class="list-search-result" >
+				
+			</div>
+       
+   </div>
+    
+    <div id="list-in-modal">
+	   	<div class="list-param label div-tag m-t-sm "  tooltip-placement="top" tooltip="{{'CONTAINS'|translate}} {{item.companyCount}} {{'COMPANIES'|translate}}"
+		  		ng-repeat="item in userList track by $index" select-list='{{item.companyList.id}}'>
+	       		{{item.companyList.name}}
+	       		<i class="fa fa-plus"></i>
+		</div>
+	</div>
+	
+	<!-- 
+	<a load-more-list  ng-show="allList.length > userList.length">
+   		more
+	</a>
+	 -->
+    
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="addConfirm()">Add</button>
+</div>
+

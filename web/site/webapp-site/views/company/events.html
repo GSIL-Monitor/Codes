@@ -1,0 +1,26 @@
+<div class="event-left-part m-t"  ng-controller= "CompanyEventsCtrl">
+	<ol class="vertical-timeline">
+  	 <li class="tl-node m-b-md" ng-repeat="item in newsList">
+		<div class="tl-stamp m-b-xs">
+			{{item.news.newsDate}}
+			<span class="m-l tl-title" ng-show="item.news.title != null">{{item.news.title}}</span>
+		</div>
+		<div ng-class="(item.news.newsDate.slice(0,4) == year)?'new':'old'">
+			<span class="tl-content m-t-sm" event-popover ng-click="newsDetail({{item.news.newsId}})" >{{item.news.newsTitle}}</span>
+			
+			<div class="div-event-popover">
+          	<div class="pop-desc event-content">
+          		{{item.brief}} ...
+          	</div>
+          	
+          	<a ng-click="newsDetail({{item.news.newsId}})" class="pull-right m-r">{{'READ_MORE'|translate}}</a>
+          
+          </div>
+		</div>
+     </li>
+     </ol>
+ </div>
+	  
+ <div class="event-right-part" >
+ 	<h3>{{'SUMMARY' | translate}}</h3>
+ </div>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.company.DomainWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Domain">
+		insert domain
+			(
+			companyId,
+			domain,
+			organizer,
+			organizerType,
+			beianhao,
+			mainBeianhao,
+			websiteName,
+			homepage,
+			beianDate,
+			expire,
+			verify,
+			active,	
+			createTime,
+			createUser,
+			confidence
+			)
+		values(
+			#{companyId},
+			#{domain},
+			#{organizer},
+			#{organizerType},
+			#{beianhao},
+			#{mainBeianhao},
+			#{websiteName},
+			#{homepage},
+			#{beianDate},
+			#{expire},
+			#{verify}, 
+			#{active}, 
+			#{createTime}, 
+			#{createUser},
+			#{confidence}
+		)
+	</insert>
+
+</mapper>

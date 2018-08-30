@@ -1,0 +1,43 @@
+insert user(id,username,email,password,active,createTime) values(15,'Sylvia','sylvia@gobivc.com',md5('2411458133180585672415Gobi5292'),'Y',now());
+insert user_email(userId,email,verify) values(15,'sylvia@gobivc.com',true);
+insert user_email(userId,email,verify) values(15,'sylvia@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,15,now());
+insert user_role(userId,role,createTime) values(15,25040,now());
+
+#23906	居品汇
+#jupinhui		51195
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(41,1,19050,20030,18010,now(),51195);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(15,41,21020,23010,now());
+
+#18549	青年居室
+#qingnianjushi1204	61637
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(42,1,19050,20030,18010,now(),61637);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(15,42,21020,23010,now());
+
+#16348	夹克厨房
+#jkdx-jkchf		15178
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(43,1,19050,20030,18010,now(),15178);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(15,43,21020,23010,now());
+
+#13195	来一火
+#laiyihuo		1926
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(44,1,19050,20030,18010,now(),1926);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(15,44,21020,23010,now());
+
+#2217	Spottly
+#Spottly		2909
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(45,1,19050,20030,18010,now(),2909);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(15,45,21020,23010,now());
+	
+
+

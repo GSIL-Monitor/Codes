@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>烯牛数据-重置密码</title>
+</head>
+<body >
+    <div style="font-size: 15px; display: inline-block; width: 100%; padding: 0 20px; text-align: center">
+        <header style="padding: 20px 0; border-bottom: 1px solid #c6d0d8; color: #666">
+                <img src="http://${data['host']}/resources/image/site-v2/header/logo.png"
+                     width="142"
+                     height="32"
+                     style="margin: 0 auto 10px;"
+                />
+            <div style="font-size: 18px; margin-bottom: 10px;">
+                Hi ${data['user']['username']}!
+            </div>
+            <div style="font-size: 18px;">
+                您正在重置烯牛数据的密码，请使用以下验证码重置密码，
+            </div>
+        </header>
+        <div style="width: 510px;
+                    margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="padding: 10px 0; font-size: 36px; margin:10px auto 0;width:130px">
+                ${data['task']['code']}
+            </div>
+            <div style="font-size: 18px;">
+                或点击以下链接重置密码，
+            </div>
+            <div style="padding: 10px 0">
+                <a href="http://${data['host']}/account/#/forgetpwd/${data['task']['email']}/${data['task']['code']}/email">http://${data['host']}/account/#/forgetpwd/${data["task"]["email"]}/${data["task"]["code"]}/email</a>
+            </div>
+            <div style="padding: 10px 0">
+                如果链接无法点击，请复制链接粘贴到浏览器地址栏中并访问。
+            </div>
+            <div style="padding: 10px 0; font-size: 12px;">
+                （为保障账号安全性，该链接仅在10分钟内有效。如非您本人操作，请忽略此邮件）
+            </div>
+            <div style="padding: 10px 0; font-size: 12px;">
+                邮件来自烯牛数据的自动提醒，无需回复。
+            </div>
+            <div style="padding: 10px 0; font-size: 12px;">
+                如果您在使用中有任何的疑问或者建议， 欢迎反馈我们意见至邮件：support@xiniudata.com
+            </div>
+        </div>
+
+        <div style="margin: 20px 0; color:#666;">
+            <div style="font-size: 16px; margin-bottom: 10px;">
+                微信扫描下方二维码，关注公众号【烯牛小助手】
+            </div>
+
+            <img src="http://${data['host']}/resources/image/icon-system/verify/bg-wechat-qrcode.jpg"
+                 width="200"
+                 height="200"
+                 style="margin: 0 auto 20px;"
+            />
+
+            <div style="margin-bottom: 10px;">
+                工作开心 ：）
+            </div>
+            <div style="margin-bottom: 10px;">
+                烯牛数据团队
+            </div>
+            <div>
+                <a href="http://${data['host']}" style="color: #333;">${data['host']}</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<div ng-controller ='ThCtrl'  class='m-t' style='min-height:800px;'>
+	<div class="row pull-right m-t-n-xl m-r">
+		
+       	<button class="btn btn-danger" ui-sref="index.search" ng-click='update()'>
+          Update
+        </button>
+    </div>
+
+
+	
+	<div class="th" style="margin-top:50px">
+		<div class="search-param th-label bg-default" 
+		style="height:auto; min-width:60px;
+			text-align: center; lin-height:40px; padding:5px; font-size:15px; margin-left:20px; margin-top:20px;"
+			th-select="{{item.termId}}"  ng-repeat="item in list track by $index" ng-model ='check'
+			>
+        			{{item.termName}}
+		 </div>
+	 
+	 	
+	 	<div class='pull-right' >
+    	 <pagination total-items="bigTotalItems" ng-model="currentPage"
+    	  max-size="maxSize" ng-change='pageChanged()'
+    	  boundary-links="true" rotate="false" num-pages="numPages"
+    	  ></pagination>
+   		
+	</div>
+	
+	 
+	 </div>
+	
+	
+	
+	
+	
+</div>

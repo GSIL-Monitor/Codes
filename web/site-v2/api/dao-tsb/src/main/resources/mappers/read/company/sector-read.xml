@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.company.SectorReadDao">
+	<resultMap id="sectorResult" type="Sector">
+	</resultMap>
+
+	<select id="get" resultMap="sectorResult">
+		select * from sector where level = 1
+	</select>
+	
+	<select id="getByParentId" parameterType="Integer"  resultMap="sectorResult">
+		select * from sector where parentId=#{parentId} and level=2 limit 1000
+	</select>
+	
+	<select id="getById"  parameterType="Integer" resultMap="sectorResult">
+		select * from sector where id=#{id}
+	</select>
+	
+	
+</mapper>

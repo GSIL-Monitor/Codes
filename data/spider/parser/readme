@@ -1,0 +1,8 @@
+[program:parser_alexa]
+command=/opt/py-env/bin/python alexa_parser.py
+directory=/data/task-v2/spider/parser/trends
+user=root
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/data/task-v2/spider/parser/trends/logs/alexa_parser.log

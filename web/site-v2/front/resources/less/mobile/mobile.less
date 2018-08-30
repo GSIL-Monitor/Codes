@@ -1,0 +1,183 @@
+body{
+  font: normal 80%  Arial, Helvetica, sans-serif;
+}
+
+.container{
+  width: 98%;
+  padding: 0 8px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.m-body{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+.m-body:before{
+  display: table;
+  content: '';
+}
+
+.m-page-wrapper{
+  width: 100%;
+  min-height: 1000px;
+  display: inline-flex;
+}
+
+
+.m-company{
+  display: inline-block;
+  width: 100%;
+}
+
+.m-star-rating{
+  font-size: 1.2em;
+}
+
+.m-score-part{
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.m-submit{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.m-header{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: @gray;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1.1em;
+  position: relative;
+  z-index: 999;
+  display: inline-flex;
+}
+
+.m-site-logo{
+  float: left;
+  margin-right: 20px;
+  margin-left: 1px;
+  margin-top: 4px;
+  border: none;
+  background: transparent;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.m-site-hidden{
+  display: none;
+}
+
+.m-search{
+  float: left;
+  width: 80%;
+}
+
+.m-header-user{
+  margin-right: 1px;
+  margin-top: 8px;
+  float: right;
+}
+
+.m-search-input{
+  width: 100%;
+  float: left;
+  padding: 6px 2px;
+  line-height: 20px;
+  min-height: 30px;
+}
+
+.search-icon{
+  line-height: 30px;
+}
+
+
+.m-header-list{
+}
+
+.m-header-list > ul{
+  list-style: none;
+  background-color: #f3f3f4;
+  width: 100%;
+  overflow: hidden;
+}
+
+.m-header-list > ul > li{
+  padding: 15px 0;
+  display: list-item;
+  font-size: 1.1em;
+  color: #000;
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.m-header-list > ul > li:hover{
+  color: @blue;
+  cursor: pointer;
+}
+
+footer{
+  display: inline-block;
+  width: 100%;
+  float: none;
+  padding: 5px 0;
+  margin-top: 30px;
+}
+
+
+.score-item:hover{
+  background: transparent;
+}
+
+
+@media (max-width: 800px) {
+
+  .m-header-list > ul{
+    padding: 5px 0;
+  }
+
+  .m-header-list > ul > li{
+    padding: 5px 0;
+    display: list-item;
+    font-size: 1.1em;
+    color: #000;
+    float: none;
+    width: 100%;
+    padding-left: 20px;
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 600px) {
+  div.funding-money{
+    position: relative;
+    width: auto;
+  }
+  div.funding-investors{
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .m-header-close{
+    position: absolute;
+    right: 15px;
+  }
+
+  .m-search{
+    width: 65%;
+  }
+
+}
+
+

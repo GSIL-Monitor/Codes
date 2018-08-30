@@ -1,0 +1,6 @@
+#dump gridfs 约20分钟 45G
+mongodump -h 10.44.176.22 -d gridfs -o gridfs_20160625.dump
+
+
+#restore gridfs 30分钟
+mongorestore --host dds-2ze211ee68246e341.mongodb.rds.aliyuncs.com:3717 --authenticationDatabase admin -uroot -p -d gridfs gridfs_20160625.dump/gridfs

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="cn">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>Gobi BP</title>
+
+    <style type="text/css">
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #fff;
+            background-color: #262626;
+            margin:0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .content{
+        	width: 80%;
+        	height:100%;
+        	left: 10%;
+        	position: absolute;
+        }
+        
+        .info{
+        	top:15%;
+        	width:100%;
+        	position: absolute;
+        	text-align: center;
+        }
+        
+        .title{
+        	font-size: 38px;
+        	font-weight: 700;
+        }
+        
+        .desc{
+        	font-size: 18px;
+        	font-weight: 600
+        }
+        
+        .btn{
+        	display: inline-block;
+		    padding: 6px 12px;
+		    height:40px;
+		    margin-bottom: 0;
+		    font-size: 18px;
+		    font-weight: normal;
+		    line-height: 1.42857143;
+		    text-align: center;
+		    white-space: nowrap;
+		    vertical-align: middle;
+		    -ms-touch-action: manipulation;
+		    touch-action: manipulation;
+		    cursor: pointer;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		    background-image: none;
+		    border: 1px solid transparent;
+		    border-radius: 1px;
+		    width: 80%;
+		    max-width:600px;
+		    margin-top: 20px;
+        }
+        
+        .btn:focus,
+		.btn:active:focus,
+		.btn.active:focus,
+		.btn.focus,
+		.btn:active.focus,
+		.btn.active.focus {
+		    outline: thin dotted;
+		    outline: 2px auto -webkit-focus-ring-color;
+		    outline-offset: -1px;
+		}
+		.btn:hover,
+		.btn:focus,
+		.btn.focus {
+		    color: #333;
+		    text-decoration: none;
+		}
+		.btn:active,
+		.btn.active {
+		    background-image: none;
+		    outline: 0;
+		    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+		    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+		}
+		
+		btn-default {
+		    color: #333;
+		    background-color: #adadad;
+		    border-color: #adadad;
+		}
+		.btn-default:hover,
+		.btn-default:focus,
+		.btn-default.focus,
+		.btn-default:active,
+		.btn-default.active {
+		    color: #333;
+		    background-color: #e6e6e6;
+		    border-color: #adadad;
+		}
+		.btn-default:active,
+		.btn-default.active {
+		    background-image: none;
+		}
+		
+		.btn-primary {
+		    color: #fff;
+		    background-color: #f5ab20;
+		    border-color: #f5ab20;
+		}
+		.btn-primary:hover,
+		.btn-primary:focus,
+		.btn-primary.focus,
+		.btn-primary:active,
+		.btn-primary.active {
+		    color: #fff;
+		    background-color: #f5ab20;
+		    border-color: #f5ab20;
+		}
+		.btn-primary:active,
+		.btn-primary.active{
+		    background-image: none;
+		}
+				
+		
+		.btn-success {
+		    color: #fff;
+		    background-color: #5cb85c;
+		    border-color: #4cae4c;
+		}
+		.btn-success:hover,
+		.btn-success:focus,
+		.btn-success.focus,
+		.btn-success:active,
+		.btn-success.active{
+		    color: #fff;
+		    background-color: #449d44;
+		    border-color: #398439;
+		}
+		.btn-success:active,
+		.btn-success.active {
+		    background-image: none;
+		}
+		
+		
+		
+		.hint{
+			font-size:20px;
+			margin-top:10px;
+			display: none;
+		}
+
+    </style>
+</head>
+<body>
+	<div class="content">
+		<div class="info">
+			<div class="desc">
+				<span class="title">
+					索天下之才</br>
+				</span>
+				</br>
+				风险资本拥有改变世界的力量</br>
+				鼓励每个人追求梦想</br>
+				并付出努力改变世界</br>
+				让我们实现这非凡的理想</br>
+				立即联系我们！</br>
+			</div>
+			<button class="btn btn-primary" onclick="sendMail()"> 发送 BP</button>
+			<button class="btn btn-primary" onclick="lvzhou()"> 在线提交</button>
+			
+			<div id="hint"  class="hint">请使用浏览器打开</div>
+		</div>
+   	  
+    </div>
+</body>
+
+<script>
+
+    function sendMail(){
+    	if(isWeiXin()){
+    		document.getElementById('hint').style.display = 'block';
+    	}
+    	else{
+	        var subject = '项目BP';
+	        var mailBody = '[项目名]%0A[联系方式]%0A[添加附件]'
+	        document.location.href = "mailto:go@gobi.cn?subject="+subject
+	                + "&body=" +mailBody;
+    	}
+        
+    }
+    
+    function lvzhou(){
+    	document.location.href = "http://lvzhou.gobi.cn"
+    }
+    
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+</script>
+</html>

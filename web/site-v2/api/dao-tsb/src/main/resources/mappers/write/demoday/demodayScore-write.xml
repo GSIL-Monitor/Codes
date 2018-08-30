@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.demoday.DemodayScoreWriteDao">
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"
+		parameterType="DemodayScore">
+		insert
+		demoday_score
+		(
+		dealDemodayId,
+		userId,
+		industry,
+		team,
+		product, 
+		gain,
+		preMoney,
+		createTime
+		 )
+		values(
+		#{dealDemodayId},
+		#{userId},
+		#{industry}, 
+		#{team}, 
+		#{product},
+		#{gain}, 
+		#{preMoney},
+		#{createTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="DemodayScore">
+		update
+		demoday_score
+		set
+			dealDemodayId=#{dealDemodayId},
+			userId=#{userId},
+			industry=#{industry},
+			team=#{team},
+			product=#{product}, 
+			gain=#{gain},
+			preMoney=#{preMoney},
+			createTime= #{createTime},
+			modifyTime = #{modifyTime}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from demoday_score where dealDemodayId=#{dealDemodayId}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.company.dao.CompanyVODao">
+	<resultMap id="companySearchVOResult" type="CompanySearchVO"></resultMap>
+	<resultMap id="companyVOResult" type="CompanyVO"></resultMap>
+	<resultMap id="cdResult" type="CompanyDescVO"></resultMap>
+	
+	<select id="getById" resultMap="companySearchVOResult">
+		select 
+			*, 			
+			l.locationName as location
+		from
+			 company c
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		where 
+			id  = #{id}
+	</select>
+	
+	<select id="getSearch" resultMap="companySearchVOResult">
+		select 
+			*, 			
+			l.locationName as location
+		from
+			 company c
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		where 
+			id in 
+		<foreach item="item" index="index" collection="companyIds" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	
+	<select id="getSearchByCodes" resultMap="companySearchVOResult">
+		select 
+			*, 			
+			l.locationName as location
+		from
+			 company c
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		where 
+			code in 
+		<foreach item="item" index="index" collection="codes" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	
+	
+	<select id="getByCode" resultMap="companyVOResult">
+		select 
+			*, 			
+			l.locationName as location
+		from
+			 company c
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		where 
+			code = #{code}
+		and 
+			c.active = 'Y'
+	</select>
+	
+	<select id="getName" parameterType="String" resultType="String">
+		select name from company where code = #{code}
+	</select>
+	
+	
+	<select id="getDesc" resultMap="cdResult">
+		select 
+			productDesc, modelDesc, operationDesc, teamDesc,  
+			marketDesc, compititorDesc, advantageDesc, planDesc
+	    from company where code = #{code}
+	</select>
+	
+	<select id="getSortSearch" resultMap="companySearchVOResult">
+		select 
+			*, 			
+			l.locationName as location
+		from
+			 company c
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+			
+		left join 
+			company_sector cs
+		on 
+			c.id=cs.companyId
+		where 
+			id in 
+		<foreach item="item" index="index" collection="companyIds" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		and 
+		 <if test="round!=null">
+               c.round=#{round}
+          </if>
+          and 
+           <if test="locationId!=null">
+               l.locationId=#{locationId}
+          </if>
+          and 
+            <if test="sectorId!=null">
+               cs.sectorId=#{sectorId}
+          </if>
+	</select>
+	
+	<select id="getSort" resultMap="companySearchVOResult">
+		select 
+			*, 			
+			l.locationName as location
+		from
+			 company c
+		left join
+			location l
+		on 
+			c.locationId = l.locationId
+		left join 
+			company_sector cs
+		on 
+			c.id=cs.companyId
+		where 
+			id  = #{id}
+		 and 
+		 <if test="round!=null">
+               c.round=#{round}
+          </if>
+          and 
+           <if test="locationId!=null">
+               l.locationId=#{locationId}
+          </if>
+          and 
+          <if test="sectorId!=null">
+               cs.sectorId=#{sectorId}
+          </if>
+	</select>
+
+	<resultMap id="sourceResult" type="SourceVO"></resultMap>
+	<select id="getSource" parameterType="Integer" resultMap="sourceResult">
+		select source,sourceId from source_company where companyId = #{companyId} order by source limit 1
+	</select>
+
+
+
+</mapper>

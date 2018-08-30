@@ -1,0 +1,9 @@
+<xml>
+	<ToUserName><![CDATA[{{ model.user }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ model.app }}]]></FromUserName>
+	<CreateTime>{{ model.createTime }}</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[项目({{ title }})已存在! 请不要重复发送
+
+如有问题，请联系管理员]]></Content>
+</xml>

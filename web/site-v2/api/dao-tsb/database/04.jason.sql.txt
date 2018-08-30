@@ -1,0 +1,106 @@
+#deployed
+insert user(id,username,email,password,active,createTime) values(4,'Jason','jason@gobivc.com',md5('241145813318058567244test'),'Y',now());
+insert user_email(userId,email,verify) values(4,'jason@gobivc.com',true);
+insert user_email(userId,email,verify) values(4,'jason@gobi.cn',true);
+insert user_organization_rel(organizationId,userId,createTime) values(1,4,now());
+insert user_role(userId,role,createTime) values(4,25040,now());
+
+
+#1110	智游啦
+#lvxingmeishiyao	26285
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(15,1,19050,20030,18010,now(),26285);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,15,21020,23010,now());
+
+#1039	生活半径
+#shenghuobanjing	3618
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(16,1,19050,20030,18010,now(),3618);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,16,21020,23010,now());
+
+#1099	下一站
+#xiayizhan			102711
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(17,1,19050,20030,18010,now(),102711);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,17,21020,23010,now());
+
+#1573	明星衣橱
+#mingxingyichu		1562
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(18,1,19050,20030,18010,now(),1562);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,18,21020,23010,now());
+
+#1753	魔方天空
+
+#1978	百恩百
+#bb-ttbfb			11235	
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(19,1,19050,20030,18010,now(),11235);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,19,21020,23010,now());
+
+#2218	卡拉丁
+#qialadingqichebaoyang	6775
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(20,1,19050,20030,18010,now(),6775);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,20,21020,23010,now());
+
+#2409	UR
+
+#5266	iTrip
+#aolewang1127			12357
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(21,1,19050,20030,18010,now(),12357);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,21,21020,23010,now());
+
+#8071	神剧
+#shanpowang				5817
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(22,1,19050,20030,18010,now(),5817);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,22,21020,23010,now());
+
+#17420	360装房网
+#360zhuangfangwang		12769
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(23,1,19050,20030,18010,now(),12769);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,23,21020,23010,now());
+
+#20888	皇包车
+#chuncuilvxing			10127
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(24,1,19050,20030,18010,now(),10127);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,24,21020,23010,now());
+
+#21758	家墨方
+#jiamofang				9364
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(25,1,19050,20030,18010,now(),9364);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,25,21020,23010,now());
+
+#21992	丫米厨房
+#beimengwangluo			12531
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(26,1,19050,20030,18010,now(),12531);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,26,21020,23010,now());
+
+#22017	绿豆家装
+#lvdoujiazhuang			15457
+insert deal(id,organizationId,status,priority,declineStatus,createTime,companyId)
+values(27,1,19050,20030,18010,now(),15457);
+insert deal_user_rel(userId,dealId,userIdentify,type,createTime)
+values(4,27,21020,23010,now());
+
+#26366	氪基地
+
+update user set password=md5('241145813318058567244Gobi5292') where id=4;

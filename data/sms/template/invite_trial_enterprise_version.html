@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>${data['from_user']['username']}发起了「烯牛数据」机构版试用，邀您体验量化VC</title>
+</head>
+<body >
+    <div style="font-size: 15px; display: inline-block; width: 100%; padding: 0 20px; text-align: center">
+        <header style="padding: 20px 0; border-bottom: 1px solid #c6d0d8; color: #666">
+                <img src="http://${data['host']}/resources/image/site-v2/header/logo.png"
+                     width="142"
+                     height="32"
+                     style="margin: 0 auto 10px;"
+                />
+            <div style="font-size: 22px">
+                创投数据库+基金管理系统=？试试机构版！
+            </div>
+        </header>
+        <div style="width: 550px;
+                    margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="font-size: 16px; margin: 20px 0 10px; color:#111;">Hi ${data['to_user']['username']},</div>
+
+            <div style="padding: 10px 0">
+                你的同事${data['from_user']['username']}发起了「烯牛数据」机构版试用，邀请${data['org']['name']}的同事一起加入。
+            </div>
+        </div>
+
+        <div style="width: 550px;
+                    margin: 0 auto;
+                    text-align: left;
+                    color: #666;">
+            <div style="padding: 10px 0; color: #333; font-size: 16px;">
+                一键升级到<a href="http://www.xiniudata.com/#/">机构版</a>，立即享有以下特权：
+            </div>
+            <div style="padding: 10px 0">
+                投前发现：数据库数十万项目动态更新，基于大数据提升案源质量；
+            </div>
+            <div style="padding: 10px 0">
+                投中推进：实时记录项目执行全程，方便内部协同及复盘；
+            </div>
+            <div style="padding: 10px 0">
+                投后管理：追踪监测Portfolio及其竞品业绩表现；
+            </div>
+            <div style="padding: 10px 0">
+                内部管理：投资漏斗统计、基金项目库、例会功能。
+            </div>
+            <div style="padding: 10px 0; margin:0 auto; width: 250px">
+                体验时间还剩<span style="color: red; font-size:18px;">${data['left_days']}</span>天哦，赶快加入吧！
+            </div>
+            <div style="padding: 10px 0; margin:0 auto; width: 120px">
+                <a href="http://www.xiniudata.com/#/" style="
+                        width: 120px;
+                        border-radius: 30px;
+                        background: #05b8bf;
+                        color: #fff;
+                        text-decoration: none;
+                        height: 40px;
+                        display:inline-block;
+                        line-height: 40px;
+                        text-align: center;"
+                >立即体验</a>
+            </div>
+        </div>
+
+        <div style="width: 550px;
+                    margin: 0 auto;
+                    text-align: left;
+                    display: inline-block;
+                    color: #666;">
+             <div style="padding: 10px 0; color: #333;">
+                    升级为正式版请联系：
+             </div>
+
+            <div style="display:inline-block; width: 275px; float: left;">
+
+                <div style="padding: 5px 0">
+                    Charlotte
+                </div>
+                <div style="padding: 5px 0">
+                    电话/微信: 18401796835
+                </div>
+                <div style="padding: 5px 0">
+                    邮件:      charlotte@xiniudata.com
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0; color:#666;">
+            <div style="margin-bottom: 10px;">
+                烯牛数据团队
+            </div>
+            <div>
+                <a href="http://${data['host']}" style="color: #333;">${data['host']}</a>
+            </div>
+            <img src="http://${data['host']}/resources/image/icon-system/verify/bg-wechat-qrcode.jpg"
+                 width="200"
+                 height="200"
+                 style="margin: 0 auto 20px;"
+            />
+        </div>
+    </div>
+</body>
+</html>

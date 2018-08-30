@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.demoday.DemodayReadDao">
+	<resultMap id="demodayResult" type="Demoday">
+	</resultMap>
+	
+	<select id="get" resultMap="demodayResult">
+		select * from demoday  where id=#{demodayId}
+	</select>
+	<select id="getAll" resultMap="demodayResult">
+		select * from demoday  order by holdStartDate desc
+	</select>
+	<select id="getByName" resultMap="demodayResult">
+		select * from demoday  where name=#{name}
+	</select>
+
+</mapper>

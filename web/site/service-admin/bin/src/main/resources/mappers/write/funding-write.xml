@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.write.FundingWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Funding">
+		insert
+			funding
+			(companyId, preMoney, postMoney, investment, round, roundDesc,
+			 currency, precise, fundingDate, active, verify, createTime, createUser)
+		values(
+			#{companyId}, #{preMoney}, #{postMoney}, #{investment}, #{round}, #{roundDesc},
+			#{currency}, #{precise}, #{fundingDate}, #{active}, #{verify}, #{createTime}, #{createUser}
+		)
+	</insert>
+
+	<update id="update" parameterType="Funding">
+		update
+			funding
+		set 
+			preMoney = #{preMoney},
+			postMoney = #{postMoney},
+			investment = #{investment},
+			round = #{round},
+			roundDesc = #{roundDesc},
+			currency = #{currency},
+			precise = #{precise},
+			fundingDate = #{fundingDate},
+			active = #{active},
+			verify = #{verify},
+			modifyTime = #{modifyTime},
+			modifyUser= #{modifyUser}
+		where 
+			id = #{id}
+	</update>
+	
+</mapper>

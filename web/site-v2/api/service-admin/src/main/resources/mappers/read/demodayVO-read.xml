@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.admin.dao.DemodayVOReadDao">
+	<resultMap id="orgResult" type="DemodayOrgVO">
+	</resultMap>
+	<select id="getDemodayOrgVOList" resultMap="orgResult">
+		select
+			o.id as orgId,
+			do.status as status,
+			o.name as orgName,
+			o.status as orgStatus
+		from
+			organization o
+		left join
+			demoday_organization do
+		on
+			do.organizationId=o.id 
+			and 
+			 do.demodayId =#{demodayId}
+		where  o.status= 31010 order by
+		do.createTime desc
+	</select>
+
+	<resultMap id="companiesResult" type="DemodayCompanyVO">
+	</resultMap>
+	<select id="getDemodayCompanyVOList" resultMap="companiesResult">
+		select
+			c.code as
+			code,
+			c.name as name,
+			o.name as orgName,
+			dc.rank as rank ,
+			dc.scoringStatus as scoringStatus,
+			dc.joinStatus as joinStatus,
+			dc.createTime as createTime,
+			dc.id as id,
+			dc.pass as pass
+		from
+			demoday_company dc
+		left join
+			company c
+		on
+			c.id = dc.companyId
+		left join
+			organization o
+		on
+			o.id = dc.organizationId
+		where dc.demodayId =#{demodayId} order by  dc.scoringStatus 
+	</select>
+	
+	<select id="getSysDemodayCompanyVOList" resultMap="companiesResult">
+		select
+			c.code as
+			code,
+			c.name as name,
+			o.name as orgName,
+			dc.rank as rank ,
+			dc.scoringStatus as scoringStatus,
+			dc.joinStatus as joinStatus,
+			dc.createTime as createTime,
+			dc.id as id,
+			dc.pass as pass
+		from
+			demoday_company dc
+		left join
+			company c
+		on
+			c.id = dc.companyId
+		left join
+			organization o
+		on
+			o.id = dc.organizationId
+		where dc.demodayId =#{demodayId} and dc.organizationId =#{organizationId}
+		 order by  dc.createTime  desc
+		  limit #{start},#{pageSize}
+	</select>
+	
+	
+	<select id="getAllSysDemodayCompanyVO" resultMap="companiesResult">
+		select
+			c.code as
+			code,
+			c.name as name,
+			o.name as orgName,
+			dc.rank as rank ,
+			dc.scoringStatus as scoringStatus,
+			dc.joinStatus as joinStatus,
+			dc.createTime as createTime,
+			dc.id as id,
+			dc.pass as pass
+		from
+			demoday_company dc
+		left join
+			company c
+		on
+			c.id = dc.companyId
+		left join
+			organization o
+		on
+			o.id = dc.organizationId
+		where dc.demodayId =#{demodayId} and dc.organizationId =#{organizationId}
+		 order by  dc.createTime desc
+	</select>
+	
+	
+	 <resultMap id="userPreScoresResult" type="UserPreScoreVO">
+	 </resultMap>
+	 <select id="getAllUserPreScores" resultMap="userPreScoresResult">
+			select
+				 dp.score as score,
+				 u.userName as userName
+			from
+				demoday_prescore dp
+			left join 
+				 user u
+			on
+				u.id = dp.userId	
+			where 
+				dp.dealDemodayId  = #{dealDemodayId}
+	</select> 
+	
+	<resultMap id="avgPreScoreVOResult" type="AvgPreScoreVO">
+	</resultMap>
+	<select id="getCompaniesAvgPreScore"  resultMap="avgPreScoreVOResult">
+			select
+			 AVG(dp.score) as avg,
+			 c.name as name,
+			 dc.companyId as id ,
+			 dc.id as demodayCompanyId,
+			 dc.scoringStatus as scoringStatus
+			from 
+				demoday_company dc 
+			left join 
+				company c
+			on 
+				c.id = dc.companyId
+			left join 
+				demoday_prescore dp
+			on 
+				dp.dealDemodayId=dc.id
+			where
+			 dc.demodayId=#{demodayId} 
+			 group by dc.id
+	</select>
+	
+	
+	<select id="getPartnerPreScores"  resultMap="userPreScoresResult">
+			select
+				dp.score as score,
+				u.userName as userName
+			from 
+				user_role ur
+			left join 
+				demoday_prescore dp
+			on 
+				ur.userId = dp.userId
+            and 
+				dp.dealDemodayId=#{dealDemodayId} 
+		
+			left join user u
+            on 
+				u.id = ur.userId
+		
+            where ur.role=25030
+	</select>
+	
+	
+</mapper>

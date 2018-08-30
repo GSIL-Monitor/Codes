@@ -1,0 +1,2 @@
+db.appstore_rank.aggregate({$group:{_id:{type:"$type",genre:"$genre"},count:{$sum:1}}})
+db.appstore_rank.aggregate({$match:{date:ISODate("2016-08-25")}},{$group:{_id:{type:"$type",genre:"$genre"},count:{$sum:1}}})

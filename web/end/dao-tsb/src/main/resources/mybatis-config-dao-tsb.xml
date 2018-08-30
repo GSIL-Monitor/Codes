@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="Company" type="com.tsb.model.Company" />
+		<typeAlias alias="Location" type="com.tsb.model.Location" />
+		<typeAlias alias="Funding" type="com.tsb.model.Funding" />
+		<typeAlias alias="FundingInvestorRel" type="com.tsb.model.FundingInvestorRel" />
+		<typeAlias alias="Investor" type="com.tsb.model.Investor" />
+		<typeAlias alias="Member" type="com.tsb.model.Member" />
+		<typeAlias alias="CompanyMemberRel" type="com.tsb.model.CompanyMemberRel" />
+		
+		<typeAlias alias="SourceCompany" type="com.tsb.model.source.SourceCompany" />
+		<typeAlias alias="SourceFunding" type="com.tsb.model.source.SourceFunding" />
+		<typeAlias alias="SourceFundingInvestorRel" type="com.tsb.model.source.SourceFundingInvestorRel" />
+		<typeAlias alias="SourceInvestor" type="com.tsb.model.source.SourceInvestor" />
+		<typeAlias alias="SourceMember" type="com.tsb.model.source.SourceMember" />
+		<typeAlias alias="SourceCompanyMemberRel" type="com.tsb.model.source.SourceCompanyMemberRel" />
+		
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappers/read/company-read.xml" />
+		<mapper resource="mappers/read/location-read.xml" />
+		<mapper resource="mappers/read/funding-read.xml" />
+		<mapper resource="mappers/read/fundingInvestorRel-read.xml" />
+		<mapper resource="mappers/read/investor-read.xml" />
+		<mapper resource="mappers/read/member-read.xml" />
+		<mapper resource="mappers/read/companyMemberRel-read.xml" />
+		
+		<!--  Source  -->
+		<mapper resource="mappers/read/source/sourceCompany-read.xml" />
+		<mapper resource="mappers/read/source/sourceFunding-read.xml" />
+		<mapper resource="mappers/read/source/sourceFundingInvestorRel-read.xml" />
+		<mapper resource="mappers/read/source/sourceInvestor-read.xml" />
+		<mapper resource="mappers/read/source/sourceMember-read.xml" />
+		<mapper resource="mappers/read/source/sourceCompanyMemberRel-read.xml" />
+		
+		<mapper resource="mappers/write/company-write.xml" />
+		<mapper resource="mappers/write/funding-write.xml" />
+		<mapper resource="mappers/write/member-write.xml" />
+		<mapper resource="mappers/write/investor-write.xml" />
+		<mapper resource="mappers/write/companyMemberRel-write.xml" />
+		<mapper resource="mappers/write/fundingInvestorRel-write.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,54 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <h3 >{{'PROFILE' | translate}}</h3>
+</div>
+<div class="modal-body form-horizontal div-profile">
+<form id="profileForm" method="post">
+	<div class="form-group">
+        <label class="col-xs-3 control-label">Username</label>
+        <div class="col-xs-8">
+            <input type="text" class="form-control" placeholder="username" ng-value ="profile.username" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Email</label>
+        <div class="col-xs-8">
+            <input type="email" class="form-control" placeholder="Email" ng-value ="profile.email"/>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Phone</label>
+        <div class="col-xs-8">
+            <input type="text" class="form-control" placeholder="Mobile Phone" ng-value ="profile.phone"/>
+        </div>
+    </div>
+    
+     <div class="form-group">
+        <label class="col-xs-3 control-label">Language</label>
+        <div class="col-xs-8">
+        
+            <div class="radio">
+                <label>
+                    <input type="radio" name="language" value="English" /> English
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="language" value="Chinese" /> Chinese
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">Save</button>
+</div>
+

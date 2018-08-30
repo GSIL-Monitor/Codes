@@ -1,0 +1,1 @@
+forever start oss-fileserver.js  -o /var/www/oss-fileserver/logs/out.log -e /var/www/oss-fileserver/logs/err.log -l /var/www/oss-fileserver/logs/forever.log -a

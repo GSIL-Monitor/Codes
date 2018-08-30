@@ -1,0 +1,1 @@
+insert into user_wechat (openid, userId, nik) values();

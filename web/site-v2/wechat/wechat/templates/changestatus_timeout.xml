@@ -1,0 +1,9 @@
+<xml>
+	<ToUserName><![CDATA[{{ model.user }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ model.app }}]]></FromUserName>
+	<CreateTime>{{ model.createTime }}</CreateTime>
+	<MsgType><![CDATA[text]]></MsgType>
+	<Content><![CDATA[项目({{ title }})负责人没有修改成功，原因是已超过10分钟。请登录web版修改。
+
+如有问题，请联系管理员]]></Content>
+</xml>

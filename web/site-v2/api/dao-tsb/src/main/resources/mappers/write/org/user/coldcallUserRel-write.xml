@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.write.org.user.ColdcallUserRelWriteDao">
+
+	<insert id="insert"  useGeneratedKeys="true" keyProperty="id"  parameterType="Deal">
+		insert coldcall_user_rel(
+			coldcallId, userId,userIdentify,createTime
+		)
+		values(
+			#{coldcallId}, #{userId},#{userIdentify},#{createTime}
+		)
+	</insert>
+	
+	<update id="update" parameterType="Deal">
+		update
+			coldcall_user_rel
+		set 
+			coldcallId=#{coldcallId}, 
+			userId=#{userId},
+			userIdentify=#{userIdentify},
+			createTime=#{createTime},
+			modifyTime=#{modifyTime}
+		where 
+			id = #{id}
+	</update>
+
+</mapper>

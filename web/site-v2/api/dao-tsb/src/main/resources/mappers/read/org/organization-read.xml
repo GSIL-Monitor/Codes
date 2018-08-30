@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.dao.read.org.OrganizationReadDao">
+	<resultMap id="orgResult" type="Organization">
+	</resultMap>
+
+	<select id="get" parameterType="Integer" resultMap="orgResult">
+		select * from organization where id = #{id}
+	</select>
+	
+	<select id="getByUser" parameterType="Integer" resultMap="orgResult">
+		select o.* from organization o join user_organization_rel r on r.organizationId=o.id
+		where r.userId = #{userId}
+		limit 1
+	</select>
+	
+	<select id="getByIds"  resultType="String">
+		select 
+			name 
+		from 
+			organization o
+		where o.id in 
+		 	<foreach collection="ids" item="item" index="index"  open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	
+	<select id="getByName" parameterType="String" resultType="Integer">
+		select
+			 id 
+		from 
+			organization
+		where 
+			name in
+		<foreach collection="name" item="item" index="index"  open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+	
+	<select id="getOrgs" resultMap="orgResult">
+		select * from organization order by createTime desc
+	</select>
+	
+	<select id="getOrgByName" resultMap="orgResult">
+		select * from organization  where name=#{name} limit 1
+	</select>
+	<select id="getXOrgs" resultMap="orgResult">
+		select * from organization  where status=#{status} order by createTime desc
+	</select>
+	
+	
+</mapper>

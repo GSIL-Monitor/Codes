@@ -1,0 +1,71 @@
+mkdir /opt/consul/bin
+mkdir /opt/consul/config
+mkdir /opt/consul/data
+mkdir /opt/consul/logs
+
+#web-01
+/opt/consul/bin/consul agent -server -bootstrap-expect=2 \
+-data-dir=/opt/consul/data -node=web-01 -datacenter=xiniudata \
+-bind=10.27.73.209 \
+-config-dir=/opt/consul/config \
+2>&1 > /opt/consul/logs/consul.log &
+
+
+#web-02
+/opt/consul/bin/consul agent -server -ui \
+-data-dir=/opt/consul/data -node=web-02 -datacenter=xiniudata \
+-bind=10.27.73.237 \
+-config-dir=/opt/consul/config \
+2>&1 > /opt/consul/logs/consul.log &
+
+/opt/consul/bin/consul join 10.27.73.209
+
+htpasswd -c /opt/consul/config/pass.db arthur  Rhino@309
+
+server {
+    listen       59.110.21.244:8500;
+    server_name  localhost;
+
+    include /opt/ngx/nginx/conf/conf.d/ssl.inc;
+    auth_basic "User Authentication";
+    auth_basic_user_file /opt/consul/config/pass.db;
+
+    location / {
+        proxy_pass http://127.0.0.1:8500;
+    }
+}
+
+#other-01
+/opt/consul/bin/consul agent -server \
+-data-dir=/opt/consul/data -node=other-01 -datacenter=xiniudata \
+-bind=10.27.74.15 \
+-config-dir=/opt/consul/config \
+2>&1 > /opt/consul/logs/consul.log &
+
+/opt/consul/bin/consul join 10.27.73.209
+
+
+#dev
+
+/opt/consul/bin/consul agent -server -bootstrap-expect=1 \
+-data-dir=/opt/consul/data -node=dev-01 -datacenter=xiniudata-dev -bind=10.44.202.51 \
+-config-dir=/opt/consul/config \
+2>&1 > /opt/consul/logs/consul.log &
+
+yum -y install httpd-tools
+htpasswd -c /opt/consul/config/pass.db arthur  Rhino@309
+
+server {
+    listen       101.200.230.47:8500;
+    server_name  localhost;
+
+    auth_basic "User Authentication";
+    auth_basic_user_file /opt/consul/config/pass.db;
+
+    location / {
+        proxy_pass http://127.0.0.1:8500;
+    }
+    location /ui {
+        alias /opt/consul/ui;
+    }
+}

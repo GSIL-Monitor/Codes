@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tsb.company.dao.CollectionVODao">
+	<resultMap id="hotColsResult" type="CollectionVO">
+	</resultMap>
+	
+	<select id="getHotCols" resultMap="hotColsResult">
+		select
+			c.id as id,
+			c.name as name,
+			c.description as description,
+			c.sort as sort
+		from 
+			collection c 
+		where  c.type=#{type} and c.active='Y' order by  c.sort desc, c.createTime desc
+	</select>
+	
+</mapper>
